@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [RoundTrip]">
+  <listeners>
+    <listener class-name="TestScript.RoundTrip.Flightcheck"/>
+  </listeners>
+  <test name="Nopackage(failed)">
+    <classes>
+      <class name="TestScript.RoundTrip.Flight">
+        <methods>
+          <include name="flightroundtrip" invocation-numbers="0"/>
+          <include name="afterMetod"/>
+        </methods>
+      </class> <!-- TestScript.RoundTrip.Flight -->
+    </classes>
+  </test> <!-- Nopackage(failed) -->
+</suite> <!-- Failed suite [RoundTrip] -->

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="RoundTrip" >
+
+<listeners>
+<listener class-name="TestScript.RoundTrip.Flightcheck"></listener>
+
+</listeners>
+
+  <test name="Nopackage" >
+    <classes>
+       <class name="TestScript.RoundTrip.Flight" />
+    </classes>
+  </test>
+</suite>

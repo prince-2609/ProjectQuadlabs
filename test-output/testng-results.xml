@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Multicity" duration-ms="287278" started-at="2020-01-27T06:38:43Z" finished-at="2020-01-27T06:43:30Z">
+    <groups>
+    </groups>
+    <test name="Nopackage" duration-ms="287278" started-at="2020-01-27T06:38:43Z" finished-at="2020-01-27T06:43:30Z">
+      <class name="TestScript.Multicity.FlightMulticity">
+        <test-method status="PASS" signature="flightMultiCitytest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TestScript.Multicity.FlightMulticity@3b088d51]" name="flightMultiCitytest" duration-ms="279819" started-at="2020-01-27T12:08:49Z" data-provider="getexceldata" finished-at="2020-01-27T12:13:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ql]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[tarun.chugh@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[J15QG5BT26&$!)&]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[del]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[New Delhi, India - Indira Gandhi International Airport (DEL)]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[bom]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Mumbai, India - Chhatrapati Shivaji International Airport (BOM)]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[dxb]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Dubai, United Arab Emirates - Dubai International Airport (DXB)]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[del]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[New Delhi, India - Indira Gandhi International Airport (DEL)]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[2212020]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[2252020]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[2272020]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[International]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[First Class]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[JET AIRWAYS,AIR INDIA,EMIRATES,KUWAIT AIRWAYS]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[anji@test.com]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[MRS,MS]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Anjali,Priya]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[kumari]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[jain,singh]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[25,24]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[Apr,Jan]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[1990,1991]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[7678678,986754]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[91]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[9212487567]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[5566774,4667785]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[India (IN),India (IN)]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[6,10]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Dec,Jan]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[2035,2029]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[Indian,Afghan]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[MISS,MSTR]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[Dev,Sawara]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[jain,bansal]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[28,17]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Aug,Dec]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[2010,2015]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[667678,90909]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[232323,454545]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[India (IN),India (IN)]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[28,17]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[Aug,Dec]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[2021,2025]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[Indian,Indian]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[MISS,MSTR]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[saanvi,Manan]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Gupta,Bansal]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[28,17]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[Aug,Dec]]>
+              </value>
+            </param>
+            <param index="55">
+              <value>
+                <![CDATA[2019,2019]]>
+              </value>
+            </param>
+            <param index="56">
+              <value>
+                <![CDATA[788788,65433]]>
+              </value>
+            </param>
+            <param index="57">
+              <value>
+                <![CDATA[Adult1,Adult2]]>
+              </value>
+            </param>
+            <param index="58">
+              <value>
+                <![CDATA[232323,454545]]>
+              </value>
+            </param>
+            <param index="59">
+              <value>
+                <![CDATA[India (IN),Australia (AU)]]>
+              </value>
+            </param>
+            <param index="60">
+              <value>
+                <![CDATA[28,17]]>
+              </value>
+            </param>
+            <param index="61">
+              <value>
+                <![CDATA[Aug,Dec]]>
+              </value>
+            </param>
+            <param index="62">
+              <value>
+                <![CDATA[2021,2025]]>
+              </value>
+            </param>
+            <param index="63">
+              <value>
+                <![CDATA[Indian,Indian]]>
+              </value>
+            </param>
+            <param index="64">
+              <value>
+                <![CDATA[MR]]>
+              </value>
+            </param>
+            <param index="65">
+              <value>
+                <![CDATA[Aseem]]>
+              </value>
+            </param>
+            <param index="66">
+              <value>
+                <![CDATA[jain]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[Nirman nagar]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[Jai]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[Jaipur]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[Haryana]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[202019]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[India (IN)]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[Credit Card]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[Visa]]>
+              </value>
+            </param>
+            <param index="75">
+              <value>
+                <![CDATA[4811111111111114]]>
+              </value>
+            </param>
+            <param index="76">
+              <value>
+                <![CDATA[test test]]>
+              </value>
+            </param>
+            <param index="77">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+            <param index="78">
+              <value>
+                <![CDATA[2020]]>
+              </value>
+            </param>
+            <param index="79">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="80">
+              <value>
+                <![CDATA[112233]]>
+              </value>
+            </param>
+            <param index="81">
+              <value>
+                <![CDATA[786]]>
+              </value>
+            </param>
+            <param index="82">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightMultiCitytest -->
+        <test-method status="PASS" signature="afterMetod()[pri:0, instance:TestScript.Multicity.FlightMulticity@3b088d51]" name="afterMetod" is-config="true" duration-ms="365" started-at="2020-01-27T12:13:30Z" finished-at="2020-01-27T12:13:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+      </class> <!-- TestScript.Multicity.FlightMulticity -->
+    </test> <!-- Nopackage -->
+  </suite> <!-- Multicity -->
+</testng-results>

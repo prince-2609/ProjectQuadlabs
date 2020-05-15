@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Transfer OneWay]">
+  <listeners>
+    <listener class-name="TestScript.RoundTrip.Flightcheck"/>
+  </listeners>
+  <test name="Nopackage(failed)">
+    <classes>
+      <class name="TestScript.OneWay.TransferOneWay">
+        <methods>
+          <include name="transferOneway"/>
+        </methods>
+      </class> <!-- TestScript.OneWay.TransferOneWay -->
+    </classes>
+  </test> <!-- Nopackage(failed) -->
+</suite> <!-- Failed suite [Transfer OneWay] -->
