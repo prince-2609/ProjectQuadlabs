@@ -12,9 +12,7 @@ import utilities.Logger;
 
 public class Flightcheck extends TestBase implements ITestListener {
 
-	
 	QaExcelRead reader;
-	
 
 	public void onTestStart(ITestResult result) {
 
@@ -40,13 +38,10 @@ public class Flightcheck extends TestBase implements ITestListener {
 	}
 
 	public void onTestFailure(ITestResult result) {
-
 		try {
-
 			if (result.getStatus() == ITestResult.FAILURE) {
-				
 				Logger.fail(driver);
-				//QaLogger.testLog(result);
+				// QaLogger.testLog(result);
 				test.log(Status.FAIL, result.getThrowable());
 			}
 
@@ -56,18 +51,14 @@ public class Flightcheck extends TestBase implements ITestListener {
 	}
 
 	public void onTestSkipped(ITestResult result) {
-
 		try {
-
 			if (result.getStatus() == ITestResult.SKIP) {
-
 				String screenShotPath = Logger.takeScreenshot(driver, "SKIP");
 				test.log(Status.SKIP, result.getThrowable());
 				test.log(Status.INFO, "Skipped Booking Snapshot Below :",
 						MediaEntityBuilder.createScreenCaptureFromPath(screenShotPath).build());
 				System.out.println("********* Skipped *********");
 			}
-
 		} catch (Exception e) {
 			e.getMessage();
 		}
@@ -76,19 +67,12 @@ public class Flightcheck extends TestBase implements ITestListener {
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 
 	}
-	
+
 	public void onStart(ITestContext context) {
-		
-		try
-		{
-			
+		try {
 			init();
-				
 		}
-		
-		catch (IOException e)
-		{
-			
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

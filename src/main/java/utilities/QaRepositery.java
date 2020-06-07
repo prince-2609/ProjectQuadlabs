@@ -18,4 +18,6 @@ public class QaRepositery {
 			obj.load(inputStream);
 		}
 	}
+	// set default respository file
+	
 }
