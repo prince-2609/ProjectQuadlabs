@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jan 23 12:57:38 IST 2020</td>
+<td>Started on:</td><td>Sun Jun 07 13:02:42 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>144 seconds (144856 ms)</td>
+<tr><td>Total time:</td><td>23 seconds (23436 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,56 +75,77 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestScript.ModifySearch.FlightDuration.Duration()'><b>Duration</b><br>Test class: TestScript.ModifySearch.FlightDuration<br>Parameters: ql, tarun.chugh@quadlabs.com, J15QG5BT26&$!)&, del, New Delhi, India - Indira Gandhi International Airport (DEL), dxb, Dubai, United Arab Emirates - Dubai International Airport (DXB), 2252020, International, 1, 1, 1, Indian Rupees, Economy, JET AIRWAYS,AIR INDIA,EMIRATES,KUWAIT AIRWAYS, Direct, Refundable</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[@class=&quot;ng-pristine ng-valid clsStops full bxs txt-ac ON ng-touched&quot;]&quot;}
-  (Session info: chrome=79.0.3945.130)
-  (Driver info: chromedriver=79.0.3945.16 (93fcc21110c10dbbd49bbff8f472335360e31d05-refs/branch-heads/3945@{#262}),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 10.04 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+<td title='TestScript.ModifySearch.FlightAirline.Duration()'><b>Duration</b><br>Test class: TestScript.ModifySearch.FlightAirline<br>Parameters: ql, tarun.chugh@quadlabs.com, J15QG5BT26&$!)&, del, New Delhi, India - Indira Gandhi International Airport (DEL), dxb, Dubai, United Arab Emirates - Dubai International Airport (DXB), 2252020, International, 1, 1, 1, Indian Rupees, Economy, JET AIRWAYS,AIR INDIA,EMIRATES,KUWAIT AIRWAYS, Direct, Refundable</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: Returned value cannot be converted to WebElement: {stacktrace=Backtrace:
+	Ordinal0 [0x002E9F93+1548179]
+	Ordinal0 [0x0026DC51+1039441]
+	Ordinal0 [0x001EE33E+516926]
+	Ordinal0 [0x00181179+70009]
+	Ordinal0 [0x001996F7+169719]
+	Ordinal0 [0x001980D0+164048]
+	Ordinal0 [0x00197CAA+162986]
+	Ordinal0 [0x0017221E+8734]
+	Ordinal0 [0x00172606+9734]
+	Ordinal0 [0x00172C80+11392]
+	Ordinal0 [0x00287047+1142855]
+	GetHandleVerifier [0x00382996+507766]
+	GetHandleVerifier [0x003826B4+507028]
+	GetHandleVerifier [0x00389D97+537463]
+	GetHandleVerifier [0x00383252+510002]
+	Ordinal0 [0x0027F12C+1110316]
+	Ordinal0 [0x0017204E+8270]
+	Ordinal0 [0x00171D99+7577]
+	GetHandleVerifier [0x0061D8FC+3239644]
+	BaseThreadInitThunk [0x74818744+36]
+	RtlGetAppContainerNamedObjectPath [0x77B558ED+253]
+	RtlGetAppContainerNamedObjectPath [0x77B558BD+205]
+, error=invalid session id, message=invalid session id}
 Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
-System info: host: &apos;Anjali&apos;, ip: &apos;192.168.111.111&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:57043}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=79.0.3945.16 (93fcc21110c10dbbd49bbff8f472335360e31d05-refs/branch-heads/3945@{#262}), userDataDir=C:\Users\ANJALI~1.JAI\AppData\Local\Temp\scoped_dir1340_820562951}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: dd502eaca0c6cb232454cff8b41acece
-*** Element info: {Using=xpath, value=//span[@class=&quot;ng-pristine ng-valid clsStops full bxs txt-ac ON ng-touched&quot;]}
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+System info: host: &apos;Anjali&apos;, ip: &apos;192.168.42.77&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-	at Base.TestBase.getLocator(TestBase.java:163)
-	at Base.TestBase.getWebElement(TestBase.java:209)
-	at Base.TestBase.ClickOnElement(TestBase.java:418)
-	at TestScript.ModifySearch.FlightDuration.Duration(FlightDuration.java:317)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1296109622", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1296109622'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[@class=&quot;ng-pristine ng-valid clsStops full bxs txt-ac ON ng-touched&quot;]&quot;}
-  (Session info: chrome=79.0.3945.130)
-  (Driver info: chromedriver=79.0.3945.16 (93fcc21110c10dbbd49bbff8f472335360e31d05-refs/branch-heads/3945@{#262}),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 10.04 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+	at Base.TestBase.listofautosuggestion(TestBase.java:156)
+	at TestScript.ModifySearch.FlightAirline.Duration(FlightAirline.java:43)
+Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to org.openqa.selenium.WebElement
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:373)
+	... 30 more
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace937366737", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace937366737'><pre>org.openqa.selenium.WebDriverException: Returned value cannot be converted to WebElement: {stacktrace=Backtrace:
+	Ordinal0 [0x002E9F93+1548179]
+	Ordinal0 [0x0026DC51+1039441]
+	Ordinal0 [0x001EE33E+516926]
+	Ordinal0 [0x00181179+70009]
+	Ordinal0 [0x001996F7+169719]
+	Ordinal0 [0x001980D0+164048]
+	Ordinal0 [0x00197CAA+162986]
+	Ordinal0 [0x0017221E+8734]
+	Ordinal0 [0x00172606+9734]
+	Ordinal0 [0x00172C80+11392]
+	Ordinal0 [0x00287047+1142855]
+	GetHandleVerifier [0x00382996+507766]
+	GetHandleVerifier [0x003826B4+507028]
+	GetHandleVerifier [0x00389D97+537463]
+	GetHandleVerifier [0x00383252+510002]
+	Ordinal0 [0x0027F12C+1110316]
+	Ordinal0 [0x0017204E+8270]
+	Ordinal0 [0x00171D99+7577]
+	GetHandleVerifier [0x0061D8FC+3239644]
+	BaseThreadInitThunk [0x74818744+36]
+	RtlGetAppContainerNamedObjectPath [0x77B558ED+253]
+	RtlGetAppContainerNamedObjectPath [0x77B558BD+205]
+, error=invalid session id, message=invalid session id}
 Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
-System info: host: &apos;Anjali&apos;, ip: &apos;192.168.111.111&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:57043}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=79.0.3945.16 (93fcc21110c10dbbd49bbff8f472335360e31d05-refs/branch-heads/3945@{#262}), userDataDir=C:\Users\ANJALI~1.JAI\AppData\Local\Temp\scoped_dir1340_820562951}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=79.0.3945.130, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: dd502eaca0c6cb232454cff8b41acece
-*** Element info: {Using=xpath, value=//span[@class=&quot;ng-pristine ng-valid clsStops full bxs txt-ac ON ng-touched&quot;]}
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+System info: host: &apos;Anjali&apos;, ip: &apos;192.168.42.77&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_121&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
 	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-	at Base.TestBase.getLocator(TestBase.java:163)
-	at Base.TestBase.getWebElement(TestBase.java:209)
-	at Base.TestBase.ClickOnElement(TestBase.java:418)
-	at TestScript.ModifySearch.FlightDuration.Duration(FlightDuration.java:317)
+	at Base.TestBase.listofautosuggestion(TestBase.java:156)
+	at TestScript.ModifySearch.FlightAirline.Duration(FlightAirline.java:43)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -147,12 +168,15 @@ Session ID: dd502eaca0c6cb232454cff8b41acece
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
 	at org.testng.TestNG.runSuites(TestNG.java:1133)
 	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassCastException: com.google.common.collect.Maps$TransformedEntriesMap cannot be cast to org.openqa.selenium.WebElement
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:373)
+	... 30 more
 </pre></div></td>
-<td>137</td>
-<td>TestScript.ModifySearch.FlightDuration@3b088d51</td></tr>
+<td>1</td>
+<td>TestScript.ModifySearch.FlightAirline@2f8dad04</td></tr>
 </table><p>
 </body>
 </html>

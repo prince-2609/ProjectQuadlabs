@@ -22,7 +22,7 @@ public class AlgosaibiMulticity extends Flightcheck
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
 		
-		return QaDataProvider.getExceldata("algosaibi","Multicity");
+		return QaDataProvider.getTestdata("algosaibi","Multicity");
 	}
 	
 

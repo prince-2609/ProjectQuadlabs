@@ -11,7 +11,7 @@ import com.aventstack.extentreports.markuputils.CodeLanguage;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 import TestScript.Algosaibi.AlgosaibiOneway;
-import utilities.QaLogger;
+import utilities.Logger;
 import utilities.QaRobot;
 
 public class Algosaibi_oneway extends AlgosaibiOneway {
@@ -86,7 +86,7 @@ public class Algosaibi_oneway extends AlgosaibiOneway {
 
 		// take screenshot for search page
 
-		String searchpage = QaLogger.takeScreenshot(driver, "Search Page");
+		String searchpage = Logger.takeScreenshot(driver, "Search Page");
 		//test.log(Status.INFO, "Screenshot for Search Page");
 		//test.addScreenCaptureFromPath(searchpage);
 		test.log(Status.INFO, "Screenshot for Search Page", MediaEntityBuilder.createScreenCaptureFromPath(searchpage).build());
@@ -126,7 +126,7 @@ public class Algosaibi_oneway extends AlgosaibiOneway {
 				
 				// take screenshot for result page
 
-				String resultnotfound = QaLogger.takeScreenshot(driver, "resultnotfound");
+				String resultnotfound = Logger.takeScreenshot(driver, "resultnotfound");
 				test.log(Status.INFO, "Screenshot for Resultnotfound", MediaEntityBuilder.createScreenCaptureFromPath(resultnotfound).build());
 
 				test.info(MarkupHelper.createCodeBlock(getLogText("\\\\erp-staging\\Cache\\Booking\\local\\store", uid[1]),CodeLanguage.XML));						
@@ -145,7 +145,7 @@ public class Algosaibi_oneway extends AlgosaibiOneway {
 
 			// take screenshot for result page
 
-			String resultpage = QaLogger.takeScreenshot(driver, "Resultpage");
+			String resultpage = Logger.takeScreenshot(driver, "Resultpage");
 			test.log(Status.INFO, "Screenshot for Resultpage", MediaEntityBuilder.createScreenCaptureFromPath(resultpage).build());
 
 			// get total amount of result page
@@ -222,7 +222,7 @@ public class Algosaibi_oneway extends AlgosaibiOneway {
 
 			// take screenshot for checkout page
 
-			String checkoutpage = QaLogger.takeScreenshot(driver, "Checkoutpage");
+			String checkoutpage = Logger.takeScreenshot(driver, "Checkoutpage");
 			test.log(Status.INFO, "Screenshot for Checkoutpage", MediaEntityBuilder.createScreenCaptureFromPath(checkoutpage).build());
 
 			// If getting change selection then click on send Enquiry
@@ -240,7 +240,7 @@ public class Algosaibi_oneway extends AlgosaibiOneway {
 
 				
 				// take screenshot sendenquiry
-				String sendenquiry = QaLogger.takeScreenshot(driver, "sendenquiry");
+				String sendenquiry = Logger.takeScreenshot(driver, "sendenquiry");
 				test.log(Status.INFO, "Screenshot for Send Enquiry", MediaEntityBuilder.createScreenCaptureFromPath(sendenquiry).build());
 				QaRobot.ClickOnElement("algosaibi_gohome", "clicked on Home Page");
 				
@@ -265,7 +265,7 @@ public class Algosaibi_oneway extends AlgosaibiOneway {
 						
 						// take screenshot for confirm page
 
-						String fraudcheck = QaLogger.takeScreenshot(driver, "fraudcheck");
+						String fraudcheck = Logger.takeScreenshot(driver, "fraudcheck");
 						test.log(Status.INFO, "Screenshot for Fraud Check", MediaEntityBuilder.createScreenCaptureFromPath(fraudcheck).build());
 						test.info(MarkupHelper.createCodeBlock(getLogText("\\\\erp-staging\\Cache\\Booking\\local\\store", uid[1]),CodeLanguage.XML));						
 						QaRobot.ClickOnElement("algosaibi_gohome", "clicked on Home Page");
@@ -280,7 +280,7 @@ public class Algosaibi_oneway extends AlgosaibiOneway {
 
 					// take screenshot for confirm page
 
-					String confirmpage = QaLogger.takeScreenshot(driver, "confirmpage");
+					String confirmpage = Logger.takeScreenshot(driver, "confirmpage");
 					test.log(Status.INFO, "Screenshot for Confirm Page", MediaEntityBuilder.createScreenCaptureFromPath(confirmpage).build());
 
 					// compare value of payment and Confirm page

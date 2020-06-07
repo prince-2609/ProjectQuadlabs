@@ -18,7 +18,7 @@ public class FlightOneWay extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("OneWay","Sheet1");
+		return QaDataProvider.getTestdata("OneWay","Sheet1");
 	}
 	
 	@Test(dataProvider = "getexceldata")

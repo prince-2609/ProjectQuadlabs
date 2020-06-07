@@ -21,7 +21,7 @@ public class HolidaybaghdadTOneway extends Flightcheck {
 
 	
 		
-		return QaDataProvider.getExceldata("Holidaybaghdad","TOneway");
+		return QaDataProvider.getTestdata("Holidaybaghdad","TOneway");
 	}
 
 	@Test(dataProvider = "getexceldata")

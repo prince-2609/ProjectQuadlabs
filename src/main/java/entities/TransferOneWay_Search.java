@@ -7,7 +7,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import Base.TestBase;
 import TestScript.OneWay.TransferOneWay;
-import utilities.QaLogger;
+import utilities.Logger;
 import utilities.QaRobot;
 
 public class TransferOneWay_Search extends TransferOneWay {
@@ -102,7 +102,7 @@ public class TransferOneWay_Search extends TransferOneWay {
 
 		// take screenshot for search page
 
-		String searchpage = QaLogger.takeScreenshot(driver, "Search Page");
+		String searchpage = Logger.takeScreenshot(driver, "Search Page");
 		test.log(Status.INFO, "Screenshot for Search Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(searchpage).build());
 
@@ -129,7 +129,7 @@ public class TransferOneWay_Search extends TransferOneWay {
 
 		// take screenshot for result page
 
-		String resultpage = QaLogger.takeScreenshot(driver, "Resultpage");
+		String resultpage = Logger.takeScreenshot(driver, "Resultpage");
 		test.log(Status.INFO, "Screenshot for Resultpage",
 				MediaEntityBuilder.createScreenCaptureFromPath(resultpage).build());
 
@@ -162,7 +162,7 @@ public class TransferOneWay_Search extends TransferOneWay {
 
 		// take screenshot for Book page
 
-		String bookpage = QaLogger.takeScreenshot(driver, "BookPage");
+		String bookpage = Logger.takeScreenshot(driver, "BookPage");
 		test.log(Status.INFO, "Screenshot for Book Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(bookpage).build());
 
@@ -196,7 +196,7 @@ public class TransferOneWay_Search extends TransferOneWay {
 
 		// take screenshot for checkout page
 
-		String checkoutpage = QaLogger.takeScreenshot(driver, "Checkoutpage");
+		String checkoutpage = Logger.takeScreenshot(driver, "Checkoutpage");
 		test.log(Status.INFO, "Screenshot for Checkoutpage",
 				MediaEntityBuilder.createScreenCaptureFromPath(checkoutpage).build());
 
@@ -232,7 +232,7 @@ public class TransferOneWay_Search extends TransferOneWay {
 
 		// take screenshot for confirm page
 
-		String confirmpage = QaLogger.takeScreenshot(driver, "confirmpage");
+		String confirmpage = Logger.takeScreenshot(driver, "confirmpage");
 		test.log(Status.INFO, "Screenshot for Confirm Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(confirmpage).build());
 		// test.info(MarkupHelper.createCodeBlock(getLogText("\\\\erp-staging\\Cache\\Booking\\local",

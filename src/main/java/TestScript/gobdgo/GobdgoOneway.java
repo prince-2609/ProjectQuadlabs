@@ -22,7 +22,7 @@ public class GobdgoOneway extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("gobdgo","Oneway");
+		return QaDataProvider.getTestdata("gobdgo","Oneway");
 	}
 	
 	@Test(dataProvider = "getexceldata")

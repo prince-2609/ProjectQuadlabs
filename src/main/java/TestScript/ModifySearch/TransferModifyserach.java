@@ -10,7 +10,7 @@ import Base.TestBase;
 import TestScript.RoundTrip.Flightcheck;
 import utilities.QaDataProvider;
 import utilities.QaExcelRead;
-import utilities.QaLogger;
+import utilities.Logger;
 import utilities.QaRobot;
 
 public class TransferModifyserach extends Flightcheck {
@@ -22,7 +22,7 @@ public class TransferModifyserach extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("TransferOneWay","modify");
+		return QaDataProvider.getTestdata("TransferOneWay","modify");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -110,7 +110,7 @@ public class TransferModifyserach extends Flightcheck {
 
 		// take screenshot for search page
 
-		String searchpage = QaLogger.takeScreenshot(driver, "Search Page");
+		String searchpage = Logger.takeScreenshot(driver, "Search Page");
 		test.log(Status.INFO, "Screenshot for Search Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(searchpage).build());
 
@@ -137,7 +137,7 @@ public class TransferModifyserach extends Flightcheck {
 
 		// take screenshot for result page
 
-		String resultpage = QaLogger.takeScreenshot(driver, "Resultpage");
+		String resultpage = Logger.takeScreenshot(driver, "Resultpage");
 		test.log(Status.INFO, "Screenshot for Resultpage",
 				MediaEntityBuilder.createScreenCaptureFromPath(resultpage).build());
 

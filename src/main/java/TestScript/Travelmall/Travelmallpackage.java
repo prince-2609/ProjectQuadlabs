@@ -20,7 +20,7 @@ public class Travelmallpackage extends Flightcheck
 		public Object[][] getexceldata() throws Exception {
 
 			
-			return QaDataProvider.getExceldata("travelmalloneway","package");
+			return QaDataProvider.getTestdata("travelmalloneway","package");
 		}
 
 		@Test(dataProvider = "getexceldata")

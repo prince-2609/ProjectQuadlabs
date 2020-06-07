@@ -19,7 +19,7 @@ public class TravelmallOneWay extends Flightcheck {
 
 		
 		
-		return QaDataProvider.getExceldata("travelmalloneway","Sheet1");
+		return QaDataProvider.getTestdata("travelmalloneway","Sheet1");
 	}
 	
 	@Test(dataProvider = "getexceldata")

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Multicity]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Roundtrip]">
   <listeners>
     <listener class-name="TestScript.RoundTrip.Flightcheck"/>
   </listeners>
   <test name="Nopackage(failed)">
     <classes>
-      <class name="TestScript.Multicity.FlightMulticity">
+      <class name="entities.Algosaibi_multicity">
         <methods>
-          <include name="flightMultiCitytest" invocation-numbers="0"/>
           <include name="afterMetod"/>
+          <include name="flightMultiCitytest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- TestScript.Multicity.FlightMulticity -->
+      </class> <!-- entities.Algosaibi_multicity -->
     </classes>
   </test> <!-- Nopackage(failed) -->
-</suite> <!-- Failed suite [Multicity] -->
+</suite> <!-- Failed suite [Roundtrip] -->

@@ -19,7 +19,7 @@ public class Package extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 	
-		return QaDataProvider.getExceldata("package","Sheet1");
+		return QaDataProvider.getTestdata("package","Sheet1");
 	}
 
 	@Test(dataProvider = "getexceldata")

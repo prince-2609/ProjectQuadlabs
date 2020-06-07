@@ -26,7 +26,8 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.ExtentKlovReporter;
 
 import utilities.QaBrowser;
-import utilities.QaLogger;
+import utilities.Logger;
+import utilities.QaRepositery;
 import utilities.QaRobot;
 
 public class TestBase {
@@ -51,31 +52,15 @@ public class TestBase {
 	public static String[] qudchildCat;
 	
 	static QaBrowser browser = new QaBrowser("chrome","","");
+	static QaRepositery respositer = new QaRepositery();
 	
 	public static WebDriver driver;
 
 	public static void init() throws IOException {
 		
 		driver = browser.launchBrowser();
-
-		obj = new Properties();
-		file = new File("D:\\Webdriverwork\\projectb2c1\\properties\\LoginObject.properties");
-		fin = new FileInputStream(file);
-		obj.load(fin);
-
-		file = new File("D:\\Webdriverwork\\projectb2c1\\properties\\Flight.properties");
-		fin = new FileInputStream(file);
-		obj.load(fin);
-
-		file = new File("D:\\Webdriverwork\\projectb2c1\\properties\\Transfer.properties");
 		
-		fin = new FileInputStream(file);
-		obj.load(fin);
-
-		file = new File("D:\\Webdriverwork\\projectb2c1\\properties\\Travelmall.properties");
-		fin = new FileInputStream(file);
-		obj.load(fin);
-
+		respositer.init(obj);
 	}
 
 	public static void Companycode(String ccode) throws IOException {
@@ -1979,7 +1964,7 @@ public class TestBase {
 
 		// take screenshot for result page
 
-		String resultnotfound = QaLogger.takeScreenshot(driver, "resultnotfound");
+		String resultnotfound = Logger.takeScreenshot(driver, "resultnotfound");
 		test.log(Status.INFO, "Screenshot for Resultnotfound",
 				MediaEntityBuilder.createScreenCaptureFromPath(resultnotfound).build());
 

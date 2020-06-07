@@ -22,7 +22,7 @@ public class HolidaybaghdadMulticity extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("Holidaybaghdad","Multicity");
+		return QaDataProvider.getTestdata("Holidaybaghdad","Multicity");
 	}
 	
 

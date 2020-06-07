@@ -21,7 +21,7 @@ public class Sighseeing extends Flightcheck {
 	
 			
 		
-		return QaDataProvider.getExceldata("signhtseen","Sheet1");
+		return QaDataProvider.getTestdata("signhtseen","Sheet1");
 	}
 	
 	@Test(dataProvider="getexceldata")

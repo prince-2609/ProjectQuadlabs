@@ -20,7 +20,7 @@ public class HolidaybaghdadRoundtrip extends Flightcheck
 	public Object[][] getexceldata() throws Exception {
 	
 		
-		return QaDataProvider.getExceldata("Holidaybaghdad","Roundtrip");
+		return QaDataProvider.getTestdata("Holidaybaghdad","Roundtrip");
 	}
 	
 	

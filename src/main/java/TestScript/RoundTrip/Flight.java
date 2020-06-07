@@ -17,7 +17,7 @@ public class Flight extends Flightcheck
 	public Object[][] getexceldata() throws Exception {
 	
 		
-		return QaDataProvider.getExceldata("roundtrip1","Sheet1");
+		return QaDataProvider.getTestdata("roundtrip1","Sheet1");
 	}
 	
 	

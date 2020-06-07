@@ -19,7 +19,7 @@ public class MajesticSighseeing extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 	
 		
-		return QaDataProvider.getExceldata("Majestic","Sightseeing");
+		return QaDataProvider.getTestdata("Majestic","Sightseeing");
 	}
 	
 	@Test(dataProvider="getexceldata")

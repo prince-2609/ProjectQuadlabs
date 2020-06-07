@@ -19,7 +19,7 @@ public class MajesticRoundtrip extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 	
 		
-		return QaDataProvider.getExceldata("Majestic","Roundtrip");
+		return QaDataProvider.getTestdata("Majestic","Roundtrip");
 	}
 	
 	

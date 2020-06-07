@@ -19,7 +19,7 @@ public class TravelmallToneway extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("travelmalloneway","TransferOneway");
+		return QaDataProvider.getTestdata("travelmalloneway","TransferOneway");
 	}
 
 	@Test(dataProvider = "getexceldata")

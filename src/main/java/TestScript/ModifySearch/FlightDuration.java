@@ -13,7 +13,7 @@ import Base.TestBase;
 import TestScript.RoundTrip.Flightcheck;
 import utilities.QaDataProvider;
 import utilities.QaExcelRead;
-import utilities.QaLogger;
+import utilities.Logger;
 import utilities.QaRobot;
 
 public class FlightDuration extends Flightcheck {
@@ -27,7 +27,7 @@ public class FlightDuration extends Flightcheck {
 
 		
 		
-		return QaDataProvider.getExceldata("modify","Duration");
+		return QaDataProvider.getTestdata("modify","Duration");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -102,7 +102,7 @@ public class FlightDuration extends Flightcheck {
 
 		// take screenshot for search page
 
-		String searchpage = QaLogger.takeScreenshot(driver, "Search Page");
+		String searchpage = Logger.takeScreenshot(driver, "Search Page");
 		// test.log(Status.INFO, "Screenshot for Search Page");
 		// test.addScreenCaptureFromPath(searchpage);
 		test.log(Status.INFO, "Screenshot for Search Page",

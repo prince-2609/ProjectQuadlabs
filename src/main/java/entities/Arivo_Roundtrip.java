@@ -12,7 +12,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 import Base.TestBase;
 import TestScript.Arivo.ArivoRoundtrip;
-import utilities.QaLogger;
+import utilities.Logger;
 import utilities.QaRobot;
 
 public class Arivo_Roundtrip extends ArivoRoundtrip {
@@ -93,7 +93,7 @@ public class Arivo_Roundtrip extends ArivoRoundtrip {
 
 		// take screenshot for search page
 
-		String searchpage = QaLogger.takeScreenshot(driver, "Search Page");
+		String searchpage = Logger.takeScreenshot(driver, "Search Page");
 		test.log(Status.INFO, "Screenshot for Search Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(searchpage).build());
 
@@ -133,7 +133,7 @@ public class Arivo_Roundtrip extends ArivoRoundtrip {
 
 				// take screenshot for result page
 
-				String resultnotfound = QaLogger.takeScreenshot(driver, "resultnotfound");
+				String resultnotfound = Logger.takeScreenshot(driver, "resultnotfound");
 				test.log(Status.INFO, "Screenshot for Resultnotfound",
 						MediaEntityBuilder.createScreenCaptureFromPath(resultnotfound).build());
 
@@ -164,7 +164,7 @@ public class Arivo_Roundtrip extends ArivoRoundtrip {
 
 				// take screenshot for International result page
 
-				String resultpage = QaLogger.takeScreenshot(driver, "International Result page");
+				String resultpage = Logger.takeScreenshot(driver, "International Result page");
 				test.log(Status.INFO, "Screenshot for InternationalResultpage",
 						MediaEntityBuilder.createScreenCaptureFromPath(resultpage).build());
 
@@ -222,7 +222,7 @@ public class Arivo_Roundtrip extends ArivoRoundtrip {
 
 				// take screenshot for Domestic result page
 
-				String resultpage = QaLogger.takeScreenshot(driver, "Domestic Result page");
+				String resultpage = Logger.takeScreenshot(driver, "Domestic Result page");
 				test.log(Status.INFO, "Screenshot for DomesticResultpage",
 						MediaEntityBuilder.createScreenCaptureFromPath(resultpage).build());
 
@@ -310,7 +310,7 @@ public class Arivo_Roundtrip extends ArivoRoundtrip {
 
 			// take screenshot for checkout page
 
-			String checkoutpage = QaLogger.takeScreenshot(driver, "Checkoutpage");
+			String checkoutpage = Logger.takeScreenshot(driver, "Checkoutpage");
 			test.log(Status.INFO, "Screenshot for Checkoutpage",
 					MediaEntityBuilder.createScreenCaptureFromPath(checkoutpage).build());
 
@@ -329,7 +329,7 @@ public class Arivo_Roundtrip extends ArivoRoundtrip {
 
 				// take screenshot sendenquiry
 
-				String sendenquiry = QaLogger.takeScreenshot(driver, "sendenquiry");
+				String sendenquiry = Logger.takeScreenshot(driver, "sendenquiry");
 				test.log(Status.INFO, "Screenshot for Send Enquiry",
 						MediaEntityBuilder.createScreenCaptureFromPath(sendenquiry).build());
 
@@ -356,7 +356,7 @@ public class Arivo_Roundtrip extends ArivoRoundtrip {
 
 						// take screenshot for confirm page
 
-						String fraudcheck = QaLogger.takeScreenshot(driver, "fraudcheck");
+						String fraudcheck = Logger.takeScreenshot(driver, "fraudcheck");
 						test.log(Status.INFO, "Screenshot for Fraud Check",
 								MediaEntityBuilder.createScreenCaptureFromPath(fraudcheck).build());
 						test.info(MarkupHelper.createCodeBlock(
@@ -372,7 +372,7 @@ public class Arivo_Roundtrip extends ArivoRoundtrip {
 
 					// take screenshot for confirm page
 
-					String confirmpage = QaLogger.takeScreenshot(driver, "confirmpage");
+					String confirmpage = Logger.takeScreenshot(driver, "confirmpage");
 					test.log(Status.INFO, "Screenshot for Confirm Page",
 							MediaEntityBuilder.createScreenCaptureFromPath(confirmpage).build());
 

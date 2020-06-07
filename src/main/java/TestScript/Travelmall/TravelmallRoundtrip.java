@@ -20,7 +20,7 @@ public class TravelmallRoundtrip extends Flightcheck
 	
 		
 		
-		return QaDataProvider.getExceldata("travelmalloneway","froundtrip");
+		return QaDataProvider.getTestdata("travelmalloneway","froundtrip");
 	}
 	
 	

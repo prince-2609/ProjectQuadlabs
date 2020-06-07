@@ -19,7 +19,7 @@ public class TransferOneWay extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("TransferRoundTrip","oneway");
+		return QaDataProvider.getTestdata("TransferRoundTrip","oneway");
 	}
 
 	@Test(dataProvider = "getexceldata")

@@ -23,7 +23,7 @@ public class SkysouqRoundtrip extends Flightcheck {
 
 		
 		
-		return QaDataProvider.getExceldata("Newskysouq","Roundtrip");
+		return QaDataProvider.getTestdata("Newskysouq","Roundtrip");
 	}
 
 	@Test(dataProvider = "getexceldata")

@@ -25,7 +25,7 @@ public class SkysouqOneway extends Flightcheck {
 
 		
 		
-		return QaDataProvider.getExceldata("Newskysouq","Oneway");
+		return QaDataProvider.getTestdata("Newskysouq","Oneway");
 	}
 	
 	@Test(dataProvider = "getexceldata")

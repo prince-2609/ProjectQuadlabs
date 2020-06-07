@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.CapabilityType;
@@ -36,7 +37,7 @@ public class QaBrowser {
 		}
 		driver.get(this.url);
 		driver.manage().window().maximize();
-		return null;
+		return driver;
 	}
 
 	public void closeBrowser() {
@@ -53,7 +54,8 @@ public class QaBrowser {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\lib\\chromedriver.exe");
 		DesiredCapabilities dc = DesiredCapabilities.chrome();
 		dc.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		driver = remoteWebDriver(dc);
+		driver = new ChromeDriver(dc);
+		
 		return driver;
 	}
 
@@ -65,9 +67,11 @@ public class QaBrowser {
 		profile.setAcceptUntrustedCertificates(true);
 		profile.setAssumeUntrustedCertificateIssuer(false);
 		driver = new FirefoxDriver(profile);
+		
 		return driver;
 	}
 
+	@SuppressWarnings("unused")
 	private WebDriver remoteWebDriver(DesiredCapabilities dc) throws MalformedURLException {
 		driver = new RemoteWebDriver(new URL(this.nodeUrl), dc);
 		return driver;

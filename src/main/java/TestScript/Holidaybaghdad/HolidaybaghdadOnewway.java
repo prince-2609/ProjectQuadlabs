@@ -19,7 +19,7 @@ public class HolidaybaghdadOnewway extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("Holidaybaghdad","Oneway");
+		return QaDataProvider.getTestdata("Holidaybaghdad","Oneway");
 	}
 	
 	@Test(dataProvider = "getexceldata")

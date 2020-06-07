@@ -8,7 +8,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import Base.TestBase;
 import utilities.QaExcelRead;
-import utilities.QaLogger;
+import utilities.Logger;
 
 public class Flightcheck extends TestBase implements ITestListener {
 
@@ -26,7 +26,7 @@ public class Flightcheck extends TestBase implements ITestListener {
 
 			if (result.getStatus() == ITestResult.SUCCESS) {
 
-				String screenShotPath = QaLogger.takeScreenshot(driver, "Pass");
+				String screenShotPath = Logger.takeScreenshot(driver, "Pass");
 				test.log(Status.INFO, "Successful Booking Snapshot Below :",
 						MediaEntityBuilder.createScreenCaptureFromPath(screenShotPath).build());
 				System.out.println("********* Passed *********");
@@ -45,7 +45,7 @@ public class Flightcheck extends TestBase implements ITestListener {
 
 			if (result.getStatus() == ITestResult.FAILURE) {
 				
-				QaLogger.testFail(driver);
+				Logger.fail(driver);
 				//QaLogger.testLog(result);
 				test.log(Status.FAIL, result.getThrowable());
 			}
@@ -61,7 +61,7 @@ public class Flightcheck extends TestBase implements ITestListener {
 
 			if (result.getStatus() == ITestResult.SKIP) {
 
-				String screenShotPath = QaLogger.takeScreenshot(driver, "SKIP");
+				String screenShotPath = Logger.takeScreenshot(driver, "SKIP");
 				test.log(Status.SKIP, result.getThrowable());
 				test.log(Status.INFO, "Skipped Booking Snapshot Below :",
 						MediaEntityBuilder.createScreenCaptureFromPath(screenShotPath).build());

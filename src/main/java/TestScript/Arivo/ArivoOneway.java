@@ -21,7 +21,7 @@ public class ArivoOneway extends Flightcheck {
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
 		
-		return QaDataProvider.getExceldata("Arivo","Oneway");
+		return QaDataProvider.getTestdata("Arivo","Oneway");
 	}
 	
 	@Test(dataProvider = "getexceldata")

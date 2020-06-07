@@ -15,7 +15,7 @@ import Base.TestBase;
 import TestScript.RoundTrip.Flightcheck;
 import utilities.QaDataProvider;
 import utilities.QaExcelRead;
-import utilities.QaLogger;
+import utilities.Logger;
 import utilities.QaRobot;
 
 public class Flightoneway_newcheckout extends Flightcheck {
@@ -27,7 +27,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("OneWay","newcheckout");
+		return QaDataProvider.getTestdata("OneWay","newcheckout");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -120,7 +120,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 		// take screenshot for search page
 
-		String searchpage = QaLogger.takeScreenshot(driver, "Search Page");
+		String searchpage = Logger.takeScreenshot(driver, "Search Page");
 		test.log(Status.INFO, "Screenshot for Search Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(searchpage).build());
 
@@ -157,7 +157,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 				// take screenshot for result page
 
-				String resultnotfound = QaLogger.takeScreenshot(driver, "resultnotfound");
+				String resultnotfound = Logger.takeScreenshot(driver, "resultnotfound");
 				test.log(Status.INFO, "Screenshot for Resultnotfound",
 						MediaEntityBuilder.createScreenCaptureFromPath(resultnotfound).build());
 
@@ -175,7 +175,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// take screenshot for result page
 
-			String resultpage = QaLogger.takeScreenshot(driver, "Resultpage");
+			String resultpage = Logger.takeScreenshot(driver, "Resultpage");
 			test.log(Status.INFO, "Screenshot for Resultpage",
 					MediaEntityBuilder.createScreenCaptureFromPath(resultpage).build());
 
@@ -322,7 +322,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// take screenshot for Checkout page
 
-			String checkoutpage = QaLogger.takeScreenshot(driver, "checkoutpage");
+			String checkoutpage = Logger.takeScreenshot(driver, "checkoutpage");
 			test.log(Status.INFO, "Screenshot for Checkout Page",
 					MediaEntityBuilder.createScreenCaptureFromPath(checkoutpage).build());
 
@@ -389,7 +389,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// take screenshot for confirm page
 
-			String confirmpage = QaLogger.takeScreenshot(driver, "confirmpage");
+			String confirmpage = Logger.takeScreenshot(driver, "confirmpage");
 			test.log(Status.INFO, "Screenshot for Confirm Page",
 					MediaEntityBuilder.createScreenCaptureFromPath(confirmpage).build());
 

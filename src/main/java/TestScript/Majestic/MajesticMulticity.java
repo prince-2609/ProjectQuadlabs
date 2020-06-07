@@ -20,7 +20,7 @@ public class MajesticMulticity extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("Majestic","Multicity");
+		return QaDataProvider.getTestdata("Majestic","Multicity");
 	}
 	
 

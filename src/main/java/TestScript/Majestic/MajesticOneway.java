@@ -22,7 +22,7 @@ public class MajesticOneway extends Flightcheck {
 
 		
 		
-		return QaDataProvider.getExceldata("Majestic","Oneway");
+		return QaDataProvider.getTestdata("Majestic","Oneway");
 	}
 	
 	@Test(dataProvider = "getexceldata")

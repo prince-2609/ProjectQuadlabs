@@ -19,7 +19,7 @@ public class ArivoRoundtrip extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 	
 		
-		return QaDataProvider.getExceldata("Arivo","Roundtrip");
+		return QaDataProvider.getTestdata("Arivo","Roundtrip");
 	}
 	
 	

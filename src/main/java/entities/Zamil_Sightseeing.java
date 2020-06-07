@@ -7,7 +7,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import Base.TestBase;
 import TestScript.Zamil.ZamilSightseeing;
-import utilities.QaLogger;
+import utilities.Logger;
 import utilities.QaRobot;
 
 public class Zamil_Sightseeing extends ZamilSightseeing {
@@ -73,7 +73,7 @@ public class Zamil_Sightseeing extends ZamilSightseeing {
 
 		// take screenshot for search page
 
-		String searchpage1 = QaLogger.takeScreenshot(driver, "Search Page1");
+		String searchpage1 = Logger.takeScreenshot(driver, "Search Page1");
 		System.out.println("Screenshot path     " + searchpage1);
 		test.log(Status.INFO, "Screenshot for Search Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(searchpage1).build());
@@ -109,7 +109,7 @@ public class Zamil_Sightseeing extends ZamilSightseeing {
 
 		// take screenshot for result page
 
-		String resultpage = QaLogger.takeScreenshot(driver, "Resultpage");
+		String resultpage = Logger.takeScreenshot(driver, "Resultpage");
 		test.log(Status.INFO, "Screenshot for Resultpage",
 				MediaEntityBuilder.createScreenCaptureFromPath(resultpage).build());
 
@@ -170,7 +170,7 @@ public class Zamil_Sightseeing extends ZamilSightseeing {
 
 		// take screenshot for checkout page
 
-		String checkoutpage = QaLogger.takeScreenshot(driver, "Checkoutpage");
+		String checkoutpage = Logger.takeScreenshot(driver, "Checkoutpage");
 		test.log(Status.INFO, "Screenshot for Checkoutpage",
 				MediaEntityBuilder.createScreenCaptureFromPath(checkoutpage).build());
 
@@ -197,7 +197,7 @@ public class Zamil_Sightseeing extends ZamilSightseeing {
 
 		// take screenshot for confirm page
 
-		String confirmpage = QaLogger.takeScreenshot(driver, "confirmpage");
+		String confirmpage = Logger.takeScreenshot(driver, "confirmpage");
 		test.log(Status.INFO, "Screenshot for Confirm Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(confirmpage).build());
 		// test.info(MarkupHelper.createCodeBlock(getLogText("\\\\erp-staging\\Cache\\Booking\\local",

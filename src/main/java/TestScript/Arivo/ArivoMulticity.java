@@ -21,7 +21,7 @@ public class ArivoMulticity extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("Arivo","Multicity");
+		return QaDataProvider.getTestdata("Arivo","Multicity");
 	}
 	
 

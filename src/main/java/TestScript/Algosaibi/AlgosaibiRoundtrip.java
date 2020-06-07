@@ -21,7 +21,7 @@ public class AlgosaibiRoundtrip extends Flightcheck
 	public Object[][] getexceldata() throws Exception {
 		
 		
-		return QaDataProvider.getExceldata("OneWay","Roundtrip");
+		return QaDataProvider.getTestdata("OneWay","Roundtrip");
 	}
 	
 	

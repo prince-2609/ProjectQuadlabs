@@ -24,7 +24,7 @@ public class SkysouqMulticity extends Flightcheck {
 
 		
 		
-		return QaDataProvider.getExceldata("Newskysouq","Multicity");
+		return QaDataProvider.getTestdata("Newskysouq","Multicity");
 	}
 
 	@Test(dataProvider = "getexceldata")

@@ -19,7 +19,7 @@ public class ZamilRoundtrip extends Flightcheck {
 
 	
 		
-		return QaDataProvider.getExceldata("zamil","Roundtrip");
+		return QaDataProvider.getTestdata("zamil","Roundtrip");
 	}
 
 	@Test(dataProvider = "getexceldata")

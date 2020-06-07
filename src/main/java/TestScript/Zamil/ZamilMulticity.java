@@ -22,7 +22,7 @@ public class ZamilMulticity extends Flightcheck {
 
 		
 		
-		return QaDataProvider.getExceldata("zamil","Multicity");
+		return QaDataProvider.getTestdata("zamil","Multicity");
 	}
 
 	@Test(dataProvider = "getexceldata")

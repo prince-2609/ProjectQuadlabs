@@ -6,12 +6,12 @@
   </listeners>
   <test name="Nopackage(failed)">
     <classes>
-      <class name="TestScript.ModifySearch.FlightDuration">
+      <class name="TestScript.ModifySearch.FlightAirline">
         <methods>
           <include name="Duration" invocation-numbers="0"/>
           <include name="afterMetod"/>
         </methods>
-      </class> <!-- TestScript.ModifySearch.FlightDuration -->
+      </class> <!-- TestScript.ModifySearch.FlightAirline -->
     </classes>
   </test> <!-- Nopackage(failed) -->
 </suite> <!-- Failed suite [Flight Duration] -->

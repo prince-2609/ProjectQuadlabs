@@ -14,7 +14,7 @@ import Base.TestBase;
 import TestScript.RoundTrip.Flightcheck;
 import utilities.QaDataProvider;
 import utilities.QaExcelRead;
-import utilities.QaLogger;
+import utilities.Logger;
 import utilities.QaRobot;
 
 public class FlightModifySearch extends Flightcheck {
@@ -27,7 +27,7 @@ public class FlightModifySearch extends Flightcheck {
 	public Object[][] getexceldata() throws Exception
 	{
 
-		return QaDataProvider.getExceldata("modify","mfytest");
+		return QaDataProvider.getTestdata("modify","mfytest");
 	}
 	
 	@BeforeMethod
@@ -113,7 +113,7 @@ public class FlightModifySearch extends Flightcheck {
 
 		// take screenshot for search page
 
-		String searchpage = QaLogger.takeScreenshot(driver, "Search Page");
+		String searchpage = Logger.takeScreenshot(driver, "Search Page");
 		// test.log(Status.INFO, "Screenshot for Search Page");
 		// test.addScreenCaptureFromPath(searchpage);
 		test.log(Status.INFO, "Screenshot for Search Page",

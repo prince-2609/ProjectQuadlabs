@@ -20,7 +20,7 @@ public class ZamilOneway extends Flightcheck {
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
 		
-		return QaDataProvider.getExceldata("zamil","Oneway");
+		return QaDataProvider.getTestdata("zamil","Oneway");
 	}
 	
 	@Test(dataProvider = "getexceldata")

@@ -7,7 +7,7 @@ import com.aventstack.extentreports.Status;
 
 import Base.TestBase;
 import TestScript.Travelmall.Travelmallpackage;
-import utilities.QaLogger;
+import utilities.Logger;
 import utilities.QaRobot;
 
 public class Travelmall_package extends Travelmallpackage  {
@@ -51,7 +51,7 @@ public class Travelmall_package extends Travelmallpackage  {
 
 		// take screenshot for search page
 
-		String searchpage1 = QaLogger.takeScreenshot(driver, "Search Page1");
+		String searchpage1 = Logger.takeScreenshot(driver, "Search Page1");
 		System.out.println("Screenshot path     " + searchpage1);
 		test.log(Status.INFO, "Screenshot for Search Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(searchpage1).build());
@@ -87,7 +87,7 @@ public class Travelmall_package extends Travelmallpackage  {
 
 		// take screenshot for Checkout Enquiry page
 
-		String Enquirypage = QaLogger.takeScreenshot(driver, "Enquirypage");
+		String Enquirypage = Logger.takeScreenshot(driver, "Enquirypage");
 		test.log(Status.INFO, "Screenshot for Enquiry Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(Enquirypage).build());
 
@@ -133,7 +133,7 @@ public class Travelmall_package extends Travelmallpackage  {
 
 		// take screenshot for Checkout informationa pax page
 
-		String checkoutinfopage = QaLogger.takeScreenshot(driver, "Checkoutinfopage");
+		String checkoutinfopage = Logger.takeScreenshot(driver, "Checkoutinfopage");
 		test.log(Status.INFO, "Screenshot for Checkout informationa pax page",
 				MediaEntityBuilder.createScreenCaptureFromPath(checkoutinfopage).build());
 
@@ -141,7 +141,7 @@ public class Travelmall_package extends Travelmallpackage  {
 
 		// take screenshot for supplement page
 
-		String supplimentpage = QaLogger.takeScreenshot(driver, "supplimentpage");
+		String supplimentpage = Logger.takeScreenshot(driver, "supplimentpage");
 		test.log(Status.INFO, "Screenshot for Supplimentpage page",
 				MediaEntityBuilder.createScreenCaptureFromPath(supplimentpage).build());
 
@@ -190,7 +190,7 @@ public class Travelmall_package extends Travelmallpackage  {
 
 
 		// take screenshot for checkout page
-		String checkoutpage = QaLogger.takeScreenshot(driver, "Checkoutpage");
+		String checkoutpage = Logger.takeScreenshot(driver, "Checkoutpage");
 		test.log(Status.INFO, "Screenshot for Checkoutpage",
 				MediaEntityBuilder.createScreenCaptureFromPath(checkoutpage).build());
 		
@@ -306,7 +306,7 @@ public class Travelmall_package extends Travelmallpackage  {
 
 		// take screenshot for confirm page
 
-		String confirmpage = QaLogger.takeScreenshot(driver, "confirmpage");
+		String confirmpage = Logger.takeScreenshot(driver, "confirmpage");
 		test.log(Status.INFO, "Screenshot for Confirm Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(confirmpage).build());
 		// test.info(MarkupHelper.createCodeBlock(getLogText("\\\\erp-staging\\Cache\\Booking\\local",

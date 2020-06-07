@@ -20,7 +20,7 @@ public class AlgosaibiOneway extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("algosaibi","oneway");
+		return QaDataProvider.getTestdata("algosaibi","oneway");
 	}
 	
 	@Test(dataProvider = "getexceldata")

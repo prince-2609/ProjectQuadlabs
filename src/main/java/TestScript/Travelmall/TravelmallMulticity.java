@@ -22,7 +22,7 @@ public class TravelmallMulticity extends Flightcheck {
 
 		
 		
-		return QaDataProvider.getExceldata("travelmalloneway","fmulticity");
+		return QaDataProvider.getTestdata("travelmalloneway","fmulticity");
 	}
 	
 

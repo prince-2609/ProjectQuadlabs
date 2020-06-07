@@ -20,7 +20,7 @@ public class TransferRoundTrip extends Flightcheck {
 
 	
 		
-		return QaDataProvider.getExceldata("TransferRoundTrip","Sheet1");
+		return QaDataProvider.getTestdata("TransferRoundTrip","Sheet1");
 	}
 
 	

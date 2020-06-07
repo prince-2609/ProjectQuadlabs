@@ -20,7 +20,7 @@ public class FlightMulticity extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getExceldata("MultiCity1","Sheet1");
+		return QaDataProvider.getTestdata("MultiCity1","Sheet1");
 	}
 	
 
