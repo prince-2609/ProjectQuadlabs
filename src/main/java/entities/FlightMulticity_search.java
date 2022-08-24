@@ -16,6 +16,7 @@ import utilities.Logger;
 import utilities.QaRobot;
 
 public class FlightMulticity_search extends FlightMulticity {
+	
 
 	public static void flightMulticity_search(String ddate, String adate, String adate1, String Triptype, String adult,
 			String child, String infant, String fclass, String airlines, String emailid, String title,

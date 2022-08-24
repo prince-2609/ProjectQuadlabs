@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-08-10T17:44:50 IST" name="Booking" finished-at="2022-08-10T17:45:04 IST" duration-ms="13599">
+    <groups>
+    </groups>
+    <test started-at="2022-08-10T17:44:50 IST" name="Hotel dependent booking" finished-at="2022-08-10T17:45:04 IST" duration-ms="13599">
+      <class name="product.Flight.suite.Oneway.BookGuestHotel">
+        <test-method signature="Sbt_flight_Search(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:product.Flight.suite.Oneway.BookGuestHotel@28f2a10f]" started-at="2022-08-10T17:44:51 IST" name="Sbt_flight_Search" data-provider="getexceldata" finished-at="2022-08-10T17:45:03 IST" duration-ms="11926" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[//staging117/sbt]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[QLABS12345]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Laxmi]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Admin@123]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Guest]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[dxb]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Dubai,United Arab Emirates -  (DXB)]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[August 21, 2022]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[August 21, 2022]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[2,1]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[1,2]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[7,8,9]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Indian]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Mrs,Ms,Mr]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Sonia,Isha,Sonu]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Jha,Sharma,Garg]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[20,25,16]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Aug,Nov,Jun]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[1989,1990,1991]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[Female,Female,Male]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[91]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[9867567876]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[Miss,Mstr,Miss]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Abhisha,Dev,Babu]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[Jha,Jain,Jain]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[15,16,13]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[May,May,May]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[2015,2015,2014]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Female,Male,Female]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[laxmi]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[Bill To Company]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[345678]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Credit Card]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Master Card]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Hotel Book]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[Fullfillment]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[IN Policy all ]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[test]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.UnhandledAlertException">
+            <message>
+              <![CDATA[unexpected alert open: {Alert text : Invalid UserName Or Password}
+  (Session info: chrome=104.0.5112.81): Invalid UserName Or Password
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.71', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8e981f6798d7948ea30a2be3b5bd34c8, findElement {using=xpath, value=//a[@id='aHotelM']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:65181}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:65181/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8e981f6798d7948ea30a2be3b5bd34c8]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Invalid UserName Or Password}
+  (Session info: chrome=104.0.5112.81): Invalid UserName Or Password
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.71', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8e981f6798d7948ea30a2be3b5bd34c8, findElement {using=xpath, value=//a[@id='aHotelM']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.81, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:65181}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:65181/devtoo..., se:cdpVersion: 104.0.5112.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8e981f6798d7948ea30a2be3b5bd34c8
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+at utilities.QaRobot.getLocator(QaRobot.java:50)
+at utilities.QaRobot.getWebElement(QaRobot.java:82)
+at utilities.QaRobot.ClickOnElement(QaRobot.java:104)
+at product.Flight.suite.Oneway.BookGuestHotel.Sbt_flight_Search(BookGuestHotel.java:48)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Sbt_flight_Search -->
+        <test-method is-config="true" signature="After_Test()[pri:0, instance:product.Flight.suite.Oneway.BookGuestHotel@28f2a10f]" started-at="2022-08-10T17:45:04 IST" name="After_Test" finished-at="2022-08-10T17:45:04 IST" duration-ms="250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- After_Test -->
+      </class> <!-- product.Flight.suite.Oneway.BookGuestHotel -->
+    </test> <!-- Hotel dependent booking -->
+  </suite> <!-- Booking -->
+</testng-results>

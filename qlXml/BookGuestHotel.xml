@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Booking">
+	<listeners>
+		<listener class-name="TestScript.RoundTrip.Flightcheck"></listener>
+	</listeners>
+	<test name="Hotel dependent booking">
+		<classes>
+			<class name="product.Flight.suite.Oneway.BookGuestHotel" />
+		</classes>
+	</test>
+</suite>

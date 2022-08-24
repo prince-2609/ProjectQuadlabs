@@ -9,6 +9,7 @@ import TestScript.RoundTrip.Flightcheck;
 import entities.FlightOneWay_Search;
 import utilities.QaDataProvider;
 import utilities.QaExcelRead;
+import utilities.QaExtentReport;
 
 public class FlightOneWay extends Flightcheck {
 	TestBase t;
@@ -18,7 +19,7 @@ public class FlightOneWay extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getTestdata("OneWay","Sheet1");
+		return QaDataProvider.getTestdata("OneWay","Sheet2");
 	}
 	
 	@Test(dataProvider = "getexceldata")
@@ -45,7 +46,7 @@ public class FlightOneWay extends Flightcheck {
 		TestBase.listofautosuggestion(By.xpath("//DIV[@id='divFLDepart']/P"), origin, forigin,
 				By.xpath("//input[@id='fromcityAc']"));
 		//TestBase.impliwait(40);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
 		TestBase.listofautosuggestion(By.xpath("//DIV[@id='divFLArrival']/P"), destination, fdestination,
 				By.xpath("//input[@id='tocityAc']"));
@@ -53,16 +54,14 @@ public class FlightOneWay extends Flightcheck {
 		
 		Thread.sleep(1000);
 		
-		test = report.createTest("flight Oneway");
+		QaExtentReport.test = QaExtentReport.report.createTest("flight Oneway");
 		
 		FlightOneWay_Search.flight_search(ddate, Triptype, adult, child, infant, fcurrency, fclass, airlines, emailid, title, adultfname, adultmname, adultlname, adultdate, adultmonth, adultyear, adultidno, adultisd, adultphone, adultpassprot, adultpassportcomp, adultedate, adultemonth, adulteyear, adultnationality, ctitle, childfname, childlname, childdate, childmonth, childyear, childidno, childpassprot, childpassportcomp, childedate, childemonth, childeyear, childnationality, ititle, infantfname, infantlname, infantdate, infantmonth, infantyear, infantidno, infantTravelling, infantpassprot, infantpassportcomp, infantedate, infantemonth, infanteyear, infantnationality, btitle, bfname, blname, baddress, bcity, bcityauto, bstate, bzipcode, bcountry, cardmode, type, cardno, cardname, cardmonth, cardyear, cardcvv, cardpwd, couponno, discountvalue);
 		
 	}
-	
 	@AfterMethod
 	public static void afterMetod()
 	{
-		test.getExtent().flush();
+		QaExtentReport.test.getExtent().flush();
 	}
-
 }

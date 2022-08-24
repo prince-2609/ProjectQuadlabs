@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -16,9 +17,11 @@ import Base.TestBase;
 import TestScript.RoundTrip.Flightcheck;
 import utilities.QaDataProvider;
 import utilities.QaExcelRead;
+import utilities.QaExtentReport;
 import utilities.Logger;
 import utilities.QaRobot;
 
+@Listeners(listenerClass.Listener.class)
 public class FlightAirline extends Flightcheck {
 
 	TestBase t;
@@ -32,22 +35,27 @@ public class FlightAirline extends Flightcheck {
 
 	@Test(dataProvider = "getexceldata")
 
-	public static void Duration(String ccode,String username, String password, String origin, String forigin, String destination,
+	public static void Duration(String ccode,String URL,String username, String password, String origin, String forigin, String destination,
 			String fdestination, String ddate, String Triptype, String adult, String child, String infant,
 			String fcurrency, String fclass, String airlines, String type, String faretype) throws Exception {
-
-		Companycode(ccode);
-
-		test = report.createTest("Flight Airline Filter");
+		
+		TestBase.Companycode(ccode,URL); 
+		QaRobot.pageLoad(30);
+		QaRobot.impliwait(30);
+		
+		QaExtentReport.test = QaExtentReport.report.createTest("Test on Flight Airline Filter");
+//		Companycode(ccode);
+//
+//		test = report.createTest("Flight Airline Filter");
 
 		TestBase.listofautosuggestion(By.xpath("//DIV[@id='divFLDepart']/P"), origin, forigin,
 				By.xpath("//input[@id='fromcityAc']"));
-		QaRobot.impliwait(10);
+//		QaRobot.impliwait(10);
 
 		TestBase.listofautosuggestion(By.xpath("//DIV[@id='divFLArrival']/P"), destination, fdestination,
 				By.xpath("//input[@id='tocityAc']"));
 
-		QaRobot.impliwait(10);
+//		QaRobot.impliwait(10);
 
 		String departdate = "id:id" + ddate;// id:id1252019
 		String Fclass = "xpath://select[@id='ddl_class']/option[contains(text(),'" + fclass + "')]";
@@ -55,7 +63,8 @@ public class FlightAirline extends Flightcheck {
 
 		// departure date
 
-		QaRobot.ClickOnElement("flight_depart_date", "Clicked on Flight Departure");
+		QaRobot.ClickOnElement("flight_depart_date");
+		QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Flight Departure</i></b>");
 
 		Thread.sleep(1000);
 
@@ -65,7 +74,8 @@ public class FlightAirline extends Flightcheck {
 		QaRobot.getLocator(departdate).click();// id1252019
 
 		// Pax
-		QaRobot.ClickOnElement("select_pax", "clicked on select PAX");
+		QaRobot.ClickOnElement("select_pax");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on select PAX</i></b>");
 
 		// select adult
 		QaRobot.selectValueFromDropdown("flight_adult", adult, "Selected Adult");
@@ -79,18 +89,23 @@ public class FlightAirline extends Flightcheck {
 		// explicitwaitclickable(60,By.xpath("(//a[contains(text(),'More
 		// Options')])[1]"));
 		Thread.sleep(500);
-		QaRobot.ClickOnElement("option", "clicked on interface");
+		QaRobot.ClickOnElement("option");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on interface</i></b>");
 
 		// click on more option
-		QaRobot.ClickOnElement("more_option", "clicked on more option");
+		QaRobot.ClickOnElement("more_option");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on more option</i></b>");
 
 		// select currency
 
-		QaRobot.ClickOnElement("flight_currency", "Selected Currency");
+		QaRobot.ClickOnElement("flight_currency");
+		QaExtentReport.test.log(Status.INFO,"<b><i>Selected Currency</i></b>");
+		
 		QaRobot.getLocator(currency).click();
 
 		// select class
-		QaRobot.ClickOnElement("flight_class", "Selected Class");
+		QaRobot.ClickOnElement("flight_class");
+		QaExtentReport.test.log(Status.INFO,"<b><i>Selected Class</i></b>");
 
 		QaRobot.getLocator(Fclass).click();
 
@@ -107,7 +122,8 @@ public class FlightAirline extends Flightcheck {
 				MediaEntityBuilder.createScreenCaptureFromPath(searchpage).build());
 
 		// search
-		QaRobot.ClickOnElement("flight_rsearch", "Clicked On Serach");
+		QaRobot.ClickOnElement("flight_rsearch");
+		QaExtentReport.test.log(Status.INFO,"<b><i>Clicked On Serach</i></b>");
 
 		QaRobot.explicitwaitinvisible(240, By.xpath("//*[@class='progress-bar progress-bar-striped active']"));
 		

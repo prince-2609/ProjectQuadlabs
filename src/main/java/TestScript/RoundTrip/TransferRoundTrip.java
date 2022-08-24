@@ -17,10 +17,8 @@ public class TransferRoundTrip extends Flightcheck {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-
 	
-		
-		return QaDataProvider.getTestdata("TransferRoundTrip","Sheet1");
+		return QaDataProvider.getTestdata("TransferRoundTrip","Sheet1","B2C");
 	}
 
 	

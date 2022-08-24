@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [preApproval]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Chrome(failed)">
+    <classes>
+      <class name="CarporateSBT.preApprovalQueue2">
+        <methods>
+          <include name="Profiling2" invocation-numbers="0"/>
+          <include name="Before_Test"/>
+        </methods>
+      </class> <!-- CarporateSBT.preApprovalQueue2 -->
+    </classes>
+  </test> <!-- Chrome(failed) -->
+</suite> <!-- Failed suite [preApproval] -->

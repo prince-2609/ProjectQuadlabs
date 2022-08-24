@@ -6,10 +6,11 @@ import java.util.Properties;
 
 public class QaRepositery {
 
-	public void init(Properties obj) throws IOException {
-		obj = new Properties();
+
+	public Properties init() throws IOException {
+		Properties	obj = new Properties();
 		String propsDir = System.getProperty("user.dir") + "\\repository";
-		String[] files = {"LoginObject","Flight","Transfer","Travelmall"};
+		String[] files = {"LoginObject","Flight","Transfer","Travelmall","Sbt_flight","Hotel","Corporate_Management"};
 		String propsFileSuffix = ".properties";
 		
 		for (String file : files) {
@@ -17,6 +18,7 @@ public class QaRepositery {
 			FileInputStream inputStream =  new FileInputStream(file);
 			obj.load(inputStream);
 		}
+		return obj;
 	}
 	// set default respository file
 	

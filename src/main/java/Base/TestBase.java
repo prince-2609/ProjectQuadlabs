@@ -8,34 +8,27 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
-
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-
 import utilities.Logger;
 import utilities.QaBrowser;
+import utilities.QaExtentReport;
 import utilities.QaRepositery;
 import utilities.QaRobot;
 
-public class TestBase {
+public class TestBase extends QaExtentReport {
 
-	public static Properties obj;
+	public static Properties obj, object;
 	public static File file;
 	public static FileInputStream fin;
 	public static WebDriverWait wait;
-	public static ExtentReports report;
-	public static ExtentTest test;
-	static SoftAssert softassert = new SoftAssert();
+	
 
 	public static String[] dblchildCat;
 	public static String[] twnchildCat;
@@ -50,81 +43,166 @@ public class TestBase {
 
 	public static WebDriver driver;
 
+	@SuppressWarnings("deprecation")
 	public static void init() throws Exception {
 		if (initFlag) {
 			return;
 		}
 		initFlag = true;
-		Logger.initKlovReport();
-		report = Logger.extent;
-		test = Logger.test;
-		repositery.init(obj);
+		QaExtentReport.test_htmlreport();
+		obj = repositery.init();
 		initCompletedFlag = true;
 	}
 
-	public static void Companycode(String ccode) throws Exception {
+	public static void Companycode(String ccode,String URL) throws Exception {
 		init();
-		if(!initCompletedFlag) {
+		if (!initCompletedFlag) {
 			throw new Exception("Initialization not complete");
 		}
-		if (ccode.equalsIgnoreCase("ql")) {
-			browser.launchBrowser("http://erp-staging/qlmetab2c");
-			Logger.setProjectName("QlB2C");
+		if (ccode.equalsIgnoreCase("b2c")) {
+			browser.launchBrowser("http:"+URL+"");
 		}
-		if (ccode.equalsIgnoreCase("gt")) {
-			browser.launchBrowser("http://travelmall.erp-staging.com");
-			Logger.setProjectName("Travelmall");
+		if (ccode.equalsIgnoreCase("sbt")) {
+			browser.launchBrowser("http:"+URL+"");
+			
+			//browser.launchBrowser("http://v12staging/sbt");
 		}
-		if (ccode.equalsIgnoreCase("bn")) {
-			browser.launchBrowser("http://erp-staging/algosaibib2c/");
-			Logger.setProjectName("Algosaibi");
-		}
-		if (ccode.equalsIgnoreCase("ag")) {
-			browser.launchBrowser("http://erp-staging/arivob2c/");
-			Logger.setProjectName("Arivo");
-		}
-		if (ccode.equalsIgnoreCase("ts")) {
-			browser.launchBrowser("http://erp-staging/holidaybaghdadb2c/");
-			Logger.setProjectName("HolidayBaghdad");
-		}
-		if (ccode.equalsIgnoreCase("bd")) {
-			browser.launchBrowser("http://erp-staging/gobdgo/");
-			Logger.setProjectName("Gobdgo");
-		}
-		if (ccode.equalsIgnoreCase("mh")) {
-			browser.launchBrowser("http://erp-staging/majestic/");
-			Logger.setProjectName("Majestic");
-		}
-		if (ccode.equalsIgnoreCase("sb")) {
-			browser.launchBrowser("http://preproduction/newskysouq/");
-			Logger.setProjectName("NewSkysouq");
-		}
-		if (ccode.equalsIgnoreCase("zt")) {
-			browser.launchBrowser("http://erp-staging/zamil/");
-			Logger.setProjectName("Zamil");
-		}
-		Logger.setProjectName("Staging Server");
+//		if (ccode.equalsIgnoreCase("bn")) {
+//			browser.launchBrowser("http://erp-staging/algosaibib2c/");
+//			Logger.setProjectName("Algosaibi");
+//		}
+//		if (ccode.equalsIgnoreCase("ag")) {
+//			browser.launchBrowser("http://erp-staging/arivob2c/");
+//			Logger.setProjectName("Arivo");
+//		}
+//		if (ccode.equalsIgnoreCase("ts")) {
+//			browser.launchBrowser("http://erp-staging/holidaybaghdadb2c/");
+//			Logger.setProjectName("HolidayBaghdad");
+//		}
+//		if (ccode.equalsIgnoreCase("bd")) {
+//			browser.launchBrowser("http://erp-staging/gobdgo/");
+//			Logger.setProjectName("Gobdgo");
+//		}
+//		if (ccode.equalsIgnoreCase("mh")) {
+//			browser.launchBrowser("http://erp-staging/majestic/");
+//			Logger.setProjectName("Majestic");
+//		}
+//		if (ccode.equalsIgnoreCase("sb")) {
+//			browser.launchBrowser("http://preproduction/newskysouq/");
+//			Logger.setProjectName("NewSkysouq");
+//		}
+//		if (ccode.equalsIgnoreCase("zt")) {
+//			browser.launchBrowser("http://erp-staging/zamil/");
+//			Logger.setProjectName("Zamil");
+//		}
+	
 
 	}
+	
+	
 
-	public static List<WebElement> listofautosuggestion(By suggestiontxt, String txt, String city_name, By d)
-			throws InterruptedException {
-		driver.findElement(d).sendKeys(txt);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		ArrayList<WebElement> autosuggestions = (ArrayList<WebElement>) driver.findElements(suggestiontxt);
+	public static List<WebElement> listofautosuggestion(By suggestiontxt, String txt, String city_name, By d)throws InterruptedException 
+	{
+		QaBrowser.driver.findElement(d).sendKeys(txt);
+		QaBrowser.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		ArrayList<WebElement> autosuggestions = (ArrayList<WebElement>) QaBrowser.driver.findElements(suggestiontxt);
 		// System.out.println(autosuggestions.toString());
-		for (WebElement autosuggestion : autosuggestions) {
-			System.out.println(autosuggestion.getText());
-			if (autosuggestion.getText().equalsIgnoreCase(city_name)) {
-				System.out.println("equal");
+		for (WebElement autosuggestion : autosuggestions) 
+		{
+//			System.out.println(autosuggestion.getText());
+			if (autosuggestion.getText().equalsIgnoreCase(city_name)) 
+			{
+//				System.out.println("equal");
 				autosuggestion.click();
 				break;
-			} else {
+			} 
+			else 
+			{
 				System.out.println("not equal");
 			}
 		}
 
 		return autosuggestions;
+	}
+	
+	public static List<WebElement> listofautosuggestion1(By sugtxt,String CategoryName, By a)throws InterruptedException 
+	{
+		QaBrowser.driver.findElement(a).click();
+		QaBrowser.driver.findElement(a).clear();
+		QaBrowser.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		ArrayList<WebElement> autosuggs = (ArrayList<WebElement>) QaBrowser.driver.findElements(sugtxt);
+		System.out.println(autosuggs);
+		// System.out.println(autosuggestions.toString());
+		for (WebElement autosun : autosuggs) 
+		{
+			System.out.println(autosun.getText());
+			if (autosun.getText().equalsIgnoreCase(CategoryName)) 
+			{
+				System.out.println("equal");
+				autosun.click();
+				break;
+			} 
+			else 
+			{
+				System.out.println("not equal");
+			}
+		}
+
+		return autosuggs;
+	}
+	
+	public static List<WebElement> listofautosuggestion2(By stxt,String TypeName, By b)throws InterruptedException 
+	{
+		QaBrowser.driver.findElement(b).click();
+//		System.out.println("clickTab");
+		QaBrowser.driver.findElement(b).sendKeys(TypeName);
+//		System.out.println("TypeName "+TypeName);
+		Thread.sleep(3000);
+		
+//		QaBrowser.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		ArrayList<WebElement> autoss = (ArrayList<WebElement>) QaBrowser.driver.findElements(stxt);
+//		System.out.println(autoss);
+		// System.out.println(autosuggestions.toString());
+		for (WebElement autosn : autoss) 
+		{
+//			System.out.println(autosn.getText());
+			if (autosn.getText().equalsIgnoreCase(TypeName)) 
+			{
+				System.out.println("equal");
+				autosn.click();
+				break;
+			} 
+			else 
+			{
+				System.out.println("not equal");
+			}
+		}
+
+		return autoss;
+	}
+	
+	public static List<WebElement> listofautosuggestion3(By sutxt,String BranchName, By c)throws InterruptedException 
+	{
+		ArrayList<WebElement> autosugs = (ArrayList<WebElement>) QaBrowser.driver.findElements(sutxt);
+		System.out.println(autosugs);
+		// System.out.println(autosuggestions.toString());
+		for (WebElement autsun : autosugs) 
+		{
+			System.out.println(autsun.getText());
+			if (autsun.getText().equalsIgnoreCase(BranchName)) 
+			{
+				System.out.println("equal");
+				autsun.click();
+				QaBrowser.driver.findElement(c).click();
+				break;
+			} 
+			else 
+			{
+				System.out.println("not equal");
+			}
+		}
+
+		return autosugs;
 	}
 
 	// discount coupon
@@ -132,22 +210,24 @@ public class TestBase {
 			String disvalueofexcel) throws Exception {
 
 		try {
-			QaRobot.PassValue(Locator, couponno, "Entered " + couponno + " as coupon number");
+			QaRobot.PassValue(Locator, couponno);
+			QaExtentReport.test.log(Status.INFO,"<b><i> Entered " + couponno + " as coupon number</i></b>");
 
-			QaRobot.ClickOnElement("discount_button", "clicked on discount coupon");
+			QaRobot.ClickOnElement("discount_button");
+			QaExtentReport.test.log(Status.INFO,"<b><i>clicked on discount coupon</i></b>");
 
 			String discountMessage = QaRobot.getWebElement(msg).getText();
 
-			test.log(Status.INFO, " Message is " + discountMessage);
+			QaExtentReport.test.log(Status.INFO, " Message is " + discountMessage);
 			System.out.println(discountMessage);
 
 			String discountAmount = QaRobot.getWebElement(amountxpath).getText();
 
-			test.log(Status.PASS, "discount amount is " + discountAmount);
+			QaExtentReport.test.log(Status.PASS, "discount amount is " + discountAmount);
 			System.out.println("Discounted amount is " + discountAmount);
 
 		} catch (Exception e) {
-			test.log(Status.FAIL, "Discount coupon not applied ");
+			QaExtentReport.test.log(Status.FAIL, "Discount coupon not applied ");
 
 			throw new Exception("Discount coupon not applied ");
 
@@ -158,61 +238,68 @@ public class TestBase {
 	// flight itineray
 	public static void Flight_Iteneary(String emailid) throws Exception {
 
-		QaRobot.ClickOnElement("fare_iteneary", "clicked on flight iteneary");
+		QaRobot.ClickOnElement("fare_iteneary");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on flight iteneary</i></b>");
 
-		QaRobot.explicitwaitvisible(60, By.xpath("(//span[@class='ng-binding' and text()='Send Email'])[1]"));
+//		QaRobot.explicitwaitvisible(60, By.xpath("(//span[@class='ng-binding' and text()='Send Email'])[1]"));
 
 		// send a flight iteneary
 
-		QaRobot.ClickOnElement("email_link", "clicked on email link");
+		QaRobot.ClickOnElement("email_link");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on email link</i></b>");
 
 		// wait till visible close email
-		QaRobot.explicitwaitvisible(60, By.xpath("//button[@class='btn btn-secondary ng-binding']"));
+//		QaRobot.explicitwaitvisible(60, By.xpath("//button[@class='btn btn-secondary ng-binding']"));
 
-		QaRobot.PassValue("email_textbox", emailid, "Enterned " + emailid + "  as user email_id");
+		QaRobot.PassValue("email_textbox", emailid);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Enterned " + emailid + "  as user email_id</i></b>");
 
-		QaRobot.ClickOnElement("send_mail", "Clicked on send email button");
+		QaRobot.ClickOnElement("send_mail");
+		QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on send email button</i></b>");
 
 		QaRobot.explicitwaitalert(100);
 
 		// Switching to Alert
-		Alert alert = TestBase.driver.switchTo().alert();
+		Alert alert = QaBrowser.driver.switchTo().alert();
 
 		// Capturing alert message.
-		String alertMessage = TestBase.driver.switchTo().alert().getText();
+		String alertMessage = QaBrowser.driver.switchTo().alert().getText();
 
 		// Displaying alert message
 		System.out.println(alertMessage);
-		TestBase.test.log(Status.INFO, alertMessage);
+		QaExtentReport.test.log(Status.INFO, alertMessage);
 
 		// Accepting alert
 		alert.accept();
 
-		QaRobot.ClickOnElement("close_email", "Clicked on close button");
+		QaRobot.ClickOnElement("close_email");
+		QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on close button</i></b>");
 
 		// wait till invisible close email
-		QaRobot.explicitwaitinvisible(50, By.xpath("//button[@class='btn btn-secondary ng-binding']"));
+//		QaRobot.explicitwaitinvisible(50, By.xpath("//button[@class='btn btn-secondary ng-binding']"));
 
 		// print a Flight Iteneary
 
-		QaRobot.ClickOnElement("print_link", "clicked on print link");
+		QaRobot.ClickOnElement("print_link");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on print link</i></b>");
 
 		// wait till visible print button
-		QaRobot.explicitwaitvisible(160, By.xpath("//button[@class='btn_smallred ng-binding']"));
+//		QaRobot.explicitwaitvisible(160, By.xpath("//button[@class='btn_smallred ng-binding']"));
 
 		// switch to current window for close
 
 		// get window handle
 
-		String beforewindowpopup = TestBase.driver.getWindowHandle();
+		String beforewindowpopup = QaBrowser.driver.getWindowHandle();
 
 		// click on print
 
-		QaRobot.ClickOnElement("print_button", "clicked on print button");
+		QaRobot.ClickOnElement("print_button");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on print button</i></b>");
 
 		// now get all window handle after click print
 
-		Set<String> afterwindowpopup = TestBase.driver.getWindowHandles();
+		Set<String> afterwindowpopup = QaBrowser.driver.getWindowHandles();
 
 		// remove all handle before pop up
 
@@ -222,7 +309,7 @@ public class TestBase {
 
 		for (String printwindow : afterwindowpopup) {
 
-			TestBase.driver.switchTo().window(printwindow);
+			QaBrowser.driver.switchTo().window(printwindow);
 
 			// System.out.println(driver.getTitle());
 
@@ -230,7 +317,7 @@ public class TestBase {
 
 				// close the print window
 
-				TestBase.driver.close();
+				QaBrowser.driver.close();
 
 			} catch (Throwable e) {
 
@@ -241,7 +328,7 @@ public class TestBase {
 
 		// Now switch to current window
 
-		TestBase.driver.switchTo().window(beforewindowpopup);
+		QaBrowser.driver.switchTo().window(beforewindowpopup);
 
 		// take a screen shot after print
 
@@ -250,10 +337,10 @@ public class TestBase {
 		// test.log(Status.INFO, "PrintIteneary : " +
 		// test.addScreenCapture(print));
 
-		QaRobot.ClickOnElement("close_print", "closed print screen");
-
+		QaRobot.ClickOnElement("close_print");
+		QaExtentReport.test.log(Status.INFO,"<b><i>closed print screen</i></b>");
 		// wait till invisible print button
-		QaRobot.explicitwaitinvisible(60, By.xpath("//button[@class='btn_smallred ng-binding']"));
+//		QaRobot.explicitwaitinvisible(60, By.xpath("//button[@class='btn_smallred ng-binding']"));
 
 		// take screenshot for fare_iteneary
 
@@ -262,9 +349,10 @@ public class TestBase {
 		// test.log(Status.INFO, "fareIteneary : " +
 		// test.addScreenCapture(fareI));
 
-		QaRobot.ClickOnElement("fare_iteneary", "clicked on flight iteneary");
-
-		QaRobot.explicitwaitinvisible(100, By.xpath("(//span[@class='ng-binding' and text()='Send Email'])[1]"));
+		QaRobot.ClickOnElement("fare_iteneary");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on flight iteneary</i></b>");
+		
+//		QaRobot.explicitwaitinvisible(100, By.xpath("(//span[@class='ng-binding' and text()='Send Email'])[1]"));
 
 	}
 
@@ -272,10 +360,11 @@ public class TestBase {
 
 	public static void Fare_Rule() throws Exception {
 
-		QaRobot.ClickOnElement("fare_rule", "clicked on flight rule");
-
+		QaRobot.ClickOnElement("fare_rule");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on flight rule</i></b>");
+		
 		// wait till visible booking class
-		QaRobot.explicitwaitvisible(60, By.xpath("(//th[text()='Booking Class'])[1]"));
+//		QaRobot.explicitwaitvisible(60, By.xpath("(//th[text()='Booking Class'])[1]"));
 
 		// take screenshot for fare_rule
 
@@ -283,11 +372,12 @@ public class TestBase {
 
 		// test.log(Status.INFO, "fareRule : " + test.addScreenCapture(fareR));
 
-		QaRobot.ClickOnElement("fare_rule", "clicked on flight rule");
-
+		QaRobot.ClickOnElement("fare_rule");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on flight rule</i></b>");
+		
 		// wait till economy class invisible
 
-		QaRobot.explicitwaitinvisible(100, By.xpath("(//th[text()='Booking Class'])[1]"));
+//		QaRobot.explicitwaitinvisible(100, By.xpath("(//th[text()='Booking Class'])[1]"));
 
 	}
 
@@ -297,9 +387,10 @@ public class TestBase {
 
 	{
 
-		QaRobot.ClickOnElement("fare_breakup", "Clicked on FareBreakup");
+		QaRobot.ClickOnElement("fare_breakup");
+		QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on FareBreakup</i></b>");
 
-		QaRobot.explicitwaitvisible(30, By.xpath("(//div[@class='fare_tb']//span[@class='ng-binding'])[1]"));
+//		QaRobot.explicitwaitvisible(30, By.xpath("(//div[@class='fare_tb']//span[@class='ng-binding'])[1]"));
 
 		// get total value of fare breakup
 		String Fare_B_value = QaRobot.getWebElement("total_price").getText();
@@ -314,7 +405,7 @@ public class TestBase {
 
 		// String value = ExcludeRP[1];
 
-		CompareFareValue(resultvalue, Fare_B_value, "fare breakup " + Fare_B_value);
+		QaRobot.CompareFareValue(resultvalue, Fare_B_value, "fare breakup " + Fare_B_value);
 
 		// take screenshot for fare_breakup
 		// String fareb = TakeScreenshot(driver, "fare_breakup1");
@@ -322,9 +413,10 @@ public class TestBase {
 		// test.log(Status.INFO, "fare_breakup : " +
 		// test.addScreenCapture(fareb));
 
-		QaRobot.ClickOnElement("fare_breakup", "Clicked on FareBreakup");
+		QaRobot.ClickOnElement("fare_breakup");
+		QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on FareBreakup</i></b>");
 
-		QaRobot.explicitwaitinvisible(30, By.xpath("(//div[@class='fare_tb']//span[@class='ng-binding'])[1]"));
+//		QaRobot.explicitwaitinvisible(30, By.xpath("(//div[@class='fare_tb']//span[@class='ng-binding'])[1]"));
 
 	}
 
@@ -332,7 +424,8 @@ public class TestBase {
 
 	public static void penal_info() throws Exception {
 
-		QaRobot.ClickOnElement("penalties_info", "clicked on penalties info");
+		QaRobot.ClickOnElement("penalties_info");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on penalties info</i></b>");
 
 		// take screenshot for penal_info
 		// String penalI = TakeScreenshot(driver, "penal_info");
@@ -340,24 +433,28 @@ public class TestBase {
 		// test.log(Status.INFO, "penal_info : " +
 		// test.addScreenCapture(penalI));
 
-		QaRobot.ClickOnElement("penalties_info", "clicked on penalties info");
+		QaRobot.ClickOnElement("penalties_info");
+		QaExtentReport.test.log(Status.INFO,"<b><i>clicked on penalties info</i></b>");
 
 	}
 
 	// handle Prefered airline
 	public static void PreferedAirline(String preairline, String airlines, String searchairline) throws Exception {
 		// click prefered airline
-		QaRobot.ClickOnElement(preairline, "Clicked on Prefered Airline");
+		QaRobot.ClickOnElement(preairline);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Prefered Airline</i></b>");
+		
 		String[] airlinearr = airlines.split(",");
 		for (int i = 0; i < airlinearr.length; i++) {
 			String currentairline = airlinearr[i].toLowerCase();
 			// send the airlinename in search box
 
-			QaRobot.PassValue(searchairline, currentairline, "Entered " + currentairline + " Prefered Airline");
+			QaRobot.PassValue(searchairline, currentairline);
+			QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + currentairline + " Prefered Airline</i></b>");
 
 			// click selected airline
 			String check = "//ul[@class='ui-multiselect-checkboxes ui-helper-reset']/li/label/span";
-			List<WebElement> elements = driver.findElements(By.xpath(check));
+			List<WebElement> elements = QaBrowser.driver.findElements(By.xpath(check));
 			for (WebElement webelement : elements) {
 				if (webelement.getText().toLowerCase().equals(currentairline)) {
 					webelement.click();
@@ -373,29 +470,39 @@ public class TestBase {
 			String bcityauto, String bstate, String bzipcode, String bcountry) throws Exception {
 
 		// Select billing title
-		QaRobot.selectDropdownValuebyLocator("billing_title", btitle, "Entered " + btitle + " as billing title");
+		// QaRobot.selectDropdownValuebyLocator("billing_title", btitle, "Entered " +
+		// btitle + " as billing title");
 
 		// Billing fName
-		QaRobot.PassValue("billing_fname", bfname, "Entered " + bfname + " as billing Firstname");
+		// QaRobot.PassValue("billing_fname", bfname, "Entered " + bfname + " as billing
+		// Firstname");
 
 		// Billing lName
-		QaRobot.PassValue("billing_lname", blname, "Entered " + blname + " as billing LastName");
+		// QaRobot.PassValue("billing_lname", blname, "Entered " + blname + " as billing
+		// LastName");
 
 		// Billing Address
-		QaRobot.PassValue("billing_address1", baddress, "Entered " + baddress + " as billing address");
+		// QaRobot.PassValue("billing_address1", baddress, "Entered " + baddress + " as
+		// billing address");
 
 		// Select billing country
-		QaRobot.selectTextFromDropdown("billing_country", bcountry, "Selected " + bcountry + " as billing Country");
+		// QaRobot.selectTextFromDropdown("billing_country", bcountry, "Selected " +
+		// bcountry + " as billing Country");
 
 		// billing city
-		listofautosuggestion(By.xpath("//div[@id='divHTCity']/p"), bcity, bcityauto,
-				By.xpath("//input[@id='ctl00_contentMain_payeeCity']"));
+		// billing city
+		QaBrowser.driver.findElement(By.xpath("//input[@id='txtBillingCity']")).clear();
+		listofautosuggestion(By.xpath("//div[@id='divCityCC']/p"), bcity, bcityauto,
+				By.xpath("//input[@id='txtBillingCity']"));
+		Thread.sleep(1000);
 
 		// Select billing state
-		QaRobot.selectTextFromDropdown("billing_state", bstate, "Entered " + bstate + " as billing state");
+		QaRobot.selectTextFromDropdown("new_chk_billing_state_credit", bstate,
+				"Entered " + bstate + " as billing state");
 
 		// Billing zipcode
-		QaRobot.PassValue("billing_zipcode", bzipcode, "Entered " + bzipcode + " as billing zipcode");
+		// QaRobot.PassValue("billing_zipcode", bzipcode, "Entered " + bzipcode + " as
+		// billing zipcode");
 
 	}
 
@@ -403,48 +510,87 @@ public class TestBase {
 			String cardyear, String cardcvv) throws Exception {
 		// condition for credit and online
 
-		if (cardmode.equalsIgnoreCase("Credit Card") || cardmode.equalsIgnoreCase("استخدام بطاقة الائتمان")) {
+		if (cardmode.equalsIgnoreCase("Credit Card")
+				|| cardmode.equalsIgnoreCase("استخدام بطاقة الائتمان")) {
 
-			QaRobot.ClickOnElement("credit_card", "Clicked on credit card");
+			QaRobot.ClickOnElement("newchk_credit_card");
+			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on credit card</i></b>");
+			
 			if (type.equalsIgnoreCase("Master Card")) {
 
-				QaRobot.selectTextFromDropdown("credit", type, "selected " + type + " as card type master card");
-				QaRobot.PassValue("card_number", cardno, "Entered " + cardno + " as Card Number");
-				QaRobot.PassValue("card_name", cardname, "Entered " + cardname + " as Card Holder Name");
-				QaRobot.selectValueFromDropdown("card_month", cardmonth, "selected " + cardmonth + " as card Month");
-				QaRobot.selectValueFromDropdown("card_year", cardyear, "selected " + cardyear + " as card Year");
-				QaRobot.PassValue("card_cvv", cardcvv, "Entered " + cardcvv + " as card CVV Number");
+				QaRobot.selectTextFromDropdown("newchk_creditmaster", type,
+						"selected " + type + " as card type master card");
+				QaRobot.PassValue("newchk_ccard_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardno + " as Card Number</i></b>");
+				
+				QaRobot.PassValue("newchk_ccard_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardname + " as Card Holder Name</i></b>");
+				QaRobot.selectValueFromDropdown("newchk_ccard_month", cardmonth,
+						"selected " + cardmonth + " as card Month");
+				QaRobot.selectValueFromDropdown("newchk_ccard_year", cardyear,
+						"selected " + cardyear + " as card Year");
+				QaRobot.PassValue("newchk_ccard_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardcvv + " as card CVV Number</i></b>");
 
 			} else if (type.equalsIgnoreCase("visa")) {
 
-				QaRobot.selectTextFromDropdown("credit", type, "selected " + type + " as card type master card");
-				QaRobot.PassValue("card_number", cardno, "Entered " + cardno + " as Card Number");
-				QaRobot.PassValue("card_name", cardname, "Entered " + cardname + " as Card Holder Name");
-				QaRobot.selectValueFromDropdown("card_month", cardmonth, "selected " + cardmonth + " as card Month");
-				QaRobot.selectValueFromDropdown("card_year", cardyear, "selected " + cardyear + " as card Year");
-				QaRobot.PassValue("card_cvv", cardcvv, "Entered " + cardcvv + " as card CVV Number");
+				QaRobot.selectTextFromDropdown("newchk_creditvisa", type,
+						"selected " + type + " as card type master card");
+				QaRobot.PassValue("newchk_ccard_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardno + " as Card Number</i></b>");
+				
+				QaRobot.PassValue("newchk_ccard_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardname + " as Card Holder Name</i></b>");
+				
+				QaRobot.selectValueFromDropdown("newchk_ccard_month", cardmonth,
+						"selected " + cardmonth + " as card Month");
+				QaRobot.selectValueFromDropdown("newchk_ccard_year", cardyear,
+						"selected " + cardyear + " as card Year");
+				QaRobot.PassValue("newchk_ccard_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardcvv + " as card CVV Number</i></b>");
 
 			}
-		} else if (cardmode.equalsIgnoreCase("Debit Card") || cardmode.equalsIgnoreCase("ااستخدام بطاقة الخصم")) {
+		} else if (cardmode.equalsIgnoreCase("Debit Card")
+				|| cardmode.equalsIgnoreCase("ااستخدام بطاقة الخصم")) {
 
-			QaRobot.ClickOnElement("debit_card", "Clicked on debit card");
+			QaRobot.ClickOnElement("newchk_debit_card");
+			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on debit card</i></b>");
+			
 			if (type.equalsIgnoreCase("Master Card")) {
 
-				QaRobot.selectTextFromDropdown("debit", type, "selected " + type + " as card type master card");
-				QaRobot.PassValue("card_number", cardno, "Entered " + cardno + " as Card Number");
-				QaRobot.PassValue("card_name", cardname, "Entered " + cardname + " as Card Holder Name");
-				QaRobot.selectValueFromDropdown("card_month", cardmonth, "selected " + cardmonth + " as card Month");
-				QaRobot.selectValueFromDropdown("card_year", cardyear, "selected " + cardyear + " as card Year");
-				QaRobot.PassValue("card_cvv", cardcvv, "Entered " + cardcvv + " as card CVV Number");
+				QaRobot.selectTextFromDropdown("newchk_debitmaster", type,
+						"selected " + type + " as card type master card");
+				QaRobot.PassValue("newchk_dcard_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardno + " as Card Number</i></b>");
+				
+				QaRobot.PassValue("newchk_dcard_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardname + " as Card Holder Name</i></b>");
+				
+				QaRobot.selectValueFromDropdown("newchk_dcard_month", cardmonth,
+						"selected " + cardmonth + " as card Month");
+				QaRobot.selectValueFromDropdown("newchk_dcard_year", cardyear,
+						"selected " + cardyear + " as card Year");
+				QaRobot.PassValue("newchk_dcard_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardcvv + " as card CVV Number</i></b>");
+				
 
 			} else if (type.equalsIgnoreCase("visa")) {
 
-				QaRobot.selectTextFromDropdown("debit", type, "selected " + type + " as card type master card");
-				QaRobot.PassValue("card_number", cardno, "Entered " + cardno + " as Card Number");
-				QaRobot.PassValue("card_name", cardname, "Entered " + cardname + " as Card Holder Name");
-				QaRobot.selectValueFromDropdown("card_month", cardmonth, "selected " + cardmonth + " as card Month");
-				QaRobot.selectValueFromDropdown("card_year", cardyear, "selected " + cardyear + " as card Year");
-				QaRobot.PassValue("card_cvv", cardcvv, "Entered " + cardcvv + " as card CVV Number");
+				QaRobot.selectTextFromDropdown("newchk_debitvisa", type,
+						"selected " + type + " as card type master card");
+				QaRobot.PassValue("newchk_dcard_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardno + " as Card Number</i></b>");
+				
+				QaRobot.PassValue("newchk_dcard_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardname + " as Card Holder Name</i></b>");
+				
+				QaRobot.selectValueFromDropdown("newchk_dcard_month", cardmonth,
+						"selected " + cardmonth + " as card Month");
+				QaRobot.selectValueFromDropdown("newchk_dcard_year", cardyear,
+						"selected " + cardyear + " as card Year");
+				QaRobot.PassValue("newchk_dcard_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardcvv + " as card CVV Number</i></b>");
+				
 
 			}
 
@@ -458,99 +604,92 @@ public class TestBase {
 		if (cardmode.equalsIgnoreCase("استخدام بطاقة الائتمان")) {
 
 			// ClickOnElement("credit_card", "Clicked on credit card");
-			driver.findElement(By.xpath("//span[contains(text(),'استخدام بطاقة الائتمان')]")).click();
+			QaBrowser.driver
+					.findElement(By.xpath("//span[contains(text(),'استخدام بطاقة الائتمان')]"))
+					.click();
 			if (type.equalsIgnoreCase("Master Card")) {
 
 				QaRobot.selectTextFromDropdown("credit", type, "selected " + type + " as card type master card");
-				QaRobot.PassValue("card_number", cardno, "Entered " + cardno + " as Card Number");
-				QaRobot.PassValue("card_name", cardname, "Entered " + cardname + " as Card Holder Name");
+				QaRobot.PassValue("card_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardno + " as Card Number</i></b>");
+				
+				QaRobot.PassValue("card_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardname + " as Card Holder Name</i></b>");
+				
 				QaRobot.selectTextFromDropdown("card_month", cardmonth, "selected " + cardmonth + " as card Month");
 				QaRobot.selectValueFromDropdown("card_year", cardyear, "selected " + cardyear + " as card Year");
-				QaRobot.PassValue("card_cvv", cardcvv, "Entered " + cardcvv + " as card CVV Number");
+				QaRobot.PassValue("card_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardcvv + " as card CVV Number</i></b>");
 
 			} else if (type.equalsIgnoreCase("visa")) {
 
 				QaRobot.selectTextFromDropdown("credit", type, "selected " + type + " as card type master card");
-				QaRobot.PassValue("card_number", cardno, "Entered " + cardno + " as Card Number");
-				QaRobot.PassValue("card_name", cardname, "Entered " + cardname + " as Card Holder Name");
+				QaRobot.PassValue("card_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardno + " as Card Number</i></b>");
+				
+				QaRobot.PassValue("card_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardname + " as Card Holder Name</i></b>");
+				
 				QaRobot.selectTextFromDropdown("card_month", cardmonth, "selected " + cardmonth + " as card Month");
 				QaRobot.selectValueFromDropdown("card_year", cardyear, "selected " + cardyear + " as card Year");
-				QaRobot.PassValue("card_cvv", cardcvv, "Entered " + cardcvv + " as card CVV Number");
+				QaRobot.PassValue("card_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardcvv + " as card CVV Number</i></b>");
 
 			}
 		} else if (cardmode.equalsIgnoreCase("استخدام بطاقة الخصم")) {
 
 			// ClickOnElement("debit_card", "Clicked on debit card");
-			driver.findElement(By.xpath("//span[contains(text(),'استخدام بطاقة الخصم')]")).click();
+			QaBrowser.driver.findElement(By.xpath("//span[contains(text(),'استخدام بطاقة الخصم')]"))
+					.click();
 			if (type.equalsIgnoreCase("Master Card")) {
 
 				QaRobot.selectTextFromDropdown("debit", type, "selected " + type + " as card type master card");
-				QaRobot.PassValue("card_number", cardno, "Entered " + cardno + " as Card Number");
-				QaRobot.PassValue("card_name", cardname, "Entered " + cardname + " as Card Holder Name");
+				QaRobot.PassValue("card_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardno + " as Card Number</i></b>");
+				
+				QaRobot.PassValue("card_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardname + " as Card Holder Name</i></b>");
+				
 				QaRobot.selectTextFromDropdown("card_month", cardmonth, "selected " + cardmonth + " as card Month");
 				QaRobot.selectValueFromDropdown("card_year", cardyear, "selected " + cardyear + " as card Year");
-				QaRobot.PassValue("card_cvv", cardcvv, "Entered " + cardcvv + " as card CVV Number");
+				QaRobot.PassValue("card_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardcvv + " as card CVV Number</i></b>");
+				
 
 			} else if (type.equalsIgnoreCase("visa")) {
 
 				QaRobot.selectTextFromDropdown("debit", type, "selected " + type + " as card type master card");
-				QaRobot.PassValue("card_number", cardno, "Entered " + cardno + " as Card Number");
-				QaRobot.PassValue("card_name", cardname, "Entered " + cardname + " as Card Holder Name");
+				QaRobot.PassValue("card_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardno + " as Card Number</i></b>");
+				
+				QaRobot.PassValue("card_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardname + " as Card Holder Name</i></b>");
+				
 				QaRobot.selectTextFromDropdown("card_month", cardmonth, "selected " + cardmonth + " as card Month");
 				QaRobot.selectValueFromDropdown("card_year", cardyear, "selected " + cardyear + " as card Year");
-				QaRobot.PassValue("card_cvv", cardcvv, "Entered " + cardcvv + " as card CVV Number");
+				QaRobot.PassValue("card_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + cardcvv + " as card CVV Number</i></b>");
 
 			}
 
 		}
 	}
 
-	public static void CompareFareValue(String ActualValue, String ExpectedValue, String Msg) throws Exception {
-
-		softassert.assertEquals(ActualValue, ExpectedValue, Msg);
-		if (ActualValue.equalsIgnoreCase(ExpectedValue)) {
-			test.log(Status.PASS, "Verification Passed for value of " + Msg);
-		}
-
-		else {
-			test.log(Status.FAIL, "Verification Failed for value of " + Msg);
-			throw new Exception("Verification Failed for value of " + Msg);
-		}
-	}
+	
 
 	public static void adultCheckout(String Triptype, String adult, String title, String adultfname, String adultlname,
-			String adultdate, String adultmonth, String adultyear, String adultidno, String adultisd, String adultphone,
-			String adultpassprot, String adultpassportcomp, String adultedate, String adultemonth, String adulteyear,
-			String adultnationality) throws Exception {
+			String adultdate, String adultmonth, String adultyear, String adultmailid, String adultisd,
+			String adultphone, String adultpassprot, String adultpassportcomp, String adultedate, String adultemonth,
+			String adulteyear, String adultnationality) throws Exception {
 
 		int a = Integer.parseInt(adult);
 		for (int i = 1; i <= a; i++) {
 
-			// fill Title
-			String adultTitleElement = "(//select[@id='ctl00_contentMain_ddlTitle'])";
-			String[] adulttitle = title.split(",");
-			QaRobot.selectDropdownValue(adultTitleElement, adulttitle[0],
-					"Selected " + adulttitle[0] + " as title of Adult");
-
-			// FIll Day
-
-			String adultdayElement = "(//select[@id='ctl00_contentMain_txt_birthDateAdt_ddlDay'])";
-			String[] adultday = adultdate.split(",");
-			QaRobot.selectTextByLocator(adultdayElement, adultday[0],
-					"Selected " + adultday[0] + " birth day of Adult");
-
-			// Fill Month
-			String adultmonthElement = "(//select[@id='ctl00_contentMain_txt_birthDateAdt_ddlMonth'])";
-			String[] adultmm = adultmonth.split(",");
-			QaRobot.selectDropdownValue(adultmonthElement, adultmm[0],
-					"Selected " + adultmm[0] + " birth month of Adult");
-
-			// Fill Year
-
-			String adultyearElement = "(//select[@id='ctl00_contentMain_txt_birthDateAdt_ddlYear'])";
-			String[] adulty = adultyear.split(",");
-			QaRobot.selectTextByLocator(adultyearElement, adulty[0],
-					"Selected " + adulty[0] + " as birth Year of Adult");
+//			// fill Title
+//			String adultTitleElement = "(//select[@id='ctl00_contentMain_ddlTitle'])";
+//			String[] adulttitle = title.split(",");
+//			QaRobot.selectDropdownValue(adultTitleElement, adulttitle[0],
+//					"Selected " + adulttitle[0] + " as title of Adult");
 
 			// // fill identity number
 			// List<WebElement> id_number_Adult = driver
@@ -580,123 +719,88 @@ public class TestBase {
 			QaRobot.PassValueByLocator(adultLNameElement, adultlastname[i - 1],
 					"Entered " + adultlastname[i - 1] + " as LastName of Adult");
 
-			if (Triptype.equalsIgnoreCase("International")) {
+//			//fill isd
+//			QaBrowser.driver.findElement(By.xpath("//input[@id='txt_ISDAdt"+i+"']")).clear();
+//			String adultisdelement = "(//input[@id='txt_ISDAdt" + i + "'])";
+//			String[] adultisdno = adultisd.split(",");
+//			QaRobot.PassValueByLocator(adultisdelement, adultisdno[i-1],
+//					"Entered " + adultisdno[i-1] + " as ISD of Adult");
+			// fill phone number
+			String adultphelement = "(//input[@id='txt_mobileAdt" + i + "'])";
+			String[] adultphno = adultphone.split(",");
+			QaRobot.PassValueByLocator(adultphelement, adultphno[i - 1],
+					"Entered " + adultphno[i - 1] + " as phone number of Adult");
 
-				// Fill Passport
-				String adultpassportElement = "//input[@id='txt_passportAdt" + i + "']";
-				String[] adultpass = adultpassprot.split(",");
-				QaRobot.PassValueByLocator(adultpassportElement, adultpass[i - 1],
-						"Entered " + adultpass[i - 1] + " as passport number of Adult");
+			// fill dob
+			// QaRobot.ClickOnElement("//input[@id='txt_dobAdt"+i+"']","Clicked on Adult
+			// DOB");
+			QaBrowser.driver.findElement(By.xpath("//input[@id='txt_dobAdt" + i + "']")).click();
+			Thread.sleep(2000);
+			// select year
+			String adultyearElement = "(//select[@title='Change the year'])";
+			String[] adulty = adultyear.split(",");
+			QaRobot.selectTextByLocator(adultyearElement, adulty[i - 1],
+					"Selected " + adulty[i - 1] + " as year of birth of Adult");
+			// select month
+			String adultmonElement = "(//select[@title='Change the month'])";
+			String[] adultm = adultmonth.split(",");
+			QaRobot.selectTextByLocator(adultmonElement, adultm[i - 1],
+					"Selected " + adultm[i - 1] + " as month of birth of Adult");
+			// select day
+			String[] adultday = adultdate.split(",");
+			QaBrowser.driver.findElement(By.xpath("//td/a[text()='" + adultday[i - 1] + "']")).click();
+			// QaRobot.ClickOnElement("//td/a[text()='"+adultday[i-1]+"']","Selected
+			// "+adultday[i-1]+" date of Adult DOB");
 
-				// fill Passport issuing country
-				String adultpasscountryElement = "(//select[@id='ctl00_contentMain_ddl_passCountryAdt'])";
-				String[] adultpc = adultpassportcomp.split(",");
-				QaRobot.selectTextByLocator(adultpasscountryElement, adultpc[0],
-						"Selected " + adultpc[0] + "  as passport country of Adult");
+			// Fill Passport
+			String adultpassportElement = "//input[@id='txt_passportAdt" + i + "']";
+			String[] adultpass = adultpassprot.split(",");
+			QaRobot.PassValueByLocator(adultpassportElement, adultpass[i - 1],
+					"Entered " + adultpass[i - 1] + " as passport number of Adult");
 
-				// FIll Expiry Day
+			// fill Passport issuing country
+			String adultpasscountryElement = "(//select[@id='ddl_passCountryAdt" + i + "'])";
+			String[] adultpc = adultpassportcomp.split(",");
+			QaRobot.selectTextByLocator(adultpasscountryElement, adultpc[i - 1],
+					"Selected " + adultpc[i - 1] + "  as passport country of Adult");
+			Thread.sleep(1000);
 
-				String adultedayElement = "(//select[@id='ctl00_contentMain_txt_ex_dateAdt_ddlDay'])";
-				String[] adulteday = adultedate.split(",");
-				QaRobot.selectTextByLocator(adultedayElement, adulteday[0],
-						"Selected " + adulteday[0] + " as passport expiry day of Adult");
+			// fill edob
+			QaBrowser.driver.findElement(By.xpath("//input[@id='txt_ex_dateAdt" + i + "']")).click();
+			Thread.sleep(2000);
+			// select year
+			String adulteyearElement = "(//select[@title='Change the year'])";
+			String[] adultey = adulteyear.split(",");
+			QaRobot.selectTextByLocator(adulteyearElement, adultey[i - 1],
+					"Selected " + adultey[i - 1] + " as year of birth of Adult");
+			// select month
+			String adultemonElement = "(//select[@title='Change the month'])";
+			String[] adultem = adultemonth.split(",");
+			QaRobot.selectTextByLocator(adultemonElement, adultem[i - 1],
+					"Selected " + adultem[i - 1] + " as month of birth of Adult");
+			// select day
+			String[] adulteday = adultedate.split(",");
+			QaBrowser.driver.findElement(By.xpath("//td/a[text()='" + adulteday[i - 1] + "']")).click();
 
-				// Fill Expiry Month
-				String adultemonthElement = "(//select[@id='ctl00_contentMain_txt_ex_dateAdt_ddlMonth'])";
-				String[] adultemm = adultemonth.split(",");
-				QaRobot.selectDropdownValue(adultemonthElement, adultemm[0],
-						"Selected " + adultemm[0] + "  as passport expiry month of Adult");
+			// fill nationality
 
-				// Fill Expiry Year
+			String adultnationalityElement = "(//select[@id='ddl_nationalityAdt" + i + "'])";
+			String[] adultnat = adultnationality.split(",");
+			QaRobot.selectTextByLocator(adultnationalityElement, adultnat[i - 1],
+					"Selected " + adultnat[i - 1] + "  as nationality of Adult");
 
-				String adulteyearElement = "(//select[@id='ctl00_contentMain_txt_ex_dateAdt_ddlYear'])";
-				String[] adultey = adulteyear.split(",");
-				QaRobot.selectTextByLocator(adulteyearElement, adultey[0],
-						"Selected " + adultey[0] + " as passport expiry year of Adult");
-
-				// fill nationality
-
-				String adultnationalityElement = "(//select[@id='ctl00_contentMain_ddl_nationalityAdt'])";
-				String[] adultnat = adultnationality.split(",");
-				QaRobot.selectTextByLocator(adultnationalityElement, adultnat[0],
-						"Selected " + adultnat[0] + "  as nationality of Adult");
-
-			}
-
-		}
-
-		for (int i = 1; i < a; i++) {
-
-			// fill Title
-			String adultTitleElement1 = "(//select[@id='ctl00_contentMain_ddlTitle_" + i + "'])";
-			String[] adulttitle1 = title.split(",");
-			QaRobot.selectDropdownValue(adultTitleElement1, adulttitle1[i],
-					"Selected " + adulttitle1[i] + " as title of Adult");
-
-			// FIll Day
-
-			String adultdayElement1 = "(//select[@id='ctl00_contentMain_txt_birthDateAdt_ddlDay_" + i + "'])";
-			String[] adultday1 = adultdate.split(",");
-			QaRobot.selectTextByLocator(adultdayElement1, adultday1[i],
-					"Selected " + adultday1[i] + " as birth day of Adult");
-
-			// Fill Month
-			String adultmonthElement1 = "(//select[@id='ctl00_contentMain_txt_birthDateAdt_ddlMonth_" + i + "'])";
-			String[] adultmm1 = adultmonth.split(",");
-			QaRobot.selectDropdownValue(adultmonthElement1, adultmm1[i],
-					"Selected " + adultmm1[i] + " as birth month of Adult");
-
-			// Fill Year
-
-			String adultyearElement1 = "(//select[@id='ctl00_contentMain_txt_birthDateAdt_ddlYear_" + i + "'])";
-			String[] adulty1 = adultyear.split(",");
-			QaRobot.selectTextByLocator(adultyearElement1, adulty1[i],
-					"Selected " + adulty1[i] + " as birth year of Adult");
-
-			if (Triptype.equalsIgnoreCase("International")) {
-
-				// fill passport country
-				String adultpasscountryElement1 = "(//select[@id='ctl00_contentMain_ddl_passCountryAdt_" + i + "'])";
-				String[] adultpc1 = adultpassportcomp.split(",");
-				QaRobot.selectTextByLocator(adultpasscountryElement1, adultpc1[i],
-						"Selected " + adultpc1[i] + "  as passport country of Adult");
-
-				// FIll Expiry Day
-
-				String adultedayElement1 = "(//select[@id='ctl00_contentMain_txt_ex_dateAdt_ddlDay_" + i + "'])";
-				String[] adulteday1 = adultedate.split(",");
-				QaRobot.selectTextByLocator(adultedayElement1, adulteday1[i],
-						"Selected " + adulteday1[i] + " as passport expiry day of Adult");
-
-				// Fill Expiry Month
-				String adultemonthElement1 = "(//select[@id='ctl00_contentMain_txt_ex_dateAdt_ddlMonth_" + i + "'])";
-				String[] adultemm1 = adultemonth.split(",");
-				QaRobot.selectDropdownValue(adultemonthElement1, adultemm1[i],
-						"Selected " + adultemm1[i] + " as passport expiry month of Adult");
-
-				// Fill Expiry Year
-
-				String adulteyearElement1 = "(//select[@id='ctl00_contentMain_txt_ex_dateAdt_ddlYear_" + i + "'])";
-				String[] adultey1 = adulteyear.split(",");
-				QaRobot.selectTextByLocator(adulteyearElement1, adultey1[i],
-						"Selected " + adultey1[i] + " as passport expiry year of Adult");
-
-				// fill nationality
-
-				String adultnationalityElement1 = "(//select[@id='ctl00_contentMain_ddl_nationalityAdt_" + i + "'])";
-				String[] adultnat1 = adultnationality.split(",");
-				QaRobot.selectTextByLocator(adultnationalityElement1, adultnat1[i],
-						"Selected " + adultnat1[i] + " as nationality of Adult");
-
-			}
+			Thread.sleep(2000);
+			// fill title
+			String adultTitleElement = "(//select[@id='ddlTitleAdt" + i + "'])";
+			String[] adulttitle = title.split(",");
+			QaRobot.selectDropdownValue(adultTitleElement, adulttitle[i - 1],
+					"Selected " + adulttitle[i - 1] + " as title of Adult");
 
 		}
-
-		// adult isd
-		QaRobot.PassValue("adt_isd", adultisd, "Entered " + adultisd + " as ISD Number");
-
-		// adult phone
-		QaRobot.PassValue("adt_ph", adultphone, "Entered " + adultphone + " as Phone Number");
+		// adult email id
+		QaRobot.PassValue("fnew_adult_maild", adultmailid);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Entered " + adultmailid + " as Email Address</i></b>");
+		
 
 	}
 
@@ -838,10 +942,13 @@ public class TestBase {
 		}
 
 		// adult isd
-		QaRobot.PassValue("adt_isd", adultisd, "Entered ISD Number");
+		QaRobot.PassValue("adt_isd", adultisd);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Entered ISD Number</i></b>");
+		
 
 		// adult phone
-		QaRobot.PassValue("adt_ph", adultphone, "Entered Phone Number");
+		QaRobot.PassValue("adt_ph", adultphone);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Entered Phone Number</i></b>");
 
 	}
 
@@ -1487,7 +1594,7 @@ public class TestBase {
 				// Fill Age
 				String Dage = "//input[@id='Age_dbl_chd_" + (i + 1) + "']";
 				String[] DA = dbl_cage.split(",");
-				driver.findElement(By.xpath(Dage)).click();
+				QaBrowser.driver.findElement(By.xpath(Dage)).click();
 				QaRobot.PassValueByLocator(Dage, DA[i],
 						"Entered Age of Child without bed for Double Room" + (i + 1) + "");
 
@@ -1536,7 +1643,7 @@ public class TestBase {
 			// Fill Infant Age
 			String IAge = "//input[@id='Age_dbl_inf_" + i + "']";
 			String[] IA = dbl_infant_age.split(",");
-			driver.findElement(By.xpath(IAge)).click();
+			QaBrowser.driver.findElement(By.xpath(IAge)).click();
 			QaRobot.PassValueByLocator(IAge, IA[Stringvalue], "Entered Age of Infant for Double Room" + i + "");
 			Stringvalue++;
 		}
@@ -1593,7 +1700,7 @@ public class TestBase {
 				// Fill Age
 				String Tage = "//input[@id='Age_twin_chd_" + (i + 1) + "']";
 				String[] TA = Twn_cage.split(",");
-				driver.findElement(By.xpath(Tage)).click();
+				QaBrowser.driver.findElement(By.xpath(Tage)).click();
 				QaRobot.PassValueByLocator(Tage, TA[i],
 						"Entered Age of Child without bed for Twin Room" + (i + 1) + "");
 			}
@@ -1642,7 +1749,7 @@ public class TestBase {
 			// // Fill Infant Age
 			String IAge = "//input[@id='Age_twin_inf_" + i + "']";
 			String[] IA = Twn_infant_age.split(",");
-			driver.findElement(By.xpath(IAge)).click();
+			QaBrowser.driver.findElement(By.xpath(IAge)).click();
 			QaRobot.PassValueByLocator(IAge, IA[Stringvalue], "Entered Age of Infant for Twin Room" + i + "");
 			// System.out.println(IA[Stringvalue]);
 
@@ -1701,7 +1808,7 @@ public class TestBase {
 				// Fill Age
 				String Tage = "//input[@id='Age_tpl_chd_" + (i + 1) + "']";
 				String[] TA = Tpl_cage.split(",");
-				driver.findElement(By.xpath(Tage)).click();
+				QaBrowser.driver.findElement(By.xpath(Tage)).click();
 				QaRobot.PassValueByLocator(Tage, TA[i],
 						"Entered Age of Child without bed for Triple Room" + (i + 1) + "");
 			}
@@ -1730,7 +1837,7 @@ public class TestBase {
 			// Fill Infant Age
 			String IAge = "//input[@id='Age_tpl_inf_" + i + "']";
 			String[] IA = Tpl_infant_age.split(",");
-			driver.findElement(By.xpath(IAge)).click();
+			QaBrowser.driver.findElement(By.xpath(IAge)).click();
 			QaRobot.PassValueByLocator(IAge, IA[Stringvalue], "Entered Age of Infant for Triple Room" + i + "");
 
 			Stringvalue++;
@@ -1789,7 +1896,7 @@ public class TestBase {
 				// Fill Age
 				String Tage = "//input[@id='Age_sgl_chd_" + (i + 1) + "']";
 				String[] TA = Sin_cage.split(",");
-				driver.findElement(By.xpath(Tage)).click();
+				QaBrowser.driver.findElement(By.xpath(Tage)).click();
 				QaRobot.PassValueByLocator(Tage, TA[i],
 						"Entered Age of Child without bed for Single Room" + (i + 1) + "");
 			}
@@ -1818,7 +1925,7 @@ public class TestBase {
 			// Fill Infant Age
 			String IAge = "//input[@id='Age_sgl_inf_" + i + "']";
 			String[] IA = Sin_infant_age.split(",");
-			driver.findElement(By.xpath(IAge)).click();
+			QaBrowser.driver.findElement(By.xpath(IAge)).click();
 			QaRobot.PassValueByLocator(IAge, IA[Stringvalue], "Entered Age of Infant for Single Room" + i + "");
 
 			Stringvalue++;
@@ -1876,7 +1983,7 @@ public class TestBase {
 				// Fill Age
 				String Tage = "//input[@id='Age_quad_chd_" + (i + 1) + "']";
 				String[] TA = Qud_cage.split(",");
-				driver.findElement(By.xpath(Tage)).click();
+				QaBrowser.driver.findElement(By.xpath(Tage)).click();
 				QaRobot.PassValueByLocator(Tage, TA[i],
 						"Entered Age of Child without bed for Quad Room" + (i + 1) + "");
 			}
@@ -1905,7 +2012,7 @@ public class TestBase {
 			// Fill Infant Age
 			String IAge = "//input[@id='Age_quad_inf_" + i + "']";
 			String[] IA = Qud_infant_age.split(",");
-			driver.findElement(By.xpath(IAge)).click();
+			QaBrowser.driver.findElement(By.xpath(IAge)).click();
 			QaRobot.PassValueByLocator(IAge, IA[Stringvalue], "Entered Age of Infant for Quad Room" + i + "");
 
 			Stringvalue++;
@@ -1919,15 +2026,24 @@ public class TestBase {
 
 		if (cardmode.equalsIgnoreCase("Credit Card")) {
 
-			QaRobot.ClickOnElement("P_credit", "Clicked on credit card");
+			QaRobot.ClickOnElement("P_credit");
+			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on credit card</i></b>");
+			
 			if (type.equalsIgnoreCase("Master Card")) {
 
-				QaRobot.ClickOnElement("P_credit_master", "clicked card type master card");
-				QaRobot.PassValue("P_cardno", cardno, "Entered Card Number");
-				QaRobot.PassValue("P_cardname", cardname, "Entered Card Holder Name");
+				QaRobot.ClickOnElement("P_credit_master");
+				QaExtentReport.test.log(Status.INFO,"<b><i>clicked card type master card</i></b>");
+				
+				QaRobot.PassValue("P_cardno", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Number</i></b>");
+				
+				QaRobot.PassValue("P_cardname", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Holder Name</i></b>");
+				
 				QaRobot.selectValueFromDropdown("P_cardmonth", cardmonth, "selected card Month");
 				QaRobot.selectValueFromDropdown("P_cardyear", cardyear, "selected card Year");
-				QaRobot.PassValue("P_cvv", cardcvv, "Entered card CVV Number");
+				QaRobot.PassValue("P_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered card CVV Number</i></b>");
 			}
 
 			// else if (type.equalsIgnoreCase("visa")) {
@@ -1945,24 +2061,37 @@ public class TestBase {
 			// }
 		} else if (cardmode.equalsIgnoreCase("Debit Card")) {
 
-			QaRobot.ClickOnElement("P_debit", "Clicked on debit card");
+			QaRobot.ClickOnElement("P_debit");
+			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on debit card</i></b>");
 			if (type.equalsIgnoreCase("Master Card")) {
 
-				QaRobot.ClickOnElement("P_debit_master", "clicked card type master card");
-				QaRobot.PassValue("P_cardno", cardno, "Entered Card Number");
-				QaRobot.PassValue("P_cardname", cardname, "Entered Card Holder Name");
+				QaRobot.ClickOnElement("P_debit_master");
+				QaExtentReport.test.log(Status.INFO,"<b><i>clicked card type master card</i></b>");
+				
+				QaRobot.PassValue("P_cardno", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Number</i></b>");
+				
+				QaRobot.PassValue("P_cardname", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Holder Name</i></b>");
+				
 				QaRobot.selectValueFromDropdown("P_cardmonth", cardmonth, "selected card Month");
 				QaRobot.selectValueFromDropdown("P_cardyear", cardyear, "selected card Year");
-				QaRobot.PassValue("P_cvv", cardcvv, "Entered card CVV Number");
+				QaRobot.PassValue("P_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered card CVV Number</i></b>");
 
 			} else if (type.equalsIgnoreCase("VISA")) {
 
 				QaRobot.selectTextFromDropdown("P_debit_visa", type, "select card type master card");
-				QaRobot.PassValue("P_cardno", cardno, "Entered Card Number");
-				QaRobot.PassValue("P_cardname", cardname, "Entered Card Holder Name");
+				QaRobot.PassValue("P_cardno", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Number</i></b>");
+				
+				QaRobot.PassValue("P_cardname", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Holder Name</i></b>");
+				
 				QaRobot.selectValueFromDropdown("P_cardmonth", cardmonth, "selected card Month");
 				QaRobot.selectValueFromDropdown("P_cardyear", cardyear, "selected card Year");
-				QaRobot.PassValue("P_cvv", cardcvv, "Entered card CVV Number");
+				QaRobot.PassValue("P_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered card CVV Number</i></b>");
 
 			}
 
@@ -1973,14 +2102,16 @@ public class TestBase {
 			throws Exception {
 
 		// Billing Address
-		QaRobot.PassValue("P_bil_add", baddress, "Entered Billing Address");
+		QaRobot.PassValue("P_bil_add", baddress);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Entered Billing Address</i></b>");
 
 		// billing city
 		listofautosuggestion(By.xpath("//div[@id='divHTCity']/p"), bcity, bcityauto,
 				By.xpath("//input[@id='clientCity']"));
 
 		// Select billing state
-		QaRobot.PassValue("P_bil_state", bstate, "Entered billing state");
+		QaRobot.PassValue("P_bil_state", bstate);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Entered billing state</i></b>");
 
 		// Select billing country
 		QaRobot.selectTextFromDropdown("P_bil_country", bcountry, "Slected billing Country");
@@ -1990,14 +2121,14 @@ public class TestBase {
 	public static void ResultnotFound(String text) throws Exception {
 		// If not getting result
 
-		test.log(Status.INFO, text);
+		QaExtentReport.test.log(Status.INFO, text);
 
 		Thread.sleep(1000);
 
 		// take screenshot for result page
 
-		String resultnotfound = Logger.takeScreenshot(driver, "resultnotfound");
-		test.log(Status.INFO, "Screenshot for Resultnotfound",
+		String resultnotfound = Logger.takeScreenshot(QaBrowser.driver, "resultnotfound");
+		QaExtentReport.test.log(Status.INFO, "Screenshot for Resultnotfound",
 				MediaEntityBuilder.createScreenCaptureFromPath(resultnotfound).build());
 
 		// ClickOnElement("Go_Home", "clicked on Home Page");
@@ -2033,7 +2164,7 @@ public class TestBase {
 
 			// FIll DOB
 
-			driver.findElement(By.xpath("//input[@id='txt_dobAdt" + i + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//input[@id='txt_dobAdt" + i + "']")).click();
 
 			Thread.sleep(1000);
 
@@ -2051,7 +2182,7 @@ public class TestBase {
 			// FIll Day
 
 			String[] adultday = adultdate.split(",");
-			driver.findElement(By.xpath("//a[text()='" + adultday[i - 1] + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//a[text()='" + adultday[i - 1] + "']")).click();
 
 			// // fill identity number
 			// List<WebElement> id_number_Adult = driver
@@ -2068,7 +2199,7 @@ public class TestBase {
 			// System.out.print("No identity number for adult");
 			// }
 			Thread.sleep(500);
-			driver.findElement(By.xpath("(//span[@class='pr-1 black_color ng-binding'])[" + i + "]")).click();
+			QaBrowser.driver.findElement(By.xpath("(//span[@class='pr-1 black_color ng-binding'])[" + i + "]")).click();
 			Thread.sleep(500);
 
 			// Fill Passport
@@ -2084,7 +2215,7 @@ public class TestBase {
 
 			// clicked on Expiry Dob
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//input[@id='txt_ex_dateAdt" + i + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//input[@id='txt_ex_dateAdt" + i + "']")).click();
 			Thread.sleep(500);
 
 			// Fill Year
@@ -2101,7 +2232,7 @@ public class TestBase {
 			// FIll Day
 
 			String[] adulteday = adultedate.split(",");
-			driver.findElement(By.xpath("//a[text()='" + adulteday[i - 1] + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//a[text()='" + adulteday[i - 1] + "']")).click();
 
 			// fill nationality
 
@@ -2113,28 +2244,26 @@ public class TestBase {
 
 		// Adult Mailid
 
-		QaRobot.PassValue("fnew_adult_maild", adultmailid, "Entered MailID");
+		QaRobot.PassValue("fnew_adult_maild", adultmailid);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Entered MailID</i></b>");
 
 		// adult isd
-		QaRobot.PassValue("fnew_adt_isd", adultisd, "Entered ISD Number");
+		QaRobot.PassValue("fnew_adt_isd", adultisd);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Entered ISD Number</i></b>");
 
 		// adult phone
-		QaRobot.PassValue("fnew_adt_ph", adultphone, "Entered Phone Number");
+		QaRobot.PassValue("fnew_adt_ph", adultphone);
+		QaExtentReport.test.log(Status.INFO,"<b><i>Entered Phone Number</i></b>");
 
 	}
 
 	public static void childNewCheckout(String child, String ctitle, String childfname, String childlname,
-			String childmonth, String childyear, String childdate, String childidno, String childpassprot,
-			String childpassportcomp, String childemonth, String childeyear, String childedate, String childnationality)
+			String childdate, String childmonth, String childyear, String childidno, String childpassprot,
+			String childpassportcomp, String childedate, String childemonth, String childeyear, String childnationality)
 			throws Exception {
 
 		int a = Integer.parseInt(child);
 		for (int i = 1; i <= a; i++) {
-
-			// fill Title
-			String childTitleElement = "(//select[@id='ddlTitleChd" + i + "'])";
-			String[] childtitle = ctitle.split(",");
-			QaRobot.selectDropdownValue(childTitleElement, childtitle[i - 1], "Selected Title For Child");
 
 			// Fill First name
 			String childNameElement = "//input[@id='txt_firstNameChd" + i + "']";
@@ -2149,42 +2278,28 @@ public class TestBase {
 
 			// FIll DOB
 
-			driver.findElement(By.xpath("//input[@id='txt_dobChd" + i + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//input[@id='txt_dobChd" + i + "']")).click();
 
 			Thread.sleep(1000);
 
 			// Fill Year
 
-			String childyearElement = "(//select[@class='datepick-month-year'])[2]";
+			String childyearElement = "//select[@title='Change the year']";
 			String[] childy = childyear.split(",");
 			QaRobot.selectTextByLocator(childyearElement, childy[i - 1], "Selected Year For Child");
 
 			// Fill Month
-			String childmonthElement = "(//select[@class='datepick-month-year'])[1]";
+			String childmonthElement = "//select[@title='Change the month']";
 			String[] childmm = childmonth.split(",");
 			QaRobot.selectTextByLocator(childmonthElement, childmm[i - 1], "Selected Month For Child");
 
 			// FIll Day
 
 			String[] childday = childdate.split(",");
-			driver.findElement(By.xpath("//a[text()='" + childday[i - 1] + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//a[text()='" + childday[i - 1] + "']")).click();
 
-			// // fill identity number
-			// List<WebElement> id_number_Adult = driver
-			// .findElements(By.xpath("//input[@id='txt_IdentityNoAdt" + i +
-			// "']"));
-			//
-			// if (id_number_Adult.size() > 0) {
-			// String[] idno = adultidno.split(",");
-			// // PassValueByLocator(id_number_Adult,idno[i-1],"Selected
-			// // Identity no For Adult"+i+"");
-			// driver.findElement(By.xpath("//input[@id='txt_IdentityNoAdt" + i
-			// + "']")).sendKeys(idno[i - 1]);
-			// } else {
-			// System.out.print("No identity number for adult");
-			// }
 			Thread.sleep(500);
-			driver.findElement(By.xpath("(//span[@class='pr-1 black_color'])[" + i + "]")).click();
+			QaBrowser.driver.findElement(By.xpath("(//span[@class='pr-1 black_color'])[" + i + "]")).click();
 			Thread.sleep(500);
 
 			// Fill Passport
@@ -2201,24 +2316,24 @@ public class TestBase {
 
 			// clicked on Expiry Dob
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//input[@id='txt_ex_dateChd" + i + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//input[@id='txt_ex_dateChd" + i + "']")).click();
 			Thread.sleep(500);
 
 			// Fill Year
 
-			String childeyearElement = "(//select[@class='datepick-month-year'])[2]";
+			String childeyearElement = "(//select[@title='Change the year'])";
 			String[] childey = childeyear.split(",");
 			QaRobot.selectTextByLocator(childeyearElement, childey[i - 1], "Selected Expiry Year For Child");
 
 			// Fill Month
-			String childemonthElement = "(//select[@class='datepick-month-year'])[1]";
+			String childemonthElement = "(//select[@title='Change the month'])";
 			String[] childemm = childemonth.split(",");
 			QaRobot.selectTextByLocator(childemonthElement, childemm[i - 1], "Selected Expiry Month For Child");
 
 			// FIll Day
 
 			String[] childeday = childedate.split(",");
-			driver.findElement(By.xpath("//a[text()='" + childeday[i - 1] + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//a[text()='" + childeday[i - 1] + "']")).click();
 
 			// fill nationality
 
@@ -2226,22 +2341,21 @@ public class TestBase {
 			String[] childnat = childnationality.split(",");
 			QaRobot.selectTextByLocator(childnationalityElement, childnat[i - 1], "Selected Nationality For Child");
 
+			// fill Title
+			String childTitleElement = "(//select[@id='ddlTitleChd" + i + "'])";
+			String[] childtitle = ctitle.split(",");
+			QaRobot.selectDropdownValue(childTitleElement, childtitle[i - 1], "Selected Title For Child");
 		}
 	}
 
 	public static void infantNewCheckout(String child, String infant, String ititle, String infantfname,
-			String infantlname, String infantmonth, String infantyear, String infantdate, String infantidno,
-			String infantTravelling, String infantpassprot, String infantpassportcomp, String infantemonth,
-			String infanteyear, String infantedate, String infantnationality) throws Exception {
+			String infantlname, String infantdate, String infantmonth, String infantyear, String infantidno,
+			String infantTravelling, String infantpassprot, String infantpassportcomp, String infantedate,
+			String infantemonth, String infanteyear, String infantnationality) throws Exception {
 
 		int c = Integer.parseInt(child);
 		int a = Integer.parseInt(infant);
 		for (int i = 1; i <= a; i++) {
-
-			// fill Title
-			String infantTitleElement = "(//select[@id='ddlTitleInf" + i + "'])";
-			String[] infanttitle = ititle.split(",");
-			QaRobot.selectDropdownValue(infantTitleElement, infanttitle[i - 1], "Selected Title For infant");
 
 			// Fill First name
 			String infantNameElement = "//input[@id='txt_firstNameInf" + i + "']";
@@ -2256,25 +2370,25 @@ public class TestBase {
 
 			// FIll DOB
 
-			driver.findElement(By.xpath("//input[@id='txt_dobInf" + i + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//input[@id='txt_dobInf" + i + "']")).click();
 
 			Thread.sleep(1000);
 
 			// Fill Year
 
-			String infantyearElement = "(//select[@class='datepick-month-year'])[2]";
+			String infantyearElement = "(//select[@title='Change the year'])";
 			String[] infanty = infantyear.split(",");
 			QaRobot.selectTextByLocator(infantyearElement, infanty[i - 1], "Selected Year For infant");
 
 			// Fill Month
-			String infantmonthElement = "(//select[@class='datepick-month-year'])[1]";
+			String infantmonthElement = "(//select[@title='Change the month'])";
 			String[] infantmm = infantmonth.split(",");
 			QaRobot.selectTextByLocator(infantmonthElement, infantmm[i - 1], "Selected Month For infant");
 
 			// FIll Day
 
 			String[] infantday = infantdate.split(",");
-			driver.findElement(By.xpath("//a[text()='" + infantday[i - 1] + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//a[text()='" + infantday[i - 1] + "']")).click();
 
 			// Fill travel with
 			String infantTravelElement1 = "//select[@id='ddl_travell_with" + i + "']";
@@ -2298,11 +2412,11 @@ public class TestBase {
 			// }
 			Thread.sleep(500);
 
-			if (c > 0) {
-				driver.findElement(By.xpath("(//span[@class='pr-1 black_color'])[" + (c + i) + "]")).click();
-			} else {
-				driver.findElement(By.xpath("(//span[@class='pr-1 black_color'])[" + i + "]")).click();
-			}
+//			if (c > 0) {
+//				QaBrowser.driver.findElement(By.xpath("(//span[@class='pr-1 black_color'])[" + (c + i) + "]")).click();
+//			} else {
+//				QaBrowser.driver.findElement(By.xpath("(//span[@class='pr-1 black_color'])[" + i + "]")).click();
+//			}
 
 			Thread.sleep(500);
 
@@ -2321,30 +2435,35 @@ public class TestBase {
 
 			// clicked on Expiry Dob
 			Thread.sleep(500);
-			driver.findElement(By.xpath("//input[@id='txt_ex_dateInf" + i + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//input[@id='txt_ex_dateInf" + i + "']")).click();
 			Thread.sleep(500);
 
 			// Fill Year
 
-			String infanteyearElement = "(//select[@class='datepick-month-year'])[2]";
+			String infanteyearElement = "(//select[@title='Change the year'])";
 			String[] infantey = infanteyear.split(",");
 			QaRobot.selectTextByLocator(infanteyearElement, infantey[i - 1], "Selected Expiry Year For infant");
 
 			// Fill Month
-			String infantemonthElement = "(//select[@class='datepick-month-year'])[1]";
+			String infantemonthElement = "(//select[@title='Change the month'])";;
 			String[] infantemm = infantemonth.split(",");
 			QaRobot.selectTextByLocator(infantemonthElement, infantemm[i - 1], "Selected Expiry Month For infant");
 
 			// FIll Day
 
 			String[] infanteday = infantedate.split(",");
-			driver.findElement(By.xpath("//a[text()='" + infanteday[i - 1] + "']")).click();
+			QaBrowser.driver.findElement(By.xpath("//a[text()='" + infanteday[i - 1] + "']")).click();
 
 			// fill nationality
 
 			String infantnationalityElement = "(//select[@id='ddl_nationalityInf" + i + "'])";
 			String[] infantnat = infantnationality.split(",");
 			QaRobot.selectTextByLocator(infantnationalityElement, infantnat[i - 1], "Selected Nationality For infant");
+			
+			// fill Title
+			String infantTitleElement = "(//select[@id='ddlTitleInf" + i + "'])";
+			String[] infanttitle = ititle.split(",");
+			QaRobot.selectDropdownValue(infantTitleElement, infanttitle[i - 1], "Selected Title For infant");
 
 		}
 	}
@@ -2355,46 +2474,78 @@ public class TestBase {
 
 		if (cardmode.equalsIgnoreCase("Credit Card")) {
 
-			QaRobot.ClickOnElement("newchk_credit_card", "Clicked on credit card");
+			QaRobot.ClickOnElement("newchk_credit_card");
+			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on credit card</i></b>");
+			
 			if (type.equalsIgnoreCase("Master Card")) {
 
-				QaRobot.ClickOnElement("newchk_creditmaster", "select master card type ");
-				QaRobot.PassValue("newchk_ccard_number", cardno, "Entered Card Number");
-				QaRobot.PassValue("newchk_ccard_name", cardname, "Entered Card Holder Name");
+				QaRobot.ClickOnElement("newchk_creditmaster");
+				QaExtentReport.test.log(Status.INFO,"<b><i>select master card type </i></b>");
+				
+				QaRobot.PassValue("newchk_ccard_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Number</i></b>");
+				
+				QaRobot.PassValue("newchk_ccard_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Holder Name</i></b>");
+				
 				QaRobot.selectTextFromDropdown("newchk_ccard_month", cardmonth, "selected card Month");
 				QaRobot.selectTextFromDropdown("newchk_ccard_year", cardyear, "selected card Year");
-				QaRobot.PassValue("newchk_ccard_cvv", cardcvv, "Entered card CVV Number");
+				QaRobot.PassValue("newchk_ccard_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered card CVV Number</i></b>");
 
 			} else if (type.equalsIgnoreCase("visa")) {
 
-				QaRobot.ClickOnElement("newchk_creditvisa", "select visa card type ");
-				QaRobot.PassValue("card_number", cardno, "Entered Card Number");
-				QaRobot.PassValue("card_name", cardname, "Entered Card Holder Name");
-				QaRobot.selectTextFromDropdown("card_month", cardmonth, "selected card Month");
-				QaRobot.selectTextFromDropdown("card_year", cardyear, "selected card Year");
-				QaRobot.PassValue("card_cvv", cardcvv, "Entered card CVV Number");
+				QaRobot.ClickOnElement("newchk_creditvisa");
+				QaExtentReport.test.log(Status.INFO,"<b><i>select visa card type </i></b>");
+				
+				QaRobot.PassValue("newchk_ccard_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Number</i></b>");
+				
+				QaRobot.PassValue("newchk_ccard_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Holder Name</i></b>");
+				
+				QaRobot.selectTextFromDropdown("newchk_ccard_month", cardmonth, "selected card Month");
+				QaRobot.selectTextFromDropdown("newchk_ccard_year", cardyear, "selected card Year");
+				QaRobot.PassValue("newchk_ccard_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered card CVV Number</i></b>");
 
 			}
 		} else if (cardmode.equalsIgnoreCase("Debit Card")) {
 
-			QaRobot.ClickOnElement("newchk_debit_card", "Clicked on debit card");
+			QaRobot.ClickOnElement("newchk_debit_card");
+			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on debit card</i></b>");
+			
 			if (type.equalsIgnoreCase("Master Card")) {
 
-				QaRobot.ClickOnElement("newchk_debitmaster", "select master card type ");
-				QaRobot.PassValue("newchk_dcard_number", cardno, "Entered Card Number");
-				QaRobot.PassValue("newchk_dcard_name", cardname, "Entered Card Holder Name");
+				QaRobot.ClickOnElement("newchk_debitmaster");
+				QaExtentReport.test.log(Status.INFO,"<b><i>select master card type </i></b>");
+				
+				QaRobot.PassValue("newchk_dcard_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Number</i></b>");
+				
+				QaRobot.PassValue("newchk_dcard_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Holder Name</i></b>");
+				
 				QaRobot.selectTextFromDropdown("newchk_dcard_month", cardmonth, "selected card Month");
 				QaRobot.selectTextFromDropdown("newchk_dcard_year", cardyear, "selected card Year");
-				QaRobot.PassValue("newchk_dcard_cvv", cardcvv, "Entered card CVV Number");
+				QaRobot.PassValue("newchk_dcard_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered card CVV Number</i></b>");
 
 			} else if (type.equalsIgnoreCase("visa")) {
 
-				QaRobot.ClickOnElement("newchk_debitvisa", "select visa card type ");
-				QaRobot.PassValue("newchk_dcard_number", cardno, "Entered Card Number");
-				QaRobot.PassValue("newchk_dcard_name", cardname, "Entered Card Holder Name");
+				QaRobot.ClickOnElement("newchk_debitvisa");
+				QaExtentReport.test.log(Status.INFO,"<b><i>select visa card type </i></b>");
+				
+				QaRobot.PassValue("newchk_dcard_number", cardno);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Number</i></b>");
+				
+				QaRobot.PassValue("newchk_dcard_name", cardname);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered Card Holder Name</i></b>");
+				
 				QaRobot.selectTextFromDropdown("newchk_dcard_month", cardmonth, "selected card Month");
 				QaRobot.selectTextFromDropdown("newchk_dcard_year", cardyear, "selected card Year");
-				QaRobot.PassValue("newchk_dcard_cvv", cardcvv, "Entered card CVV Number");
+				QaRobot.PassValue("newchk_dcard_cvv", cardcvv);
+				QaExtentReport.test.log(Status.INFO,"<b><i>Entered card CVV Number</i></b>");
 
 			}
 
@@ -2427,10 +2578,10 @@ public class TestBase {
 			// PassValue("new_chk_billing_address_debit", baddress, "Entered
 			// Billing Address");
 
-			// billing city
-			// listofautosuggestion(By.xpath("//div[@id='divCityDC']/p"), bcity,
-			// bcityauto,
-			// By.xpath("(//input[@id='txtBillingCity'])[2]"));
+//			// billing city
+//			 listofautosuggestion(By.xpath("//div[@id='divCityCC']/p"), bcity,
+//			 bcityauto,
+//			 By.xpath("//input[@id='txtBillingCity']"));
 
 			// Select billing state
 			QaRobot.selectTextFromDropdown("new_chk_billing_state_debit", bstate, "Entered billing state");

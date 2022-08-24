@@ -1,12 +1,24 @@
 package utilities;
 
+import org.openqa.selenium.interactions.Actions;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.Status;
 
@@ -16,7 +28,11 @@ import Base.TestBase;
  * @author Anjali.Jain
  *
  */
-public class QaRobot {
+public class QaRobot extends QaExtentReport
+
+
+{
+	static SoftAssert softassert = new SoftAssert();
 
 	/**
 	 * 
@@ -25,55 +41,87 @@ public class QaRobot {
 	 * @throws Exception
 	 */
 	// *** This Function returns the Locators in the Web Application *****
-	public static WebElement getLocator(String locator) throws Exception {
+	public static WebElement getLocator(String locator) throws Exception 
+	{
 		String locatorType = locator.split(":")[0];
 		String locatorValue = locator.split(":")[1];
 	
-		if (locatorType.toLowerCase().equals("xpath"))
-			return TestBase.driver.findElement(By.xpath(locatorValue));
+		if (locatorType.toLowerCase().equals("xpath")) 
+			return QaBrowser.driver.findElement(By.xpath(locatorValue));
 		else if (locatorType.toLowerCase().equals("id"))
-			return TestBase.driver.findElement(By.id(locatorValue));
+			return QaBrowser.driver.findElement(By.id(locatorValue));
 		else if (locatorType.toLowerCase().equals("class"))
-			return TestBase.driver.findElement(By.className(locatorValue));
+			return QaBrowser.driver.findElement(By.className(locatorValue)); 
 		else if (locatorType.toLowerCase().equals("tag"))
-			return TestBase.driver.findElement(By.tagName(locatorValue));
+			return QaBrowser.driver.findElement(By.tagName(locatorValue));
 		else if (locatorType.toLowerCase().equals("link"))
-			return TestBase.driver.findElement(By.linkText(locatorValue));
+			return QaBrowser.driver.findElement(By.linkText(locatorValue));
 		else if (locatorType.toLowerCase().equals("css"))
-			return TestBase.driver.findElement(By.cssSelector(locatorValue));
+			return QaBrowser.driver.findElement(By.cssSelector(locatorValue));
 		else if (locatorType.toLowerCase().equals("name"))
-			return TestBase.driver.findElement(By.name(locatorValue));
+			return QaBrowser.driver.findElement(By.name(locatorValue));
 		else
 			throw new Exception("Unknown Locator Type" + locatorType);
 	}
+	
+	public static void ScreenshotMethod(String text,String text1) throws IOException 
+	{
+		Date date = new Date();
+		DateFormat d = new SimpleDateFormat("MM-dd-yy & HH-mm-ss");
+		String NewDate = d.format(date);
+		
+		TakesScreenshot ts = (TakesScreenshot)QaBrowser.driver;
+		File Source = ts.getScreenshotAs(OutputType.FILE);
+		File Dest = new File("D:\\Automation\\projectQuadlabs\\Screenshot\\"+NewDate+text+".jpg");
+		FileUtils.copyFile(Source, Dest);
+		QaExtentReport.test.log(Status.INFO, text1);
+	}
+	
 
 	public static WebElement getWebElement(String locator) throws Exception {
 		return getLocator(TestBase.obj.getProperty(locator));
 	}
+	public static void mouseHover(String sourceXpath,String targetXpath)
+	{
+		Actions action =new Actions(QaBrowser.driver);
+		WebElement mainMenu=QaBrowser.driver.findElement(By.xpath(sourceXpath));
+		WebElement subMenu=QaBrowser.driver.findElement(By.xpath(targetXpath));
+		action.moveToElement(mainMenu);
+		action.moveToElement(subMenu).click().build().perform();;
+		
+	}
+	
+	public static void getvalue() 
+	{
+		WebElement getvalue = QaBrowser.driver.findElement(By.xpath("//input[@id='ctl00_hdnUId']"));
+		getvalue.getAttribute("Id");
+	}
 
 	// click on element
-	public static void ClickOnElement(String locator2, String text) throws Exception {
+	public static void ClickOnElement(String locator2) throws Exception {
 	
-		WebElement element = getWebElement(locator2);
-	
+		//QaBrowser.driver.findElement(By.xpath(TestBase.obj.getProperty(locator2))).click();
+		WebElement element= getWebElement(locator2);
 		element.click();
+		
 	
-		TestBase.test.log(Status.INFO, text);
+//		QaExtentReport.test.log(Status.INFO, text);
 	
 	}
 
 	//send the value on textbox
-	public static void PassValue(String Locator, String value, String text) throws Exception {
+	public static void PassValue(String Locator, String value) throws Exception {
 	
 		getWebElement(Locator).sendKeys(value);
-		TestBase.test.log(Status.INFO, text);
+		
+//		test.log(Status.INFO, Text);
 	
 	}
 
 	public static void PassValueByLocator(String Locator, String value, String text) throws Exception {
 	
-		TestBase.driver.findElement(By.xpath(Locator)).sendKeys(value);
-		TestBase.test.log(Status.INFO, text);
+		QaBrowser.driver.findElement(By.xpath(Locator)).sendKeys(value);
+		QaExtentReport.test.log(Status.INFO, text);
 	}
 
 	/**
@@ -81,7 +129,7 @@ public class QaRobot {
 	 * @param time
 	 */
 	public static void explicitwaitalert(int time) {
-		TestBase.wait = new WebDriverWait(TestBase.driver, time);
+		TestBase.wait = new WebDriverWait(QaBrowser.driver, time);
 		TestBase.wait.until(ExpectedConditions.alertIsPresent());
 	
 	}
@@ -91,8 +139,13 @@ public class QaRobot {
 	 * @param time
 	 */
 	public static void impliwait(int time) {
-		TestBase.driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
+		QaBrowser.driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
 	}
+	
+	public static void pageLoad(int time) {
+		QaBrowser.driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
+	}
+	
 
 	/**
 	 *  Explicit Wait element to be clickable
@@ -100,7 +153,7 @@ public class QaRobot {
 	 * @param e
 	 */
 	public static void explicitwaitclickable(int time, By e) {
-		TestBase.wait = new WebDriverWait(TestBase.driver, time);
+		TestBase.wait = new WebDriverWait(QaBrowser.driver, time);
 		TestBase.wait.until(ExpectedConditions.elementToBeClickable(e));
 	}
 
@@ -110,7 +163,7 @@ public class QaRobot {
 	 * @param e
 	 */
 	public static void explicitwaitinvisible(int time, By e) {
-		TestBase.wait = new WebDriverWait(TestBase.driver, time);
+		TestBase.wait = new WebDriverWait(QaBrowser.driver, time);
 		TestBase.wait.until(ExpectedConditions.invisibilityOfElementLocated(e));
 	
 	}
@@ -121,14 +174,20 @@ public class QaRobot {
 	 * @param e
 	 */
 	public static void explicitwaitvisible(int time, By e) {
-		TestBase.wait = new WebDriverWait(TestBase.driver, time);
+		TestBase.wait = new WebDriverWait(QaBrowser.driver,time);
 		TestBase.wait.until(ExpectedConditions.visibilityOfElementLocated(e));
 	
+	}
+	
+	public static void explicitwait(int time, By e)
+	{
+		WebDriverWait wait1 = new WebDriverWait(QaBrowser.driver,time);
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(e));
 	}
 
 	/**
 	 *  select value from drop down by value
-	 * @param locator1
+	 * @param locator1r
 	 * @param value
 	 * @param text
 	 * @throws Exception
@@ -138,26 +197,26 @@ public class QaRobot {
 		WebElement element = getWebElement(locator1);
 		Select s = new Select(element);
 		s.selectByValue(value);
-		TestBase.test.log(Status.INFO, text);
+		QaExtentReport.test.log(Status.INFO, text);
 	
 	}
 
 	public static void selectValueByLocator(String locator1, String value, String text) throws Exception {
 	
-		WebElement element = TestBase.driver.findElement(By.xpath(locator1));
+		WebElement element = QaBrowser.driver.findElement(By.xpath(locator1));
 		Select s = new Select(element);
 		s.selectByValue(value);
-		TestBase.test.log(Status.INFO, text);
+		QaExtentReport.test.log(Status.INFO, text);
 	
 	}
 
 	// select locator
-	public static void selectTextByLocator(String locator1, String value, String text) throws Exception {
+	public static void selectTextByLocator(String xpath, String value, String text) throws Exception {
 	
-		WebElement element = TestBase.driver.findElement(By.xpath(locator1));
+		WebElement element = QaBrowser.driver.findElement(By.xpath(xpath));
 		Select s = new Select(element);
 		s.selectByVisibleText(value);
-		TestBase.test.log(Status.INFO, text);
+		QaExtentReport.test.log(Status.INFO, text);
 	
 	}
 
@@ -173,14 +232,14 @@ public class QaRobot {
 		WebElement element = getWebElement(locator1);
 		Select s = new Select(element);
 		s.selectByVisibleText(value);
-		TestBase.test.log(Status.INFO, text);
+		QaExtentReport.test.log(Status.INFO, text);
 	
 	}
 
 	// select locator
 	public static void selectDropdownValue(String locator1, String value, String text) throws Exception {
 	
-		WebElement element = TestBase.driver.findElement(By.xpath(locator1));
+		WebElement element = QaBrowser.driver.findElement(By.xpath(locator1));
 		Select dropdown = new Select(element);
 	
 		// Get all options
@@ -197,10 +256,22 @@ public class QaRobot {
 	
 				dropdown.selectByIndex(j);
 	
-				TestBase.test.log(Status.INFO, text);
+				QaExtentReport.test.log(Status.INFO, text);
 			}
 		}
 	
+	}
+	public static void CompareFareValue(String ActualValue, String ExpectedValue, String Msg) throws Exception {
+
+		softassert.assertEquals(ActualValue, ExpectedValue, Msg);
+		if (ActualValue.equalsIgnoreCase(ExpectedValue)) {
+			QaExtentReport.test.log(Status.PASS, "Verification Passed for value of " + Msg);
+		}
+
+		else {
+			QaExtentReport.test.log(Status.FAIL, "Verification Failed for value of " + Msg);
+			throw new Exception("Verification Failed for value of " + Msg);
+		}
 	}
 
 	// select locator
@@ -223,10 +294,15 @@ public class QaRobot {
 	
 				dropdown.selectByIndex(j);
 	
-				TestBase.test.log(Status.INFO, text);
+				QaExtentReport.test.log(Status.INFO, text);
 			}
 		}
 	
+	}
+
+	public static void ClickOnElement(Object object) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

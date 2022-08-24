@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import Base.TestBase;
-import TestScript.Sighseeing.Sighseeing;
+import TestScript.Sighseeing123.Sighseeing;
 import utilities.Logger;
 import utilities.QaRobot;
 

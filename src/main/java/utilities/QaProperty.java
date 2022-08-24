@@ -26,7 +26,7 @@ public class QaProperty {
 	}
 	
 	/**
-	 * get boolean propery
+	 * get boolean property
 	 * @param propKey
 	 * @param defaultValue
 	 * @return

@@ -7,24 +7,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class QaBrowser {
 
-	public WebDriver driver;
+
+public class QaBrowser extends QaRobot {
+
+	public static WebDriver driver;
 	public String browser = QaEnvironment.getProperty("browser","chrome");
 	public String url = QaEnvironment.getProperty("sut.url");
-
-	public QaBrowser() {
-	}
 
 	public WebDriver launchBrowser() throws Exception {
 		if (this.url == null || this.url.isBlank() || this.url.isEmpty()) {
 			throw new Exception("url is null");
 		}
 		quitBrowser();
-		if (this.browser.equalsIgnoreCase("firefox")) {
+		if (this.browser.equalsIgnoreCase("gecko")) {
 			luanchFirefox();
 
 		} else if (this.browser.equalsIgnoreCase("chrome")) {
@@ -51,22 +49,34 @@ public class QaBrowser {
 	}
 
 	@SuppressWarnings("deprecation")
-	private WebDriver launchChrome() throws MalformedURLException {
+	private void launchChrome() throws MalformedURLException {
+
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\lib\\chromedriver.exe");
-		DesiredCapabilities dc = DesiredCapabilities.chrome();
-		dc.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		driver = new ChromeDriver(dc);
-		return driver;
+		//DesiredCapabilities dc = DesiredCapabilities.chrome();
+		//dc.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		driver = (WebDriver) new ChromeDriver();
+		
 	}
 
+//	private WebDriver luanchFirefox() {
+//		System.setProperty("webdriver.firefox.marionette", System.getProperty("user.dir") + "\\lib\\geckodriver1.exe");
+//		//DesiredCapabilities dc = DesiredCapabilities.firefox();
+//		//dc.setCapability("marionette", true);
+////		FirefoxProfile profile = new FirefoxProfile();
+////		profile.setAcceptUntrustedCertificates(true);
+////		profile.setAssumeUntrustedCertificateIssuer(false);
+//		driver = (WebDriver) new FirefoxDriver();
+//		return driver;
+//	}
+	
 	private WebDriver luanchFirefox() {
-		System.setProperty("webdriver.firefox.marionette", System.getProperty("user.dir") + "\\lib\\geckodriver.exe");
-		DesiredCapabilities dc = DesiredCapabilities.firefox();
-		dc.setCapability("marionette", true);
-		FirefoxProfile profile = new FirefoxProfile();
-		profile.setAcceptUntrustedCertificates(true);
-		profile.setAssumeUntrustedCertificateIssuer(false);
-		driver = new FirefoxDriver();
+		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\lib\\geckodriver1.exe");
+//		DesiredCapabilities dc = DesiredCapabilities.firefox();
+//		dc.setCapability("marionette", true);
+//		FirefoxProfile profile = new FirefoxProfile();
+//		profile.setAcceptUntrustedCertificates(true);
+//		profile.setAssumeUntrustedCertificateIssuer(false);
+		driver = (WebDriver) new FirefoxDriver();
 		return driver;
 	}
 

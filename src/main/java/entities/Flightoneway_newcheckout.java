@@ -16,6 +16,7 @@ import TestScript.RoundTrip.Flightcheck;
 import utilities.QaDataProvider;
 import utilities.QaExcelRead;
 import utilities.Logger;
+import utilities.QaBrowser;
 import utilities.QaRobot;
 
 public class Flightoneway_newcheckout extends Flightcheck {
@@ -27,7 +28,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 	public Object[][] getexceldata() throws Exception {
 
 		
-		return QaDataProvider.getTestdata("OneWay","newcheckout");
+		return QaDataProvider.getTestdata("OneWay","Sheet1","B2C");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -120,7 +121,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 		// take screenshot for search page
 
-		String searchpage = Logger.takeScreenshot(driver, "Search Page");
+		String searchpage = Logger.takeScreenshot(QaBrowser.driver, "Search Page");
 		test.log(Status.INFO, "Screenshot for Search Page",
 				MediaEntityBuilder.createScreenCaptureFromPath(searchpage).build());
 
@@ -131,7 +132,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 		// get current url
 
-		String url = driver.getCurrentUrl();
+		String url = QaBrowser.driver.getCurrentUrl();
 
 		System.out.println(url);
 
@@ -147,7 +148,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 		// If not getting result
 
-		WebElement ResultNotFound = driver.findElement(By.xpath(
+		WebElement ResultNotFound = QaBrowser.driver.findElement(By.xpath(
 				"//p[text()='Oops! Seems like no flight journeys are available for the selected search criteria.']"));
 
 		if (ResultNotFound.isDisplayed()) {
@@ -157,7 +158,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 				// take screenshot for result page
 
-				String resultnotfound = Logger.takeScreenshot(driver, "resultnotfound");
+				String resultnotfound = Logger.takeScreenshot(QaBrowser.driver, "resultnotfound");
 				test.log(Status.INFO, "Screenshot for Resultnotfound",
 						MediaEntityBuilder.createScreenCaptureFromPath(resultnotfound).build());
 
@@ -175,7 +176,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// take screenshot for result page
 
-			String resultpage = Logger.takeScreenshot(driver, "Resultpage");
+			String resultpage = Logger.takeScreenshot(QaBrowser.driver, "Resultpage");
 			test.log(Status.INFO, "Screenshot for Resultpage",
 					MediaEntityBuilder.createScreenCaptureFromPath(resultpage).build());
 
@@ -193,7 +194,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// Flight_Iteneary("anjali.jain@quadlabs.com");
 
-			TFR = driver.findElement(By.xpath("//span[@class='filter_state ng-binding']")).getText();
+			TFR = QaBrowser.driver.findElement(By.xpath("//span[@class='filter_state ng-binding']")).getText();
 			String[] totalFlightResult = TFR.split(" ");
 			int totalresults = Integer.parseInt(totalFlightResult[1]);
 			System.out.println("Total " + totalresults);
@@ -208,7 +209,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// Seat not available
 
-			Seatnotavailable = driver.findElement(By.xpath("//p[text()='The seat is no longer available ']"));
+			Seatnotavailable = QaBrowser.driver.findElement(By.xpath("//p[text()='The seat is no longer available ']"));
 			Thread.sleep(500);
 
 			if (Seatnotavailable.isDisplayed()) {
@@ -226,16 +227,16 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 					// get total amount of result page
 
-					result = driver.findElement(By.xpath("(//span[@class='f_p_n_f_price ng-binding'])[("+ i +" * 3 + 1)]")).getText();
+					result = QaBrowser.driver.findElement(By.xpath("(//span[@class='f_p_n_f_price ng-binding'])[("+ i +" * 3 + 1)]")).getText();
 
 					System.out.println("result page fare after choose another flight is " + result);
 					
 					test.log(Status.PASS, "Result page fare after choose another flight is " + result);
 					
-					driver.findElement(By.xpath("(//input[starts-with(@id,'Anchor_')])[" + (i * 3 + 1) + "]")).click();
+					QaBrowser.driver.findElement(By.xpath("(//input[starts-with(@id,'Anchor_')])[" + (i * 3 + 1) + "]")).click();
 					QaRobot.explicitwaitvisible(250, By.xpath("//span[@id='ShowTotalFare']"));
 
-					Seatnotavailable = driver.findElement(By.xpath("//p[text()='The seat is no longer available ']"));
+					Seatnotavailable = QaBrowser.driver.findElement(By.xpath("//p[text()='The seat is no longer available ']"));
 					boolean seatNo = Seatnotavailable.isDisplayed();
 					Thread.sleep(1000);
 
@@ -244,7 +245,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 						QaRobot.ClickOnElement("new_chk_bookanotherflight", "Clicked on Book another flight");
 
 						QaRobot.explicitwaitinvisible(200, By.xpath("//*[@class='progress-bar progress-bar-striped active']"));
-						TFR = driver.findElement(By.xpath("//span[@class='filter_state ng-binding']")).getText();
+						TFR = QaBrowser.driver.findElement(By.xpath("//span[@class='filter_state ng-binding']")).getText();
 						String[] totalFlightResult1 = TFR.split(" ");
 						totalresults = Integer.parseInt(totalFlightResult1[1]);
 						System.out.println("Total result " + totalresults);
@@ -267,7 +268,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 				// fare change
 
-				fareChange = driver.findElement(By.xpath("//h1[text()='Fare Update']"));
+				fareChange = QaBrowser.driver.findElement(By.xpath("//h1[text()='Fare Update']"));
 
 				if (fareChange.isDisplayed()) {
 
@@ -278,12 +279,12 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 						for (int i = 1; i <= totalresults; i++) {
 
-							driver.findElement(By.xpath("(//input[starts-with(@id,'Anchor_')])[" + (i * 3 + 1) + "]"))
+							QaBrowser.driver.findElement(By.xpath("(//input[starts-with(@id,'Anchor_')])[" + (i * 3 + 1) + "]"))
 									.click();
 
 							QaRobot.explicitwaitvisible(250, By.xpath("//span[@id='ShowTotalFare']"));
 
-							fareChange = driver.findElement(By.xpath("//h1[text()='Fare Update']"));
+							fareChange = QaBrowser.driver.findElement(By.xpath("//h1[text()='Fare Update']"));
 							boolean fareupdate = fareChange.isDisplayed();
 
 							if (!fareupdate) {
@@ -322,7 +323,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// take screenshot for Checkout page
 
-			String checkoutpage = Logger.takeScreenshot(driver, "checkoutpage");
+			String checkoutpage = Logger.takeScreenshot(QaBrowser.driver, "checkoutpage");
 			test.log(Status.INFO, "Screenshot for Checkout Page",
 					MediaEntityBuilder.createScreenCaptureFromPath(checkoutpage).build());
 
@@ -352,7 +353,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// Print Online fee charge
 
-			onlinecharge = driver.findElement(By.xpath("//div[text()='Convenience Fee ']"));
+			onlinecharge = QaBrowser.driver.findElement(By.xpath("//div[text()='Convenience Fee ']"));
 			if (onlinecharge.isDisplayed()) {
 
 				String ocharge = QaRobot.getWebElement("new_chk_onlinecharge").getText();
@@ -364,7 +365,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// Print Credit card charge
 
-			creditcharge = driver.findElement(By.xpath("//div[text()='Online Convenience Fee ']"));
+			creditcharge = QaBrowser.driver.findElement(By.xpath("//div[text()='Online Convenience Fee ']"));
 			if (creditcharge.isDisplayed()) {
 
 				String ccharge = QaRobot.getWebElement("new_chk_creditcharge").getText();
@@ -389,7 +390,7 @@ public class Flightoneway_newcheckout extends Flightcheck {
 
 			// take screenshot for confirm page
 
-			String confirmpage = Logger.takeScreenshot(driver, "confirmpage");
+			String confirmpage = Logger.takeScreenshot(QaBrowser.driver, "confirmpage");
 			test.log(Status.INFO, "Screenshot for Confirm Page",
 					MediaEntityBuilder.createScreenCaptureFromPath(confirmpage).build());
 
