@@ -27,14 +27,14 @@ public class BookAndQuoteFlight
 	}
 	
 	@Test(dataProvider = "getexceldata")
-	public static void Profiling1(String Source,String URL, String Comapnycode,String Username,String Password, String RefNo,
-			String BookingType,String adult,String child,String infant) throws Exception 
+	public static void Profiling1(String TestCaseId,String Employee,String TravelArranger,String Travlername,String Source,String URL, String Comapnycode,String Username,String Password, String RefNo,
+			String BookingType,String adult,String child,String infant,String CreatedBy) throws Exception 
 	{
 		TestBase.Companycode(Source,URL); 
 		QaRobot.impliwait(30);
 		
-		QaExtentReport.test = QaExtentReport.report.createTest("Test on My Booking For Flight");
-	
+		QaExtentReport.test = QaExtentReport.report.createTest(TestCaseId);
+		
 		QaRobot.PassValue("User_name",Username);
 		QaExtentReport.test.log(Status.INFO,"<b><i>Write Username</i></b>");
 		
@@ -44,20 +44,27 @@ public class BookAndQuoteFlight
 		QaRobot.ClickOnElement("Submit");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on submit</i></b>");
 		
+		QaExtentReport.extentScreenshot("Corporate Login Page");
 		QaRobot.ScreenshotMethod("CorporateLogin","<b><i>Screenshot for Corporate Login Page</i></b>");
+		
+		QaExtentReport.test.log(Status.INFO, "<b><i>Employee Name is  </i></b>"+Employee);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Travel Arranger Name is  </i></b>"+Travlername);
 		
 		QaRobot.mouseHover("//a[@id='HeaderTop_aBookingMenu']", "//span[@id='HeaderTop_lblBookingQueue']");
 		
+		QaExtentReport.extentScreenshot("Corporate Dashboard Page");
 		QaRobot.ScreenshotMethod("CorporateDashboard","<b><i>Screenshot for Corporate Dashboard Page</i></b>");
 		
 		QaRobot.PassValue("EnterRefNo", RefNo);
 		QaExtentReport.test.log(Status.INFO, "<b><i>Write Ref No Is</i></b>"+RefNo);
 		
+		QaExtentReport.extentScreenshot("Enquiry Id");
 		QaRobot.ScreenshotMethod("RefNo","<b><i>Screenshot for Enquiry Id</i></b>");
 		
 		QaRobot.ClickOnElement("SearchButton");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Click on Search Button</i></b>");
 		
+		QaExtentReport.extentScreenshot("Book Button");
 		QaRobot.ClickOnElement("BookButton");
 		QaExtentReport.test.log(Status.INFO,  "<b><i>Click on Book Button</i></b>");
 		
@@ -69,6 +76,7 @@ public class BookAndQuoteFlight
 			QaExtentReport.test.log(Status.INFO, "<b><i>Click on MoreDetails</i></b>");
 			Thread.sleep(3000);
 			
+			QaExtentReport.extentScreenshot("Book Button");
 			QaRobot.ScreenshotMethod("MoreDetails","<b><i>Screenshot for More Details</i></b>");
 			
 			QaRobot.ClickOnElement("MoreDetailsClose");
@@ -78,9 +86,10 @@ public class BookAndQuoteFlight
 			QaExtentReport.test.log(Status.INFO, "<b><i>Click on FareBreackup</i></b>");
 			Thread.sleep(3000);
 			
+			QaExtentReport.extentScreenshot("FareBreackup");
 			QaRobot.ScreenshotMethod("FareBreackup","<b><i>Screenshot for Fare Breackup</i></b>");
 			
-			QaRobot.ClickOnElement("FareBreackupClose");
+			QaRobot.ClickOnElement("FareBreackupCloseMY");
 			QaExtentReport.test.log(Status.INFO, "<b><i>Click on FareBreackupClose</i></b>");
 			
 			if(infant.equalsIgnoreCase("0"))
@@ -97,6 +106,7 @@ public class BookAndQuoteFlight
 				String[] uid = url1.split("=");
 				QaExtentReport.test.log(Status.INFO, "<b><i>Session id is </i></b>" + uid[1]);
 				
+				QaExtentReport.extentScreenshot("FinalBook");
 				QaRobot.ClickOnElement("FinalBook");
 				QaExtentReport.test.log(Status.INFO, "<b><i>Click on FinalBook</i></b>");
 				
@@ -110,6 +120,7 @@ public class BookAndQuoteFlight
 				QaRobot.ClickOnElement("Ok");
 				QaExtentReport.test.log(Status.INFO, "<b><i>Click on Ok Button</i></b>");
 				
+				QaExtentReport.extentScreenshot("Proceed");
 				QaRobot.ScreenshotMethod("Proceed","<b><i>Screenshot for Procced Page</i></b>");
 				
 				QaRobot.ClickOnElement("Proceed");
@@ -119,6 +130,7 @@ public class BookAndQuoteFlight
 				String getTxt2 = getT2.getText();
 				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Id Is </i></b>"+getTxt2);
 				
+				QaExtentReport.extentScreenshot("FinalResult");
 				QaRobot.ScreenshotMethod("FinalResult","<b><i>Screenshot for Search Page</i></b>");
 			}
 			
@@ -140,6 +152,7 @@ public class BookAndQuoteFlight
 				String[] uid = url1.split("=");
 				QaExtentReport.test.log(Status.INFO, "<b><i>Session id is </i></b>" + uid[1]);
 				
+				QaExtentReport.extentScreenshot("FinalBook");
 				QaRobot.ClickOnElement("FinalBook");
 				QaExtentReport.test.log(Status.INFO, "<b><i>Click on FinalBook</i></b>");
 				
@@ -154,6 +167,7 @@ public class BookAndQuoteFlight
 				QaRobot.ClickOnElement("Ok");
 				QaExtentReport.test.log(Status.INFO, "<b><i>Click on Ok Button</i></b>");
 				
+				QaExtentReport.extentScreenshot("Proceed");
 				QaRobot.ScreenshotMethod("Proceed","<b><i>Screenshot for Procced Page</i></b>");
 				
 				QaRobot.ClickOnElement("Proceed");
@@ -163,6 +177,7 @@ public class BookAndQuoteFlight
 				String getTxt2 = getT2.getText();
 				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Id Is </i></b>"+getTxt2);
 				
+				QaExtentReport.extentScreenshot("FinalResult");
 				QaRobot.ScreenshotMethod("FinalResult","<b><i>Screenshot for Search Page</i></b>");
 			}
 			
@@ -184,6 +199,7 @@ public class BookAndQuoteFlight
 				String[] uid = url.split("=");
 				QaExtentReport.test.log(Status.INFO, "<b><i>Session id is </i></b>" + uid[1]);
 				
+				QaExtentReport.extentScreenshot("FinalBook");
 				QaRobot.ClickOnElement("FinalBook");
 				QaExtentReport.test.log(Status.INFO, "<b><i>Click on FinalBook</i></b>");
 				
@@ -199,6 +215,7 @@ public class BookAndQuoteFlight
 				
 				QaRobot.ScreenshotMethod("Proceed","<b><i>Screenshot for Procced Page</i></b>");
 				
+				QaExtentReport.extentScreenshot("Proceed");
 				QaRobot.ClickOnElement("Proceed");
 				QaExtentReport.test.log(Status.INFO,"<b><i>Click on Proceed</i></b>");
 				
@@ -206,6 +223,7 @@ public class BookAndQuoteFlight
 				String getTxt1 = getT1.getText();
 				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Id Is </i></b>"+getTxt1);
 				
+				QaExtentReport.extentScreenshot("FinalResult");
 				QaRobot.ScreenshotMethod("FinalResult","<b><i>Screenshot for Search Page</i></b>");
 			}
 		}
@@ -216,6 +234,7 @@ public class BookAndQuoteFlight
 			QaExtentReport.test.log(Status.INFO, "<b><i>Click on MoreDetails</i></b>");
 			Thread.sleep(3000);
 			
+			QaExtentReport.extentScreenshot("MoreDetails");
 			QaRobot.ScreenshotMethod("MoreDetails","<b><i>Screenshot for More Details</i></b>");
 			
 			QaRobot.ClickOnElement("MoreDetailsClose");
@@ -225,9 +244,10 @@ public class BookAndQuoteFlight
 			QaExtentReport.test.log(Status.INFO, "<b><i>Click on FareBreackup</i></b>");
 			Thread.sleep(3000);
 			
+			QaExtentReport.extentScreenshot("FareBreackup");
 			QaRobot.ScreenshotMethod("FareBreackup","<b><i>Screenshot for Fare Breackup</i></b>");
 			
-			QaRobot.ClickOnElement("FareBreackupClose");
+			QaRobot.ClickOnElement("FareBreackupCloseMY");
 			QaExtentReport.test.log(Status.INFO, "<b><i>Click on FareBreackupClose</i></b>");
 			
 			QaRobot.ClickOnElement("CheckBox");
@@ -242,6 +262,7 @@ public class BookAndQuoteFlight
 			String[] uid = url2.split("=");
 			QaExtentReport.test.log(Status.INFO, "<b><i>Session id is </i></b>" + uid[1]);
 			
+			QaExtentReport.extentScreenshot("FinalBook");
 			QaRobot.ClickOnElement("FinalBook");
 			QaExtentReport.test.log(Status.INFO, "<b><i>Click on FinalBook</i></b>");
 			
@@ -255,6 +276,7 @@ public class BookAndQuoteFlight
 			QaRobot.ClickOnElement("Ok");
 			QaExtentReport.test.log(Status.INFO, "<b><i>Click on Ok Button</i></b>");
 			
+			QaExtentReport.extentScreenshot("Proceed");
 			QaRobot.ScreenshotMethod("Proceed","<b><i>Screenshot for Procced Page</i></b>");
 			
 			QaRobot.ClickOnElement("Proceed");
@@ -262,9 +284,44 @@ public class BookAndQuoteFlight
 			
 			WebElement getT = QaBrowser.driver.findElement(By.xpath("(//html//body//div//span)[70]"));
 			String getTxt = getT.getText();
-			QaExtentReport.test.log(Status.INFO, "<b><i>Booking Id Is </i></b>"+getTxt);
 			
-			QaRobot.ScreenshotMethod("FinalResult","<b><i>Screenshot for Search Page</i></b>");
+			String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
+			String a []= bookingID.split(" ");
+			String number = a[2];
+			QaExtentReport.test.log(Status.INFO, "<b><i>Booking Id Is </i></b>"+getTxt);
+			QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + bookingID);
+			
+			QaExtentReport.extentScreenshot("Confirm Page");
+			
+			QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']", "//span[@id='ctl00_HeaderTop_lblBookingQueue']");
+			QaExtentReport.extentScreenshot("CorporateDashboard Page");
+			
+			QaRobot.ScreenshotMethod("CorporateDashboard","<b><i>Screenshot for Corporate Dashboard Page</i></b>");
+			Thread.sleep(3000);
+			
+			QaRobot.PassValue("RefNo",number);
+			QaExtentReport.test.log(Status.INFO,"<b><i>Write Ref No</i></b>");
+			
+			QaRobot.ClickOnElement("SearchRefNo");
+			 
+			QaRobot.ClickOnElement("RefBooking");
+			
+			QaExtentReport.extentScreenshot("Booking Card");
+			
+			QaExtentReport.test.log(Status.INFO, "<b><i>Created by accepted </i></b>"+CreatedBy);
+			
+			String Creater = QaBrowser.driver.findElement(By.xpath("//span[@id='lblCreatedBy']")).getText();
+			System.out.println("Created By " + Creater);
+			QaExtentReport.test.log(Status.INFO, "<b><i>Created By </i></b>" + Creater);
+			
+			if(CreatedBy.equalsIgnoreCase(Creater))
+			{
+				QaExtentReport.test.log(Status.INFO, "<b><i>Creater is Correct  </i></b>"+CreatedBy);
+			}
+			else
+			{
+				QaExtentReport.test.log(Status.FAIL, "<b><i>Creater is Different  </i></b>"+CreatedBy);
+			}
 		}
 	}	
 	

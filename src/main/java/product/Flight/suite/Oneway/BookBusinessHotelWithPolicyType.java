@@ -60,6 +60,7 @@ public class BookBusinessHotelWithPolicyType
 				By.xpath("//input[@id='txtHHLCity']"));
 		Thread.sleep(2000);
 
+		QaBrowser.driver.findElement(By.xpath("//div[@id='divHotelName']/p")).click();
 		QaExtentReport.test.log(Status.INFO, "Destination city : " + forigin);
 
 		Thread.sleep(1000);
@@ -79,6 +80,7 @@ public class BookBusinessHotelWithPolicyType
 		// String searchpage = Logger.takeScreenshot(QaBrowser.driver,
 		// "D:\\Screenshot\\searchPage.png");
 		// QaExtentReport.test.log(Status.INFO, "Search Page "+searchpage+"");
+		QaExtentReport.extentScreenshot("Sigh In Page");
 		// click on search hotel button
 		QaRobot.ClickOnElement("search_button");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on search Hotel button</i></b>");
@@ -94,10 +96,6 @@ public class BookBusinessHotelWithPolicyType
 
 			// explicit wait till loader invisible
 //			QaRobot.explicitwaitinvisible(400, By.xpath("//i[@class='htl-rslt-loader-img']"));
-
-			// click on Prefered check ALL
-			//QaRobot.ClickOnElement("PreferedChkAll", "Clicked on prefered check");
-
 			// screenshot of result page
 			// String resultpage = Logger.takeScreenshot(QaBrowser.driver,
 			// "D:\\Screenshot\\resultpage.png");
@@ -116,6 +114,11 @@ public class BookBusinessHotelWithPolicyType
 			QaExtentReport.test.log(Status.INFO, "Result page url is  " + url);
 
 			QaExtentReport.test.log(Status.INFO, "Session id is " + uid[1]);
+			
+			Thread.sleep(45000);
+			// click on Prefered check ALL
+			QaRobot.ClickOnElement("PreferedChkAll");
+			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on prefered check</i></b>");
 
 			// get the list of policy type
 			List<WebElement> listOfPolicytype = QaBrowser.driver.findElements(By.xpath("//div[@class='fl_upref_right']"));
@@ -128,6 +131,7 @@ public class BookBusinessHotelWithPolicyType
 				if (type.equalsIgnoreCase(policy)) {
 					// click on select room button with indexing (starting from 11)
 					QaBrowser.driver.findElement(By.xpath("//p[@id='htlrm0" + bookindex+ "']")).click();
+					Thread.sleep(3000);
 				
 					// wait for loader
 
@@ -135,11 +139,12 @@ public class BookBusinessHotelWithPolicyType
 
 				
 					// check room availability
-					if (isElementAvailable("//div[@id='nrm_box_1']/div[2]/div/h3")) {
-						fail("Unable to procced booking due to getting no room availability");
-					} else {
+//					if (isElementAvailable("//div[@id='nrm_box_1']/div[2]/div/h3")) {
+//						fail("Unable to procced booking due to getting no room availability");
+//					} else {
 						// select the room
 						QaBrowser.driver.findElement(By.xpath("(//a[text()='BOOK'])[1]")).click();
+						QaExtentReport.extentScreenshot("Result Page");
 					// check In policy and out policy text
 					if (type.equalsIgnoreCase("Out Of Policy")) {
 
@@ -147,7 +152,8 @@ public class BookBusinessHotelWithPolicyType
 					}
 
 					break;
-					}}
+//					}
+					}
 				 else {
 					QaExtentReport.test.log(Status.INFO, "Corporate policy is not matched with " + policy);
 					System.out.println("Corporate policy is not matched");
@@ -175,6 +181,7 @@ public class BookBusinessHotelWithPolicyType
 			// check the terms and condition checkbox
 			QaRobot.ClickOnElement("ow_chkterms");
 			QaExtentReport.test.log(Status.INFO, "<b><i>check the terms and condition</i></b>");
+			QaExtentReport.extentScreenshot("Checkout Page");
 			// proceed the booking from checkout page
 			QaRobot.ClickOnElement("ow_chkbook");
 			QaExtentReport.test.log(Status.INFO, "<b><i>book button to proceed the booking from checkout page</i></b>");
@@ -195,8 +202,8 @@ public class BookBusinessHotelWithPolicyType
 //			QaRobot.explicitwaitvisible(300, By.xpath("//div[@class='value_package_details']"));
 
 			// screenshot of Payment page
-			String paymentpage = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\paymentpage.png");
-			QaExtentReport.test.log(Status.INFO, "Payment Page " + paymentpage + "");
+//			String paymentpage = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\paymentpage.png");
+//			QaExtentReport.test.log(Status.INFO, "Payment Page " + paymentpage + "");
 			// get price on Payment page
 			String paymentPrice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']"))
 					.getText();
@@ -211,7 +218,8 @@ public class BookBusinessHotelWithPolicyType
 			} else {
 				SBTCheckoutPayment.fopCreditDebit(card, cardType, cvv);
 			}
-
+			QaExtentReport.extentScreenshot("Payment Page");
+			
 			QaRobot.ClickOnElement("ow_paymentprocced");
 			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
 
@@ -237,6 +245,7 @@ public class BookBusinessHotelWithPolicyType
 			String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
 			System.out.println("Booking ID is " + bookingID);
 			QaExtentReport.test.log(Status.INFO, "Booking ID is  " + bookingID);
+			QaExtentReport.extentScreenshot("Confirm Page");
 
 			// Click on home page
 			// QaBrowser.driver.findElement(By.xpath("//img[@id='ctl00_HeaderTop_imgCompanyWise']")).click();

@@ -48,9 +48,9 @@ public class SBTCheckoutPayment {
 		// select the travelling with for infant
 
 		int inf = Integer.parseInt(infant);
-		for (int i = 1; i <= inf; i++) {
-			WebElement webelement = QaBrowser.driver
-					.findElement(By.xpath("(//select[@id='ctl00_contentMain_ddl_travell_with'])[" + i + "]"));
+		for (int i = 1; i <= inf; i++) 
+		{
+			WebElement webelement = QaBrowser.driver.findElement(By.xpath("(//select[@id='ctl00_contentMain_ddl_travell_with'])[" + i + "]"));
 			Select select = new Select(webelement);
 			select.selectByIndex(i);
 
@@ -108,13 +108,10 @@ public class SBTCheckoutPayment {
 
 		int inf = Integer.parseInt(infant);
 		for (int i = 1; i <= inf; i++) {
-			WebElement webelement = QaBrowser.driver
-					.findElement(By.xpath("(//select[@id='ctl00_contentMain_ddl_travell_with'])[" + i + "]"));
+			WebElement webelement = QaBrowser.driver.findElement(By.xpath("(//select[@id='ctl00_contentMain_ddl_travell_with'])[" + i + "]"));
 			Select select = new Select(webelement);
 			select.selectByIndex(i);
-
 		}
-
 	}
 
 	public static void fopCreditDebit(String card, String cardType, String cvv) throws Exception {
@@ -140,12 +137,11 @@ public class SBTCheckoutPayment {
 
 	public static void fopCash(String card, String receiptno) throws Exception {
 
-		QaRobot.selectTextFromDropdown("ow_selectcard", card, "Selected card: " + card);
+		QaRobot.selectTextFromDropdown("ow_selectcard", card, "Selected card: " + card);	
 		QaRobot.ClickOnElement("click_OK");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on Ok button</i></b>");
 		QaRobot.PassValue("ow_receiptno", receiptno);
 		QaExtentReport.test.log(Status.INFO, "<b><i>receipt number is: </i></b>"+receiptno);
-
 	}
 
 	public static void fopBillToComapnay(String card) throws Exception {
@@ -155,6 +151,7 @@ public class SBTCheckoutPayment {
 	}
 
 	public static void holdAndQuote() throws Exception {
+		
 		// click on book and quote
 		QaRobot.ClickOnElement("bookandquote");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on book and quote button</i></b>");
@@ -163,12 +160,15 @@ public class SBTCheckoutPayment {
 		// booking id
 		String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
 		System.out.println("Booking id : " + bookingID);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Booking id </i></b>"+ bookingID);
 		// booking status
 		String status = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']")).getText();
 		System.out.println("Booking status is : " + status);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Booking status is </i></b>"+ status);
 		// booking price
 		String price = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[3]")).getText();
 		System.out.println("Booking price : " + price);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Booking price is </i></b>"+ price);
 	}
 
 	public static void checkoutFlightQuote(String airReasonCode) throws Exception {
@@ -255,18 +255,18 @@ public class SBTCheckoutPayment {
 		int chd = Integer.parseInt(child);
 		int inf = Integer.parseInt(infant);
 		// check adult
-		for (int i = 1; i < adt; i++) {
-
+		for (int i = 1; i < adt; i++) 
+		{
 			QaBrowser.driver.findElement(By.xpath("//input[@id='rptPaxDetails_ctl01_rptDetails_ctl0" + i + "_chk']")).click();
 		}
 		// check child
-		for (int i = 1; i <= chd; i++) {
-
+		for (int i = 1; i <= chd; i++) 
+		{
 			QaBrowser.driver.findElement(By.xpath("//input[@id='rptPaxDetails_ctl02_rptDetails_ctl0" + i + "_chk']")).click();
 		}
 		// check infant
-		for (int i = 1; i <= inf; i++) {
-
+		for (int i = 1; i <= inf; i++) 
+		{
 			QaBrowser.driver.findElement(By.xpath("//input[@id='rptPaxDetails_ctl03_rptDetails_ctl0" + i + "_chk']")).click();
 		}
 

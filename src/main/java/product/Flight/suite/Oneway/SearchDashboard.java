@@ -53,11 +53,10 @@ public class SearchDashboard {
 	public static void selectEmployeeWithID(String travelerID) throws Exception {
 
 		QaRobot.ClickOnElement("ow_Searchemp");
-		QaExtentReport.test.log(Status.INFO, "<b><i>Corporate employee: </i></b>"+ travelerID);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Employee Email : </i></b>"+ travelerID);
 		// get list of all travelers
 
-		List<WebElement> corpUsers = QaBrowser.driver
-				.findElements(By.xpath("//table[@id='gridCorporateTravel']/tbody/tr/td[2]"));
+		List<WebElement> corpUsers = QaBrowser.driver.findElements(By.xpath("//table[@id='gridCorporateTravel']/tbody/tr/td[2]"));
 		int index=0;
 		for(WebElement cropUser:corpUsers)
 		{
@@ -65,20 +64,17 @@ public class SearchDashboard {
 			index=index+1;
 			if(TextofCropUser.equalsIgnoreCase(travelerID))
 			{
-				
 				QaBrowser.driver.findElement(By.xpath("(//span[@style='padding-left: 8px; padding-right: 8px; float: left;'])["+index+"]")).click();
 				break;
 			}
 			else
 			{
-				QaExtentReport.test.log(Status.INFO,
-						"Corporate traveler ID does not match with " + travelerID );
+//				QaExtentReport.test.log(Status.INFO,"Corporate traveler ID does not match with " + travelerID );
 				System.out.println("Not match");
 			}
 		}
-		
-
 	}
+	
 	public static void selectRoomPax(String roomcount,String adult,String child,String ageofchildren)
 	{
 		int room=Integer.parseInt(roomcount);

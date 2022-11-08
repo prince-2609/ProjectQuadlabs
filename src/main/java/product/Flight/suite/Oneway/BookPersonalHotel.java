@@ -88,11 +88,12 @@ public class BookPersonalHotel
 		// String searchpage = Logger.takeScreenshot(QaBrowser.driver,
 		// "D:\\Screenshot\\searchPage.png");
 		// QaExtentReport.test.log(Status.INFO, "Search Page "+searchpage+"");
+		QaExtentReport.extentScreenshot("Search Page");
 		// click on search hotel button
 		QaRobot.ClickOnElement("search_button");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on search Hotel button</i></b>");
 		
-		Thread.sleep(15000);
+		Thread.sleep(20000);
 //		QaRobot.explicitwaitinvisible(300, By.xpath("div[@class='loadbar ld_hotel']"));
 
 		// No result found
@@ -106,8 +107,8 @@ public class BookPersonalHotel
 //			QaRobot.explicitwaitinvisible(200, By.xpath("//i[@class='htl-rslt-loader-img']"));
 
 			// click on Prefered check ALL
-//			QaRobot.ClickOnElement("PreferedChkAll");
-//			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on prefered check</i></b>");
+			QaRobot.ClickOnElement("PreferedChkAll");
+			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on prefered check</i></b>");
 
 			// screenshot of result page
 			// String resultpage = Logger.takeScreenshot(QaBrowser.driver,
@@ -144,7 +145,7 @@ public class BookPersonalHotel
 
 			QaExtentReport.test.log(Status.INFO, "Session id is " + uid[1]);
 
-			
+			QaExtentReport.extentScreenshot("Result Page");
 				// select the room
 				QaBrowser.driver.findElement(By.xpath("(//a[text()='BOOK'])[1]")).click();
 
@@ -182,6 +183,8 @@ public class BookPersonalHotel
 				QaRobot.ClickOnElement("ow_chkterms");
 				QaExtentReport.test.log(Status.INFO, "<b><i>check the terms and condition</i></b>");
 				
+				QaExtentReport.extentScreenshot("Checkout Page");
+				
 				// proceed the booking from checkout page
 				QaRobot.ClickOnElement("ow_chkbook");
 				QaExtentReport.test.log(Status.INFO, "<b><i>book button to proceed the booking from checkout page</i></b>");
@@ -215,7 +218,7 @@ public class BookPersonalHotel
 //					} else {
 //						SBTCheckoutPayment.fopCreditDebit(card, cardType, cvv);
 //					}
-
+					QaExtentReport.extentScreenshot("Payment Page");
 					QaRobot.ClickOnElement("ow_paymentprocced");
 					QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
 
@@ -244,6 +247,7 @@ public class BookPersonalHotel
 							.getText();
 					System.out.println("Booking ID is " + bookingID);
 					QaExtentReport.test.log(Status.INFO, "Booking ID is  " + bookingID);
+					QaExtentReport.extentScreenshot("Confirm Page");
 				}
 				// Click on home page
 				// QaBrowser.driver.findElement(By.xpath("//img[@id='ctl00_HeaderTop_imgCompanyWise']")).click();

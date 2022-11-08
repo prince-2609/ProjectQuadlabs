@@ -62,11 +62,19 @@ public class TestBase extends QaExtentReport {
 		if (ccode.equalsIgnoreCase("b2c")) {
 			browser.launchBrowser("http:"+URL+"");
 		}
-		if (ccode.equalsIgnoreCase("sbt")) {
+		if (ccode.equalsIgnoreCase("sbt"))
+		{
 			browser.launchBrowser("http:"+URL+"");
 			
 			//browser.launchBrowser("http://v12staging/sbt");
 		}
+		if (ccode.equalsIgnoreCase("preprod117"))
+		{
+			browser.launchBrowser("http:"+URL+"");
+			
+			//browser.launchBrowser("http://v12staging/sbt");
+		}
+		
 //		if (ccode.equalsIgnoreCase("bn")) {
 //			browser.launchBrowser("http://erp-staging/algosaibib2c/");
 //			Logger.setProjectName("Algosaibi");
@@ -104,7 +112,6 @@ public class TestBase extends QaExtentReport {
 	public static List<WebElement> listofautosuggestion(By suggestiontxt, String txt, String city_name, By d)throws InterruptedException 
 	{
 		QaBrowser.driver.findElement(d).sendKeys(txt);
-		QaBrowser.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		ArrayList<WebElement> autosuggestions = (ArrayList<WebElement>) QaBrowser.driver.findElements(suggestiontxt);
 		// System.out.println(autosuggestions.toString());
 		for (WebElement autosuggestion : autosuggestions) 

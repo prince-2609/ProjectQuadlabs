@@ -85,12 +85,13 @@ public class HotelBusinessAddToCart extends Flightcheck
 		// String searchpage = Logger.takeScreenshot(QaBrowser.driver,
 		// "D:\\Screenshot\\searchPage.png");
 		// QaExtentReport.test.log(Status.INFO, "Search Page "+searchpage+"");
+		QaExtentReport.extentScreenshot("Search Page");
 		// click on search hotel button
 		QaRobot.ClickOnElement("search_button");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on search Hotel button</i></b>");
 		
 //		QaRobot.explicitwaitinvisible(300, By.xpath("div[@class='loadbar ld_hotel']"));
-		Thread.sleep(15000);
+		Thread.sleep(30000);
 		// No result found
 		if (QaBrowser.driver.findElement(By.xpath("//div[@id='NoResultmsg']/div/h1")).isDisplayed()) {
 			// fail the test case and screenshot
@@ -102,13 +103,13 @@ public class HotelBusinessAddToCart extends Flightcheck
 //			QaRobot.explicitwaitinvisible(200, By.xpath("//i[@class='htl-rslt-loader-img']"));
 
 			// click on Prefered check ALL
-//			QaRobot.ClickOnElement("PreferedChkAll");
-//			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on prefered check</i></b>");
+			QaRobot.ClickOnElement("PreferedChkAll");
+			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on prefered check</i></b>");
 			// screenshot of result page
 			// String resultpage = Logger.takeScreenshot(QaBrowser.driver,
 			// "D:\\Screenshot\\resultpage.png");
 			// QaExtentReport.test.log(Status.INFO, "Result page " + resultpage + "");
-
+			QaExtentReport.extentScreenshot("Result Page");
 			// get price on result page
 			String resultPrice = QaBrowser.driver.findElement(By.xpath("(//p[@class='price_bonus_count'])[" + booknowindex + "]")).getText();
 			System.out.println("Result page price is " + resultPrice);

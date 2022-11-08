@@ -93,6 +93,9 @@ public class flightBusinessAddToCart
 
 		// check the policy checkbox
 		SearchDashboard.FlightpolicyCheck();
+		
+		QaExtentReport.extentScreenshot("Search Page");
+		
 		// click on search flight button
 		QaRobot.ClickOnElement("ow_searchflight");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on search flight button</i></b>");
@@ -101,10 +104,7 @@ public class flightBusinessAddToCart
 		// explicit wait till loader invisible
 //		QaRobot.explicitwaitinvisible(200, By.xpath("//div[@class='flight-wait-progress progress ng-hide']"));
 
-		if (QaBrowser.driver
-				.findElement(
-						By.xpath("//p[contains(text(),'Sorry, could not find desired results. Please try again.')]"))
-				.isDisplayed()) {
+		if (QaBrowser.driver.findElement(By.xpath("//p[contains(text(),'Sorry, could not find desired results. Please try again.')]")).isDisplayed()) {
 			// fail the test case and screenshot
 //			String resultnotfound = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\resultnotfound.png");
 //			QaExtentReport.test.log(Status.FAIL, "Results are not found");
@@ -114,13 +114,13 @@ public class flightBusinessAddToCart
 			resultPagePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='fl_price_fmt']/p[2]/span/span[2])[" + booknowindex + "]")).getText();
 			System.out.println("Result page price is " + resultPagePrice);
 			QaExtentReport.test.log(Status.INFO, "Result page price is " + resultPagePrice);
-
+			QaExtentReport.extentScreenshot("Result1 Page");
 			// get text of element that start start from 1
 			String policytype = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'PT_')])[" + policyindex + "]")).getText();
 
 			// Send Quotation
 			SBTResultPage.addToCart(addtocartindex, addToCartRemarks,resultPagePrice,policytype);
-
+			QaExtentReport.extentScreenshot("Result Page");
 		}
 	}
 

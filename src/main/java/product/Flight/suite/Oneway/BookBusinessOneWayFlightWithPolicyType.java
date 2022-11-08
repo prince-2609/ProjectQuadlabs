@@ -35,7 +35,7 @@ public class BookBusinessOneWayFlightWithPolicyType
 			String corptraveller, String searchType, String origin, String forigin, String destination, String fdesti,
 			String ddate, String triptype, String adult, String child, String infant, String currency, String fclass,
 			String preairline, String nationality,String policy, String passportnumber,
-			String fop, String receiptno, String card, String cardtype, String cvv, String airReasonCode)
+			String fop, String receiptno, String card, String cardtype, String cvv, String airReasonCode,String AirTextTrvlr)
 			throws Exception {
 		
 		QaExtentReport.test = QaExtentReport.report.createTest("Test On Book Business OneWay Flight With Policy Type " + policy);
@@ -108,6 +108,7 @@ public class BookBusinessOneWayFlightWithPolicyType
 		
 		// check the policy checkbox
 		SearchDashboard.FlightpolicyCheck();
+		QaExtentReport.extentScreenshot("Sigh In Page");
 		// click on search flight button
 		QaRobot.ClickOnElement("ow_searchflight");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on search flight button</i></b>");
@@ -147,6 +148,7 @@ public class BookBusinessOneWayFlightWithPolicyType
 			List<WebElement> listOfPolicytype = QaBrowser.driver
 					.findElements(By.xpath("//div[@class='fl_upref_left ng-scope']"));
 
+			QaExtentReport.extentScreenshot("Result Page");
 			int bookindex = 0;
 			for (WebElement policytype : listOfPolicytype) {
 				bookindex = bookindex + 1;
@@ -187,9 +189,13 @@ public class BookBusinessOneWayFlightWithPolicyType
 				WebElement element = QaBrowser.driver.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
 				Select sel = new Select(element);
 				sel.selectByIndex(1);
+				
+				QaRobot.PassValue("AirTextTrvlr",AirTextTrvlr);
+				
 				// check the terms and condition checkbox
 				QaRobot.ClickOnElement("ow_chkterms");
 				QaExtentReport.test.log(Status.INFO, "<b><i>check the terms and condition</i></b>");
+				QaExtentReport.extentScreenshot("Checkout Page");
 				// proceed the booking from checkout page
 				QaRobot.ClickOnElement("ow_chkbook");
 				QaExtentReport.test.log(Status.INFO, "<b><i>book button to proceed the booking from checkout page</i></b>");
@@ -241,7 +247,7 @@ public class BookBusinessOneWayFlightWithPolicyType
 				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
 				System.out.println("Booking ID is " + bookingID);
 				QaExtentReport.test.log(Status.INFO, "Booking ID is  " + bookingID);
-
+				QaExtentReport.extentScreenshot("Confirm Page");
 			}
 		}
 	}
