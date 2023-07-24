@@ -37,5 +37,4 @@ public class QaDataProvider {
 		}
 		return data;
 	}
-	
 }

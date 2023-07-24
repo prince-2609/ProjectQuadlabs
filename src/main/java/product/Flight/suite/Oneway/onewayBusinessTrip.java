@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import Base.TestBase;
-import TestScript.RoundTrip.Flightcheck;
 import entities.Login;
 import utilities.QaBrowser;
 import utilities.QaDataProvider;
@@ -17,30 +16,31 @@ import utilities.QaExtentReport;
 import utilities.QaRobot;
 
 @Listeners(listenerClass.Listener.class)
-public class onewayBusinessTrip extends Flightcheck {
+public class onewayBusinessTrip {
 
 	public static String resultPagePrice;
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
 
-		return QaDataProvider.getTestdata("SBT_Flight", "Oneway");
+		return QaDataProvider.getTestdata("SBT_Flight", "Sheet2");
 	}
 
 	@Test(dataProvider = "getexceldata")
-	public static void Sbt_flight_Search(String ccode, String URL,String compCode,String uname, String pwd, String corptraveller,String searchType, String origin,
-			String forigin, String destination, String fdesti, String ddate, String triptype, String adult,
-			String child, String infant, String currency, String fclass, String preairline,
-			String nationality, String booknowindex, String policyindex, String tripindex,String passportnumber, String fop, String receiptno, String card, String cardtype,
-			String cvv, String resultpagestep, String checkoutPageStep, String airReasonCode) throws Exception {
+	public static void Sbt_flight_Search(String ccode, String URL, String compCode, String uname, String pwd,
+			String corptraveller, String searchType, String origin, String forigin, String destination, String fdesti,
+			String ddate, String triptype, String adult, String child, String infant, String currency, String fclass,
+			String preairline, String nationality, String booknowindex, String policyindex, String tripindex,
+			String passportnumber, String fop, String receiptno, String card, String cardtype, String cvv,
+			String resultpagestep, String checkoutPageStep, String airReasonCode) throws Exception {
 
-		QaExtentReport.test = QaExtentReport.report.createTest("Test On "+resultpagestep);
-		TestBase.Companycode(ccode,URL); 
+		QaExtentReport.test = QaExtentReport.report.createTest("Test On " + resultpagestep);
+		TestBase.Companycode(ccode, URL);
 		QaRobot.impliwait(30);
 		Login.SbtLogin(uname, pwd);
 		// login on sbt
 //		Login.V12SbtLogin(compCode,uname, pwd);
-		//Login.SbtLogin(uname, pwd);
+		// Login.SbtLogin(uname, pwd);
 
 		// close notification
 		// QaBrowser.driver.findElement(By.xpath("//a[@id='btnClosePopUpNotification']")).click();
@@ -48,35 +48,43 @@ public class onewayBusinessTrip extends Flightcheck {
 		SearchDashboard.selectEmployeeWithID(corptraveller);
 		// select the trip type
 		QaRobot.ClickOnElement("trip_Busniess");
-		QaExtentReport.test.log(Status.INFO, "<b><i>Search for business trip</i></b>");
+//		QaExtentReport.test.log(Status.INFO, "<b><i>Search for business trip</i></b>");
 		// select one way trip
 		QaRobot.ClickOnElement("ow_onewaytrip");
-		QaExtentReport.test.log(Status.INFO, "<b><i>Flight oneway trip</i></b>");
+//		QaExtentReport.test.log(Status.INFO, "<b><i>Flight oneway trip</i></b>");
 		Thread.sleep(1000);
-		TestBase.listofautosuggestion(By.xpath("//div[@id='divDepartureCity']/p"), origin, forigin,By.xpath("//input[@id='txtDepartureCity']"));
+		TestBase.listofautosuggestion(By.xpath("//div[@id='divDepartureCity']/p"), origin, forigin,
+				By.xpath("//input[@id='txtDepartureCity']"));
 		Thread.sleep(1000);
 
 		QaExtentReport.test.log(Status.INFO, "Departure city : " + forigin);
 
-		TestBase.listofautosuggestion(By.xpath("//div[@id='divDestinationCity']/p"), destination, fdesti,By.xpath("//input[@id='txtDestinationCity']"));
+		TestBase.listofautosuggestion(By.xpath("//div[@id='divDestinationCity']/p"), destination, fdesti,
+				By.xpath("//input[@id='txtDestinationCity']"));
 		Thread.sleep(1000);
-		
+
 		QaExtentReport.test.log(Status.INFO, "Arrival city : " + fdesti);
 
 		// Thread.sleep(500);
 		// click on departure date icon
-		QaBrowser.driver.findElement(By.xpath("(//input[@id=\"txtDepartureDate\"]//following::span/img[@class=\"cal_click\"])[1]")).click();
-		
+		QaBrowser.driver
+				.findElement(
+						By.xpath("(//input[@id=\"txtDepartureDate\"]//following::span/img[@class=\"cal_click\"])[1]"))
+				.click();
+
 		Thread.sleep(500);
 		// click on next month
-		//QaRobot.ClickOnElement("nextmonth_calender", "Clicked  on Next Month Button");
-		 QaRobot.ClickOnElement("nextmonth_calender");
-		
+		// QaRobot.ClickOnElement("nextmonth_calender", "Clicked on Next Month Button");
+		QaRobot.ClickOnElement("nextmonth_calender");
+
 		// select the depature date
 		QaBrowser.driver.findElement(By.xpath("//a[contains(@title,'" + ddate + "')]")).click();
 		QaExtentReport.test.log(Status.INFO, "Depature date : " + ddate);
-		
-		QaBrowser.driver.findElement(By.xpath("(//input[@id=\"txtDepartureDate\"]//following::span/img[@class=\"cal_click\"])[1]")).click();
+
+		QaBrowser.driver
+				.findElement(
+						By.xpath("(//input[@id=\"txtDepartureDate\"]//following::span/img[@class=\"cal_click\"])[1]"))
+				.click();
 
 		// select cabin class
 		QaRobot.selectTextFromDropdown("ow_class", fclass, "cabin class : " + fclass);
@@ -93,13 +101,15 @@ public class onewayBusinessTrip extends Flightcheck {
 		SearchDashboard.FlightpolicyCheck();
 		QaExtentReport.extentScreenshot("Search Page");
 		// click on search flight button
-		  QaRobot.ClickOnElement("ow_searchflight");
-		  QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on search flight button</i></b>");
-		  Thread.sleep(30000);
+		QaRobot.ClickOnElement("ow_searchflight");
+//		  QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on search flight button</i></b>");
+		Thread.sleep(30000);
 		// explicit wait till loader invisible
 //		QaRobot.explicitwaitinvisible(200, By.xpath("//div[@class='flight-wait-progress progress ng-hide']"));
 
-		if (QaBrowser.driver.findElement(By.xpath("//p[contains(text(),'Sorry, could not find desired results. Please try again.')]"))
+		if (QaBrowser.driver
+				.findElement(
+						By.xpath("//p[contains(text(),'Sorry, could not find desired results. Please try again.')]"))
 				.isDisplayed()) {
 			// fail the test case and screenshot
 //			String resultnotfound = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\resultnotfound.png");
@@ -122,137 +132,132 @@ public class onewayBusinessTrip extends Flightcheck {
 			QaExtentReport.test.log(Status.INFO, "Result page url is  " + url);
 
 			QaExtentReport.test.log(Status.INFO, "Session id is " + uid[1]);
-			
-			if(triptype.equalsIgnoreCase("International"))
-			{
 
-			// get price of result page
-			resultPagePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='fl_price_fmt']/p[2]/span/span[2])[" + tripindex + "]"))
-					.getText();
-			System.out.println("Result page price is " + resultPagePrice);
-			QaExtentReport.test.log(Status.INFO, "Result page price is " + resultPagePrice);
+			if (triptype.equalsIgnoreCase("International")) {
 
-			// get text of element that start start from 1
-			String policytype = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'PT_')])[" + policyindex + "]")).getText();
-			QaExtentReport.extentScreenshot("Result Page");
-			if (resultpagestep.equalsIgnoreCase("Trip Request")) {
-				// Send Quotation
-				SBTResultPage.tripRequest(tripindex, resultPagePrice, policytype);
+				// get price of result page
+				resultPagePrice = QaBrowser.driver
+						.findElement(By.xpath("(//div[@class='fl_price_fmt']/p[2]/span/span[2])[" + tripindex + "]"))
+						.getText();
+				System.out.println("Result page price is " + resultPagePrice);
+				QaExtentReport.test.log(Status.INFO, "Result page price is " + resultPagePrice);
 
-			} 
-			else if (resultpagestep.equalsIgnoreCase("Flight Book")) {
-				// click on book now button with indexing
-				QaBrowser.driver.findElement(By.xpath("(//input[contains(@id,'Anchor_')])[" + booknowindex + "]")).click();
-				// check In policy and out policy text
-				if (policytype.equalsIgnoreCase("Out Of Policy")) {
+				// get text of element that start start from 1
+				String policytype = QaBrowser.driver
+						.findElement(By.xpath("(//span[contains(@id,'PT_')])[" + policyindex + "]")).getText();
+				QaExtentReport.extentScreenshot("Result Page");
+				if (resultpagestep.equalsIgnoreCase("Trip Request")) {
+					// Send Quotation
+					SBTResultPage.tripRequest(tripindex, resultPagePrice, policytype);
 
-					QaBrowser.driver.switchTo().alert().accept();
+				} else if (resultpagestep.equalsIgnoreCase("Flight Book")) {
+					// click on book now button with indexing
+					QaBrowser.driver.findElement(By.xpath("(//input[contains(@id,'Anchor_')])[" + booknowindex + "]"))
+							.click();
+					// check In policy and out policy text
+					if (policytype.equalsIgnoreCase("Out Of Policy")) {
+
+						QaBrowser.driver.switchTo().alert().accept();
+					}
+
+					checkoutpage(fop, receiptno, card, cardtype, cvv, checkoutPageStep, airReasonCode);
 				}
-				
-				checkoutpage(fop,receiptno,card,cardtype,cvv,checkoutPageStep,airReasonCode);
-			}
-			
+
 //close international 
 			}
-			
-			if(triptype.equalsIgnoreCase("Domestic"))
-			{
-				
-			}
-			}
 
+			if (triptype.equalsIgnoreCase("Domestic")) {
+
+			}
 		}
-	
+
+	}
+
 	@AfterTest
 	public static void After_Test() {
 
 		QaExtentReport.test.getExtent().flush();
 	}
 
-	
-	
-	public static void checkoutpage(String fop,String receiptno,String card,String cardtype,String cvv,String checkoutPageStep,String airReasonCode) throws Exception 
-	{
-	// if getting change selection on check out page
-	if (QaBrowser.driver.findElement(By.xpath("//a[@id='ctl00_contentMain_expATag']")).isDisplayed()) {
-		QaExtentReport.test.log(Status.FAIL, "Geeting change selection");
-	} else {
+	public static void checkoutpage(String fop, String receiptno, String card, String cardtype, String cvv,
+			String checkoutPageStep, String airReasonCode) throws Exception {
+		// if getting change selection on check out page
+		if (QaBrowser.driver.findElement(By.xpath("//a[@id='ctl00_contentMain_expATag']")).isDisplayed()) {
+			QaExtentReport.test.log(Status.FAIL, "Geeting change selection");
+		} else {
 
-		// explicit wait till terms and condition check box visible
+			// explicit wait till terms and condition check box visible
 //		QaRobot.explicitwaitvisible(180, By.xpath("//input[@id='ctl00_contentMain_chkTerms']"));
-		// screenshot of checkout page
+			// screenshot of checkout page
 //		String checkoutpage = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\checkoutpage.png");
 //		QaExtentReport.test.log(Status.INFO, "Successful Booking " + checkoutpage + "");
-		// get the checkout page booking price
-		String checkoutprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_totcashPrice']")).getText();
-		System.out.println("Price of checkout page " + checkoutprice);
-		QaExtentReport.test.log(Status.INFO, "Price of checkout page " + checkoutprice + "");
-		QaExtentReport.extentScreenshot("Checkout Page");
+			// get the checkout page booking price
+			String checkoutprice = QaBrowser.driver
+					.findElement(By.xpath("//span[@id='ctl00_contentMain_totcashPrice']")).getText();
+			System.out.println("Price of checkout page " + checkoutprice);
+			QaExtentReport.test.log(Status.INFO, "Price of checkout page " + checkoutprice + "");
+			QaExtentReport.extentScreenshot("Checkout Page");
 
-		if (checkoutPageStep.equalsIgnoreCase("Hold and quote")) 
-		{
-			SBTCheckoutPayment.holdAndQuote();
-		} 
-		else if (checkoutPageStep.equalsIgnoreCase("Quote")) 
-		{
-			SBTCheckoutPayment.checkoutFlightQuote(airReasonCode);
-		} 
-		else if (checkoutPageStep.equalsIgnoreCase("Fullfillment")) 
-		{
-			// check the terms and condition checkbox
-			QaRobot.ClickOnElement("ow_chkterms");
-			QaExtentReport.test.log(Status.INFO, "<b><i>check the terms and condition</i></b>");
-			// proceed the booking from checkout page
-			QaRobot.ClickOnElement("ow_chkbook");
-			QaExtentReport.test.log(Status.INFO, "<b><i>book button to proceed the booking from checkout page</i></b>");
-			// accept alert to proceed from checkout page
-			QaBrowser.driver.switchTo().alert().accept();
-			// wait till payment page display
+			if (checkoutPageStep.equalsIgnoreCase("Hold and quote")) {
+				SBTCheckoutPayment.holdAndQuote();
+			} else if (checkoutPageStep.equalsIgnoreCase("Quote")) {
+				SBTCheckoutPayment.checkoutFlightQuote(airReasonCode);
+			} else if (checkoutPageStep.equalsIgnoreCase("Fullfillment")) {
+				// check the terms and condition checkbox
+				QaRobot.ClickOnElement("ow_chkterms");
+				QaExtentReport.test.log(Status.INFO, "<b><i>check the terms and condition</i></b>");
+				// proceed the booking from checkout page
+				QaRobot.ClickOnElement("ow_chkbook");
+				QaExtentReport.test.log(Status.INFO,
+						"<b><i>book button to proceed the booking from checkout page</i></b>");
+				// accept alert to proceed from checkout page
+				QaBrowser.driver.switchTo().alert().accept();
+				// wait till payment page display
 //			QaRobot.explicitwaitvisible(300, By.xpath("//div[@id='ctl00_contentMain_div_Heading']"));
-			// screenshot of Payment page
+				// screenshot of Payment page
 //			String paymentpage = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\paymentpage.png");
 //			QaExtentReport.test.log(Status.INFO, "Successful Booking " + paymentpage + "");
 
-			// get the payment page booking price
-			String paymentprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']")).getText();
-			System.out.println("Price of payment page " + paymentprice);
-			QaExtentReport.test.log(Status.INFO, "Price of payment page " + paymentprice + "");
-			// select FOP
-			if (fop.equalsIgnoreCase("Cash")) 
-			{
-				SBTCheckoutPayment.fopCash(fop, receiptno);
-			} 
-			else 
-			{
-				SBTCheckoutPayment.fopCreditDebit(card, cardtype, cvv);
-			}
-			QaExtentReport.extentScreenshot("Payment Page");
-			QaRobot.ClickOnElement("ow_paymentprocced");
-			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
-			Thread.sleep(2000);
-			// screenshot of Confirmation page
+				// get the payment page booking price
+				String paymentprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']"))
+						.getText();
+				System.out.println("Price of payment page " + paymentprice);
+				QaExtentReport.test.log(Status.INFO, "Price of payment page " + paymentprice + "");
+				// select FOP
+				if (fop.equalsIgnoreCase("Cash")) {
+					SBTCheckoutPayment.fopCash(fop, receiptno);
+				} else {
+					SBTCheckoutPayment.fopCreditDebit(card, cardtype, cvv);
+				}
+				QaExtentReport.extentScreenshot("Payment Page");
+				QaRobot.ClickOnElement("ow_paymentprocced");
+				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
+				Thread.sleep(2000);
+				// screenshot of Confirmation page
 //			String confirmpage = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\confirmpage.png");
 //			QaExtentReport.test.log(Status.INFO, "Successful Booking " + confirmpage + "");
 
-			// booking status
-			String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']")).getText();
-			System.out.println("Booking Status is " + bookingStatus);
-			QaExtentReport.test.log(Status.INFO, "Booking Status is  " + bookingStatus);
-			// Confirmation code
-			String pnr = QaBrowser.driver.findElement(By.xpath("//p[@class='nc_status_p']")).getText();
-			System.out.println("PNR is " + pnr);
-			QaExtentReport.test.log(Status.INFO, "PNR is  " + pnr);
-			// Confirm page price
-			String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[3]")).getText();
-			System.out.println("Confirm Page Price is " + confirmePrice);
-			QaExtentReport.test.log(Status.INFO, "Confirm Page Price is  " + confirmePrice);
-			// Booking id
-			String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
-			System.out.println("Booking ID is " + bookingID);
-			QaExtentReport.test.log(Status.INFO, "Booking ID is  " + bookingID);
-			QaExtentReport.extentScreenshot("Confirm Page");
+				// booking status
+				String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']"))
+						.getText();
+				System.out.println("Booking Status is " + bookingStatus);
+				QaExtentReport.test.log(Status.INFO, "Booking Status is  " + bookingStatus);
+				// Confirmation code
+				String pnr = QaBrowser.driver.findElement(By.xpath("//p[@class='nc_status_p']")).getText();
+				System.out.println("PNR is " + pnr);
+				QaExtentReport.test.log(Status.INFO, "PNR is  " + pnr);
+				// Confirm page price
+				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[3]"))
+						.getText();
+				System.out.println("Confirm Page Price is " + confirmePrice);
+				QaExtentReport.test.log(Status.INFO, "Confirm Page Price is  " + confirmePrice);
+				// Booking id
+				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
+				System.out.println("Booking ID is " + bookingID);
+				QaExtentReport.test.log(Status.INFO, "Booking ID is  " + bookingID);
+				QaExtentReport.extentScreenshot("Confirm Page");
 
+			}
 		}
 	}
-}}
-
+}

@@ -23,7 +23,7 @@ public class QaExtentReport
 	public static ExtentReports report;
 	public static ExtentTest test;
 	
-	public static void test_htmlreport() 
+	public static void test_htmlreport() throws IOException 
 	{
 		Date date = new Date();
 		DateFormat d = new SimpleDateFormat("dd-MMM-yy & HH-mm-ss");
@@ -34,12 +34,11 @@ public class QaExtentReport
 		File file = new File("D:\\Automation\\projectQuadlabs\\Reports\\"+NewDate+" report"+".html");
 		ExtentSparkReporter sparkreporter = new ExtentSparkReporter(file);
 		ExtentSparkReporterConfig config = sparkreporter.config();
-		config.setTheme(Theme.DARK);
-		config.setReportName("SBT B2C");
+		config.setTheme(Theme.STANDARD);
+		config.setReportName("Extent Report");
 		config.setDocumentTitle("SBT");
 		
 		report.attachReporter(sparkreporter);
-	
 //		report
 //		.createTest("Pre Approval Queue for Business Trip")
 //		.assignAuthor("Shubham Natkar")
@@ -48,7 +47,14 @@ public class QaExtentReport
 	
 	public static void extentScreenshot(String txt) throws IOException
 	{
-		test.info(MediaEntityBuilder.createScreenCaptureFromPath(captureScreenshot(txt)).build());
+		test.info(MediaEntityBuilder.createScreenCaptureFromPath(captureScreenshot(txt),txt).build());
+	}
+	
+	public static void extentScreenshot1(String txt,String txt1) throws IOException
+	{
+		test.info(MediaEntityBuilder.createScreenCaptureFromPath(captureScreenshot(txt),txt1).build());
+//		String path = captureScreenshot(txt);
+//		test.addScreenCaptureFromPath(path, txt1);
 	}
 	
 	public static String captureScreenshot(String text) throws IOException
@@ -59,7 +65,7 @@ public class QaExtentReport
 		
 		TakesScreenshot ts = (TakesScreenshot)QaBrowser.driver;
 		File Source = ts.getScreenshotAs(OutputType.FILE);
-		File Dest = new File("D:\\Automation\\V12StagingB2C\\Screenshot\\"+NewDate+" "+text+".jpg");
+		File Dest = new File("D:\\Automation\\projectQuadlabs\\Screenshot\\"+NewDate+" "+text+".jpg");
 		FileUtils.copyFile(Source, Dest);
 		return Dest.getAbsolutePath();
 	}

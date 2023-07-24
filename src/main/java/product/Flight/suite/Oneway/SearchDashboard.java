@@ -21,7 +21,7 @@ public class SearchDashboard {
 	public static void selectEmployee(String traveler) throws Exception {
 
 		QaRobot.ClickOnElement("ow_Searchemp");
-		QaExtentReport.test.log(Status.INFO, "<b><i>Corporate employee: </i></b>"+ traveler);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Corporate employee: </i></b>" + traveler);
 
 		// get list of all travelers
 
@@ -53,57 +53,55 @@ public class SearchDashboard {
 	public static void selectEmployeeWithID(String travelerID) throws Exception {
 
 		QaRobot.ClickOnElement("ow_Searchemp");
-		QaExtentReport.test.log(Status.INFO, "<b><i>Employee Email : </i></b>"+ travelerID);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Employee Email : </i></b>" + travelerID);
+		QaBrowser.driver.findElement(By.xpath("//input[@id='txtEmailAddress']")).sendKeys(travelerID);
+		QaBrowser.driver.findElement(By.xpath("//input[@id='btnSearchUser']")).click();
+		Thread.sleep(3000);
 		// get list of all travelers
-
-		List<WebElement> corpUsers = QaBrowser.driver.findElements(By.xpath("//table[@id='gridCorporateTravel']/tbody/tr/td[2]"));
-		int index=0;
-		for(WebElement cropUser:corpUsers)
-		{
-			String TextofCropUser=cropUser.getText();
-			index=index+1;
-			if(TextofCropUser.equalsIgnoreCase(travelerID))
-			{
-				QaBrowser.driver.findElement(By.xpath("(//span[@style='padding-left: 8px; padding-right: 8px; float: left;'])["+index+"]")).click();
+		List<WebElement> corpUsers = QaBrowser.driver
+				.findElements(By.xpath("//table[@id='gridCorporateTravel']/tbody/tr/td[2]"));
+		int index = 0;
+		for (WebElement cropUser : corpUsers) {
+			String TextofCropUser = cropUser.getText();
+			index = index + 1;
+			if (TextofCropUser.equalsIgnoreCase(travelerID)) {
+				QaBrowser.driver.findElement(By
+						.xpath("(//span[@style='padding-left: 8px; padding-right: 8px; float: left;'])[" + index + "]"))
+						.click();
 				break;
-			}
-			else
-			{
+			} else {
 //				QaExtentReport.test.log(Status.INFO,"Corporate traveler ID does not match with " + travelerID );
 				System.out.println("Not match");
 			}
 		}
 	}
-	
-	public static void selectRoomPax(String roomcount,String adult,String child,String ageofchildren)
-	{
-		int room=Integer.parseInt(roomcount);
-		String[] adultcount=adult.split(",");
-		String[] childcount=child.split(",");
-		//select adult and child 
-		for(int i=1;i<=room;i++)
-		{
-			WebElement adultelement=QaBrowser.driver.findElement(By.xpath("//select[@id='ddlHHLAdultR"+i+"']"));
-			Select selectadult=new Select(adultelement);
-			selectadult.selectByValue(adultcount[i-1]);
-			
-			WebElement childelement=QaBrowser.driver.findElement(By.xpath("//select[@id='ddlHHLChildR"+i+"']"));
-			Select selectchild=new Select(childelement);
-			selectchild.selectByValue(childcount[i-1]);
-			
+
+	public static void selectRoomPax(String roomcount, String adult, String child, String ageofchildren) {
+		int room = Integer.parseInt(roomcount);
+		String[] adultcount = adult.split(",");
+		String[] childcount = child.split(",");
+		// select adult and child
+		for (int i = 1; i <= room; i++) {
+			WebElement adultelement = QaBrowser.driver.findElement(By.xpath("//select[@id='ddlHHLAdultR" + i + "']"));
+			Select selectadult = new Select(adultelement);
+			selectadult.selectByValue(adultcount[i - 1]);
+
+			WebElement childelement = QaBrowser.driver.findElement(By.xpath("//select[@id='ddlHHLChildR" + i + "']"));
+			Select selectchild = new Select(childelement);
+			selectchild.selectByValue(childcount[i - 1]);
+
 		}
-		//select the child age if have
-		String[] ageofchild=ageofchildren.split(",");
-		for(String chd:childcount)
-		{
-			int chdcount=Integer.parseInt(chd);
-			for(int i=1;i<=chdcount;i++)
-			{
-				WebElement childrenage=QaBrowser.driver.findElement(By.xpath("//select[@id='ddlHHLChild"+i+"R"+chdcount+"']"));
-				Select selectage=new Select(childrenage);
-				selectage.selectByValue(ageofchild[i-1]);
+		// select the child age if have
+		String[] ageofchild = ageofchildren.split(",");
+		for (String chd : childcount) {
+			int chdcount = Integer.parseInt(chd);
+			for (int i = 1; i <= chdcount; i++) {
+				WebElement childrenage = QaBrowser.driver
+						.findElement(By.xpath("//select[@id='ddlHHLChild" + i + "R" + chdcount + "']"));
+				Select selectage = new Select(childrenage);
+				selectage.selectByValue(ageofchild[i - 1]);
 			}
-		
+
 		}
 	}
 
@@ -130,7 +128,6 @@ public class SearchDashboard {
 	// Travel policy checkbox for flight
 	public static void FlightpolicyCheck() throws Exception {
 		QaRobot.ClickOnElement("ow_checkpolicy");
-		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked travel policy check</i></b>");
 	}
 
 	// Travel policy checkbox for Hotel

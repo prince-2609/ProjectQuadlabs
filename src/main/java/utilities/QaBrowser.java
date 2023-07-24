@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import org.apache.poi.ss.formula.eval.NotImplementedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -29,7 +30,9 @@ public class QaBrowser extends QaRobot {
 			launchChrome();
 		}
 		driver.navigate().to(this.url);
+		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
 		return driver;
 	}
 
@@ -48,26 +51,15 @@ public class QaBrowser extends QaRobot {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
+//	@SuppressWarnings("deprecation")
 	private void launchChrome() throws MalformedURLException {
-
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\lib\\chromedriverUpdate.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\lib\\chromeUpdate.exe");
 		//DesiredCapabilities dc = DesiredCapabilities.chrome();
 		//dc.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		driver = (WebDriver) new ChromeDriver();
-		
+		ChromeOptions opt = new ChromeOptions();
+		opt.addArguments("--remote-allow-origins=*"); 
+		driver = (WebDriver) new ChromeDriver(opt);
 	}
-
-//	private WebDriver luanchFirefox() {
-//		System.setProperty("webdriver.firefox.marionette", System.getProperty("user.dir") + "\\lib\\geckodriver1.exe");
-//		//DesiredCapabilities dc = DesiredCapabilities.firefox();
-//		//dc.setCapability("marionette", true);
-////		FirefoxProfile profile = new FirefoxProfile();
-////		profile.setAcceptUntrustedCertificates(true);
-////		profile.setAssumeUntrustedCertificateIssuer(false);
-//		driver = (WebDriver) new FirefoxDriver();
-//		return driver;
-//	}
 	
 	private WebDriver luanchFirefox() {
 		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\lib\\geckodriver1.exe");

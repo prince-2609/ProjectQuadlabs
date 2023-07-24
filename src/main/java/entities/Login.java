@@ -2,6 +2,7 @@ package entities;
 
 
 import TestScript.RoundTrip.Flight;
+import utilities.QaExtentReport;
 import utilities.QaRobot;
 
 public class Login extends Flight
@@ -22,6 +23,7 @@ public class Login extends Flight
 		//QaRobot.getWebElement("sbt_compcode").sendKeys(companycode);
 		QaRobot.getWebElement("sbt_Login").sendKeys(username);
 		QaRobot.getWebElement("sbt_Pasword").sendKeys(password);
+		QaExtentReport.extentScreenshot("Sigh In Page");
 		QaRobot.getWebElement("sbt_submit").click();
 	}
 	public static void V12SbtLogin(String companyCode,String username, String password) throws Exception

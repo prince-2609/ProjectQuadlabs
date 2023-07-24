@@ -6,6 +6,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import com.aventstack.extentreports.Status;
+
+import Base.TestBase;
 import utilities.QaBrowser;
 import utilities.QaExtentReport;
 import utilities.QaRobot;
@@ -48,9 +50,9 @@ public class SBTCheckoutPayment {
 		// select the travelling with for infant
 
 		int inf = Integer.parseInt(infant);
-		for (int i = 1; i <= inf; i++) 
-		{
-			WebElement webelement = QaBrowser.driver.findElement(By.xpath("(//select[@id='ctl00_contentMain_ddl_travell_with'])[" + i + "]"));
+		for (int i = 1; i <= inf; i++) {
+			WebElement webelement = QaBrowser.driver
+					.findElement(By.xpath("(//select[@id='ctl00_contentMain_ddl_travell_with'])[" + i + "]"));
 			Select select = new Select(webelement);
 			select.selectByIndex(i);
 
@@ -108,7 +110,8 @@ public class SBTCheckoutPayment {
 
 		int inf = Integer.parseInt(infant);
 		for (int i = 1; i <= inf; i++) {
-			WebElement webelement = QaBrowser.driver.findElement(By.xpath("(//select[@id='ctl00_contentMain_ddl_travell_with'])[" + i + "]"));
+			WebElement webelement = QaBrowser.driver
+					.findElement(By.xpath("(//select[@id='ctl00_contentMain_ddl_travell_with'])[" + i + "]"));
 			Select select = new Select(webelement);
 			select.selectByIndex(i);
 		}
@@ -116,20 +119,22 @@ public class SBTCheckoutPayment {
 
 	public static void fopCreditDebit(String card, String cardType, String cvv) throws Exception {
 		if (card.equalsIgnoreCase("Credit Card") || card.equalsIgnoreCase("Debit Card")) {
-
 			QaRobot.selectTextFromDropdown("ow_selectcard", card, "Selected card");
 			QaRobot.ClickOnElement("click_OK");
-			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked Ok button</i></b>");
+//			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked Ok button</i></b>");
 			if (cardType.equalsIgnoreCase("Master Card")) {
 				QaRobot.selectTextFromDropdown("ow_selectcardtype", cardType, "Selected master card");
+				QaRobot.ClickOnElement("ow_Card");
 				QaRobot.PassValue("ow_cardsecuritycode", cvv);
-				QaExtentReport.test.log(Status.INFO, "<b><i>CVV number</i></b>");
-			}
-
-			else if (cardType.equalsIgnoreCase("visa")) {
+				QaRobot.PassValue("OW_Address", "JMD");
+				TestBase.listofautosuggestion(By.xpath("//div[@id='divHTCity']/p"), "Delhi", "Delhi",
+						By.xpath("//input[@id='ctl00_contentMain_payeeCity']"));
+				QaRobot.PassValue("OW_State", "Delhi");
+			} else if (cardType.equalsIgnoreCase("Visa")) {
 				QaRobot.selectTextFromDropdown("ow_selectcardtype", cardType, "Selected visa card");
-				QaRobot.PassValue("card_authcode", cvv);
-				QaExtentReport.test.log(Status.INFO, "<b><i>auth code</i></b>");
+				QaRobot.ClickOnElement("ow_Card");
+//				QaRobot.PassValue("card_authcode", cvv);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>auth code</i></b>");
 
 			}
 		}
@@ -137,11 +142,11 @@ public class SBTCheckoutPayment {
 
 	public static void fopCash(String card, String receiptno) throws Exception {
 
-		QaRobot.selectTextFromDropdown("ow_selectcard", card, "Selected card: " + card);	
+		QaRobot.selectTextFromDropdown("ow_selectcard", card, "Selected card: " + card);
 		QaRobot.ClickOnElement("click_OK");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on Ok button</i></b>");
 		QaRobot.PassValue("ow_receiptno", receiptno);
-		QaExtentReport.test.log(Status.INFO, "<b><i>receipt number is: </i></b>"+receiptno);
+		QaExtentReport.test.log(Status.INFO, "<b><i>receipt number is: </i></b>" + receiptno);
 	}
 
 	public static void fopBillToComapnay(String card) throws Exception {
@@ -151,7 +156,7 @@ public class SBTCheckoutPayment {
 	}
 
 	public static void holdAndQuote() throws Exception {
-		
+
 		// click on book and quote
 		QaRobot.ClickOnElement("bookandquote");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on book and quote button</i></b>");
@@ -160,20 +165,20 @@ public class SBTCheckoutPayment {
 		// booking id
 		String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
 		System.out.println("Booking id : " + bookingID);
-		QaExtentReport.test.log(Status.INFO, "<b><i>Booking id </i></b>"+ bookingID);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Booking id </i></b>" + bookingID);
 		// booking status
 		String status = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']")).getText();
 		System.out.println("Booking status is : " + status);
-		QaExtentReport.test.log(Status.INFO, "<b><i>Booking status is </i></b>"+ status);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Booking status is </i></b>" + status);
 		// booking price
 		String price = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[3]")).getText();
 		System.out.println("Booking price : " + price);
-		QaExtentReport.test.log(Status.INFO, "<b><i>Booking price is </i></b>"+ price);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Booking price is </i></b>" + price);
 	}
 
 	public static void checkoutFlightQuote(String airReasonCode) throws Exception {
 		// click on quote button
-		
+
 		QaRobot.ClickOnElement("TermCondition");
 		QaRobot.ClickOnElement("Quoteflightcheckout");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on quote button</i></b>");
@@ -187,11 +192,10 @@ public class SBTCheckoutPayment {
 		// Pass the remarks
 		// QaRobot.PassValue("sendQuoteflightremarkscheckout", remarks, "Passed the
 		// remarks as a " +remarks);
-		
+
 		String ParentWindow = QaBrowser.driver.getWindowHandle();
 		Set<String> handles = QaBrowser.driver.getWindowHandles();
-		for (String childWindow : handles) 
-		{
+		for (String childWindow : handles) {
 			if (!childWindow.equals(ParentWindow))
 				QaBrowser.driver.switchTo().window(childWindow);
 		}
@@ -199,11 +203,11 @@ public class SBTCheckoutPayment {
 		Select sel = new Select(element);
 		sel.selectByIndex(1);
 		// click on send button
-		WebElement WebElement = QaBrowser.driver.findElement(By.xpath("//div[@id='divapprovecontainer']//a[@id='lnksendAIREnqFromCorp']"));
+		WebElement WebElement = QaBrowser.driver
+				.findElement(By.xpath("//div[@id='divapprovecontainer']//a[@id='lnksendAIREnqFromCorp']"));
 		JavascriptExecutor js = (JavascriptExecutor) QaBrowser.driver;
 		js.executeScript("arguments[0].click();", WebElement);
 
-		
 		// QaRobot.ClickOnElement("sendFlightQuoteFromCheckout", "Clicked on send
 		// button");
 		// wait till alert present
@@ -211,7 +215,8 @@ public class SBTCheckoutPayment {
 		// get the text of alert and accept it
 		String quoteMessage = QaBrowser.driver.switchTo().alert().getText();
 		System.out.println("Quote message after sending quotation from checkout page " + quoteMessage);
-		QaExtentReport.test.log(Status.INFO,"Quote message after sending quotation from checkout page " + quoteMessage);
+		QaExtentReport.test.log(Status.INFO,
+				"Quote message after sending quotation from checkout page " + quoteMessage);
 		QaBrowser.driver.switchTo().alert().accept();
 
 	}
@@ -229,7 +234,7 @@ public class SBTCheckoutPayment {
 				"Selected hotel reason code " + hotelReasonCode);
 		// Pass the remarks
 		QaRobot.PassValue("sendQuotehotelremarkscheckout", remarks);
-		QaExtentReport.test.log(Status.INFO, "<b><i>Passed the remarks as a </i></b>"+remarks);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Passed the remarks as a </i></b>" + remarks);
 
 		// click on send button
 		WebElement WebElement = QaBrowser.driver.findElement(By.xpath("//a[@id='lnksendHHLEnqFromCorp']"));
@@ -245,7 +250,8 @@ public class SBTCheckoutPayment {
 		// get the text of alert and accept it
 		String quoteMessage = QaBrowser.driver.switchTo().alert().getText();
 		System.out.println("Quote message after sending quotation from checkout page " + quoteMessage);
-		QaExtentReport.test.log(Status.INFO,"Quote message after sending quotation from checkout page " + quoteMessage);
+		QaExtentReport.test.log(Status.INFO,
+				"Quote message after sending quotation from checkout page " + quoteMessage);
 		QaBrowser.driver.switchTo().alert().accept();
 
 	}
@@ -255,19 +261,19 @@ public class SBTCheckoutPayment {
 		int chd = Integer.parseInt(child);
 		int inf = Integer.parseInt(infant);
 		// check adult
-		for (int i = 1; i < adt; i++) 
-		{
-			QaBrowser.driver.findElement(By.xpath("//input[@id='rptPaxDetails_ctl01_rptDetails_ctl0" + i + "_chk']")).click();
+		for (int i = 1; i < adt; i++) {
+			QaBrowser.driver.findElement(By.xpath("//input[@id='rptPaxDetails_ctl01_rptDetails_ctl0" + i + "_chk']"))
+					.click();
 		}
 		// check child
-		for (int i = 1; i <= chd; i++) 
-		{
-			QaBrowser.driver.findElement(By.xpath("//input[@id='rptPaxDetails_ctl02_rptDetails_ctl0" + i + "_chk']")).click();
+		for (int i = 1; i <= chd; i++) {
+			QaBrowser.driver.findElement(By.xpath("//input[@id='rptPaxDetails_ctl02_rptDetails_ctl0" + i + "_chk']"))
+					.click();
 		}
 		// check infant
-		for (int i = 1; i <= inf; i++) 
-		{
-			QaBrowser.driver.findElement(By.xpath("//input[@id='rptPaxDetails_ctl03_rptDetails_ctl0" + i + "_chk']")).click();
+		for (int i = 1; i <= inf; i++) {
+			QaBrowser.driver.findElement(By.xpath("//input[@id='rptPaxDetails_ctl03_rptDetails_ctl0" + i + "_chk']"))
+					.click();
 		}
 
 	}
@@ -299,7 +305,7 @@ public class SBTCheckoutPayment {
 		}
 
 	}
-	
+
 	// Personal booking
 
 	public static void PersonalAdultCheckout(String adult, String adttitle, String adultfname, String adultlname,
@@ -385,13 +391,13 @@ public class SBTCheckoutPayment {
 		}
 	}
 
-	public static void PersonalChildCheckout(String child,String chdtitle,String childfname,String childlname,
+	public static void PersonalChildCheckout(String child, String chdtitle, String childfname, String childlname,
 			String childYear, String childMonth, String childDate, String childGender, String childPassport,
 			String childNationality, String childEdate, String childEmonth, String childEyear, String childPassportComp)
 			throws Exception {
-		
+
 		int chd = Integer.parseInt(child);
-		for (int i = 1; i <=chd; i++) {
+		for (int i = 1; i <= chd; i++) {
 			// select title
 			String childTitleElement = "(//select[@id='ctl00_contentMain_ddl_titleChd'])[" + i + "]";
 			String[] childtitle = chdtitle.split(",");
@@ -413,7 +419,7 @@ public class SBTCheckoutPayment {
 
 			String childyearElement = "(//select[@id='ctl00_contentMain_txt_birthDateChd_ddlYear'])[" + i + "]";
 			String[] childy = childYear.split(",");
-			QaRobot.selectTextByLocator(childyearElement,childy[i - 1], "Selected Year For Child");
+			QaRobot.selectTextByLocator(childyearElement, childy[i - 1], "Selected Year For Child");
 
 			// Fill Month
 			String childmonthElement = "(//select[@id='ctl00_contentMain_txt_birthDateChd_ddlMonth'])[" + i + "]";
@@ -423,7 +429,8 @@ public class SBTCheckoutPayment {
 			// FIll Day
 			String childdayElement = "(//select[@id='ctl00_contentMain_txt_birthDateChd_ddlDay'])[" + i + "]";
 			String[] childday = childDate.split(",");
-			QaRobot.selectValueByLocator(childdayElement, childday[i - 1],"Selected " + childday[i - 1] + " as day of Child");
+			QaRobot.selectValueByLocator(childdayElement, childday[i - 1],
+					"Selected " + childday[i - 1] + " as day of Child");
 
 			// select gender
 			String childgenderElement = "(//select[@id='ctl00_contentMain_ddl_genderChd'])[" + i + "]";
@@ -433,7 +440,8 @@ public class SBTCheckoutPayment {
 			// Fill Passport
 			String childpassportElement = "//input[@id='txt_passportChd" + i + "']";
 			String[] childpass = childPassport.split(",");
-			QaRobot.PassValueByLocator(childpassportElement, childpass[i - 1],"Entered Passport Number For Child" + i + "");
+			QaRobot.PassValueByLocator(childpassportElement, childpass[i - 1],
+					"Entered Passport Number For Child" + i + "");
 
 			// fill nationality
 
@@ -445,7 +453,8 @@ public class SBTCheckoutPayment {
 
 			String[] childeday = childEdate.split(",");
 			String childedayElement = "(//select[@id='ctl00_contentMain_txt_ex_dateChd_ddlDay'])[" + i + "]";
-			QaRobot.selectValueByLocator(childedayElement, childeday[i - 1],"Selected " + childeday[i - 1] + " as day of Child");
+			QaRobot.selectValueByLocator(childedayElement, childeday[i - 1],
+					"Selected " + childeday[i - 1] + " as day of Child");
 			// Fill Month
 			String childemonthElement = "(//select[@id='ctl00_contentMain_txt_ex_dateChd_ddlMonth'])[" + i + "]";
 			String[] childemm = childEmonth.split(",");
@@ -465,7 +474,7 @@ public class SBTCheckoutPayment {
 		}
 	}
 
-	public static void PersonalInfantCheckout(String infant,String inftitle,String infantfname,String infantlname,
+	public static void PersonalInfantCheckout(String infant, String inftitle, String infantfname, String infantlname,
 			String infantyear, String infantmonth, String infantdate, String infantgender, String infantTravelingWith,
 			String infantpassprot, String infantnationality, String infantedate, String infantemonth,
 			String infanteyear, String infantpassportcomp) throws Exception {
@@ -556,14 +565,12 @@ public class SBTCheckoutPayment {
 		}
 	}
 
-	public static void GuestAdultCheckout(String adult,String adttitle,String adultfname,String adultlname,
+	public static void GuestAdultCheckout(String adult, String adttitle, String adultfname, String adultlname,
 			String adultdate, String adultmonth, String adultyear, String adultgender, String adultpassprot,
 			String adultnationality, String adultedate, String adultemonth, String adulteyear, String adultpassportcomp,
-			String isd, String phoneNumber) throws Exception 
-	{
+			String isd, String phoneNumber) throws Exception {
 		int adt = Integer.parseInt(adult);
-		for (int i = 1; i <= adt; i++) 
-		{
+		for (int i = 1; i <= adt; i++) {
 			// select title
 			String adultTitleElement = "(//select[@id='ctl00_contentMain_ddlTitle'])[" + i + "]";
 			String[] adulttitle = adttitle.split(",");
@@ -646,13 +653,13 @@ public class SBTCheckoutPayment {
 		String adultphonenumberElement = "//input[@id='ctl00_contentMain_txt_pax_phoneAdt']";
 		QaRobot.PassValueByLocator(adultphonenumberElement, phoneNumber, "Entered phone Number For adult");
 	}
-	
+
 	// Hotel Personal
 	public static void PersonalHotelAdultCheckout(String adult, String adttitle, String adultfname, String adultlname,
 			String adultdate, String adultmonth, String adultyear, String adultgender) throws Exception {
 		String[] adt = adult.split(",");
 		int adtsum = 0;
-		for (int j = 0; j <adt.length; j++) {
+		for (int j = 0; j < adt.length; j++) {
 			adtsum = Integer.parseInt(adt[j]) + adtsum;
 		}
 		for (int i = 2; i <= adtsum; i++)
@@ -699,18 +706,19 @@ public class SBTCheckoutPayment {
 
 		}
 	}
+
 	public static void PersonalHotelChildCheckout(String child, String chdtitle, String childfname, String childlname,
 			String childdate, String childmonth, String childyear, String childgender) throws Exception {
 		String[] chd = child.split(",");
 		int chdsum = 0;
-		for (int j = 0; j <chd.length; j++) {
+		for (int j = 0; j < chd.length; j++) {
 			chdsum = Integer.parseInt(chd[j]) + chdsum;
 		}
 		for (int i = 1; i <= chdsum; i++)
 
 		{ // select title
 			String childTitleElement = "(//select[@id='ctl00_contentMain_ddl_titleChd_H'])[" + i + "]";
-			String[] childtitle =chdtitle.split(",");
+			String[] childtitle = chdtitle.split(",");
 			QaRobot.selectValueByLocator(childTitleElement, childtitle[i - 1],
 					"Selected " + childtitle[i - 1] + " as title of child");
 
@@ -750,13 +758,14 @@ public class SBTCheckoutPayment {
 
 		}
 	}
-	
+
 	// Hotel Personal
 	public static void GuestHotelAdultCheckout(String adult, String adttitle, String adultfname, String adultlname,
-			String adultdate, String adultmonth, String adultyear, String adultgender,String isd,String phoneNumber) throws Exception {
+			String adultdate, String adultmonth, String adultyear, String adultgender, String isd, String phoneNumber)
+			throws Exception {
 		String[] adt = adult.split(",");
 		int adtsum = 0;
-		for (int j = 0; j <adt.length; j++) {
+		for (int j = 0; j < adt.length; j++) {
 			adtsum = Integer.parseInt(adt[j]) + adtsum;
 		}
 		for (int i = 1; i <= adtsum; i++)
@@ -764,7 +773,8 @@ public class SBTCheckoutPayment {
 		{ // select title
 			String adultTitleElement = "(//select[@id='ctl00_contentMain_ddl_titleAdt_H'])[" + i + "]";
 			String[] adulttitle = adttitle.split(",");
-			QaRobot.selectValueByLocator(adultTitleElement, adulttitle[i - 1],"Selected " + adulttitle[i - 1] + " as title of adult");
+			QaRobot.selectValueByLocator(adultTitleElement, adulttitle[i - 1],
+					"Selected " + adulttitle[i - 1] + " as title of adult");
 
 			// Fill First name
 			String adultNameElement = "(//input[contains(@id,'txt_firstNameAdt_H')])[" + i + "]";
@@ -802,11 +812,11 @@ public class SBTCheckoutPayment {
 
 		}
 		// fill Phone number and isd
-				String adultisdElement = "//input[@id='ctl00_contentMain_txt_isdAdt_H']";
-				QaRobot.PassValueByLocator(adultisdElement, isd, "Entered isd Number For adult");
+		String adultisdElement = "//input[@id='ctl00_contentMain_txt_isdAdt_H']";
+		QaRobot.PassValueByLocator(adultisdElement, isd, "Entered isd Number For adult");
 
-				String adultphonenumberElement = "//input[@id='ctl00_contentMain_txt_phoneAdt_H']";
-				QaRobot.PassValueByLocator(adultphonenumberElement, phoneNumber, "Entered phone Number For adult");
+		String adultphonenumberElement = "//input[@id='ctl00_contentMain_txt_phoneAdt_H']";
+		QaRobot.PassValueByLocator(adultphonenumberElement, phoneNumber, "Entered phone Number For adult");
 
 	}
 

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Login]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Hotel business booking(failed)">
+  <listeners>
+    <listener class-name="TestScript.RoundTrip.Flightcheck"/>
+  </listeners>
+  <test thread-count="5" name="One way business booking(failed)">
     <classes>
-      <class name="product.Flight.suite.Oneway.hotelBusinessTrip">
+      <class name="product.Flight.suite.Oneway.onewayBusinessTrip">
         <methods>
-          <include name="Sbt_flight_Search" invocation-numbers="0"/>
+          <include name="Sbt_flight_Search"/>
           <include name="After_Test"/>
         </methods>
-      </class> <!-- product.Flight.suite.Oneway.hotelBusinessTrip -->
+      </class> <!-- product.Flight.suite.Oneway.onewayBusinessTrip -->
     </classes>
-  </test> <!-- Hotel business booking(failed) -->
+  </test> <!-- One way business booking(failed) -->
 </suite> <!-- Failed suite [Login] -->

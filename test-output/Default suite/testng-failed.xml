@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CarporateSBT.preApprovalQueue4">
+      <class name="sbt117.TravellerProfiling">
         <methods>
-          <include name="afterMetod"/>
-          <include name="Profiling" invocation-numbers="0"/>
-          <include name="Before_Test"/>
+          <include name="afterMethod"/>
+          <include name="travellerProfiling" invocation-numbers="0"/>
         </methods>
-      </class> <!-- CarporateSBT.preApprovalQueue4 -->
+      </class> <!-- sbt117.TravellerProfiling -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

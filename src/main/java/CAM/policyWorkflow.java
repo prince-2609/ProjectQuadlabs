@@ -1,5 +1,7 @@
 package CAM;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,66 +18,39 @@ import utilities.QaBrowser;
 import utilities.QaDataProvider;
 import utilities.QaExtentReport;
 import utilities.QaRobot;
+
 @Listeners(listenerClass.Listener.class)
-public class policyWorkflow
-{
+public class policyWorkflow {
 	static String monthName = "";
 	static int currentMonthNumber;
 
 	@DataProvider
-	public Object[][] getexceldata() throws Exception 
-	{
-		return QaDataProvider.getTestdata("Policyworkflow", "Sheet1");
+	public Object[][] getexceldata() throws Exception {
+		return QaDataProvider.getTestdata("Policyworkflow", "Car1");
 	}
-	
+
 	@Test(dataProvider = "getexceldata")
 	public static void Profiling(String Source, String URL, String Comapnycode, String Username, String Password,
 			String TravelPolicyTitle, String Travelpurpose, String TravelCategory, String Product, String RuleAppliedOn,
-			String policy_criteria, String CostFrom, String CostTo, String TxtAirlines, String month,
-			String monthNumber, String Bookingdatefrom, String month_nameto, String month_numberto,
-			String BookingdateTo) throws Exception {
-
-
-		TestBase.Companycode(Source,URL); 
+			String SelectQty, String SelectFromList, String CriteriaQty, String CriteriaName, String OriginFor,
+			String OZqty, String OZone, String ORqty, String ORegion, String OCqty, String OCountry, String OCiQty,
+			String OCity, String DestinationFor, String DZqty, String DZone, String DRqty, String DRegion, String DCqty,
+			String DCountry, String DCiQty, String DCity, String CostFrom, String CostTo, String BookDateFrom,
+			String BookDateTo, String TripDateFrom, String TripDateTo, String MarketType) throws Exception {
+		TestBase.Companycode(Source, URL);
 		QaRobot.impliwait(30);
-		
-		QaExtentReport.test = QaExtentReport.report.createTest("Test On Policy work flow");
-		//write comapany code
-		
-		//QaRobot.PassValue("Comapnycode",Comapnycode,"write Comapnycode");
-		
-		QaRobot.PassValue("User_name",Username);
-		QaExtentReport.test.log(Status.INFO,"<b><i>Write Username</i></b>");
-			
-		QaRobot.PassValue("Password",Password);
-		QaExtentReport.test.log(Status.INFO,"<b><i>Write Password</i></b>");
-		
+		QaExtentReport.test = QaExtentReport.report.createTest("Test On Policy Work Flow");
+		QaRobot.PassValue("User_name", Username);
+		QaRobot.PassValue("Password", Password);
 		QaRobot.ClickOnElement("Submit");
-		QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on submit</i></b>");
-
-		Thread.sleep(1000);
-
 		QaRobot.mouseHover("//a[@id='HeaderTop_aSetting']", "//span[@id='HeaderTop_lblPolicyManagement']");
-		Thread.sleep(100);
-
 		QaRobot.ClickOnElement("Managetravelpolicy");
-		QaExtentReport.test.log(Status.INFO,"<b><i>click on Managetravelpolicy</i></b>");
-		Thread.sleep(100);
-
 		QaRobot.ClickOnElement("Add_Policy");
-		QaExtentReport.test.log(Status.INFO,"<b><i>click on Add_Policy</i></b>");
-		Thread.sleep(100);
-
 		QaRobot.PassValue("TravelPolicyTitle", TravelPolicyTitle);
-		QaExtentReport.test.log(Status.INFO,"<b><i>Write TravelPolicyTitle</i></b>");
-		Thread.sleep(100);
-
 		if (Travelpurpose.equalsIgnoreCase("Business")) {
-
 			WebElement element = QaBrowser.driver.findElement(By.xpath("//input[@id='radioBussinessTrip']"));
 			JavascriptExecutor executor = (JavascriptExecutor) QaBrowser.driver;
 			executor.executeScript("arguments[0].click();", element);
-
 		} else if (Travelpurpose.equalsIgnoreCase("Family")) {
 			WebElement element = QaBrowser.driver.findElement(By.xpath("//input[@id='radioAnnualFamilyTrip']"));
 			JavascriptExecutor executor = (JavascriptExecutor) QaBrowser.driver;
@@ -85,196 +60,482 @@ public class policyWorkflow
 			JavascriptExecutor executor = (JavascriptExecutor) QaBrowser.driver;
 			executor.executeScript("arguments[0].click();", element);
 		}
-		QaRobot.selectTextFromDropdown("SelectTravelCategory", TravelCategory, "SelectTravelCategory");
-		Thread.sleep(100);
-
-		QaRobot.selectTextFromDropdown("SelectProduct", Product, "SelectProduct");
-		Thread.sleep(100);
-
-		if (RuleAppliedOn.equalsIgnoreCase("Corporate")) {
-			QaRobot.selectTextFromDropdown("RuleAppliedOn", RuleAppliedOn, "RuleAppliedOn");
-			Thread.sleep(100);
-
-			QaRobot.ClickOnElement("Selectvaluefromlist");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Selectvaluefromlist</i></b>");
-			Thread.sleep(100);
-
-			QaRobot.ClickOnElement("Add_rule");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Click on Add_rule</i></b>");
-			Thread.sleep(1000);
+		QaRobot.selectTextFromDropdown("SelectTravelCategory", TravelCategory);
+		QaRobot.selectTextFromDropdown("SelectProduct", Product);
+		QaRobot.selectTextFromDropdown("RuleAppliedOn", RuleAppliedOn);
+		int pAS = Integer.parseInt(SelectQty);
+		for (int i = 1; i <= pAS; i++) {
+			String[] tN = SelectFromList.split(",");
+			String b = tN[i - 1];
+			List<WebElement> listOfRights = QaBrowser.driver.findElements(By.xpath(
+					"/html/body/div/form/div[10]/div/div/div[2]/div[3]/div[2]/div/div/div/div[4]/div[3]/div/div/div[1]/div/div/select/option"));
+			for (WebElement autoRights : listOfRights) {
+				if (autoRights.getText().equalsIgnoreCase(b)) {
+					autoRights.click();
+					QaRobot.ClickOnElement("AddList");
+				}
+			}
 		}
-
-		else if (RuleAppliedOn.equalsIgnoreCase("Corporate-Branch")) {
-			QaRobot.selectTextFromDropdown("RuleAppliedOn", RuleAppliedOn, "RuleAppliedOn");
-			Thread.sleep(100);
-
-			QaRobot.ClickOnElement("Selectvaluefromlist");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Selectvaluefromlist</i></b>");
-			Thread.sleep(100);
-
-			QaRobot.ClickOnElement("Add_rule");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Click on Add_rule</i></b>");
-			Thread.sleep(3000);
-
-		}
-		if (policy_criteria.equalsIgnoreCase("Cost Range")) {
-
-			QaRobot.selectTextFromDropdown("criteria_Flight", policy_criteria, "criteria_Flight");
-			Thread.sleep(100);
-
-			QaRobot.PassValue("Cosfrom", CostFrom);
-			QaExtentReport.test.log(Status.INFO,"<b><i>Write Cosfrom</i></b>");
-			Thread.sleep(100);
-
-			QaRobot.PassValue("Costto", CostTo);
-			QaExtentReport.test.log(Status.INFO,"<b><i>Write Costto</i></b>");
-			Thread.sleep(100);
-
-			QaRobot.ClickOnElement("Selectandclose_btn");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Click on Selectandclose_btn</i></b>");
-			Thread.sleep(1000);
-
-		} else if (policy_criteria.equalsIgnoreCase("Airline Criteria"))
-
-		{
-			QaRobot.selectTextFromDropdown("criteria_Flight", policy_criteria, "criteria_Flight");
-			Thread.sleep(1000);
-
-			QaRobot.PassValue("TxtAirlines", TxtAirlines);
-			QaExtentReport.test.log(Status.INFO,"<b><i>TxtAirlines</i></b>");
-			Thread.sleep(1000);
-
-			QaRobot.ClickOnElement("Selectairline");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Selectairline</i></b>");
-			Thread.sleep(1000);
-
-			QaRobot.ClickOnElement("Add_airline");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Add_airline</i></b>");
-			Thread.sleep(100);
-
-			QaRobot.ClickOnElement("Select&close");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Select&close</i></b>");
-			Thread.sleep(1000);
-		}
-
-		else if (policy_criteria.equalsIgnoreCase("Booking Date")) {
-			QaRobot.selectTextFromDropdown("criteria_Hotel", policy_criteria, "criteria_Hotel");
-			Thread.sleep(1000);
-
-			QaRobot.ClickOnElement("Bookingdatefrom");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Bookingdatefrom</i></b>");
-			Thread.sleep(3000);
-			
-			QaRobot.ClickOnElement("btnMonthNext");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Bookingdatefrom</i></b>");
-			
-			QaBrowser.driver.findElement(By.xpath("//input[@value='"+Bookingdatefrom+" ']")).click();
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Bookingdatefrom</i></b>");
-			
-			QaRobot.ClickOnElement("BookingdateTo");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Bookingdatefrom</i></b>");
-			
-			QaBrowser.driver.findElement(By.xpath("//input[@value='"+BookingdateTo+"']")).click();
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on Bookingdatefrom</i></b>");
-
-			// get current month name
-
-//			JavascriptExecutor j = (JavascriptExecutor) QaBrowser.driver;
-//			String currentMonthName = (String) 
-//			j.executeScript("return document.getElementById('CalenderControl_spnHead').value");
-//			String[] s1 = currentMonthName.split(" ");
-//			monthName = s1[0];
-//			if (monthName.equalsIgnoreCase("Jan")) {
-//				currentMonthNumber = 1;
-//			} else if (monthName.equalsIgnoreCase("Feb")) {
-//				currentMonthNumber = 2;
-//			} else if (monthName.equalsIgnoreCase("Mar")) {
-//				currentMonthNumber = 3;
-//			} else if (monthName.equalsIgnoreCase("Apr")) {
-//				currentMonthNumber = 4;
-//			} else if (monthName.equalsIgnoreCase("May")) {
-//				currentMonthNumber = 5;
-//			} else if (monthName.equalsIgnoreCase("Jun")) {
-//				currentMonthNumber = 6;
-//			} else if (monthName.equalsIgnoreCase("Jul")) {
-//				currentMonthNumber = 7;
-//			} else if (monthName.equalsIgnoreCase("Aug")) {
-//				currentMonthNumber = 8;
-//			} else if (monthName.equalsIgnoreCase("Sep")) {
-//				currentMonthNumber = 9;
-//			} else if (monthName.equalsIgnoreCase("Oct")) {
-//				currentMonthNumber = 10;
-//			} else if (monthName.equalsIgnoreCase("Nov")) {
-//				currentMonthNumber = 11;
-//			} else if (monthName.equalsIgnoreCase("Dec")) {
-//				currentMonthNumber = 12;
-//			}
-//			int userMonthNumber = Integer.parseInt(monthNumber);
-//			int diff = userMonthNumber - currentMonthNumber;
-//			for (int i = 1; i <= diff; i++) {
-//				QaBrowser.driver.findElement(By.xpath("//input[@id='btnMonthNext']")).click();
-//			}
+		if (Product.equalsIgnoreCase("Flight")) {
+//			int pAS = Integer.parseInt(CriteriaQty);
+//			if (CriteriaQty.equalsIgnoreCase("1")) {
+//				for (int i = 1; i <= pAS; i++) {
+//					String[] tN = CriteriaName.split(",");
+//					String b = tN[i - 1];
+//					QaRobot.selectTextByLocator("//select[@id='grdFlight_ctl02_ddlFlightKey']", policy_criteria);
+//					QaRobot.selectTextByLocator("//select[@id='key1']", b);
+//					if (b.equalsIgnoreCase("Airline")) {
+//						QaRobot.switchToWindow();
+//						int pAS1 = Integer.parseInt(AirQty);
+//						for (int k = 1; k <= pAS1; k++) {
+//							String[] tN1 = Airlines.split(",");
+//							String b1 = tN1[k - 1];
+//							QaBrowser.driver.findElement(By.xpath("//input[@id='txtAirline']")).clear();
+//							QaRobot.PassValue("PassAirline", b1);
+//							List<WebElement> listOfRights1 = QaBrowser.driver
+//									.findElements(By.xpath("//select[@id='ListBoxAirlineFiller']/option"));
+//							for (WebElement autoRights1 : listOfRights1) {
+//								if (autoRights1.getText().equalsIgnoreCase(b1)) {
+//									autoRights1.click();
+//									QaRobot.ClickOnElement("IMAddAirline");
+//								}
+//							}
+//						}
+//						QaRobot.ClickOnElement("IMAirlineSelectClose");
 //
-//			QaBrowser.driver.findElement(By.xpath("//input[@value='" + Bookingdatefrom + "']")).click();
+//					} else if (b.equalsIgnoreCase("Booking Date")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.ClickOnElement("BookDateFrom");
+//						String DateSelection[] = BookDateFrom.split("-");
+//						String year = DateSelection[2];
+//						String month = DateSelection[1];
+//						String expDate = DateSelection[0];
+//						QaRobot.selectDateInCalendarIM(expDate, month, year);
+//						QaRobot.ClickOnElement("BookDateTo");
+//						String DateSelection1[] = BookDateTo.split("-");
+//						String year1 = DateSelection1[2];
+//						String month1 = DateSelection1[1];
+//						String expDate1 = DateSelection1[0];
+//						QaRobot.selectDateInCalendarIM(expDate1, month1, year1);
+//						QaRobot.ClickOnElement("AddBookDate");
+//						QaRobot.ClickOnElement("IMBookDateSelectClose");
 //
-//			QaRobot.ClickOnElement("BookingdateTo");
-//			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on BookingdateTo</i></b>");
-//			Thread.sleep(1000);
-//			JavascriptExecutor jTo = (JavascriptExecutor) QaBrowser.driver;
-//			String currentMonthNameTo = (String) 
-//			jTo.executeScript("return document.getElementById('CalenderControl_spnHead').value");
-//			String[] sTo = currentMonthNameTo.split(" ");
-//			monthName = sTo[0];
-//			if (monthName.equalsIgnoreCase("Jan")) {
-//				currentMonthNumber = 1;
-//			} else if (monthName.equalsIgnoreCase("Feb")) {
-//				currentMonthNumber = 2;
-//			} else if (monthName.equalsIgnoreCase("Mar")) {
-//				currentMonthNumber = 3;
-//			} else if (monthName.equalsIgnoreCase("Apr")) {
-//				currentMonthNumber = 4;
-//			} else if (monthName.equalsIgnoreCase("May")) {
-//				currentMonthNumber = 5;
-//			} else if (monthName.equalsIgnoreCase("Jun")) {
-//				currentMonthNumber = 6;
-//			} else if (monthName.equalsIgnoreCase("Jul")) {
-//				currentMonthNumber = 7;
-//			} else if (monthName.equalsIgnoreCase("Aug")) {
-//				currentMonthNumber = 8;
-//			} else if (monthName.equalsIgnoreCase("Sep")) {
-//				currentMonthNumber = 9;
-//			} else if (monthName.equalsIgnoreCase("Oct")) {
-//				currentMonthNumber = 10;
-//			} else if (monthName.equalsIgnoreCase("Nov")) {
-//				currentMonthNumber = 11;
-//			} else if (monthName.equalsIgnoreCase("Dec")) {
-//				currentMonthNumber = 12;
-//			}
-//			int userMonthNumberTo = Integer.parseInt(month_numberto);
-//			int diffTo = userMonthNumberTo - currentMonthNumber;
-//			for (int i = 1; i <= diffTo; i++) {
-//				QaBrowser.driver.findElement(By.xpath("//input[@value='" + BookingdateTo + "']")).click();
-//			}
+//					} else if (b.equalsIgnoreCase("Trip Date")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.ClickOnElement("TripDateFrom");
+//						String DateSelection[] = TripDateFrom.split("-");
+//						String year = DateSelection[2];
+//						String month = DateSelection[1];
+//						String expDate = DateSelection[0];
+//						QaRobot.selectDateInCalendarIM(expDate, month, year);
+//						QaRobot.ClickOnElement("TripDateTo");
+//						String DateSelection1[] = TripDateTo.split("-");
+//						String year1 = DateSelection1[2];
+//						String month1 = DateSelection1[1];
+//						String expDate1 = DateSelection1[0];
+//						QaRobot.selectDateInCalendarIM(expDate1, month1, year1);
+//						QaRobot.ClickOnElement("AddTripDate");
+//						QaRobot.ClickOnElement("IMTripDateSelectClose");
 //
-			QaRobot.ClickOnElement("SelectBookDate");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Clicked on SelectBookDate</i></b>");
-			Thread.sleep(1000);
+//					} else if (b.equalsIgnoreCase("Corporate")) {
+//						QaRobot.switchToWindow();
+//						int pAS1 = Integer.parseInt(CorpQty);
+//						for (int k = 1; k <= pAS1; k++) {
+//							String[] tN1 = SearchCorporate.split(",");
+//							String b1 = tN1[k - 1];
+//							QaBrowser.driver.findElement(By.xpath("//input[@id='txtInputTextForCorporate']")).clear();
+//							QaRobot.PassValue("PassCorp", b1);
+//							List<WebElement> listOfRights1 = QaBrowser.driver
+//									.findElements(By.xpath("//select[@id='ListBoxCorporate']/option"));
+//							for (WebElement autoRights1 : listOfRights1) {
+//								if (autoRights1.getText().equalsIgnoreCase(b1)) {
+//									autoRights1.click();
+//									QaRobot.ClickOnElement("AddCorp");
+//								}
+//							}
+//						}
+//						QaRobot.ClickOnElement("CorpSelectClose");
+//
+//					} else if (b.equalsIgnoreCase("Destination")) {
+//						QaRobot.switchToWindow();
+//						if (DestinationFor.equalsIgnoreCase("Zone")) {
+//							QaRobot.ClickOnElement("IMZone");
+//							QaRobot.transferData(Zqty, Zone,"//select[@id='ListBoxZone']/option");
+//						} else if (DestinationFor.equalsIgnoreCase("Region")) {
+//							QaRobot.ClickOnElement("IMRegion");
+//							QaRobot.transferData(Rqty, Region,"//select[@id='ListBoxRegion']/option");
+//						} else if (DestinationFor.equalsIgnoreCase("Country")) {
+//							QaRobot.ClickOnElement("IMCountry");
+//							QaRobot.transferDataWithPassValue(Cqty, Country, "//input[@id='txtSearch']","//div[@id='divSearch']/p");
+//
+//						} else if (DestinationFor.equalsIgnoreCase("City")) {
+//							QaRobot.ClickOnElement("IMCity");
+//							QaRobot.transferDataWithPassValue(CiQty, City, "//input[@id='txtSearch']","//div[@id='divSearch']/p");
+//						} else if (DestinationFor.equalsIgnoreCase("Airport")) {
+//							QaRobot.ClickOnElement("IMAirport");
+//							QaRobot.transferDataWithPassValue(Aqty, Airport, "//input[@id='txtSearch']","//div[@id='divSearch']/p");
+//						}
+//						QaRobot.ClickOnElement("DestinationSaveClose");
+//
+//					} else if (b.equalsIgnoreCase("Weekdays")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.transferData(DaysQty, Days, "//select[@id='ListBoxWeekdays']/option");
+//						QaRobot.ClickOnElement("DaysSelectClose");
+//
+//					} else if (b.equalsIgnoreCase("Market Type")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.transferData(MarketQty, SelectMarketType, "//select[@id='ListBoxMarketType']/option");
+//						QaRobot.ClickOnElement("MarketTypeSelectClose");
+//					}
+//				}
+//
+//			} else {
+//				for (int i = 1; i <= pAS; i++) {
+//					String[] tN = CriteriaName.split(",");
+//					String b = tN[i - 1];
+//					String s = Integer.toString(i);
+//					if (s.equalsIgnoreCase("1")) {
+//						QaRobot.selectTextByLocator("//select[@id='key1']", b);
+//					} else {
+//						QaRobot.ClickOnElement("IMAddNewCriteria");
+//						QaRobot.selectTextByLocator("//select[@id='key" + i + "']", b);
+//					}
+//					if (b.equalsIgnoreCase("Airline")) {
+//						QaRobot.switchToWindow();
+//						int pAS1 = Integer.parseInt(AirQty);
+//						for (int k = 1; k <= pAS1; k++) {
+//							String[] tN1 = Airlines.split(",");
+//							String b1 = tN1[k - 1];
+//							QaBrowser.driver.findElement(By.xpath("//input[@id='txtAirline']")).clear();
+//							QaRobot.PassValue("PassAirline", b1);
+//							List<WebElement> listOfRights1 = QaBrowser.driver
+//									.findElements(By.xpath("//select[@id='ListBoxAirlineFiller']/option"));
+//							for (WebElement autoRights1 : listOfRights1) {
+//								if (autoRights1.getText().equalsIgnoreCase(b1)) {
+//									autoRights1.click();
+//									QaRobot.ClickOnElement("IMAddAirline");
+//									break;
+//								}
+//							}
+//						}
+//						QaRobot.ClickOnElement("IMAirlineSelectClose");
+//
+//					} else if (b.equalsIgnoreCase("Booking Date")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.ClickOnElement("BookDateFrom");
+//						String DateSelection[] = BookDateFrom.split("-");
+//						String year = DateSelection[2];
+//						String month = DateSelection[1];
+//						String expDate = DateSelection[0];
+//						QaRobot.selectDateInCalendarIM(expDate, month, year);
+//						QaRobot.ClickOnElement("BookDateTo");
+//						String DateSelection1[] = BookDateTo.split("-");
+//						String year1 = DateSelection1[2];
+//						String month1 = DateSelection1[1];
+//						String expDate1 = DateSelection1[0];
+//						QaRobot.selectDateInCalendarIM(expDate1, month1, year1);
+//						QaRobot.ClickOnElement("AddBookDate");
+//						QaRobot.ClickOnElement("IMBookDateSelectClose");
+//
+//					} else if (b.equalsIgnoreCase("Trip Date")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.ClickOnElement("TripDateFrom");
+//						String DateSelection[] = TripDateFrom.split("-");
+//						String year = DateSelection[2];
+//						String month = DateSelection[1];
+//						String expDate = DateSelection[0];
+//						QaRobot.selectDateInCalendarIM(expDate, month, year);
+//						QaRobot.ClickOnElement("TripDateTo");
+//						String DateSelection1[] = TripDateTo.split("-");
+//						String year1 = DateSelection1[2];
+//						String month1 = DateSelection1[1];
+//						String expDate1 = DateSelection1[0];
+//						QaRobot.selectDateInCalendarIM(expDate1, month1, year1);
+//						QaRobot.ClickOnElement("AddTripDate");
+//						QaRobot.ClickOnElement("IMTripDateSelectClose");
+//
+//					} else if (b.equalsIgnoreCase("Corporate")) {
+//						QaRobot.switchToWindow();
+//						int pAS1 = Integer.parseInt(CorpQty);
+//						for (int k = 1; k <= pAS1; k++) {
+//							String[] tN1 = SearchCorporate.split(",");
+//							String b1 = tN1[k - 1];
+//							QaBrowser.driver.findElement(By.xpath("//input[@id='txtInputTextForCorporate']")).clear();
+//							QaRobot.PassValue("PassCorp", b1);
+//							List<WebElement> listOfRights1 = QaBrowser.driver
+//									.findElements(By.xpath("//select[@id='ListBoxCorporate']/option"));
+//							for (WebElement autoRights1 : listOfRights1) {
+//								if (autoRights1.getText().equalsIgnoreCase(b1)) {
+//									autoRights1.click();
+//									QaRobot.ClickOnElement("AddCorp");
+//								}
+//							}
+//						}
+//						QaRobot.ClickOnElement("CorpSelectClose");
+//
+//					} else if (b.equalsIgnoreCase("Destination")) {
+//						QaRobot.switchToWindow();
+//						if (DestinationFor.equalsIgnoreCase("Zone")) {
+//							QaRobot.ClickOnElement("IMZone");
+//							QaRobot.transferData(Zqty, Zone,"//select[@id='ListBoxZone']/option");
+//						} else if (DestinationFor.equalsIgnoreCase("Region")) {
+//							QaRobot.ClickOnElement("IMRegion");
+//							QaRobot.transferData(Rqty, Region,"//select[@id='ListBoxRegion']/option");
+//						} else if (DestinationFor.equalsIgnoreCase("Country")) {
+//							QaRobot.ClickOnElement("IMCountry");
+//							QaRobot.transferDataWithPassValue(Cqty, Country, "//input[@id='txtSearch']","//div[@id='divSearch']/p");
+//
+//						} else if (DestinationFor.equalsIgnoreCase("City")) {
+//							QaRobot.ClickOnElement("IMCity");
+//							QaRobot.transferDataWithPassValue(CiQty, City, "//input[@id='txtSearch']","//div[@id='divSearch']/p");
+//						} else if (DestinationFor.equalsIgnoreCase("Airport")) {
+//							QaRobot.ClickOnElement("IMAirport");
+//							QaRobot.transferDataWithPassValue(Aqty, Airport, "//input[@id='txtSearch']","//div[@id='divSearch']/p");
+//						}
+//						QaRobot.ClickOnElement("DestinationSaveClose");
+//
+//					} else if (b.equalsIgnoreCase("Weekdays")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.transferData(DaysQty, Days, "//select[@id='ListBoxWeekdays']/option");
+//						QaRobot.ClickOnElement("DaysSelectClose");
+//
+//					} else if (b.equalsIgnoreCase("Market Type")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.transferData(MarketQty, SelectMarketType, "//select[@id='ListBoxMarketType']/option");
+//						QaRobot.ClickOnElement("MarketTypeSelectClose");
+//					}
+//				}
+//			}
+		} else if (Product.equalsIgnoreCase("Hotel")) {
 
-			QaRobot.ClickOnElement("Save_Policy_hotel");
-			QaExtentReport.test.log(Status.INFO,"<b><i>Save_Policy_hotel</i></b>");
+		} else if (Product.equalsIgnoreCase("Car")) {
+			int pAS3 = Integer.parseInt(CriteriaQty);
+			if (CriteriaQty.equalsIgnoreCase("1")) {
+				for (int i = 1; i <= pAS3; i++) {
+					String[] tN = CriteriaName.split(",");
+					String b = tN[i - 1];
+					QaRobot.selectTextByLocator("//select[@id='grdCar_ctl02_ddlCarKey']", b);
+					if (b.equalsIgnoreCase("Origin")) {
+						QaRobot.switchToWindow();
+						if (OriginFor.equalsIgnoreCase("Zone")) {
+							QaRobot.ClickOnElement("SOZone");
+							QaRobot.transferData(OZqty, OZone, "//select[@id='ListBoxOriginZone']/option");
+							QaRobot.ClickOnElement("SOAdd");
+						} else if (OriginFor.equalsIgnoreCase("Region")) {
+							QaRobot.ClickOnElement("SORegion");
+							QaRobot.transferData(ORqty, ORegion, "//select[@id='ListBoxOriginRegion']/option");
+							QaRobot.ClickOnElement("SOAdd");
+						} else if (OriginFor.equalsIgnoreCase("Country")) {
+							QaRobot.ClickOnElement("SOZone");
+							QaRobot.transferData(OZqty, OZone, "//select[@id='ListBoxOriginZone']/option");
+							QaRobot.ClickOnElement("SOCountry");
+							QaRobot.transferData(OCqty, OCountry, "//select[@id='ListBoxOriginCountry']/option");
+							QaRobot.ClickOnElement("SOAdd");
+						} else if (OriginFor.equalsIgnoreCase("City")) {
+							QaRobot.ClickOnElement("SOZone");
+							QaRobot.transferData(OZqty, OZone, "//select[@id='ListBoxOriginZone']/option");
+							QaRobot.ClickOnElement("SOCountry");
+							QaRobot.transferData(OCqty, OCountry, "//select[@id='ListBoxOriginCountry']/option");
+							QaRobot.ClickOnElement("SOCity");
+							QaRobot.transferData(OCiQty, OCity, "//select[@id='ListBoxOriginCity']/option");
+							QaRobot.ClickOnElement("SOAdd");
+						}
+						QaRobot.ClickOnElement("OriginSaveClose");
+					} else if (b.equalsIgnoreCase("Destination")) {
+						QaRobot.switchToWindow();
+						if (DestinationFor.equalsIgnoreCase("Zone")) {
+							QaRobot.ClickOnElement("SDZone");
+							QaRobot.transferData(DZqty, DZone, "//select[@id='ListBoxDestinationZone']/option");
+							QaRobot.ClickOnElement("SDAdd");
+						} else if (DestinationFor.equalsIgnoreCase("Region")) {
+							QaRobot.ClickOnElement("SDRegion");
+							QaRobot.transferData(DRqty, DRegion, "//select[@id='ListBoxDestinationRegion']/option");
+							QaRobot.ClickOnElement("SDAdd");
+						} else if (DestinationFor.equalsIgnoreCase("Country")) {
+							QaRobot.ClickOnElement("SDZone");
+							QaRobot.transferData(DZqty, DZone, "//select[@id='ListBoxDestinationZone']/option");
+							QaRobot.ClickOnElement("SDCountry");
+							QaRobot.transferData(DCqty, DCountry, "//select[@id='ListBoxDestinationCountry']/option");
+							QaRobot.ClickOnElement("SDAdd");
+						} else if (DestinationFor.equalsIgnoreCase("City")) {
+							QaRobot.ClickOnElement("SDZone");
+							QaRobot.transferData(DZqty, DZone, "//select[@id='ListBoxDestinationZone']/option");
+							QaRobot.ClickOnElement("SDCountry");
+							QaRobot.transferData(DCqty, DCountry, "//select[@id='ListBoxDestinationCountry']/option");
+							QaRobot.ClickOnElement("SDCity");
+							QaRobot.transferData(DCiQty, DCity, "//select[@id='ListBoxDestinationCity']/option");
+							QaRobot.ClickOnElement("SDAdd");
+						}
+						QaRobot.ClickOnElement("DestinationSaveClose");
+					} else if (b.equalsIgnoreCase("Cost Range")) {
+						QaRobot.switchToWindow();
+						QaRobot.PassValue("CostFrom", CostFrom);
+						QaRobot.PassValue("CostTo", CostTo);
+						QaRobot.ClickOnElement("CostRangeSelectClose");
+					} else if (b.equalsIgnoreCase("Booking Date")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.ClickOnElement("BookDateFrom");
+//						String DateSelection[] = BookDateFrom.split("-");
+//						String year = DateSelection[2];
+//						String month = DateSelection[1];
+//						String expDate = DateSelection[0];
+//						QaRobot.selectDateInCalendarIM(expDate, month, year);
+//						QaRobot.ClickOnElement("BookDateTo");
+//						String DateSelection1[] = BookDateTo.split("-");
+//						String year1 = DateSelection1[2];
+//						String month1 = DateSelection1[1];
+//						String expDate1 = DateSelection1[0];
+//						QaRobot.selectDateInCalendarIM(expDate1, month1, year1);
+//						QaRobot.ClickOnElement("AddBookDate");
+//						QaRobot.ClickOnElement("IMBookDateSelectClose");
+
+					} else if (b.equalsIgnoreCase("Trip Date")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.ClickOnElement("TripDateFrom");
+//						String DateSelection[] = TripDateFrom.split("-");
+//						String year = DateSelection[2];
+//						String month = DateSelection[1];
+//						String expDate = DateSelection[0];
+//						QaRobot.selectDateInCalendarIM(expDate, month, year);
+//						QaRobot.ClickOnElement("TripDateTo");
+//						String DateSelection1[] = TripDateTo.split("-");
+//						String year1 = DateSelection1[2];
+//						String month1 = DateSelection1[1];
+//						String expDate1 = DateSelection1[0];
+//						QaRobot.selectDateInCalendarIM(expDate1, month1, year1);
+//						QaRobot.ClickOnElement("AddTripDate");
+//						QaRobot.ClickOnElement("IMTripDateSelectClose");
+
+					} else if (b.equalsIgnoreCase("Market Type")) {
+						QaRobot.switchToWindow();
+						if (MarketType.equalsIgnoreCase("Domestic")) {
+							QaRobot.ClickOnElement("MARDomestic");
+						} else if (MarketType.equalsIgnoreCase("International")) {
+							QaRobot.ClickOnElement("MARInternational");
+						}
+						QaRobot.ClickOnElement("MARSaveClose");
+					}
+				}
+			} else {
+				for (int i = 1; i <= pAS3; i++) {
+					String[] tN = CriteriaName.split(",");
+					String b = tN[i - 1];
+					String s = Integer.toString(i);
+					if (s.equalsIgnoreCase("1")) {
+						QaRobot.selectTextByLocator("//select[@id='grdCar_ctl02_ddlCarKey']", b);
+					} else {
+						QaRobot.ClickOnElement("SAddNewCriteriaCar");
+						QaRobot.selectTextByLocator("//select[@id='grdCar_ctl0" + (i + 1) + "_ddlCarKey']", b);
+					}
+					if (b.equalsIgnoreCase("Origin")) {
+						QaRobot.switchToWindow();
+						if (OriginFor.equalsIgnoreCase("Zone")) {
+							QaRobot.ClickOnElement("SOZone");
+							QaRobot.transferData(OZqty, OZone, "//select[@id='ListBoxOriginZone']/option");
+							QaRobot.ClickOnElement("SOAdd");
+						} else if (OriginFor.equalsIgnoreCase("Region")) {
+							QaRobot.ClickOnElement("SORegion");
+							QaRobot.transferData(ORqty, ORegion, "//select[@id='ListBoxOriginRegion']/option");
+							QaRobot.ClickOnElement("SOAdd");
+						} else if (OriginFor.equalsIgnoreCase("Country")) {
+							QaRobot.ClickOnElement("SOZone");
+							QaRobot.transferData(OZqty, OZone, "//select[@id='ListBoxOriginZone']/option");
+							QaRobot.ClickOnElement("SOCountry");
+							QaRobot.transferData(OCqty, OCountry, "//select[@id='ListBoxOriginCountry']/option");
+							QaRobot.ClickOnElement("SOAdd");
+						} else if (OriginFor.equalsIgnoreCase("City")) {
+							QaRobot.ClickOnElement("SOZone");
+							QaRobot.transferData(OZqty, OZone, "//select[@id='ListBoxOriginZone']/option");
+							QaRobot.ClickOnElement("SOCountry");
+							QaRobot.transferData(OCqty, OCountry, "//select[@id='ListBoxOriginCountry']/option");
+							QaRobot.ClickOnElement("SOCity");
+							QaRobot.transferData(OCiQty, OCity, "//select[@id='ListBoxOriginCity']/option");
+							QaRobot.ClickOnElement("SOAdd");
+						}
+						QaRobot.ClickOnElement("OriginSaveClose");
+					} else if (b.equalsIgnoreCase("Destination")) {
+						QaRobot.switchToWindow();
+						if (DestinationFor.equalsIgnoreCase("Zone")) {
+							QaRobot.ClickOnElement("SDZone");
+							QaRobot.transferData(DZqty, DZone, "//select[@id='ListBoxDestinationZone']/option");
+							QaRobot.ClickOnElement("SDAdd");
+						} else if (DestinationFor.equalsIgnoreCase("Region")) {
+							QaRobot.ClickOnElement("SDRegion");
+							QaRobot.transferData(DRqty, DRegion, "//select[@id='ListBoxDestinationRegion']/option");
+							QaRobot.ClickOnElement("SDAdd");
+						} else if (DestinationFor.equalsIgnoreCase("Country")) {
+							QaRobot.ClickOnElement("SDZone");
+							QaRobot.transferData(DZqty, DZone, "//select[@id='ListBoxDestinationZone']/option");
+							QaRobot.ClickOnElement("SDCountry");
+							QaRobot.transferData(DCqty, DCountry, "//select[@id='ListBoxDestinationCountry']/option");
+							QaRobot.ClickOnElement("SDAdd");
+						} else if (DestinationFor.equalsIgnoreCase("City")) {
+							QaRobot.ClickOnElement("SDZone");
+							QaRobot.transferData(DZqty, DZone, "//select[@id='ListBoxDestinationZone']/option");
+							QaRobot.ClickOnElement("SDCountry");
+							QaRobot.transferData(DCqty, DCountry, "//select[@id='ListBoxDestinationCountry']/option");
+							QaRobot.ClickOnElement("SDCity");
+							QaRobot.transferData(DCiQty, DCity, "//select[@id='ListBoxDestinationCity']/option");
+							QaRobot.ClickOnElement("SDAdd");
+						}
+						QaRobot.ClickOnElement("DestinationSaveClose");
+					} else if (b.equalsIgnoreCase("Cost Range")) {
+						QaRobot.switchToWindow();
+						QaRobot.PassValue("CostFrom", CostFrom);
+						QaRobot.PassValue("CostTo", CostTo);
+						QaRobot.ClickOnElement("CostRangeSelectClose");
+					} else if (b.equalsIgnoreCase("Booking Date")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.ClickOnElement("BookDateFrom");
+//						String DateSelection[] = BookDateFrom.split("-");
+//						String year = DateSelection[2];
+//						String month = DateSelection[1];
+//						String expDate = DateSelection[0];
+//						QaRobot.selectDateInCalendarIM(expDate, month, year);
+//						QaRobot.ClickOnElement("BookDateTo");
+//						String DateSelection1[] = BookDateTo.split("-");
+//						String year1 = DateSelection1[2];
+//						String month1 = DateSelection1[1];
+//						String expDate1 = DateSelection1[0];
+//						QaRobot.selectDateInCalendarIM(expDate1, month1, year1);
+//						QaRobot.ClickOnElement("AddBookDate");
+//						QaRobot.ClickOnElement("IMBookDateSelectClose");
+
+					} else if (b.equalsIgnoreCase("Trip Date")) {
+//						QaRobot.switchToWindow();
+//						QaRobot.ClickOnElement("TripDateFrom");
+//						String DateSelection[] = TripDateFrom.split("-");
+//						String year = DateSelection[2];
+//						String month = DateSelection[1];
+//						String expDate = DateSelection[0];
+//						QaRobot.selectDateInCalendarIM(expDate, month, year);
+//						QaRobot.ClickOnElement("TripDateTo");
+//						String DateSelection1[] = TripDateTo.split("-");
+//						String year1 = DateSelection1[2];
+//						String month1 = DateSelection1[1];
+//						String expDate1 = DateSelection1[0];
+//						QaRobot.selectDateInCalendarIM(expDate1, month1, year1);
+//						QaRobot.ClickOnElement("AddTripDate");
+//						QaRobot.ClickOnElement("IMTripDateSelectClose");
+
+					} else if (b.equalsIgnoreCase("Market Type")) {
+						QaRobot.switchToWindow();
+						if (MarketType.equalsIgnoreCase("Domestic")) {
+							QaRobot.ClickOnElement("MARDomestic");
+						} else if (MarketType.equalsIgnoreCase("International")) {
+							QaRobot.ClickOnElement("MARInternational");
+						}
+						QaRobot.ClickOnElement("MARSaveClose");
+					}
+				}
+			}
 		}
-
-//		QaRobot.ClickOnElement("Save_policy");
-//		QaExtentReport.test.log(Status.INFO,"<b><i>Click on Save_policy</i></b>");
-//		Thread.sleep(100);
-
-		// QaRobot.ClickOnElement("Policy_close","Click on Policy_close");
-		// Thread.sleep(1000);
+		QaRobot.ClickOnElement("SaveCarPolicy");
 	}
 
 	@AfterMethod
 	public static void afterMetod() {
-		QaExtentReport.test.getExtent().flush();
+//		QaExtentReport.test.getExtent().flush();
 	}
 
 }
