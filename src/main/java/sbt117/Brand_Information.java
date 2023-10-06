@@ -23,15 +23,15 @@ public class Brand_Information {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("BrandInformation", "Sheet1");
+		return QaDataProvider.getTestdata("BrandInformation", "Sheet3");
 	}
 
 	@Test(dataProvider = "getexceldata")
 	public static void brandInformation(String TestCaseId, String TestCaseType, String TestScenario, String Source,
 			String URL, String CompanyCode, String UserName, String Password, String Title, String Airline,
 			String CabinClass, String BookingClassQty, String BookingClass, String MarketType, String BrandName,
-			String KeyInformation, String BrandDetails1, String BrandDetails2, String Notes, String UploadImage,
-			String SalesChannelQty, String SalesChannel) throws Exception {
+			String BrandDetails1, String BrandDetails2, String UploadImage, String SalesChannelQty, String SalesChannel,
+			String KIQty, String KeyInformation, String Notes) throws Exception {
 		TestBase.Companycode(Source, URL);
 		QaExtentReport.test = QaExtentReport.report.createTest(TestCaseId + "-" + TestScenario);
 		QaRobot.PassValue("CompanyCode", CompanyCode);
@@ -82,7 +82,7 @@ public class Brand_Information {
 		QaRobot.ClickOnElement("ClassSelectClose");
 		QaRobot.selectTextFromDropdown("BIMarketType", MarketType, "MarketType");
 		QaRobot.PassValue("BIBrandName", BrandName);
-		QaRobot.selectTextFromDropdown("BIKeyInformation", KeyInformation, "KeyInformation");
+		Thread.sleep(3000);
 		QaExtentReport.extentScreenshot("Brand Information Page");
 		String a = BrandDetails1;
 		String b = BrandDetails2;
@@ -98,16 +98,16 @@ public class Brand_Information {
 			Assert.assertTrue(TotalNo <= 50000, "Please check text,Text characters should not more than 50000");
 		}
 		QaRobot.scrollPage(1000);
-		QaRobot.PassValue("BINotes", Notes);
 		QaRobot.PassValue("BIChooseFile", UploadImage);
 		int pAS2 = Integer.parseInt(SalesChannelQty);
 		for (int k = 1; k <= pAS2; k++) {
 			String[] tN1 = SalesChannel.split(",");
 			String b1 = tN1[k - 1];
-			List<WebElement> listOfRights1 = QaBrowser.driver.findElements(By.xpath(
-					"/html/body/form/div[4]/div/div/div/div/div/div[1]/div/div[2]/div/div/div[10]/div/div/table/tbody/tr/td/label"));
+			List<WebElement> listOfRights1 = QaBrowser.driver
+					.findElements(By.xpath("//table[@id='chkbxSalesChanel']/tbody/tr/td/label"));
 			for (WebElement autoRights1 : listOfRights1) {
 				if (autoRights1.getText().equalsIgnoreCase(b1)) {
+					System.out.println(autoRights1.getText());
 					autoRights1.click();
 				}
 			}
@@ -115,6 +115,22 @@ public class Brand_Information {
 		QaExtentReport.extentScreenshot("Brand Information Page");
 		QaRobot.ClickOnElement("BISave");
 		Thread.sleep(3000);
+		QaRobot.alertAccept();
+		Thread.sleep(3000);
+		QaRobot.ClickOnElement("BBrandKeyInformation");
+		Thread.sleep(3000);
+		int Qk = Integer.parseInt(KIQty);
+		for (int i = 1; i <= Qk; i++) {
+			String[] tK = KeyInformation.split(",");
+			String k = tK[i - 1];
+			QaRobot.selectTextFromDropdown("BIKeyInformation", k, "KeyInformation");
+			String[] tN = Notes.split(",");
+			String n = tN[i - 1];
+			QaRobot.PassValue("BINotes", n);
+			QaRobot.ClickOnElement("BBAdd");
+			Thread.sleep(3000);
+		}
+		QaRobot.ClickOnElement("BISave");
 		QaExtentReport.test.log(Status.INFO, QaBrowser.driver.switchTo().alert().getText());
 		QaRobot.alertAccept();
 	}

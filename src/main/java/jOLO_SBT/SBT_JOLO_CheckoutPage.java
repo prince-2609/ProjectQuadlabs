@@ -20,7 +20,7 @@ public class SBT_JOLO_CheckoutPage {
 			QaExtentReport.extentScreenshot("Checkout Page");
 			QaRobot.scrollPage(400);
 			if (ProductType.equalsIgnoreCase("Flight")) {
-//				QaRobot.selectIndexFromDropdown("AirResonCodeC", 1);
+				QaRobot.selectIndexFromDropdown("AirResonCodeC", 1);
 				Thread.sleep(10000);
 				QaRobot.ClickOnElement("BillToBranchC");
 			} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {

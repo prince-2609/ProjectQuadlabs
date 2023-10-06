@@ -60,8 +60,14 @@ public class TestBase extends QaExtentReport {
 		if (!initCompletedFlag) {
 			throw new Exception("Initialization not complete");
 		}
-		if (Source.equalsIgnoreCase("mo")) {
+		if (Source.equalsIgnoreCase("sbt")) {
 			browser.launchBrowser("http:" + URL);
+		}
+		if (Source.equalsIgnoreCase("preprod117")) {
+			browser.launchBrowser("http:" + URL);
+		}
+		if (Source.equalsIgnoreCase("Live")) {
+			browser.launchBrowser("https:" + URL);
 		}
 	}
 
@@ -89,6 +95,11 @@ public class TestBase extends QaExtentReport {
 			// browser.launchBrowser("http://v12staging/sbt");
 		}
 		if (ccode.equalsIgnoreCase("mo")) {
+			browser.launchBrowser("http:" + URL);
+
+			// browser.launchBrowser("http://v12staging/sbt");
+		}
+		if (ccode.equalsIgnoreCase("Live")) {
 			browser.launchBrowser("http:" + URL);
 
 			// browser.launchBrowser("http://v12staging/sbt");
@@ -132,7 +143,7 @@ public class TestBase extends QaExtentReport {
 		ArrayList<WebElement> autosuggestions = (ArrayList<WebElement>) QaBrowser.driver.findElements(suggestiontxt);
 //		 System.out.println(autosuggestions.toString());
 		for (WebElement autosuggestion : autosuggestions) {
-//			System.out.println(autosuggestion.getText());
+			System.out.println(autosuggestion.getText());
 			if (autosuggestion.getText().equalsIgnoreCase(city_name)) {
 				autosuggestion.click();
 				break;

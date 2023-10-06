@@ -51,7 +51,6 @@ public class SearchDashboard {
 	}
 
 	public static void selectEmployeeWithID(String travelerID) throws Exception {
-
 		QaRobot.ClickOnElement("ow_Searchemp");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Employee Email : </i></b>" + travelerID);
 		QaBrowser.driver.findElement(By.xpath("//input[@id='txtEmailAddress']")).sendKeys(travelerID);

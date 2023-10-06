@@ -45,6 +45,7 @@ public class CorporateProfiling {
 		QaRobot.switchframe("//frame[@id='frm2']");
 		QaRobot.PassValue("CompanyName", CorporateName);
 		QaRobot.ClickOnElement("SearchCompanyName");
+		QaExtentReport.extentScreenshot("Corporate");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Corporate Name</i></b>" + " - " + CorporateName);
 		String AccountId = QaBrowser.driver.findElement(By.xpath("//span[@id='GridView1_ctl02_Label2']")).getText();
 		QaExtentReport.test.log(Status.INFO, "<b><i>Account Id</i></b>" + " - " + AccountId);
@@ -60,48 +61,52 @@ public class CorporateProfiling {
 //		QaRobot.ClickOnElement("ActiveDivision");
 //		QaRobot.ClickOnElement("SaveDivision");
 //		QaRobot.ClickOnElement("CloseDivision");
-//		QaRobot.ClickOnElement("ManageBranch");
-//		QaRobot.ClickOnElement("AddBranch");
-//		QaRobot.selectTextByLocator("//select[@id='ddlBusinessType']", DivisionName);
-//		QaRobot.PassValue("BranchName", BranchName);
-//		QaRobot.selectTextByLocator("//select[@id='drpCountry']", BranchCountry);
-//		String City[] = CityName.split(",");
-//		String City1 = City[0];
-//		String City2 = City[1];
-//		TestBase.listofautosuggestion(By.xpath("//div[@id='divCity']/p"), City1, City2,
-//				By.xpath("//input[@id='txtCity']"));
-//		QaRobot.PassValue("MobileNumber", MobileNumber);
-//		QaRobot.ClickOnElement("BCreditCard");
+		QaRobot.ClickOnElement("ManageBranch");
+		QaRobot.ClickOnElement("AddBranch");
+		QaExtentReport.extentScreenshot("Branch page 1");
+		QaRobot.selectTextByLocator("//select[@id='ddlBusinessType']", DivisionName);
+		QaRobot.PassValue("BranchName", BranchName);
+		QaRobot.selectTextByLocator("//select[@id='drpCountry']", BranchCountry);
+		String City[] = CityName.split(",");
+		String City1 = City[0];
+		String City2 = City[1];
+		TestBase.listofautosuggestion(By.xpath("//div[@id='divCity']/p"), City1, City2,
+				By.xpath("//input[@id='txtCity']"));
+		Thread.sleep(3000);
+		QaRobot.PassValue("MobileNumber", MobileNumber);
+		QaRobot.ClickOnElement("BCreditCard");
 //		QaRobot.ClickOnElement("BWallet");
 //		QaRobot.ClickOnElement("BCash");
 //		QaRobot.ClickOnElement("BDefaultCash");
-//		QaRobot.ClickOnElement("BSelectCardTypeD");
-//		QaRobot.ClickOnElement("BSMAsterCard");
+		QaRobot.ClickOnElement("BSelectCardTypeD");
+		QaRobot.ClickOnElement("BSMAsterCard");
 //		QaRobot.ClickOnElement("BSVisa");
-//		QaRobot.ClickOnElement("BAssociateCardType");
-//		QaRobot.ClickOnElement("ComplexItineneraryAir");
-//		QaRobot.ClickOnElement("HotelOnRequest");
-//		QaRobot.ClickOnElement("SelfDriveCar");
-//		QaRobot.ClickOnElement("Forex");
-//		QaRobot.ClickOnElement("ChauffeurDrivenCar");
-//		QaRobot.ClickOnElement("BNVisa");
-//		QaRobot.ClickOnElement("Insurance");
+		QaRobot.ClickOnElement("BAssociateCardType");
+		QaRobot.ClickOnElement("ComplexItineneraryAir");
+		QaRobot.ClickOnElement("HotelOnRequest");
+		QaRobot.ClickOnElement("SelfDriveCar");
+		QaRobot.ClickOnElement("Forex");
+		QaRobot.ClickOnElement("ChauffeurDrivenCar");
+		QaRobot.ClickOnElement("BNVisa");
+		QaRobot.ClickOnElement("Insurance");
 //		QaRobot.ClickOnElement("Bus");
 //		QaRobot.ClickOnElement("Retail");
-//		if (ChooseGSTDetails.equalsIgnoreCase("Yes")) {
-//			QaRobot.ClickOnElement("GSTDetails");
-//			QaRobot.PassValue("GSTNo", GSTNo);
-//			String HolderName[] = GSTHolderName.split(" ");
-//			String FNTitle = HolderName[0];
-//			String FN = HolderName[1];
-//			String LN = HolderName[2];
-//			QaRobot.selectTextByLocator("//select[@id='ddlGSTTittle']", FNTitle);
-//			QaRobot.PassValue("GSTFN", FN);
-//			QaRobot.PassValue("GSTLN", LN);
-//			QaRobot.PassValue("GSTEmail", GSTEmail);
-//		}
-//		QaRobot.ClickOnElement("SaveBranch");
-//		QaRobot.acceptAlert();
+		if (ChooseGSTDetails.equalsIgnoreCase("Yes")) {
+			QaRobot.ClickOnElement("GSTDetails");
+			QaRobot.PassValue("GSTNo", GSTNo);
+			String HolderName[] = GSTHolderName.split(" ");
+			String FNTitle = HolderName[0];
+			String FN = HolderName[1];
+			String LN = HolderName[2];
+			QaRobot.selectTextByLocator("//select[@id='ddlGSTTittle']", FNTitle);
+			QaRobot.PassValue("GSTFN", FN);
+			QaRobot.PassValue("GSTLN", LN);
+			QaRobot.PassValue("GSTEmail", GSTEmail);
+		}
+		QaExtentReport.extentScreenshot("Branch page");
+		Thread.sleep(3000);
+		QaRobot.ClickOnElement("SaveBranch");
+		QaRobot.acceptAlert("Branch Status");
 //		QaRobot.ClickOnElement("ManageCostCenter");
 //		QaRobot.ClickOnElement("AddCostCenter");
 //		QaRobot.PassValue("CostCenterCode", CostCenterCode );
@@ -133,6 +138,6 @@ public class CorporateProfiling {
 
 	@AfterMethod
 	public static void afterMethod() {
-//		QaExtentReport.test.getExtent().flush();
+		QaExtentReport.test.getExtent().flush();
 	}
 }

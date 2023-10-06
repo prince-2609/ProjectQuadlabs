@@ -89,14 +89,14 @@ public class QaRobot extends QaExtentReport {
 		JavascriptExecutor mo = (JavascriptExecutor) QaBrowser.driver;
 		mo.executeScript("window.scrollBy(0," + value + ")");
 	}
-	
+
 	public static void acceptAlert(String status) {
 		Alert alt = QaBrowser.driver.switchTo().alert();
 		String text = alt.getText();
 		QaExtentReport.test.log(Status.INFO, "<b><i>" + status + "</b></i>" + " - " + "<b><i>" + text + "</b></i>");
 		alt.accept();
 	}
-	
+
 	public static void scrollPage(String value) {
 		JavascriptExecutor mo = (JavascriptExecutor) QaBrowser.driver;
 		mo.executeScript("window.scrollBy(0," + value + ")");
@@ -331,6 +331,7 @@ public class QaRobot extends QaExtentReport {
 			for (WebElement autoRights : listOfRights) {
 				if (autoRights.getText().equalsIgnoreCase(b)) {
 					autoRights.click();
+					break;
 				}
 			}
 		}
@@ -348,6 +349,7 @@ public class QaRobot extends QaExtentReport {
 			for (WebElement autoRights : listOfRights) {
 				if (autoRights.getText().equalsIgnoreCase(b)) {
 					autoRights.click();
+					break;
 				}
 			}
 		}
@@ -396,13 +398,10 @@ public class QaRobot extends QaExtentReport {
 	}
 
 	public static void CompareFareValue(String ActualValue, String ExpectedValue, String Msg) throws Exception {
-
 		softassert.assertEquals(ActualValue, ExpectedValue, Msg);
 		if (ActualValue.equalsIgnoreCase(ExpectedValue)) {
 			QaExtentReport.test.log(Status.PASS, "Verification Passed for value of " + Msg);
-		}
-
-		else {
+		} else {
 			QaExtentReport.test.log(Status.FAIL, "Verification Failed for value of " + Msg);
 			throw new Exception("Verification Failed for value of " + Msg);
 		}
@@ -433,6 +432,5 @@ public class QaRobot extends QaExtentReport {
 		}
 
 	}
-
 
 }

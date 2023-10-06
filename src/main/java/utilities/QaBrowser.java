@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 
@@ -53,9 +54,9 @@ public class QaBrowser extends QaRobot {
 
 //	@SuppressWarnings("deprecation")
 	private void launchChrome() throws MalformedURLException {
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\lib\\chromeUpdate.exe");
-		//DesiredCapabilities dc = DesiredCapabilities.chrome();
-		//dc.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\lib\\chromedriverNew.exe");
+//		DesiredCapabilities dc = DesiredCapabilities.chrome();
+//		dc.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 		ChromeOptions opt = new ChromeOptions();
 		opt.addArguments("--remote-allow-origins=*"); 
 		driver = (WebDriver) new ChromeDriver(opt);

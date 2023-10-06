@@ -271,7 +271,7 @@ public class SBT_JOLO_ResultPage {
 							QaRobot.ClickOnElement("AddToCartJ4");
 						}
 					} else {
-						Assert.assertEquals(false, "Please select correct Airline and Fare type."+OneWayFareType);
+						Assert.assertEquals(false, "Please select correct Airline and Fare type." + OneWayFareType);
 						System.out.println("Please select correct Airline and Fare type.");
 					}
 					Thread.sleep(3000);
@@ -316,7 +316,7 @@ public class SBT_JOLO_ResultPage {
 							QaRobot.ClickOnElement("AddToCartJ4");
 						}
 					} else {
-						Assert.assertEquals(false, "Please select correct Airline and Fare type."+RoundTripFareType);
+						Assert.assertEquals(false, "Please select correct Airline and Fare type." + RoundTripFareType);
 						System.out.println("Please select correct Airline and Fare type.");
 					}
 					Thread.sleep(3000);
@@ -1366,7 +1366,7 @@ public class SBT_JOLO_ResultPage {
 			if (Trip.equalsIgnoreCase("Domestic")) {
 				QaRobot.ClickOnElement("AddToCartFlightC");
 //				if (getT.equalsIgnoreCase("Out policy")) {
-					QaRobot.alertAccept();
+				QaRobot.alertAccept();
 //				}
 				Thread.sleep(3000);
 				QaRobot.switchToWindow();
@@ -1374,7 +1374,7 @@ public class SBT_JOLO_ResultPage {
 				QaRobot.ClickOnElement("ResultRJ");
 				QaRobot.ClickOnElement("AddToCartFlightC");
 //				if (getT.equalsIgnoreCase("Out policy")) {
-					QaRobot.alertAccept();
+				QaRobot.alertAccept();
 //				}
 				Thread.sleep(3000);
 				QaRobot.switchToWindow();
@@ -1382,7 +1382,7 @@ public class SBT_JOLO_ResultPage {
 			} else if (Trip.equalsIgnoreCase("International")) {
 				QaRobot.ClickOnElement("AddToCartFlightC");
 //				if (getT.equalsIgnoreCase("Out policy")) {
-					QaRobot.alertAccept();
+				QaRobot.alertAccept();
 //				}
 				QaRobot.switchToWindow();
 				QaRobot.ClickOnElement("FlightNotificationCloseC");
@@ -1396,7 +1396,8 @@ public class SBT_JOLO_ResultPage {
 			String CheckInDate, String CheckOutDate) throws Exception {
 		QaRobot.ClickOnElement("AddHotelC");
 		QaRobot.switchframe("//iframe[@id='AddCartPopupFrame']");
-		if(ProductType.equalsIgnoreCase("Car+Flight+Hotel") || ProductType.equalsIgnoreCase("Car+Hotel") || ProductType.equalsIgnoreCase("Car+Hotel+Flight")) {
+		if (ProductType.equalsIgnoreCase("Car+Flight+Hotel") || ProductType.equalsIgnoreCase("Car+Hotel")
+				|| ProductType.equalsIgnoreCase("Car+Hotel+Flight")) {
 			TestBase.listofautosuggestion4(By.xpath("//div[@id='divHTCity']/p"), CityCode, CityTitle,
 					By.xpath("//input[@id='txtHotelSearch']"));
 			QaExtentReport.test.log(Status.INFO, "<b><i>City Name : </i></b>" + CityCode + "-" + CityTitle);
@@ -1435,7 +1436,8 @@ public class SBT_JOLO_ResultPage {
 			}
 		} else if (Server.equalsIgnoreCase("Xchange") || Server.equalsIgnoreCase("tpstg")) {
 			if (Server.equalsIgnoreCase("Xchange")) {
-				String getT1 = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy324503')])[3]")).getText();
+				String getT1 = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy324503')])[3]"))
+						.getText();
 				QaExtentReport.extentScreenshot("Hotel Results");
 				QaRobot.ClickOnElement("AddToCartHotelCX");
 				if (getT1.equalsIgnoreCase("Out Of Policy")) {

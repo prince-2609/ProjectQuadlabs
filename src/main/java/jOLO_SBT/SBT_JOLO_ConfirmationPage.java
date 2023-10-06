@@ -12,8 +12,7 @@ import utilities.QaRobot;
 
 public class SBT_JOLO_ConfirmationPage {
 
-	public static void confirmpageCar(String CreatorName)
-			throws Exception {
+	public static void confirmpageCar(String CreatorName) throws Exception {
 		String getT = QaBrowser.driver
 				.findElement(By.xpath("//div[@id='ctl00_tdContent']/section/div[2]/div/div/div[1]/h2/span")).getText();
 		String getTxt1[] = getT.split("-");
@@ -21,7 +20,8 @@ public class SBT_JOLO_ConfirmationPage {
 		System.out.println(number);
 		QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
 		String getT1 = QaBrowser.driver
-				.findElement(By.xpath("//div[@id='ctl00_contentMain_flt_details']/div/div[1]/div[2]/p/span[1]")).getText();
+				.findElement(By.xpath("//div[@id='ctl00_contentMain_flt_details']/div/div[1]/div[2]/p/span[1]"))
+				.getText();
 		String getTxt2[] = getT1.split("&");
 		String number1 = getTxt2[0];
 		System.out.println(number1);
@@ -35,8 +35,7 @@ public class SBT_JOLO_ConfirmationPage {
 		System.out.println(number2);
 		QaExtentReport.test.log(Status.INFO, "<b><i>PNR Number is </i></b>" + number2);
 		QaExtentReport.extentScreenshot("Confirm Page");
-		QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']",
-				"//span[@id='ctl00_HeaderTop_lblBookingQueue']");
+		QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']", "//span[@id='ctl00_HeaderTop_lblBookingQueue']");
 		QaExtentReport.extentScreenshot("CorporateDashboard Page");
 		Thread.sleep(3000);
 		QaRobot.PassValue("RefNo", number);
@@ -46,7 +45,7 @@ public class SBT_JOLO_ConfirmationPage {
 		String Creater = QaBrowser.driver.findElement(By.xpath("//span[@id='lblCreatedBy']")).getText();
 		QaExtentReport.test.log(Status.INFO, "<b><i>Created By </i></b>" + Creater);
 		Assert.assertTrue(CreatorName.equalsIgnoreCase(Creater), "Creater name is not Present");
-		
+
 //		if (CreatorName.equalsIgnoreCase(Creater)) {
 //			QaExtentReport.test.log(Status.INFO, "<b><i>Creater is Correct  </i></b>" + CreatorName);
 //		} else {

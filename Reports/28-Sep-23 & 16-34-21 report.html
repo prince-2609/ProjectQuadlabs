@@ -1,0 +1,4191 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>SBT</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Extent Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Sep 28, 2023 04:34:21 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 1-Flight domestic booking flow for One Way (Individual)</p>
+            <p class="text-sm">
+              <span>4:34:23 pm</span> / <span>00:02:42:504</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test on Flight 1-Flight domestic booking flow for One Way (Individual)</h5>
+<span class='badge badge-success'>09.28.2023 4:34:23 pm</span>
+<span class='badge badge-danger'>09.28.2023 4:37:05 pm</span>
+<span class='badge badge-default'>00:02:42:504</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:34:27 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-34-27 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-34-27 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:34:38 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:34:38 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:34:40 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:34:44 pm</td>
+        <td>
+          <b><i>Clicked on OneWay</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:34:47 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:34:52 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:34:56 pm</td>
+        <td>
+          <b><i>Select Date  </i></b>2-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:35:09 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-35-09 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-35-09 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:35:28 pm</td>
+        <td>
+          <b><i>Session id is </i></b>b72b5a65-a485-4c06-96cb-97f78fa91cf4
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:35:44 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-35-43 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-35-43 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:35:57 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-35-57 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-35-57 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:36:07 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-36-07 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-36-07 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:36:16 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-36-16 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-36-16 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:36:24 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-36-24 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-36-24 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:36:51 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-36-50 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-36-50 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:01 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>6,032
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:02 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-37-01 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-37-01 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:05 pm</td>
+        <td>
+          <b><i>check the terms and condition</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:05 pm</td>
+        <td>
+          <b><i>Screenshot for Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:37:05 pm</td>
+        <td>
+          <b><i>Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:37:05 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-37-05 Successful Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-37-05 Successful Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 2-Flight domestic booking flow for One Way (Dependent)</p>
+            <p class="text-sm">
+              <span>4:37:05 pm</span> / <span>00:02:52:609</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test on Flight 2-Flight domestic booking flow for One Way (Dependent)</h5>
+<span class='badge badge-success'>09.28.2023 4:37:05 pm</span>
+<span class='badge badge-danger'>09.28.2023 4:39:58 pm</span>
+<span class='badge badge-default'>00:02:52:609</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:08 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-37-07 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-37-07 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:18 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:18 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:20 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:24 pm</td>
+        <td>
+          <b><i>Clicked on OneWay</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:27 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:33 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:37 pm</td>
+        <td>
+          <b><i>Select Date  </i></b>3-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:49 pm</td>
+        <td>
+          <b><i>Select adult for booking</i></b> - 2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:52 pm</td>
+        <td>
+          <b><i>Select child for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:54 pm</td>
+        <td>
+          <b><i>Select infant for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:37:56 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-37-56 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-37-56 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:17 pm</td>
+        <td>
+          <b><i>Session id is </i></b>dda60b50-e469-4217-9c7c-043b02ff7d81
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:32 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-38-32 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-38-32 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:46 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-38-45 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-38-45 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:38:56 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-38-56 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-38-56 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:04 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-04 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-04 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:13 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-12 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-12 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:39 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-39 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-39 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:50 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>17,074
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:51 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-50 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-50 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:51 pm</td>
+        <td>
+          <b><i>Clicked on Associate pax</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:53 pm</td>
+        <td>
+          <b><i>Clicked on add to list button</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:53 pm</td>
+        <td>
+          <b><i>clicked on Associate button</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:57 pm</td>
+        <td>
+          <b><i>check the terms and condition</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:39:58 pm</td>
+        <td>
+          <b><i>Screenshot for Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:58 pm</td>
+        <td>
+          <b><i>Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:39:58 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-58 Successful Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-39-58 Successful Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 3-Flight domestic booking flow for Round Trip (Individual)</p>
+            <p class="text-sm">
+              <span>4:39:58 pm</span> / <span>00:04:04:080</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test on Flight 3-Flight domestic booking flow for Round Trip (Individual)</h5>
+<span class='badge badge-success'>09.28.2023 4:39:58 pm</span>
+<span class='badge badge-danger'>09.28.2023 4:44:02 pm</span>
+<span class='badge badge-default'>00:04:04:080</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:01 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-40-01 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-40-01 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:12 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:12 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:14 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:18 pm</td>
+        <td>
+          <b><i>Clicked on Round Trip</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:21 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:27 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:33 pm</td>
+        <td>
+          <b><i>Select Departure Date  </i></b>6-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:33 pm</td>
+        <td>
+          <b><i>Select Return Date  </i></b>8-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:40:42 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-40-41 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-40-41 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:01 pm</td>
+        <td>
+          <b><i>Session id is </i></b>f7541bc8-4d36-449a-8877-02e7cea874dc
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:17 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-16 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-16 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:30 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-30 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-30 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:40 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-40 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-40 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:49 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-48 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-48 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:41:57 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-57 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-41-57 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:38 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-42-38 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-42-38 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:42:51 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-42-51 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-42-51 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:02 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-01 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-01 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:10 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-10 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-10 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:18 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-18 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-18 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:43 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-42 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-42 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:58 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>16,929
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:43:58 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-58 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-43-58 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:02 pm</td>
+        <td>
+          <b><i>check the terms and condition</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:02 pm</td>
+        <td>
+          <b><i>Screenshot for Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:44:02 pm</td>
+        <td>
+          <b><i>Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:44:02 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-44-02 Successful Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-44-02 Successful Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 4-Flight domestic booking flow for Round Trip (Dependent)</p>
+            <p class="text-sm">
+              <span>4:44:02 pm</span> / <span>00:02:23:634</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Test on Flight 4-Flight domestic booking flow for Round Trip (Dependent)</h5>
+<span class='badge badge-success'>09.28.2023 4:44:02 pm</span>
+<span class='badge badge-danger'>09.28.2023 4:46:26 pm</span>
+<span class='badge badge-default'>00:02:23:634</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:05 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-44-05 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-44-05 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:16 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:16 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:18 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:23 pm</td>
+        <td>
+          <b><i>Clicked on Round Trip</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:26 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:31 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:37 pm</td>
+        <td>
+          <b><i>Select Departure Date  </i></b>7-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:37 pm</td>
+        <td>
+          <b><i>Select Return Date  </i></b>9-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:46 pm</td>
+        <td>
+          <b><i>Select adult for booking</i></b> - 2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:48 pm</td>
+        <td>
+          <b><i>Select child for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:51 pm</td>
+        <td>
+          <b><i>Select infant for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:44:53 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-44-53 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-44-53 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:45:14 pm</td>
+        <td>
+          <b><i>Session id is </i></b>5e9d678d-c85a-46b2-939d-ce270cd9753c
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:45:29 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-45-29 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-45-29 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:45:43 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-45-42 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-45-42 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:45:53 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-45-53 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-45-53 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:01 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-46-01 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-46-01 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:10 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-46-10 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-46-10 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:46:25 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=117.0.5938.132)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e3f961f19432d4fecec45aaa5bc63d34, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56933}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56933/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e3f961f19432d4fecec45aaa5bc63d34
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1119)
+	at utilities.QaRobot.alertAccept(QaRobot.java:54)
+	at testFlightHotel.OnewayBussinessFlightTrip.onewayBussinessFlightTrip(OnewayBussinessFlightTrip.java:3227)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:46:25 pm</td>
+        <td>
+          <b><i>Screenshot for Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:46:25 pm</td>
+        <td>
+          <b><i>Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:46:26 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-46-25 Fail Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-46-25 Fail Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 5-Flight domestic booking flow for One Way (Individual) with 1 stop</p>
+            <p class="text-sm">
+              <span>4:46:26 pm</span> / <span>00:02:44:389</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test on Flight 5-Flight domestic booking flow for One Way (Individual) with 1 stop</h5>
+<span class='badge badge-success'>09.28.2023 4:46:26 pm</span>
+<span class='badge badge-danger'>09.28.2023 4:49:10 pm</span>
+<span class='badge badge-default'>00:02:44:389</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:28 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-46-28 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-46-28 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:41 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:41 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:43 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:48 pm</td>
+        <td>
+          <b><i>Clicked on OneWay</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:51 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:56 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:00 pm</td>
+        <td>
+          <b><i>Select Date  </i></b>10-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:13 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-47-13 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-47-13 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:29 pm</td>
+        <td>
+          <b><i>Session id is </i></b>d2a51963-7a2d-41f9-823a-aeb51690c036
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:45 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-47-45 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-47-45 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:59 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-47-58 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-47-58 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:48:09 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-48-09 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-48-09 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:48:17 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-48-17 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-48-17 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:48:26 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-48-25 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-48-25 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:48:52 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-48-52 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-48-52 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:06 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>16,596
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:06 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-49-06 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-49-06 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:10 pm</td>
+        <td>
+          <b><i>check the terms and condition</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:10 pm</td>
+        <td>
+          <b><i>Screenshot for Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:49:10 pm</td>
+        <td>
+          <b><i>Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:49:10 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-49-10 Successful Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-49-10 Successful Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 6-Flight domestic booking flow for One Way (Dependent) with 1 stop</p>
+            <p class="text-sm">
+              <span>4:49:10 pm</span> / <span>00:03:12:973</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Test on Flight 6-Flight domestic booking flow for One Way (Dependent) with 1 stop</h5>
+<span class='badge badge-success'>09.28.2023 4:49:10 pm</span>
+<span class='badge badge-danger'>09.28.2023 4:52:23 pm</span>
+<span class='badge badge-default'>00:03:12:973</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:13 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-49-13 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-49-13 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:23 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:23 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:26 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:30 pm</td>
+        <td>
+          <b><i>Clicked on OneWay</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:33 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:38 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:43 pm</td>
+        <td>
+          <b><i>Select Date  </i></b>13-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:55 pm</td>
+        <td>
+          <b><i>Select adult for booking</i></b> - 2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:57 pm</td>
+        <td>
+          <b><i>Select child for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:49:59 pm</td>
+        <td>
+          <b><i>Select infant for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:50:02 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-50-02 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-50-02 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:50:24 pm</td>
+        <td>
+          <b><i>Session id is </i></b>358f85ab-dd90-4fbd-82e2-cc66dcb96f46
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:50:40 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-50-40 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-50-40 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:50:53 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-50-53 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-50-53 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:04 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-03 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-03 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:12 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-12 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-12 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:21 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-20 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-20 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:47 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-47 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-47 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:52 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:53 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-52 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-51-52 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:52:23 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Associate existing passengers']"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7f64fd102f065f6a909b64dd9fb2a90f, findElement {using=xpath, value=//a[normalize-space()='Associate existing passengers']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57056}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57056/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7f64fd102f065f6a909b64dd9fb2a90f
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at utilities.QaRobot.getLocator(QaRobot.java:71)
+	at utilities.QaRobot.getWebElement(QaRobot.java:153)
+	at utilities.QaRobot.ClickOnElement(QaRobot.java:175)
+	at product.Flight.suite.Oneway.SBTCheckoutPayment.CheckoutForFlightDependent(SBTCheckoutPayment.java:21)
+	at testFlightHotel.OnewayBussinessFlightTrip.checkoutpage(OnewayBussinessFlightTrip.java:4095)
+	at testFlightHotel.OnewayBussinessFlightTrip.onewayBussinessFlightTrip(OnewayBussinessFlightTrip.java:4019)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:52:23 pm</td>
+        <td>
+          <b><i>Screenshot for Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:52:23 pm</td>
+        <td>
+          <b><i>Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:52:23 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-52-23 Fail Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-52-23 Fail Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 7-Flight domestic booking flow for Round Trip (Individual) with 1 stop</p>
+            <p class="text-sm">
+              <span>4:52:23 pm</span> / <span>00:04:28:676</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test on Flight 7-Flight domestic booking flow for Round Trip (Individual) with 1 stop</h5>
+<span class='badge badge-success'>09.28.2023 4:52:23 pm</span>
+<span class='badge badge-danger'>09.28.2023 4:56:52 pm</span>
+<span class='badge badge-default'>00:04:28:676</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:25 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-52-25 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-52-25 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:37 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:37 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:39 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:43 pm</td>
+        <td>
+          <b><i>Clicked on Round Trip</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:46 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:52 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:58 pm</td>
+        <td>
+          <b><i>Select Departure Date  </i></b>14-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:58 pm</td>
+        <td>
+          <b><i>Select Return Date  </i></b>16-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:53:07 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-53-07 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-53-07 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:53:49 pm</td>
+        <td>
+          <b><i>Session id is </i></b>4409236c-835f-4c20-a685-9ac70c399dcb
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:05 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-05 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-05 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:19 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-18 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-18 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:29 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-29 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-29 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:37 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-37 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-37 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:46 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-46 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-54-46 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:55:27 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-55-26 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-55-26 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:55:40 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-55-40 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-55-40 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:55:51 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-55-50 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-55-50 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:55:59 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-55-59 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-55-59 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:07 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-07 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-07 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:32 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-31 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-31 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:48 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>32,916
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:48 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-48 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-48 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:51 pm</td>
+        <td>
+          <b><i>check the terms and condition</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:51 pm</td>
+        <td>
+          <b><i>Screenshot for Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:51 pm</td>
+        <td>
+          <b><i>Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:52 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-51 Successful Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-51 Successful Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 8-Flight domestic booking flow for Round Trip (Dependent) with 1 stop</p>
+            <p class="text-sm">
+              <span>4:56:52 pm</span> / <span>00:02:24:077</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Test on Flight 8-Flight domestic booking flow for Round Trip (Dependent) with 1 stop</h5>
+<span class='badge badge-success'>09.28.2023 4:56:52 pm</span>
+<span class='badge badge-danger'>09.28.2023 4:59:16 pm</span>
+<span class='badge badge-default'>00:02:24:077</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:55 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-55 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-56-55 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:06 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:06 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:08 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:12 pm</td>
+        <td>
+          <b><i>Clicked on Round Trip</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:16 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:21 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:27 pm</td>
+        <td>
+          <b><i>Select Departure Date  </i></b>15-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:27 pm</td>
+        <td>
+          <b><i>Select Return Date  </i></b>17-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:36 pm</td>
+        <td>
+          <b><i>Select adult for booking</i></b> - 2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:38 pm</td>
+        <td>
+          <b><i>Select child for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:40 pm</td>
+        <td>
+          <b><i>Select infant for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:43 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-57-42 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-57-42 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:04 pm</td>
+        <td>
+          <b><i>Session id is </i></b>44166b65-410f-4cd0-83bf-e503c959a145
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:19 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-58-19 Flight Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-58-19 Flight Itinerary.jpg">
+    <div class="title">Flight Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:33 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-58-33 More Details.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-58-33 More Details.jpg">
+    <div class="title">More Details</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:43 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-58-43 Fare Rules.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-58-43 Fare Rules.jpg">
+    <div class="title">Fare Rules</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:52 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-58-51 Fare Breakup.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-58-51 Fare Breakup.jpg">
+    <div class="title">Fare Breakup</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:00 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-59-00 Baggage Information.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-59-00 Baggage Information.jpg">
+    <div class="title">Baggage Information</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:59:15 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=117.0.5938.132)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [dfbb169ed55e9088ad25ba6ca5840fc9, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57181}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57181/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dfbb169ed55e9088ad25ba6ca5840fc9
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1119)
+	at utilities.QaRobot.alertAccept(QaRobot.java:54)
+	at testFlightHotel.OnewayBussinessFlightTrip.onewayBussinessFlightTrip(OnewayBussinessFlightTrip.java:3254)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:59:15 pm</td>
+        <td>
+          <b><i>Screenshot for Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:59:15 pm</td>
+        <td>
+          <b><i>Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>4:59:16 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-59-15 Fail Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-59-15 Fail Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 9-Flight international booking flow for One Way (Individual)</p>
+            <p class="text-sm">
+              <span>4:59:16 pm</span> / <span>00:02:03:137</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test on Flight 9-Flight international booking flow for One Way (Individual)</h5>
+<span class='badge badge-success'>09.28.2023 4:59:16 pm</span>
+<span class='badge badge-danger'>09.28.2023 5:01:19 pm</span>
+<span class='badge badge-default'>00:02:03:137</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:18 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-59-18 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 16-59-18 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:29 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:29 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:31 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:35 pm</td>
+        <td>
+          <b><i>Clicked on OneWay</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:38 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:44 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Dubai,United Arab Emirates - Dubai (DXB)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:48 pm</td>
+        <td>
+          <b><i>Select Date  </i></b>16-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:01 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-00-00 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-00-00 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:00:44 pm</td>
+        <td>
+          <b><i>Session id is </i></b>9dba7dd6-f1db-47c7-9a1b-42919826a045
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:01 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-01-01 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-01-01 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:15 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>33,718
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:15 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-01-15 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-01-15 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:18 pm</td>
+        <td>
+          <b><i>check the terms and condition</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:19 pm</td>
+        <td>
+          <b><i>Screenshot for Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:01:19 pm</td>
+        <td>
+          <b><i>Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:01:19 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-01-19 Successful Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-01-19 Successful Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 10-Flight international booking flow for One Way (Dependent)</p>
+            <p class="text-sm">
+              <span>5:01:19 pm</span> / <span>00:02:09:491</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Test on Flight 10-Flight international booking flow for One Way (Dependent)</h5>
+<span class='badge badge-success'>09.28.2023 5:01:19 pm</span>
+<span class='badge badge-danger'>09.28.2023 5:03:28 pm</span>
+<span class='badge badge-default'>00:02:09:491</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:21 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-01-21 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-01-21 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:33 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:33 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:35 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:39 pm</td>
+        <td>
+          <b><i>Clicked on OneWay</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:42 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:48 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Dubai,United Arab Emirates - Dubai (DXB)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:01:52 pm</td>
+        <td>
+          <b><i>Select Date  </i></b>20-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:05 pm</td>
+        <td>
+          <b><i>Select adult for booking</i></b> - 2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:07 pm</td>
+        <td>
+          <b><i>Select child for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:09 pm</td>
+        <td>
+          <b><i>Select infant for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:11 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-02-11 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-02-11 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:38 pm</td>
+        <td>
+          <b><i>Session id is </i></b>b624ac48-a984-44f7-89b1-dd56796b4a92
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:54 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-02-54 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-02-54 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:58 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:02:58 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-02-58 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-02-58 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:03:28 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Associate existing passengers']"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c714deef7d37bbed5664a355688cc2cb, findElement {using=xpath, value=//a[normalize-space()='Associate existing passengers']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57294/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c714deef7d37bbed5664a355688cc2cb
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at utilities.QaRobot.getLocator(QaRobot.java:71)
+	at utilities.QaRobot.getWebElement(QaRobot.java:153)
+	at utilities.QaRobot.ClickOnElement(QaRobot.java:175)
+	at product.Flight.suite.Oneway.SBTCheckoutPayment.CheckoutForFlightDependent(SBTCheckoutPayment.java:21)
+	at testFlightHotel.OnewayBussinessFlightTrip.checkoutpage(OnewayBussinessFlightTrip.java:4095)
+	at testFlightHotel.OnewayBussinessFlightTrip.onewayBussinessFlightTrip(OnewayBussinessFlightTrip.java:4019)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:03:28 pm</td>
+        <td>
+          <b><i>Screenshot for Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:03:28 pm</td>
+        <td>
+          <b><i>Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:03:28 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-03-28 Fail Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-03-28 Fail Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 11-Flight international booking flow for Round Trip (Individual)</p>
+            <p class="text-sm">
+              <span>5:03:28 pm</span> / <span>00:02:09:692</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test on Flight 11-Flight international booking flow for Round Trip (Individual)</h5>
+<span class='badge badge-success'>09.28.2023 5:03:28 pm</span>
+<span class='badge badge-danger'>09.28.2023 5:05:38 pm</span>
+<span class='badge badge-default'>00:02:09:692</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:03:31 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-03-31 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-03-31 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:03:42 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:03:42 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:03:44 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:03:48 pm</td>
+        <td>
+          <b><i>Clicked on Round Trip</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:03:51 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:03:57 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Dubai,United Arab Emirates - Dubai (DXB)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:04:03 pm</td>
+        <td>
+          <b><i>Select Departure Date  </i></b>21-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:04:03 pm</td>
+        <td>
+          <b><i>Select Return Date  </i></b>23-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:04:12 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-04-12 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-04-12 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:04:53 pm</td>
+        <td>
+          <b><i>Session id is </i></b>8dfc8dfd-43c5-41f8-8d60-1100309e86aa
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:21 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-05-21 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-05-21 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:34 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>33,815
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:34 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-05-34 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-05-34 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:38 pm</td>
+        <td>
+          <b><i>check the terms and condition</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:38 pm</td>
+        <td>
+          <b><i>Screenshot for Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:05:38 pm</td>
+        <td>
+          <b><i>Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:05:38 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-05-38 Successful Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-05-38 Successful Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 12-Flight international booking flow for Round Trip (Dependent)</p>
+            <p class="text-sm">
+              <span>5:05:38 pm</span> / <span>00:02:09:958</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Test on Flight 12-Flight international booking flow for Round Trip (Dependent)</h5>
+<span class='badge badge-success'>09.28.2023 5:05:38 pm</span>
+<span class='badge badge-danger'>09.28.2023 5:07:48 pm</span>
+<span class='badge badge-default'>00:02:09:958</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:40 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-05-40 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-05-40 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:51 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:51 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:53 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:05:58 pm</td>
+        <td>
+          <b><i>Clicked on Round Trip</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:01 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:06 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Dubai,United Arab Emirates - Dubai (DXB)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:12 pm</td>
+        <td>
+          <b><i>Select Departure Date  </i></b>22-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:12 pm</td>
+        <td>
+          <b><i>Select Return Date  </i></b>24-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:21 pm</td>
+        <td>
+          <b><i>Select adult for booking</i></b> - 2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:23 pm</td>
+        <td>
+          <b><i>Select child for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:25 pm</td>
+        <td>
+          <b><i>Select infant for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:06:28 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-06-28 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-06-28 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:07:08 pm</td>
+        <td>
+          <b><i>Session id is </i></b>5045de28-4293-416a-ac8a-0c6ab127efa0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:07:48 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div/span/span"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3205540cd483b1f7cae77217dcf8b398, findElement {using=xpath, value=/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div/span/span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57404}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57404/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3205540cd483b1f7cae77217dcf8b398
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at testFlightHotel.OnewayBussinessFlightTrip.onewayBussinessFlightTrip(OnewayBussinessFlightTrip.java:3892)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:07:48 pm</td>
+        <td>
+          <b><i>Screenshot for Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:07:48 pm</td>
+        <td>
+          <b><i>Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:07:48 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-07-48 Fail Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-07-48 Fail Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 13-Flight international booking flow for One Way (Individual) with 1 stop</p>
+            <p class="text-sm">
+              <span>5:07:48 pm</span> / <span>00:01:41:824</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test on Flight 13-Flight international booking flow for One Way (Individual) with 1 stop</h5>
+<span class='badge badge-success'>09.28.2023 5:07:48 pm</span>
+<span class='badge badge-danger'>09.28.2023 5:09:30 pm</span>
+<span class='badge badge-default'>00:01:41:824</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:07:50 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-07-50 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-07-50 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:08:01 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:08:01 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:08:03 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:08:08 pm</td>
+        <td>
+          <b><i>Clicked on OneWay</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:08:11 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:08:16 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Dubai,United Arab Emirates - Dubai (DXB)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:08:20 pm</td>
+        <td>
+          <b><i>Select Date  </i></b>27-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:08:33 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-08-33 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-08-33 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:08:56 pm</td>
+        <td>
+          <b><i>Session id is </i></b>813de3c1-6f3f-44f1-afd4-27d79fcd5f20
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:12 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-09-12 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-09-12 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:26 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>27,418
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:26 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-09-26 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-09-26 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:29 pm</td>
+        <td>
+          <b><i>check the terms and condition</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:30 pm</td>
+        <td>
+          <b><i>Screenshot for Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:09:30 pm</td>
+        <td>
+          <b><i>Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:09:30 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-09-30 Successful Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-09-30 Successful Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 14-Flight international booking flow for One Way (Dependent) with 1 stop</p>
+            <p class="text-sm">
+              <span>5:09:30 pm</span> / <span>00:02:07:400</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Test on Flight 14-Flight international booking flow for One Way (Dependent) with 1 stop</h5>
+<span class='badge badge-success'>09.28.2023 5:09:30 pm</span>
+<span class='badge badge-danger'>09.28.2023 5:11:37 pm</span>
+<span class='badge badge-default'>00:02:07:400</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:32 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-09-32 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-09-32 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:43 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:43 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:45 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:50 pm</td>
+        <td>
+          <b><i>Clicked on OneWay</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:53 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:09:58 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Dubai,United Arab Emirates - Dubai (DXB)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:10:02 pm</td>
+        <td>
+          <b><i>Select Date  </i></b>28-Nov-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:10:15 pm</td>
+        <td>
+          <b><i>Select adult for booking</i></b> - 2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:10:17 pm</td>
+        <td>
+          <b><i>Select child for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:10:19 pm</td>
+        <td>
+          <b><i>Select infant for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:10:22 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-10-22 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-10-22 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:10:43 pm</td>
+        <td>
+          <b><i>Session id is </i></b>c32d3436-308a-4d86-ac1f-a5d64493c6e8
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:11:00 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-11-00 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-11-00 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:11:07 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:11:07 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-11-07 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-11-07 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:11:37 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Associate existing passengers']"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a138ee3544cfeaccac97324ac3e411c6, findElement {using=xpath, value=//a[normalize-space()='Associate existing passengers']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57505}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57505/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a138ee3544cfeaccac97324ac3e411c6
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at utilities.QaRobot.getLocator(QaRobot.java:71)
+	at utilities.QaRobot.getWebElement(QaRobot.java:153)
+	at utilities.QaRobot.ClickOnElement(QaRobot.java:175)
+	at product.Flight.suite.Oneway.SBTCheckoutPayment.CheckoutForFlightDependent(SBTCheckoutPayment.java:21)
+	at testFlightHotel.OnewayBussinessFlightTrip.checkoutpage(OnewayBussinessFlightTrip.java:4095)
+	at testFlightHotel.OnewayBussinessFlightTrip.onewayBussinessFlightTrip(OnewayBussinessFlightTrip.java:4019)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:11:37 pm</td>
+        <td>
+          <b><i>Screenshot for Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:11:37 pm</td>
+        <td>
+          <b><i>Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:11:37 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-11-37 Fail Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-11-37 Fail Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 15-Flight international booking flow for Round Trip (Individual) with 1 stop</p>
+            <p class="text-sm">
+              <span>5:11:37 pm</span> / <span>00:02:10:293</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Test on Flight 15-Flight international booking flow for Round Trip (Individual) with 1 stop</h5>
+<span class='badge badge-success'>09.28.2023 5:11:37 pm</span>
+<span class='badge badge-danger'>09.28.2023 5:13:47 pm</span>
+<span class='badge badge-default'>00:02:10:293</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:11:40 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-11-40 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-11-40 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:11:51 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:11:51 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:11:53 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:11:57 pm</td>
+        <td>
+          <b><i>Clicked on Round Trip</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:12:00 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:12:06 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Dubai,United Arab Emirates - Dubai (DXB)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:12:12 pm</td>
+        <td>
+          <b><i>Select Departure Date  </i></b>4-Dec-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:12:12 pm</td>
+        <td>
+          <b><i>Select Return Date  </i></b>6-Dec-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:12:21 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-12-21 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-12-21 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:12:55 pm</td>
+        <td>
+          <b><i>Session id is </i></b>c26b4c55-daf4-4c9f-bf41-a116b780cb88
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:13:28 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-13-28 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-13-28 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:13:44 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>56,596
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:13:44 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-13-44 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-13-44 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:13:47 pm</td>
+        <td>
+          <b><i>check the terms and condition</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:13:47 pm</td>
+        <td>
+          <b><i>Screenshot for Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:13:47 pm</td>
+        <td>
+          <b><i>Successful Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:13:47 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-13-47 Successful Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-13-47 Successful Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Test on Flight 16-Flight international booking flow for Round Trip (Dependent) with 1 stop</p>
+            <p class="text-sm">
+              <span>5:13:47 pm</span> / <span>00:02:21:218</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Test on Flight 16-Flight international booking flow for Round Trip (Dependent) with 1 stop</h5>
+<span class='badge badge-success'>09.28.2023 5:13:47 pm</span>
+<span class='badge badge-danger'>09.28.2023 5:16:09 pm</span>
+<span class='badge badge-default'>00:02:21:218</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:13:50 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-13-50 Sigh In Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-13-50 Sigh In Page.jpg">
+    <div class="title">Sigh In Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:01 pm</td>
+        <td>
+          <b><i>Employee Name is  </i></b>Shubham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:01 pm</td>
+        <td>
+          <b><i> Traveler Type is  </i></b>Administrator
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:04 pm</td>
+        <td>
+          <b><i>Employee Email : </i></b>ankur.yadav@quadlabs.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:08 pm</td>
+        <td>
+          <b><i>Clicked on Round Trip</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:11 pm</td>
+        <td>
+          <b><i>Departure city</i></b> : Delhi,India - Indira Gandhi Intl (DEL)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:16 pm</td>
+        <td>
+          <b><i>Arrival city</i></b> : Dubai,United Arab Emirates - Dubai (DXB)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:22 pm</td>
+        <td>
+          <b><i>Select Departure Date  </i></b>5-Dec-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:22 pm</td>
+        <td>
+          <b><i>Select Return Date  </i></b>7-Dec-2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:31 pm</td>
+        <td>
+          <b><i>Select adult for booking</i></b> - 2
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:33 pm</td>
+        <td>
+          <b><i>Select child for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:35 pm</td>
+        <td>
+          <b><i>Select infant for booking</i></b> - 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:14:38 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-14-37 Search Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-14-37 Search Page.jpg">
+    <div class="title">Search Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:15:09 pm</td>
+        <td>
+          <b><i>Session id is </i></b>0a96382a-f06e-4cdb-874b-1a2c43c811ea
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:15:33 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-15-33 Your Itinerary.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-15-33 Your Itinerary.jpg">
+    <div class="title">Your Itinerary</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:15:38 pm</td>
+        <td>
+          <b><i>Price of checkout page </i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:15:38 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-15-38 Checkout Page.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-15-38 Checkout Page.jpg">
+    <div class="title">Checkout Page</div>
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:16:08 pm</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[normalize-space()='Associate existing passengers']"}
+  (Session info: chrome=117.0.5938.132)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [24ff05e10deeee59580df09559afd485, findElement {using=xpath, value=//a[normalize-space()='Associate existing passengers']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 117.0.5938.132, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57632}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57632/devtoo..., se:cdpVersion: 117.0.5938.132, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 24ff05e10deeee59580df09559afd485
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at utilities.QaRobot.getLocator(QaRobot.java:71)
+	at utilities.QaRobot.getWebElement(QaRobot.java:153)
+	at utilities.QaRobot.ClickOnElement(QaRobot.java:175)
+	at product.Flight.suite.Oneway.SBTCheckoutPayment.CheckoutForFlightDependent(SBTCheckoutPayment.java:21)
+	at testFlightHotel.OnewayBussinessFlightTrip.checkoutpage(OnewayBussinessFlightTrip.java:4095)
+	at testFlightHotel.OnewayBussinessFlightTrip.onewayBussinessFlightTrip(OnewayBussinessFlightTrip.java:4019)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:16:08 pm</td>
+        <td>
+          <b><i>Screenshot for Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:16:08 pm</td>
+        <td>
+          <b><i>Fail Test</i></b>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:16:09 pm</td>
+        <td>
+          
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-16-08 Fail Test.jpg' src="D:\Automation\projectQuadlabs\Screenshot\28-09-23 & 17-16-08 Fail Test.jpg">
+    
+    </div></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:49:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>Test on Flight 6-Flight domestic booking flow for One Way (Dependent) with 1 stop</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:01:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>Test on Flight 10-Flight international booking flow for One Way (Dependent)</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:05:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>Test on Flight 12-Flight international booking flow for Round Trip (Dependent)</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:09:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>Test on Flight 14-Flight international booking flow for One Way (Dependent) with 1 stop</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:13:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>Test on Flight 16-Flight international booking flow for Round Trip (Dependent) with 1 stop</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">org.openqa.selenium.NoAlertPresentException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoAlertPresentException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:44:02 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>Test on Flight 4-Flight domestic booking flow for Round Trip (Dependent)</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>16:56:52 pm</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>Test on Flight 8-Flight domestic booking flow for Round Trip (Dependent) with 1 stop</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Sep 28, 2023 04:34:21 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Sep 28, 2023 05:16:09 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>9</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>7</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='56%'>
+<b>9</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='43%'><b>7</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='5%'><b>18</b> events passed</small></div>
+<div>
+<small data-tooltip='8%'><b>28</b> events failed,
+<b data-tooltip='%'>302</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Test on Flight 1-Flight domestic booking flow for One Way (Individual)":162.504,"Test on Flight 2-Flight domestic booking flow for One Way (Dependent)":172.609,"Test on Flight 3-Flight domestic booking flow for Round Trip (Individual)":244.08,"Test on Flight 4-Flight domestic booking flow for Round Trip (Dependent)":143.634,"Test on Flight 5-Flight domestic booking flow for One Way (Individual) with 1 stop":164.389,"Test on Flight 6-Flight domestic booking flow for One Way (Dependent) with 1 stop":192.973,"Test on Flight 7-Flight domestic booking flow for Round Trip (Individual) with 1 stop":268.676,"Test on Flight 8-Flight domestic booking flow for Round Trip (Dependent) with 1 stop":144.077,"Test on Flight 9-Flight international booking flow for One Way (Individual)":123.137,"Test on Flight 10-Flight international booking flow for One Way (Dependent)":129.491,"Test on Flight 11-Flight international booking flow for Round Trip (Individual)":129.692,"Test on Flight 12-Flight international booking flow for Round Trip (Dependent)":129.958,"Test on Flight 13-Flight international booking flow for One Way (Individual) with 1 stop":101.824,"Test on Flight 14-Flight international booking flow for One Way (Dependent) with 1 stop":127.4,"Test on Flight 15-Flight international booking flow for Round Trip (Individual) with 1 stop":130.293,"Test on Flight 16-Flight international booking flow for Round Trip (Dependent) with 1 stop":141.218
+};
+</script>
+<div class="row">
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 9,
+failParent: 7,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 18,
+failEvents: 28,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 302
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

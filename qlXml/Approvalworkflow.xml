@@ -5,7 +5,6 @@
 
 <listeners>
 <listener class-name="TestScript.RoundTrip.Flightcheck"></listener>
-
 </listeners>
 
 <test name="Nopackage" >

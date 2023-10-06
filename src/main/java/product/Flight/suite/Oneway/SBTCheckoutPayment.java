@@ -181,7 +181,7 @@ public class SBTCheckoutPayment {
 
 		QaRobot.ClickOnElement("TermCondition");
 		QaRobot.ClickOnElement("Quoteflightcheckout");
-		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on quote button</i></b>");
+//		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on quote button</i></b>");
 		// wait till send button visibility
 		// QaRobot.explicitwaitvisible(250,
 		// By.xpath("//a[@id='lnksendAIREnqFromCorp']"));
