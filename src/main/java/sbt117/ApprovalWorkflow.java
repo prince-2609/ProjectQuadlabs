@@ -63,24 +63,24 @@ public class ApprovalWorkflow {
 		QaRobot.ClickOnElement("CPCorporateManagement");
 		QaBrowser.driver.switchTo().parentFrame();
 		QaRobot.switchframe("//frame[@id='frm2']");
-//		QaRobot.ClickOnElement("ManageTravelCategory");
-//		QaRobot.ClickOnElement("AddTravelCategory");
-//		QaRobot.PassValue("TravelCategory", TCategoryName);
-//		QaRobot.PassValue("TravelCategoryCode", TCategoryCode);
-//		if (TCategoryType.equalsIgnoreCase("Business Trip")) {
-//			QaRobot.ClickOnElement("CTBusinessTrip");
-//		} else if (TCategoryType.equalsIgnoreCase("Family Trip")) {
-//			QaRobot.ClickOnElement("CTFamilyTrip");
-//		} else if (TCategoryType.equalsIgnoreCase("Expense")) {
-//			QaRobot.ClickOnElement("CTExpence");
-//		} else if (TCategoryType.equalsIgnoreCase("Guest User")) {
-//			QaRobot.ClickOnElement("CTGuestUser");
-//		}
-//		QaRobot.ClickOnElement("ApplyTravelPolicy");
-//		QaRobot.ClickOnElement("MarkActive");
-//		QaRobot.ClickOnElement("AddTravelCategory");
-//		QaRobot.acceptAlert("TravelCategoryStatus");
-//		QaRobot.ClickOnElement("TravelCategoryClose");
+		QaRobot.ClickOnElement("ManageTravelCategory");
+		QaRobot.ClickOnElement("AddTravelCategory");
+		QaRobot.PassValue("TravelCategory", TCategoryName);
+		QaRobot.PassValue("TravelCategoryCode", TCategoryCode);
+		if (TCategoryType.equalsIgnoreCase("Business Trip")) {
+			QaRobot.ClickOnElement("CTBusinessTrip");
+		} else if (TCategoryType.equalsIgnoreCase("Family Trip")) {
+			QaRobot.ClickOnElement("CTFamilyTrip");
+		} else if (TCategoryType.equalsIgnoreCase("Expense")) {
+			QaRobot.ClickOnElement("CTExpence");
+		} else if (TCategoryType.equalsIgnoreCase("Guest User")) {
+			QaRobot.ClickOnElement("CTGuestUser");
+		}
+		QaRobot.ClickOnElement("ApplyTravelPolicy");
+		QaRobot.ClickOnElement("MarkActive");
+		QaRobot.ClickOnElement("AddTravelCategory");
+		QaRobot.acceptAlert("TravelCategoryStatus");
+		QaRobot.ClickOnElement("TravelCategoryClose");
 		QaRobot.ClickOnElement("ManageTravelPolicy");
 		QaRobot.ClickOnElement("AddManageTravelPolicy");
 		QaRobot.PassValue("PolicyTitle", PolicyTitle);
@@ -170,7 +170,7 @@ public class ApprovalWorkflow {
 							QaRobot.ClickOnElement("SDAdd");
 						}
 						QaRobot.ClickOnElement("DestinationSaveClose");
-					} else if (b.equalsIgnoreCase("Cost Range")) {                                     
+					} else if (b.equalsIgnoreCase("Cost Range")) {
 						QaRobot.switchToWindow();
 						QaRobot.PassValue("CostFrom", CostFrom);
 						QaRobot.PassValue("CostTo", CostTo);
@@ -397,7 +397,7 @@ public class ApprovalWorkflow {
 			String N5 = Name2[0];
 			String N6 = Name2[1];
 			TestBase.listofautosuggestion(By.xpath("//div[@id='divInPolicyApprover2']/p"), N5, N6,
-					By.xpath("//input[@id='txtInPolicyApprover2']")); 
+					By.xpath("//input[@id='txtInPolicyApprover2']"));
 			QaBrowser.driver.findElement(By.xpath("//div[@id='divInPolicyApprover2']/p[2]")).click();
 			Thread.sleep(2000);
 			String Name3[] = OPALevel2.split(",");

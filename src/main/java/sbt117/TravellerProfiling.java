@@ -115,7 +115,6 @@ public class TravellerProfiling {
 			String b = tN[i - 1];
 			List<WebElement> listOfRights = QaBrowser.driver.findElements(
 					By.xpath("/html/body/div/form/div[5]/div/div/div/div[2]/div[2]/div/div[46]/div/label/span/label"));
-
 			for (WebElement autoRights : listOfRights) {
 				if (autoRights.getText().equalsIgnoreCase(b)) {
 					autoRights.click();
@@ -224,10 +223,10 @@ public class TravellerProfiling {
 	}
 
 	@AfterTest
-	public  void After_Test() {
+	public void After_Test() {
 		QaExtentReport.test.getExtent().flush();
 	}
-	
+
 //	@AfterMethod
 //	public static void afterMethod() {
 //		QaExtentReport.test.getExtent().flush();

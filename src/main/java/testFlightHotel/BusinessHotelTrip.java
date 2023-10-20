@@ -19,6 +19,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import Base.TestBase;
+import jOLO_SBT.SBT_JOLO_PaymentPage;
 import product.Flight.suite.Oneway.SearchDashboard;
 import utilities.QaBrowser;
 import utilities.QaDataProvider;
@@ -31,7 +32,7 @@ public class BusinessHotelTrip {
 
 	@DataProvider
 	public Object[][] getexceldata1() throws Exception {
-		return QaDataProvider.getTestdata("SBT_Hotel", "Sheet11");
+		return QaDataProvider.getTestdata("SBT_Hotel", "Sheet13");
 	}
 
 	@Test(dataProvider = "getexceldata1")
@@ -88,8 +89,8 @@ public class BusinessHotelTrip {
 			}
 		}
 		Thread.sleep(3000);
-//		QaRobot.ClickOnElement("NotificationClose");
-//		Thread.sleep(2000);
+		QaRobot.ClickOnElement("NotificationClose");
+		Thread.sleep(2000);
 		QaRobot.ClickOnElement("search_hotel");
 		Thread.sleep(2000);
 		if (DashboardType.equalsIgnoreCase("Old")) {
@@ -173,24 +174,25 @@ public class BusinessHotelTrip {
 			// click on search hotel button
 			QaRobot.ClickOnElement("search_button");
 		} else if (DashboardType.equalsIgnoreCase("New")) {
-			QaRobot.ClickOnElement("NBookAs");
-			Thread.sleep(2000);
+//			QaRobot.ClickOnElement("NBookAs");
+//			Thread.sleep(2000);
 			if (TravelerType.equalsIgnoreCase("Administrator") || TravelerType.equalsIgnoreCase("Travel Arranger")) {
 				SearchDashboard.selectEmployeeWithID(CorporateTraveller);
+				if (SearchType.equalsIgnoreCase("Individual")) {
+					QaRobot.ClickOnElement("trip_Busniess");
+				} else if (SearchType.equalsIgnoreCase("Dependent")) {
+					QaRobot.ClickOnElement("trip_Family");
+				}
 			}
-			if (SearchType.equalsIgnoreCase("Individual")) {
-				QaRobot.ClickOnElement("trip_Busniess");
-			} else if (SearchType.equalsIgnoreCase("Dependent")) {
-				QaRobot.ClickOnElement("trip_Family");
-			}
+
 			TestBase.listofautosuggestion(By.xpath("//div[@id='divHotelName']/p"), CityCode, CityTitle,
 					By.xpath("//input[@id='txtHHLCity']"));
 			QaExtentReport.test.log(Status.INFO, "<b><i>City Name : </i></b>" + CityCode + "-" + CityTitle);
 			Thread.sleep(2000);
-			WebElement Radius = QaBrowser.driver.findElement(By.xpath("//select[@id='ddlRadius']"));
-			Select selectRadius = new Select(Radius);
-			selectRadius.selectByVisibleText(ChooseRadius);
-			Thread.sleep(3000);
+//			WebElement Radius = QaBrowser.driver.findElement(By.xpath("//select[@id='ddlRadius']"));
+//			Select selectRadius = new Select(Radius);
+//			selectRadius.selectByVisibleText(ChooseRadius);
+//			Thread.sleep(3000);
 			QaBrowser.driver
 					.findElement(By.xpath("//div[@id='tab2']/div/div[2]/div[2]/div[1]/label/span[2]/span[1]/img"))
 					.click();
@@ -518,10 +520,12 @@ public class BusinessHotelTrip {
 					}
 
 				} else if (ProductType.equalsIgnoreCase("Hotel+Flight")) {
-//						addFlight(Server, Trip, ProductType, TripType, OriginCityCode, OriginLocation, DestinationCityCode,
-//								DestinationLocation, DepartureDate, ReturnDate);
-					QaRobot.switchToWindow();
-					QaRobot.ClickOnElement("ProceedToCheckoutC");
+					QaRobot.ClickOnElement("AddFlightC");
+					Thread.sleep(5000);
+//					addFlight(Trip, ProductType, TripType, OriginCityCode, OriginLocation, DestinationCityCode,
+//							DestinationLocation, DepartureDate, ReturnDate);
+//					QaRobot.switchToWindow();
+//					QaRobot.ClickOnElement("ProceedToCheckoutC");
 				} else if (ProductType.equalsIgnoreCase("Hotel+Car")) {
 //						addCar(Server, ProductType, PickUpCode, PickUpCity, PickUpDate, DropOffDate, DriversAge);
 					QaRobot.switchToWindow();
@@ -779,9 +783,11 @@ public class BusinessHotelTrip {
 			String QuoteRemark, String Checkoutpagestep, String FOP, String CardType, String CreditCardNumber,
 			String CardHolderName, String CardExpiryDate, String CreatedBy) throws Exception {
 		if (SearchType.equalsIgnoreCase("Individual")) {
+			Thread.sleep(8000);
 			QaExtentReport.extentScreenshot("Checkout Page");
 			QaRobot.scrollPage(400);
 			if (ProductType.equalsIgnoreCase("Hotel")) {
+				QaRobot.selectIndexFromDropdown("ResonCodeCT", 1);
 				QaRobot.selectIndexFromDropdown("ResonCodeCN", 1);
 				QaRobot.ClickOnElement("BillToBranchC");
 			} else if (ProductType.equalsIgnoreCase("Hotel+Flight")) {
@@ -990,6 +996,7 @@ public class BusinessHotelTrip {
 			} else {
 				QaRobot.alertAccept();
 			}
+			Thread.sleep(5000);
 //			SBT_JOLO_PaymentPage.cardPayment(ProductType, FOP, CardType, CreditCardNumber, CardHolderName,
 //					CardExpiryDate);
 //			confirmpageCarNew(CreatedBy);
@@ -1029,6 +1036,101 @@ public class BusinessHotelTrip {
 		String Creater = QaBrowser.driver.findElement(By.xpath("//span[@id='lblCreatedBy']")).getText();
 		QaExtentReport.test.log(Status.INFO, "<b><i>Created By </i></b>" + Creater);
 		Assert.assertTrue(CreatorName.equalsIgnoreCase(Creater), "Creater name is not Present");
+	}
+
+	public static void addFlight(String Trip, String ProductType, String TripType, String OriginCityCode,
+			String OriginLocation, String DestinationCityCode, String DestinationLocation, String DepartureDate,
+			String ReturnDate) throws Exception {
+		QaRobot.ClickOnElement("AddFlightC");
+		QaRobot.switchframe("//iframe[@id='AddCartPopupFrame']");
+		if (TripType.equalsIgnoreCase("OneWay")) {
+			QaRobot.ClickOnElement("OneWayC");
+		} else if (TripType.equalsIgnoreCase("RoundTrip")) {
+			QaRobot.ClickOnElement("RoundTripC");
+		}
+		TestBase.listofautosuggestion4(By.xpath("//div[@id='divDepartureCity']/p"), OriginCityCode, OriginLocation,
+				By.xpath("//input[@id='txtDepartureCity']"));
+		Thread.sleep(2000);
+		QaExtentReport.test.log(Status.INFO,
+				"<b><i>Departure city : </i></b>" + OriginCityCode + " - " + OriginLocation);
+		Thread.sleep(2000);
+		TestBase.listofautosuggestion4(By.xpath("//div[@id='divDestinationCity']/p"), DestinationCityCode,
+				DestinationLocation, By.xpath("//input[@id='txtDestinationCity']"));
+		Thread.sleep(2000);
+		QaBrowser.driver.findElement(By.xpath("//div[@id='divDestinationCity']/p")).click();
+		QaExtentReport.test.log(Status.INFO,
+				"<b><i>Arrival city : </i></b>" + DestinationCityCode + " - " + DestinationLocation);
+		Thread.sleep(2000);
+//		QaBrowser.driver.findElement(By.xpath("//div[@id='flight_way1']/div[2]/div[1]/div/div[1]/label/span[2]/a/img"))
+//				.click();
+//		Thread.sleep(2000);
+//		String DateSelection[] = DepartureDate.split("-");
+//		String year = DateSelection[2];
+//		String month = DateSelection[1];
+//		String expDate = DateSelection[0];
+//		String DateSelection1[] = ReturnDate.split("-");
+//		String year1 = DateSelection1[2];
+//		String month1 = DateSelection1[1];
+//		String expDate1 = DateSelection1[0];
+//		if (TripType.equalsIgnoreCase("OneWay")) {
+//			selectDateInCalendarOneWay(expDate, month, year);
+//		} else if (TripType.equalsIgnoreCase("RoundTrip")) {
+//			selectDateInCalendarRoundTrip(expDate, month, year, expDate1, month1, year1);
+//		}
+		QaRobot.ClickOnElement("FlightCheckC");
+		QaExtentReport.extentScreenshot("Add Flight");
+		QaRobot.ClickOnElement("SearchFlightC");
+		Thread.sleep(5000);
+		List<WebElement> listOfRights1 = QaBrowser.driver
+				.findElements(By.xpath("//div[@id='tdContainerTblAirlines']/ul/li/label/span"));
+		for (WebElement autoRights1 : listOfRights1) {
+			if (autoRights1.getText().equalsIgnoreCase("Jetstar Airways")) {
+				autoRights1.click();
+				break;
+			}
+		}
+		QaRobot.scrollPage(-1000);
+//		if ((Server.equalsIgnoreCase("Staging") || Server.equalsIgnoreCase("Xchange")
+//				|| Trip.equalsIgnoreCase("International"))) {
+////			QaRobot.ClickOnElement("FlightSelectC");
+//		}
+		String getT = QaBrowser.driver.findElement(By.xpath("//span[contains(@id,'PT_')]")).getText();
+		QaExtentReport.extentScreenshot("Flight Results");
+		if (TripType.equalsIgnoreCase("OneWay")) {
+			QaRobot.ClickOnElement("AddToCartFlightC");
+			if (getT.equalsIgnoreCase("Out policy")) {
+				QaRobot.alertAccept();
+			}
+			QaRobot.switchToWindow();
+			QaRobot.ClickOnElement("FlightNotificationCloseC");
+		} else if (TripType.equalsIgnoreCase("RoundTrip")) {
+			if (Trip.equalsIgnoreCase("Domestic")) {
+				QaRobot.ClickOnElement("AddToCartFlightC");
+//				if (getT.equalsIgnoreCase("Out policy")) {
+				QaRobot.alertAccept();
+//				}
+				Thread.sleep(3000);
+				QaRobot.switchToWindow();
+				QaRobot.ClickOnElement("FlightNotificationCloseC");
+				QaRobot.ClickOnElement("ResultRJ");
+				QaRobot.ClickOnElement("AddToCartFlightC");
+//				if (getT.equalsIgnoreCase("Out policy")) {
+				QaRobot.alertAccept();
+//				}
+				Thread.sleep(3000);
+				QaRobot.switchToWindow();
+				QaRobot.ClickOnElement("FlightNotificationCloseC");
+			} else if (Trip.equalsIgnoreCase("International")) {
+				QaRobot.ClickOnElement("AddToCartFlightC");
+//				if (getT.equalsIgnoreCase("Out policy")) {
+				QaRobot.alertAccept();
+//				}
+				QaRobot.switchToWindow();
+				QaRobot.ClickOnElement("FlightNotificationCloseC");
+			}
+		}
+		QaRobot.ClickOnElement("YourItineraryC");
+		Thread.sleep(5000);
 	}
 
 	public static void selectDateInCalendarHotel(String Day, String Month, String Year, String Day1, String Month1,

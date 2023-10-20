@@ -117,8 +117,8 @@ public class OtherMiscFunctionality {
 						QaRobot.ClickOnElement("CARSelectClose");
 					}
 				}
-				
-			} else  {
+
+			} else {
 				for (int i = 1; i <= pAS; i++) {
 					String[] tN = CriteriaName.split(",");
 					String b = tN[i - 1];
@@ -127,7 +127,7 @@ public class OtherMiscFunctionality {
 						QaRobot.selectTextByLocator("//select[@id='ddlkey1']", b);
 					} else {
 						QaRobot.ClickOnElement("AddNewCriteria");
-						QaRobot.selectTextByLocator("//select[@id='ddlkey"+i+"']", b);
+						QaRobot.selectTextByLocator("//select[@id='ddlkey" + i + "']", b);
 					}
 					if (b.equalsIgnoreCase("Airline")) {
 						String ParentWindow = QaBrowser.driver.getWindowHandle();
@@ -242,7 +242,7 @@ public class OtherMiscFunctionality {
 						QaRobot.selectTextByLocator("//select[@id='ddlkey1']", b);
 					} else {
 						QaRobot.ClickOnElement("AddNewCriteria");
-						QaRobot.selectTextByLocator("//select[@id='ddlkey"+i+"']", b);
+						QaRobot.selectTextByLocator("//select[@id='ddlkey" + i + "']", b);
 					}
 					if (b.equalsIgnoreCase("Market")) {
 						String ParentWindow = QaBrowser.driver.getWindowHandle();
@@ -360,7 +360,7 @@ public class OtherMiscFunctionality {
 						QaRobot.selectTextByLocator("//select[@id='ddlkey1']", b);
 					} else {
 						QaRobot.ClickOnElement("AddNewCriteria");
-						QaRobot.selectTextByLocator("//select[@id='ddlkey"+i+"']", b);
+						QaRobot.selectTextByLocator("//select[@id='ddlkey" + i + "']", b);
 					}
 					if (b.equalsIgnoreCase("Market")) {
 						String ParentWindow = QaBrowser.driver.getWindowHandle();
