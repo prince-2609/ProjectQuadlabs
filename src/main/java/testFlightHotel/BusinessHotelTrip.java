@@ -74,19 +74,19 @@ public class BusinessHotelTrip {
 				QaExtentReport.extentScreenshot("Choose Corporate");
 			}
 		} else if (ccode.equalsIgnoreCase("preprod117")) {
-			if (CoporateName.equalsIgnoreCase("Demo Corporate")) {
-				QaRobot.ClickOnElement("ChooseCorporate1");
-				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-				QaExtentReport.extentScreenshot("Choose Corporate");
-			} else if (CoporateName.equalsIgnoreCase("Lux_Test_corp")) {
-				QaRobot.ClickOnElement("ChooseCorporate2");
-				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-				QaExtentReport.extentScreenshot("Choose Corporate");
-			} else if (CoporateName.equalsIgnoreCase("Amazon")) {
-				QaRobot.ClickOnElement("ChooseCorporate2");
-				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-				QaExtentReport.extentScreenshot("Choose Corporate");
-			}
+//			if (CoporateName.equalsIgnoreCase("Demo Corporate")) {
+//				QaRobot.ClickOnElement("ChooseCorporate1");
+//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+//				QaExtentReport.extentScreenshot("Choose Corporate");
+//			} else if (CoporateName.equalsIgnoreCase("Lux_Test_corp")) {
+//				QaRobot.ClickOnElement("ChooseCorporate2");
+//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+//				QaExtentReport.extentScreenshot("Choose Corporate");
+//			} else if (CoporateName.equalsIgnoreCase("Amazon")) {
+//				QaRobot.ClickOnElement("ChooseCorporate2");
+//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+//				QaExtentReport.extentScreenshot("Choose Corporate");
+//			}
 		}
 		Thread.sleep(3000);
 		QaRobot.ClickOnElement("NotificationClose");
@@ -241,7 +241,7 @@ public class BusinessHotelTrip {
 					}
 				}
 			}
-//			QaRobot.ClickOnElement("HotelPolicyCheckJ");
+			QaRobot.ClickOnElement("HotelPolicyCheckJ");
 			try {
 				QaExtentReport.extentScreenshot("Search Page");
 				QaRobot.ClickOnElement("FinalSearchHJ");
@@ -297,7 +297,7 @@ public class BusinessHotelTrip {
 //			}
 			QaRobot.ClickOnElement("OkContinue");
 		}
-		Thread.sleep(40000);
+		Thread.sleep(25000);
 
 //		QaRobot.explicitwaitinvisible(300, By.xpath("div[@class='loadbar ld_hotel']"));
 
@@ -516,7 +516,7 @@ public class BusinessHotelTrip {
 					if (ccode.equalsIgnoreCase("Live")) {
 						QaRobot.ClickOnElement("ProceedToCheckoutC");
 					} else {
-						QaRobot.ClickOnElement("ProceedToCheckoutCN");
+						QaRobot.ClickOnElement("ProceedToCheckoutH");
 					}
 
 				} else if (ProductType.equalsIgnoreCase("Hotel+Flight")) {
@@ -625,8 +625,8 @@ public class BusinessHotelTrip {
 					}
 				}
 				if (SearchType.equalsIgnoreCase("Individual")) {
-//					checkoutForHotelNew(ccode, SearchType, ProductType, QuoteTitle, QuoteRemark, Checkoutpagestep, FOP,
-//							CardType, CreditCardNumber, CardHolderName, CardExpiryDate, CreatedBy);
+					checkoutForHotelNew(ccode, SearchType, ProductType, QuoteTitle, QuoteRemark, Checkoutpagestep, FOP,
+							CardType, CreditCardNumber, CardHolderName, CardExpiryDate, CreatedBy);
 				} else if (SearchType.equalsIgnoreCase("Dependent")) {
 //						SBT_JOLO_CheckoutPage.checkoutForCar(CreatorName, TravellerType, ProductType, QuoteTitle, QuoteRemark,
 //								Checkoutpagestep, FOP, CardType, CreditCardNumber, CardHolderName, CardExpiryDate);
@@ -813,7 +813,6 @@ public class BusinessHotelTrip {
 			bookForHotelNew(ProductType, QuoteTitle, QuoteRemark, Checkoutpagestep, FOP, CardType, CreditCardNumber,
 					CardHolderName, CardExpiryDate, CreatedBy);
 		} else if (SearchType.equalsIgnoreCase("Dependent")) {
-
 		}
 	}
 
@@ -997,9 +996,9 @@ public class BusinessHotelTrip {
 				QaRobot.alertAccept();
 			}
 			Thread.sleep(5000);
-//			SBT_JOLO_PaymentPage.cardPayment(ProductType, FOP, CardType, CreditCardNumber, CardHolderName,
-//					CardExpiryDate);
-//			confirmpageCarNew(CreatedBy);
+			SBT_JOLO_PaymentPage.cardPayment(ProductType, FOP, CardType, CreditCardNumber, CardHolderName,
+					CardExpiryDate);
+			confirmpageCarNew(CreatedBy);
 		}
 	}
 
@@ -1024,7 +1023,9 @@ public class BusinessHotelTrip {
 //		String getTxt5[] = getTxt4.split(" ");
 		String number2 = getTxt2[2];
 		System.out.println(number2);
-		QaExtentReport.test.log(Status.INFO, "<b><i>Res Number is </i></b>" + number2);
+		String number3 = getTxt2[4];
+		System.out.println(number3);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Res Number is </i></b>" + number2 + " / " +number3);
 		QaExtentReport.extentScreenshot("Confirm Page");
 		QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']", "//span[@id='ctl00_HeaderTop_lblBookingQueue']");
 		QaExtentReport.extentScreenshot("CorporateDashboard Page");

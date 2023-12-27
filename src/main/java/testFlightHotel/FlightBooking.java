@@ -16,6 +16,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.Status;
 
@@ -34,7 +35,7 @@ public class FlightBooking {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("FlightBooking", "Sheet3");
+		return QaDataProvider.getTestdata("FlightBooking", "Sheet7");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -139,23 +140,23 @@ public class FlightBooking {
 				QaExtentReport.extentScreenshot("Choose Corporate");
 			}
 		} else if (ccode.equalsIgnoreCase("preprod117")) {
-			if (CoporateName.equalsIgnoreCase("Demo Corporate")) {
-				QaRobot.ClickOnElement("ChooseCorporate1");
-				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-				QaExtentReport.extentScreenshot("Choose Corporate");
-			} else if (CoporateName.equalsIgnoreCase("Lux_Test_corp")) {
-				QaRobot.ClickOnElement("ChooseCorporate2");
-				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-				QaExtentReport.extentScreenshot("Choose Corporate");
-			} else if (CoporateName.equalsIgnoreCase("Amazon")) {
-				QaExtentReport.extentScreenshot("Choose Corporate");
-				QaRobot.ClickOnElement("ChooseCorporate2");
-				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-			}
+//			if (CoporateName.equalsIgnoreCase("Demo Corporate")) {
+//				QaRobot.ClickOnElement("ChooseCorporate1");
+//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+//				QaExtentReport.extentScreenshot("Choose Corporate");
+//			} else if (CoporateName.equalsIgnoreCase("Lux_Test_corp")) {
+//				QaRobot.ClickOnElement("ChooseCorporate2");
+//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+//				QaExtentReport.extentScreenshot("Choose Corporate");
+//			} else if (CoporateName.equalsIgnoreCase("Amazon")) {
+//				QaExtentReport.extentScreenshot("Choose Corporate");
+//				QaRobot.ClickOnElement("ChooseCorporate2");
+//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+//			}
 		}
 		if (DashboardType.equalsIgnoreCase("Old")) {
-			QaRobot.ClickOnElement("NotificationClose");
-			Thread.sleep(2000);
+//			QaRobot.ClickOnElement("NotificationClose");
+//			Thread.sleep(2000);
 			if (TravelerType.equalsIgnoreCase("Administrator") || TravelerType.equalsIgnoreCase("Travel Arranger")) {
 				SearchDashboard.selectEmployeeWithID(corptraveller);
 			}
@@ -246,7 +247,6 @@ public class FlightBooking {
 //			QaRobot.ClickOnElement("NBookAs");
 //			Thread.sleep(2000);
 			if (TravelerType.equalsIgnoreCase("Administrator") || TravelerType.equalsIgnoreCase("Travel Arranger")) {
-				QaRobot.ClickOnElement("ow_Searchemp");
 				SearchDashboard.selectEmployeeWithID(corptraveller);
 				if (searchType.equalsIgnoreCase("Individual")) {
 					QaRobot.ClickOnElement("trip_Busniess");
@@ -379,7 +379,7 @@ public class FlightBooking {
 //			}
 			QaRobot.ClickOnElement("OkContinue");
 		}
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 
 //		if (QaBrowser.driver
 //				.findElement(
@@ -452,7 +452,7 @@ public class FlightBooking {
 			}
 			if (Source.equalsIgnoreCase("Live")) {
 				List<WebElement> listOfStop = QaBrowser.driver.findElements(By.xpath(
-						"//div[@id='FareDetailsController']/div[2]/div/div[1]/div/div[3]/div[5]/div[2]/ul/li/span"));
+						"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[1]/div/div[3]/div[5]/div[2]/ul/li/span"));
 				for (WebElement autoStop : listOfStop) {
 //					System.out.println(autoAirline.getText());
 					if (autoStop.getText().equalsIgnoreCase(Stops)) {
@@ -485,7 +485,7 @@ public class FlightBooking {
 				}
 			}
 		}
-		QaRobot.scrollPage(-1500);
+		QaRobot.scrollPage(-1000);
 		if (FareBranding.equalsIgnoreCase("Off")) {
 			if (triptype.equalsIgnoreCase("Domestic")) {
 				Thread.sleep(5000);
@@ -573,10 +573,11 @@ public class FlightBooking {
 //				QaExtentReport.extentScreenshot("Flight Results");
 			if (Trip.equalsIgnoreCase("OneWay")) {
 				if (triptype.equalsIgnoreCase("Domestic")) {
+//					QaRobot.scrollPage(500);
 					QaRobot.ClickOnElement("AFlightItinerary");
-					Thread.sleep(10000);
+					Thread.sleep(15000);
 					QaExtentReport.extentScreenshot("Flight Itinerary");
-					Thread.sleep(3000);
+					Thread.sleep(5000);
 					QaRobot.ClickOnElement("AMoreDetails");
 					Thread.sleep(7000);
 					QaRobot.scrollPage(300);
@@ -823,7 +824,7 @@ public class FlightBooking {
 								QaRobot.alertAccept();
 							}
 						} else if (OneWayFareType.equalsIgnoreCase("Economy Basic")) {
-							QaRobot.ClickOnElement("AddToCartJ2");
+							QaRobot.ClickOnElement("AddToCartJ1");
 							if (getT.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
 							}
@@ -857,7 +858,7 @@ public class FlightBooking {
 								QaRobot.alertAccept();
 							}
 						} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-							QaRobot.ClickOnElement("AddToCartJ2");
+							QaRobot.ClickOnElement("AddToCartJ1");
 							if (getT.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
 							}
@@ -873,8 +874,8 @@ public class FlightBooking {
 							if (getT.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
 							}
-						} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-							QaRobot.ClickOnElement("AddToCartJ2");
+						} else if (OneWayFareType.equalsIgnoreCase("PUB")) {
+							QaRobot.ClickOnElement("AddToCartJ1");
 							if (getT.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
 							}
@@ -911,124 +912,30 @@ public class FlightBooking {
 								QaRobot.alertAccept();
 							}
 						}
+					} else if (OneWayAirLine.equalsIgnoreCase("Air Asia")) {
+						if (OneWayFareType.equalsIgnoreCase("Economy Fare")) {
+							QaRobot.ClickOnElement("AddToCartJ1");
+							if (getT.equalsIgnoreCase("Out of policy")) {
+								QaRobot.alertAccept();
+							}
+						} else if (OneWayFareType.equalsIgnoreCase("ECO STANDARD")) {
+							QaRobot.ClickOnElement("AddToCartJ1");
+							if (getT.equalsIgnoreCase("Out of policy")) {
+								QaRobot.alertAccept();
+							}
+						} else if (OneWayFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
+							QaRobot.ClickOnElement("AddToCartJ3");
+							if (getT.equalsIgnoreCase("Out of policy")) {
+								QaRobot.alertAccept();
+							}
+						} else if (OneWayFareType.equalsIgnoreCase("BUSINESS SAVER")) {
+							QaRobot.ClickOnElement("AddToCartJ4");
+							if (getT.equalsIgnoreCase("Out of policy")) {
+								QaRobot.alertAccept();
+							}
+						}
 					}
 
-//					if (PolicyType.equalsIgnoreCase("OutPolicy")) {
-//						if (OneWayAirLine.equalsIgnoreCase("Air India")) {
-//							if (OneWayFareType.equalsIgnoreCase("Comfort")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("Economy Basic")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("Economy Starter Max")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Indigo")) {
-//							if (OneWayFareType.equalsIgnoreCase("Flexi Fare")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Akasa Air")) {
-//							if (OneWayFareType.equalsIgnoreCase("Economy")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("SpiceJet")) {
-//							if (OneWayFareType.equalsIgnoreCase("Spice Saver")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Vistara")) {
-//							if (OneWayFareType.equalsIgnoreCase("ECO LITE")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else {
-//							Assert.assertEquals(false, "Please select correct Airline and Fare type." + OneWayFareType);
-//							System.out.println("Please select correct Airline and Fare type.");
-//						}
-//					} else {
-//						if (OneWayAirLine.equalsIgnoreCase("Air India")) {
-//							if (OneWayFareType.equalsIgnoreCase("Comfort")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("Economy Basic")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (OneWayFareType.equalsIgnoreCase("Economy Starter Max")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Indigo")) {
-//							if (OneWayFareType.equalsIgnoreCase("Flexi Fare")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Akasa Air")) {
-//							if (OneWayFareType.equalsIgnoreCase("Economy")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("SpiceJet")) {
-//							if (OneWayFareType.equalsIgnoreCase("Spice Saver")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (OneWayFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Vistara")) {
-//							if (OneWayFareType.equalsIgnoreCase("ECO LITE")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (OneWayFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//							}
-//						} else {
-//							Assert.assertEquals(false, "Please select correct Airline and Fare type." + OneWayFareType);
-//							System.out.println("Please select correct Airline and Fare type.");
-//						}
-//					}
 					Thread.sleep(3000);
 					QaRobot.switchToWindow();
 					QaRobot.ClickOnElement("NotificationCloseJ");
@@ -1059,9 +966,9 @@ public class FlightBooking {
 			} else if (Trip.equalsIgnoreCase("RoundTrip")) {
 				if (triptype.equalsIgnoreCase("Domestic")) {
 					QaRobot.ClickOnElement("AFlightItinerary");
-					Thread.sleep(10000);
+					Thread.sleep(15000);
 					QaExtentReport.extentScreenshot("Flight Itinerary");
-					Thread.sleep(3000);
+					Thread.sleep(10000);
 					QaRobot.ClickOnElement("AMoreDetails");
 					Thread.sleep(7000);
 					QaRobot.scrollPage(300);
@@ -1358,8 +1265,8 @@ public class FlightBooking {
 							if (getT.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
 							}
-						} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-							QaRobot.ClickOnElement("AddToCartJ2");
+						} else if (OneWayFareType.equalsIgnoreCase("PUB")) {
+							QaRobot.ClickOnElement("AddToCartJ1");
 							if (getT.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
 							}
@@ -1397,7 +1304,7 @@ public class FlightBooking {
 							}
 						}
 					} else if (OneWayAirLine.equalsIgnoreCase("Air Asia")) {
-						if (OneWayFareType.equalsIgnoreCase("Standard")) {
+						if (OneWayFareType.equalsIgnoreCase("Economy Fare")) {
 							QaRobot.ClickOnElement("AddToCartJ1");
 							if (getT.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
@@ -1419,122 +1326,6 @@ public class FlightBooking {
 							}
 						}
 					}
-//					if (PolicyType.equalsIgnoreCase("OutPolicy")) {
-//						if (OneWayAirLine.equalsIgnoreCase("Air India")) {
-//							if (OneWayFareType.equalsIgnoreCase("Comfort")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("Economy Basic")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("Economy Starter Max")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Indigo")) {
-//							if (OneWayFareType.equalsIgnoreCase("Flexi Fare")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Akasa Air")) {
-//							if (OneWayFareType.equalsIgnoreCase("Economy")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("SpiceJet")) {
-//							if (OneWayFareType.equalsIgnoreCase("Spice Saver")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Vistara")) {
-//							if (OneWayFareType.equalsIgnoreCase("ECO LITE")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else {
-//							Assert.assertEquals(false, "Please select correct Airline and Fare type." + OneWayFareType);
-//							System.out.println("Please select correct Airline and Fare type.");
-//						}
-//					} else {
-//						if (OneWayAirLine.equalsIgnoreCase("Air India")) {
-//							if (OneWayFareType.equalsIgnoreCase("Comfort")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("Economy Basic")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (OneWayFareType.equalsIgnoreCase("Economy Starter Max")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Indigo")) {
-//							if (OneWayFareType.equalsIgnoreCase("Flexi Fare")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Akasa Air")) {
-//							if (OneWayFareType.equalsIgnoreCase("Economy")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("SpiceJet")) {
-//							if (OneWayFareType.equalsIgnoreCase("Spice Saver")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (OneWayFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Vistara")) {
-//							if (OneWayFareType.equalsIgnoreCase("ECO LITE")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (OneWayFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//							}
-//						} else {
-//							Assert.assertEquals(false, "Please select correct Airline and Fare type." + OneWayFareType);
-//							System.out.println("Please select correct Airline and Fare type.");
-//						}
-//					}
 					Thread.sleep(3000);
 					QaRobot.switchToWindow();
 					QaRobot.ClickOnElement("NotificationCloseJ");
@@ -1542,7 +1333,7 @@ public class FlightBooking {
 					Thread.sleep(5000);
 					if (Source.equalsIgnoreCase("Live")) {
 						List<WebElement> listOfStop = QaBrowser.driver.findElements(By.xpath(
-								"//div[@id='FareDetailsController']/div[2]/div/div[1]/div/div[3]/div[5]/div[2]/ul/li/span"));
+								"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[1]/div/div[3]/div[5]/div[2]/ul/li/span"));
 						for (WebElement autoStop : listOfStop) {
 //							System.out.println(autoAirline.getText());
 							if (autoStop.getText().equalsIgnoreCase(Stops)) {
@@ -1552,7 +1343,7 @@ public class FlightBooking {
 						}
 					} else {
 						List<WebElement> listOfStop1 = QaBrowser.driver.findElements(By.xpath(
-								"//div[@id='FareDetailsController']/div[2]/div/div[1]/div/div[3]/div[5]/div[2]/ul/li/span"));
+								"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[1]/div/div[3]/div[4]/div[2]/ul/li/span"));
 						for (WebElement autoStop1 : listOfStop1) {
 //							System.out.println(autoAirline.getText());
 							if (autoStop1.getText().equalsIgnoreCase(Stops)) {
@@ -1572,9 +1363,9 @@ public class FlightBooking {
 					QaRobot.scrollPage(-1000);
 					Thread.sleep(5000);
 					QaRobot.ClickOnElement("AFlightItinerary");
-					Thread.sleep(10000);
+					Thread.sleep(15000);
 					QaExtentReport.extentScreenshot("Flight Itinerary");
-					Thread.sleep(3000);
+					Thread.sleep(10000);
 					QaRobot.ClickOnElement("AMoreDetails");
 					Thread.sleep(7000);
 					QaRobot.scrollPage(300);
@@ -1832,7 +1623,12 @@ public class FlightBooking {
 							}
 						}
 					} else if (RoundTripAirLine.equalsIgnoreCase("Indigo")) {
-						if (RoundTripFareType.equalsIgnoreCase("SME FARE")) {
+						if (RoundTripFareType.equalsIgnoreCase("Flexi Fare")) {
+							QaRobot.ClickOnElement("AddToCartJ1");
+							if (getT.equalsIgnoreCase("Out of policy")) {
+								QaRobot.alertAccept();
+							}
+						} else if (RoundTripFareType.equalsIgnoreCase("SME FARE")) {
 							QaRobot.ClickOnElement("AddToCartJ1");
 							if (getT1.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
@@ -1871,8 +1667,8 @@ public class FlightBooking {
 							if (getT1.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
 							}
-						} else if (RoundTripFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-							QaRobot.ClickOnElement("AddToCartJ2");
+						} else if (RoundTripFareType.equalsIgnoreCase("PUB")) {
+							QaRobot.ClickOnElement("AddToCartJ1");
 							if (getT1.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
 							}
@@ -1910,7 +1706,7 @@ public class FlightBooking {
 							}
 						}
 					} else if (RoundTripAirLine.equalsIgnoreCase("Air Asia")) {
-						if (RoundTripFareType.equalsIgnoreCase("Standard")) {
+						if (RoundTripFareType.equalsIgnoreCase("Economy Fare")) {
 							QaRobot.ClickOnElement("AddToCartJ1");
 							if (getT1.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
@@ -1932,123 +1728,6 @@ public class FlightBooking {
 							}
 						}
 					}
-//					if (PolicyType.equalsIgnoreCase("OutPolicy")) {
-//						if (RoundTripAirLine.equalsIgnoreCase("Air India")) {
-//							if (RoundTripFareType.equalsIgnoreCase("Comfort")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("Economy Basic")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("Economy Starter Max")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (RoundTripAirLine.equalsIgnoreCase("Indigo")) {
-//							if (RoundTripFareType.equalsIgnoreCase("Flexi Fare")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Akasa Air")) {
-//							if (OneWayFareType.equalsIgnoreCase("Economy")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (RoundTripAirLine.equalsIgnoreCase("SpiceJet")) {
-//							if (RoundTripFareType.equalsIgnoreCase("Spice Saver")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else if (RoundTripAirLine.equalsIgnoreCase("Vistara")) {
-//							if (RoundTripFareType.equalsIgnoreCase("ECO LITE")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							} else if (RoundTripFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//								QaBrowser.driver.switchTo().alert().accept();
-//							}
-//						} else {
-//							Assert.assertEquals(false, "Please select correct Airline and Fare type." + OneWayFareType);
-//							System.out.println("Please select correct Airline and Fare type.");
-//						}
-//					} else {
-//						if (RoundTripAirLine.equalsIgnoreCase("Air India")) {
-//							if (RoundTripFareType.equalsIgnoreCase("Comfort")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (RoundTripFareType.equalsIgnoreCase("Economy Basic")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (RoundTripFareType.equalsIgnoreCase("Economy Starter Max")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							}
-//						} else if (RoundTripAirLine.equalsIgnoreCase("Indigo")) {
-//							if (RoundTripFareType.equalsIgnoreCase("Flexi Fare")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (RoundTripFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (RoundTripFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							}
-//						} else if (OneWayAirLine.equalsIgnoreCase("Akasa Air")) {
-//							if (OneWayFareType.equalsIgnoreCase("Economy")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (OneWayFareType.equalsIgnoreCase("BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							}
-//						} else if (RoundTripAirLine.equalsIgnoreCase("SpiceJet")) {
-//							if (RoundTripFareType.equalsIgnoreCase("Spice Saver")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (RoundTripFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (RoundTripFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							} else if (RoundTripFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//							}
-//						} else if (RoundTripAirLine.equalsIgnoreCase("Vistara")) {
-//							if (RoundTripFareType.equalsIgnoreCase("ECO LITE")) {
-//								QaRobot.ClickOnElement("AddToCartJ1");
-//							} else if (RoundTripFareType.equalsIgnoreCase("ECONOMY FLEX")) {
-//								QaRobot.ClickOnElement("AddToCartJ2");
-//							} else if (RoundTripFareType.equalsIgnoreCase("FLEXIBLE BUSINESS")) {
-//								QaRobot.ClickOnElement("AddToCartJ3");
-//							} else if (RoundTripFareType.equalsIgnoreCase("BUSINESS SAVER")) {
-//								QaRobot.ClickOnElement("AddToCartJ4");
-//							}
-//						} else {
-//							Assert.assertEquals(false,
-//									"Please select correct Airline and Fare type." + RoundTripFareType);
-//							System.out.println("Please select correct Airline and Fare type.");
-//						}
-//					}
 					Thread.sleep(3000);
 					QaRobot.switchToWindow();
 					QaRobot.ClickOnElement("NotificationCloseJ");
@@ -2192,7 +1871,7 @@ public class FlightBooking {
 					if (Source.equalsIgnoreCase("Live")) {
 						QaRobot.ClickOnElement("ProceedToCheckoutC");
 					} else {
-						QaRobot.ClickOnElement("SendForApprovalC");
+						QaRobot.ClickOnElement("ProceedToCheckoutC");
 					}
 				} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
 					addHotel(ProductType, CityCode, CityTitle, CheckInDate, CheckOutDate);
@@ -2305,6 +1984,7 @@ public class FlightBooking {
 					}
 				}
 				if (FareBranding.equalsIgnoreCase("On")) {
+					SoftAssert softAssert = new SoftAssert();
 					if (ccode.equalsIgnoreCase("sbt")) {
 						WebElement element = QaBrowser.driver
 								.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
@@ -2315,34 +1995,254 @@ public class FlightBooking {
 					}
 					if (ccode.equalsIgnoreCase("preprod117")) {
 						if (ProductType.equalsIgnoreCase("Flight")) {
-							WebElement element = QaBrowser.driver
-									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
-							Select sel = new Select(element);
-							sel.selectByIndex(1);
-							Thread.sleep(3000);
-							WebElement element1 = QaBrowser.driver.findElement(
-									By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169043']"));
-							Select sel1 = new Select(element1);
-							sel1.selectByIndex(1);
-							Thread.sleep(3000);
+							if (Trip.equalsIgnoreCase("OneWay")) {
+								if (Stops.equalsIgnoreCase("0")) {
+									QaRobot.scrollPage(500);
+									Thread.sleep(2000);
+									try {
+										QaRobot.ClickOnElement("Clickonbaggage1");
+										Thread.sleep(3000);
+										QaExtentReport.extentScreenshot("Baggage 1");
+										Thread.sleep(3000);
+										WebElement Baggage = QaBrowser.driver.findElement(
+												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
+										Select sel = new Select(Baggage);
+										sel.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Baggage is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("ClickonMeals1");
+										Thread.sleep(7000);
+										QaExtentReport.extentScreenshot("Meals 1");
+										Thread.sleep(4000);
+										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
+												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
+										Select sel1 = new Select(Meals1);
+										sel1.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Meal is not showing");
+									}
+									Thread.sleep(3000);
+								} else if (Stops.equalsIgnoreCase("1")) {
+									QaRobot.scrollPage(500);
+									Thread.sleep(2000);
+									try {
+										QaRobot.ClickOnElement("Clickonbaggage1");
+										Thread.sleep(3000);
+										QaExtentReport.extentScreenshot("Baggage 1");
+										Thread.sleep(3000);
+										WebElement Baggage = QaBrowser.driver.findElement(
+												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
+										Select sel = new Select(Baggage);
+										sel.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Baggage is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("ClickonMeals1");
+										Thread.sleep(7000);
+										QaExtentReport.extentScreenshot("Meals 1");
+										Thread.sleep(4000);
+										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
+												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
+										Select sel1 = new Select(Meals1);
+										sel1.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Meal 1 is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("ClickonMeals2");
+										Thread.sleep(7000);
+										QaExtentReport.extentScreenshot("Meals 2");
+										Thread.sleep(4000);
+										WebElement Meals2 = QaBrowser.driver.findElement(By.xpath(
+												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[2]"));
+										Select sel2 = new Select(Meals2);
+										sel2.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Meal 2 is not showing");
+									}
+									Thread.sleep(3000);
+								}
+							} else if (Trip.equalsIgnoreCase("RoundTrip")) {
+								if (Stops.equalsIgnoreCase("0")) {
+									QaRobot.scrollPage(500);
+									Thread.sleep(2000);
+									try {
+										QaRobot.ClickOnElement("Clickonbaggage1");
+										Thread.sleep(3000);
+										QaExtentReport.extentScreenshot("Baggage 1");
+										Thread.sleep(3000);
+										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
+												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
+										Select sel1 = new Select(Baggage1);
+										sel1.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Baggage 1 is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("Clickonbaggage2");
+										Thread.sleep(3000);
+										QaExtentReport.extentScreenshot("Baggage 2");
+										Thread.sleep(3000);
+										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
+												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
+										Select sel2 = new Select(Baggage2);
+										sel2.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Baggage 2 is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("ClickonMeals1");
+										Thread.sleep(7000);
+										QaExtentReport.extentScreenshot("Meals 1");
+										Thread.sleep(4000);
+										WebElement Meals1 = QaBrowser.driver.findElement(By
+												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
+										Select sel3 = new Select(Meals1);
+										sel3.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Outbound Meal is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("ClickonMeals2");
+										Thread.sleep(7000);
+										QaExtentReport.extentScreenshot("Meals 2");
+										Thread.sleep(4000);
+										WebElement Meals2 = QaBrowser.driver.findElement(By
+												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
+										Select sel4 = new Select(Meals2);
+										sel4.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Inbound Meal is not showing");
+									}
+									Thread.sleep(3000);
+								} else if (Stops.equalsIgnoreCase("1")) {
+									QaRobot.scrollPage(500);
+									Thread.sleep(2000);
+									try {
+										QaRobot.ClickOnElement("Clickonbaggage1");
+										Thread.sleep(3000);
+										QaExtentReport.extentScreenshot("Baggage 1");
+										Thread.sleep(3000);
+										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
+												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
+										Select sel1 = new Select(Baggage1);
+										sel1.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Baggage 1 is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("Clickonbaggage2");
+										Thread.sleep(3000);
+										QaExtentReport.extentScreenshot("Baggage 2");
+										Thread.sleep(3000);
+										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
+												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
+										Select sel2 = new Select(Baggage2);
+										sel2.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Baggage 2 is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("ClickonMeals1");
+										Thread.sleep(7000);
+										QaExtentReport.extentScreenshot("Meals 1");
+										Thread.sleep(4000);
+										WebElement Meals1 = QaBrowser.driver.findElement(By
+												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
+										Select sel3 = new Select(Meals1);
+										sel3.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Outbound Meal 1 is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("ClickonMeals2");
+										Thread.sleep(7000);
+										QaExtentReport.extentScreenshot("Meals 2");
+										Thread.sleep(4000);
+										WebElement Meals2 = QaBrowser.driver.findElement(By
+												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
+										Select sel4 = new Select(Meals2);
+										sel4.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Outbound Meal 2 is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("ClickonMeals3");
+										Thread.sleep(7000);
+										QaExtentReport.extentScreenshot("Meals 3");
+										Thread.sleep(4000);
+										WebElement Meals3 = QaBrowser.driver.findElement(By
+												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[3]"));
+										Select sel5 = new Select(Meals3);
+										sel5.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Inbound Meal 1 is not showing");
+									}
+									Thread.sleep(3000);
+									try {
+										QaRobot.ClickOnElement("ClickonMeals4");
+										Thread.sleep(7000);
+										QaExtentReport.extentScreenshot("Meals 4");
+										Thread.sleep(4000);
+										WebElement Meals4 = QaBrowser.driver.findElement(By
+												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[4]"));
+										Select sel6 = new Select(Meals4);
+										sel6.selectByIndex(1);
+									} catch (Exception e) {
+										softAssert.assertTrue(false, "Inbound Meal 2 is not showing");
+									}
+									Thread.sleep(3000);
+								}
+							}
+							String checkoutprice1 = QaBrowser.driver
+									.findElement(By.xpath("//span[@id='ctl00_contentMain_totcashPrice']")).getText();
+							System.out.println(checkoutprice1);
+							QaExtentReport.test.log(Status.INFO,
+									"<b><i>Price after adding Meal and Baggage </i></b>" + checkoutprice1);
+							Thread.sleep(5000);
+//							WebElement element = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
+//							Select sel = new Select(element);
+//							sel.selectByIndex(1);
+//							Thread.sleep(3000);
+//							WebElement element1 = QaBrowser.driver.findElement(
+//									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
+//							Select sel1 = new Select(element1);
+//							sel1.selectByIndex(1);
+//							Thread.sleep(3000);
+							QaExtentReport.extentScreenshot("Baggage and Meals");
+							softAssert.assertAll();
 						} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
-							WebElement element = QaBrowser.driver
-									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
-							Select sel = new Select(element);
-							sel.selectByIndex(1);
-							Thread.sleep(3000);
-							WebElement element1 = QaBrowser.driver.findElement(
-									By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169043']"));
-							Select sel1 = new Select(element1);
-							sel1.selectByIndex(1);
-							Thread.sleep(3000);
-							WebElement element2 = QaBrowser.driver.findElement(
-									By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDLHHLM']"));
-							Select sel2 = new Select(element2);
-							sel2.selectByIndex(1);
-							Thread.sleep(3000);
+//							WebElement element = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
+//							Select sel = new Select(element);
+//							sel.selectByIndex(1);
+//							Thread.sleep(3000);
+//							WebElement element1 = QaBrowser.driver.findElement(
+//									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
+//							Select sel1 = new Select(element1);
+//							sel1.selectByIndex(1);
+//							Thread.sleep(3000);
+//							WebElement element2 = QaBrowser.driver.findElement(
+//									By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDLHHLM']"));
+//							Select sel2 = new Select(element2);
+//							sel2.selectByIndex(1);
+//							Thread.sleep(3000);
 						}
-						QaRobot.ClickOnElement("ow_billtobranch");
+//						QaRobot.ClickOnElement("ow_billtobranch");
 					}
 				}
 				Thread.sleep(3000);
@@ -3941,10 +3841,10 @@ public class FlightBooking {
 					}
 				}
 				Thread.sleep(10000);
-				String paymentprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']"))
-						.getText();
-				System.out.println("Price of payment page " + paymentprice);
-				QaExtentReport.test.log(Status.INFO, "<b><i>Price of payment page </i></b>" + paymentprice);
+//				String paymentprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']"))
+//						.getText();
+//				System.out.println("Price of payment page " + paymentprice);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Price of payment page </i></b>" + paymentprice);
 				// select FOP
 //				if (fop.equalsIgnoreCase("Cash")) {
 //					SBTCheckoutPayment.fopCash(fop, receiptno);
@@ -4113,8 +4013,8 @@ public class FlightBooking {
 //		QaRobot.ClickOnElement("CheckPolicyHotelC");
 		QaExtentReport.extentScreenshot("Add Hotel");
 		QaRobot.ClickOnElement("SearchHotelC1");
-		Thread.sleep(2000);
-		QaRobot.ClickOnElement("SearchHotelProceed");
+//		Thread.sleep(2000);
+//		QaRobot.ClickOnElement("SearchHotelProceed");
 		Thread.sleep(8000);
 		QaRobot.scrollPage(300);
 		QaRobot.ClickOnElement("HotelSelectC");
