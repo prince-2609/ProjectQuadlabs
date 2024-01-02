@@ -150,10 +150,6 @@ public class OtherMiscFunctionality {
 			QaRobot.ClickOnElement("DCClose");
 		}
 
-		
-//		QaRobot.ClickOnElement("ManageDataCapture");
-//		QaRobot.ClickOnElement("AddManageDataCapture");
-
 //		QaRobot.ClickOnElement("ManageCustomerAgreement");
 //		QaRobot.ClickOnElement("AddManageCustomerAgreement");
 //		QaRobot.PassValue("TempletTitle", RuleTitle);

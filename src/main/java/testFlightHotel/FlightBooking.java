@@ -35,7 +35,7 @@ public class FlightBooking {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("FlightBooking", "Sheet7");
+		return QaDataProvider.getTestdata("FlightBooking", "Sheet5");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -140,19 +140,19 @@ public class FlightBooking {
 				QaExtentReport.extentScreenshot("Choose Corporate");
 			}
 		} else if (ccode.equalsIgnoreCase("preprod117")) {
-//			if (CoporateName.equalsIgnoreCase("Demo Corporate")) {
-//				QaRobot.ClickOnElement("ChooseCorporate1");
-//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-//				QaExtentReport.extentScreenshot("Choose Corporate");
-//			} else if (CoporateName.equalsIgnoreCase("Lux_Test_corp")) {
-//				QaRobot.ClickOnElement("ChooseCorporate2");
-//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-//				QaExtentReport.extentScreenshot("Choose Corporate");
-//			} else if (CoporateName.equalsIgnoreCase("Amazon")) {
-//				QaExtentReport.extentScreenshot("Choose Corporate");
-//				QaRobot.ClickOnElement("ChooseCorporate2");
-//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-//			}
+			if (CoporateName.equalsIgnoreCase("Demo Corporate")) {
+				QaRobot.ClickOnElement("ChooseCorporate1");
+				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+				QaExtentReport.extentScreenshot("Choose Corporate");
+			} else if (CoporateName.equalsIgnoreCase("Lux_Test_corp")) {
+				QaRobot.ClickOnElement("ChooseCorporate2");
+				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+				QaExtentReport.extentScreenshot("Choose Corporate");
+			} else if (CoporateName.equalsIgnoreCase("Amazon")) {
+				QaExtentReport.extentScreenshot("Choose Corporate");
+				QaRobot.ClickOnElement("ChooseCorporate2");
+				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+			}
 		}
 		if (DashboardType.equalsIgnoreCase("Old")) {
 //			QaRobot.ClickOnElement("NotificationClose");
@@ -841,7 +841,7 @@ public class FlightBooking {
 								QaRobot.alertAccept();
 							}
 						} else if (OneWayFareType.equalsIgnoreCase("SAVER")) {
-							QaRobot.ClickOnElement("AddToCartJ2");
+							QaRobot.ClickOnElement("AddToCartJ1");
 							if (getT.equalsIgnoreCase("Out of policy")) {
 								QaRobot.alertAccept();
 							}

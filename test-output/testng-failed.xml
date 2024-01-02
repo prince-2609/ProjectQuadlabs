@@ -6,7 +6,7 @@
       <class name="testFlightHotel.FlightBooking">
         <methods>
           <include name="After_Test"/>
-          <include name="flightBooking" invocation-numbers="4 5 6 7 8 9 10 11"/>
+          <include name="flightBooking" invocation-numbers="2 3"/>
         </methods>
       </class> <!-- testFlightHotel.FlightBooking -->
     </classes>
