@@ -35,25 +35,26 @@ public class FlightBooking {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("FlightBooking", "Sheet5");
+		return QaDataProvider.getTestdata("FlightBooking", "Sheet8");
 	}
 
 	@Test(dataProvider = "getexceldata")
 	public static void flightBooking(String TestCaseId, String TestScenario, String Source, String MoURL,
 			String CompanyCode, String UserName, String Password, String CorporateName, String SearchRuleStatus,
-			String RSqty, String RulesAppliedOnSearchPage, String ccode, String URL, String EmployeName,
-			String TravelerType, String uname, String pwd, String CoporateName, String FareBranding,
-			String DashboardType, String corptraveller, String searchType, String triptype, String Trip, String origin,
-			String forigin, String destination, String fdesti, String Policy, String DepartureDate, String ReturnDate,
-			String ResultRuleStatus, String RRqty, String RulesAppliedOnResultPage, String adult, String child,
-			String infant, String currency, String fclass, String PolicyType, String Stops, String ChooseAirLine,
-			String OneWayAirLine, String RoundTripAirLine, String OneWayFareType, String RoundTripFareType,
-			String booknowindex, String policyindex, String tripindex, String ProductType, String CityCode,
-			String CityTitle, String CheckInDate, String CheckOutDate, String passportnumber, String fop,
-			String receiptno, String card, String AppliedOn, String CQty, String CName, String cardtype, String cvv,
-			String Resultpagestep, String AddToCartRemarks, String CheckOutRuleStatus, String RCqty,
-			String RulesAppliedOnCheckOutPage, String checkoutPageStep, String SeatSelection, String AdultSeatSelection,
-			String ChildSeatSelection, String airReasonCode, String CreatedBy) throws Exception {
+			String RSqty, String RulesAppliedOnSearchPage, String ccode, String LoginType, String URL, String Emailid,
+			String SDN, String EmployeName, String TravelerType, String uname, String pwd, String CoporateName,
+			String FareBranding, String DashboardType, String corptraveller, String searchType, String triptype,
+			String Trip, String origin, String forigin, String destination, String fdesti, String Policy,
+			String DepartureDate, String ReturnDate, String ResultRuleStatus, String RRqty,
+			String RulesAppliedOnResultPage, String adult, String child, String infant, String currency, String fclass,
+			String PolicyType, String Stops, String ChooseAirLine, String OneWayAirLine, String RoundTripAirLine,
+			String OneWayFareType, String RoundTripFareType, String booknowindex, String policyindex, String tripindex,
+			String ProductType, String CityCode, String CityTitle, String CheckInDate, String CheckOutDate,
+			String passportnumber, String fop, String receiptno, String card, String AppliedOn, String CQty,
+			String CName, String cardtype, String cvv, String Resultpagestep, String AddToCartRemarks,
+			String CheckOutRuleStatus, String RCqty, String RulesAppliedOnCheckOutPage, String checkoutPageStep,
+			String SeatSelection, String AdultSeatSelection, String ChildSeatSelection, String airReasonCode,
+			String CreatedBy) throws Exception {
 		QaExtentReport.test = QaExtentReport.report.createTest(TestCaseId + "-" + TestScenario);
 //		TestBase.moLogin(Source, MoURL);
 //		QaRobot.PassValue("CompanyCode", CompanyCode);
@@ -122,7 +123,15 @@ public class FlightBooking {
 //		Thread.sleep(3000);
 		TestBase.Companycode(ccode, URL);
 		QaRobot.impliwait(30);
-		Login.SbtLogin(uname, pwd);
+		if (LoginType.equalsIgnoreCase("Normal")) {
+			Login.SbtLogin(uname, pwd);
+		} else if (LoginType.equalsIgnoreCase("SSO")) {
+			QaRobot.PassValue("EmailId", Emailid);
+			QaRobot.PassValue("SDN", SDN);
+			QaRobot.ClickOnElement("Encrypt");
+			QaRobot.ClickOnElement("ESubmit");
+			Thread.sleep(5000);
+		}
 //		QaRobot.getWebElement("sbt_Login1").sendKeys(uname);
 //		QaRobot.getWebElement("sbt_Pasword1").sendKeys(pwd);
 //		QaExtentReport.extentScreenshot("Sigh In Page");
