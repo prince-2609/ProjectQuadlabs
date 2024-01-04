@@ -20,7 +20,7 @@ import com.aventstack.extentreports.Status;
 
 
 import Base.TestBase;
-import CarporateSBT.preApprovalQueue1;
+import SBT_Corporate.preApprovalQueue1;
 import utilities.QaExcelRead;
 import utilities.QaExtentReport;
 import utilities.Logger;
