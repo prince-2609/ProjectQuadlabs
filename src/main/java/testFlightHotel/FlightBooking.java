@@ -47,14 +47,14 @@ public class FlightBooking {
 			String Trip, String origin, String forigin, String destination, String fdesti, String Policy,
 			String DepartureDate, String ReturnDate, String ResultRuleStatus, String RRqty,
 			String RulesAppliedOnResultPage, String adult, String child, String infant, String currency, String fclass,
-			String PolicyType, String Stops, String ChooseAirLine, String OneWayAirLine, String RoundTripAirLine,
-			String OneWayFareType, String RoundTripFareType, String booknowindex, String policyindex, String tripindex,
-			String ProductType, String CityCode, String CityTitle, String CheckInDate, String CheckOutDate,
-			String passportnumber, String fop, String receiptno, String card, String AppliedOn, String CQty,
-			String CName, String cardtype, String cvv, String Resultpagestep, String AddToCartRemarks,
-			String CheckOutRuleStatus, String RCqty, String RulesAppliedOnCheckOutPage, String checkoutPageStep,
-			String SeatSelection, String AdultSeatSelection, String ChildSeatSelection, String airReasonCode,
-			String CreatedBy) throws Exception {
+			String UpgradePolicy, String PolicyType, String Stops, String ChooseAirLine, String OneWayAirLine,
+			String RoundTripAirLine, String OneWayFareType, String RoundTripFareType, String booknowindex,
+			String policyindex, String tripindex, String ProductType, String CityCode, String CityTitle,
+			String CheckInDate, String CheckOutDate, String passportnumber, String fop, String receiptno, String card,
+			String AppliedOn, String CQty, String CName, String cardtype, String cvv, String Resultpagestep,
+			String AddToCartRemarks, String CheckOutRuleStatus, String RCqty, String RulesAppliedOnCheckOutPage,
+			String checkoutPageStep, String SeatSelection, String AdultSeatSelection, String ChildSeatSelection,
+			String airReasonCode, String CreatedBy) throws Exception {
 		QaExtentReport.test = QaExtentReport.report.createTest(TestCaseId + "-" + TestScenario);
 //		TestBase.moLogin(Source, MoURL);
 //		QaRobot.PassValue("CompanyCode", CompanyCode);
@@ -580,6 +580,10 @@ public class FlightBooking {
 //				String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'PT')])[1]")).getText();
 //				System.out.println(getT);
 //				QaExtentReport.extentScreenshot("Flight Results");
+			if (UpgradePolicy.equalsIgnoreCase("Yes")) {
+				QaRobot.ClickOnElement("AmendCabin");
+				Thread.sleep(10000);
+			}
 			if (Trip.equalsIgnoreCase("OneWay")) {
 				if (triptype.equalsIgnoreCase("Domestic")) {
 //					QaRobot.scrollPage(500);

@@ -2,206 +2,206 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-04T14:36:02 IST" name="Suite" finished-at="2024-01-04T14:36:44 IST" duration-ms="42403">
+  <suite started-at="2024-01-04T15:08:49 IST" name="Suite" finished-at="2024-01-04T15:11:34 IST" duration-ms="164610">
     <groups>
     </groups>
-    <test started-at="2024-01-04T14:36:02 IST" name="Test" finished-at="2024-01-04T14:36:44 IST" duration-ms="42403">
-      <class name="sbt117.ApprovalWorkflow">
-        <test-method signature="travellerProfiling(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:sbt117.ApprovalWorkflow@f5acb9d]" started-at="2024-01-04T14:36:02 IST" name="travellerProfiling" data-provider="getexceldata" finished-at="2024-01-04T14:36:44 IST" duration-ms="41126" status="FAIL">
+    <test started-at="2024-01-04T15:08:49 IST" name="Test" finished-at="2024-01-04T15:11:34 IST" duration-ms="164610">
+      <class name="testFlightHotel.FlightBooking">
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking@1b11171f]" started-at="2024-01-04T15:08:50 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-01-04T15:11:33 IST" duration-ms="162760" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Test MO 1]]>
+                <![CDATA[Test on Flight 1]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Positive]]>
+                <![CDATA[Flight domestic booking flow for Indigo  flight (One way - Individual) with 0 stop]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Verify Register Corporate]]>
+                <![CDATA[Live]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[mo]]>
+                <![CDATA[//test.quadlabs.net/backoffice/]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[//test.quadlabs.net/backoffice/]]>
+                <![CDATA[at]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[at]]>
+                <![CDATA[Saurav_at]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[ankur_at]]>
+                <![CDATA[Quad@721]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[Admin@456]]>
+                <![CDATA[Amazon]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[amazon]]>
+                <![CDATA[Applied]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[Business Dom31235]]>
+                <![CDATA[3]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[Dom11235]]>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[Business Trip]]>
+                <![CDATA[preprod117]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[Business cost1]]>
+                <![CDATA[SSO]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[Business Trip]]>
+                <![CDATA[//test.quadlabs.net/SSO_Login]]>
               </value>
             </param>
             <param index="14">
               <value>
-                <![CDATA[Business Dom31235]]>
+                <![CDATA[sachin.kumar@quadlabs.com]]>
               </value>
             </param>
             <param index="15">
               <value>
-                <![CDATA[Flight]]>
+                <![CDATA[test.quadlabs.net]]>
               </value>
             </param>
             <param index="16">
               <value>
-                <![CDATA[Corporate]]>
+                <![CDATA[Shubham]]>
               </value>
             </param>
             <param index="17">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[Administrator]]>
               </value>
             </param>
             <param index="18">
               <value>
-                <![CDATA[amazon]]>
+                <![CDATA[Shubham]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[4]]>
+                <![CDATA[Shubham@123]]>
               </value>
             </param>
             <param index="20">
               <value>
-                <![CDATA[Origin,Destination,Cost Range,Market Type]]>
+                <![CDATA[Null]]>
               </value>
             </param>
             <param index="21">
               <value>
-                <![CDATA[Null]]>
+                <![CDATA[On]]>
               </value>
             </param>
             <param index="22">
               <value>
-                <![CDATA[Null]]>
+                <![CDATA[New]]>
               </value>
             </param>
             <param index="23">
               <value>
-                <![CDATA[City]]>
+                <![CDATA[shubham.natkar@quadlabs.com]]>
               </value>
             </param>
             <param index="24">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[Individual]]>
               </value>
             </param>
             <param index="25">
               <value>
-                <![CDATA[Asia]]>
+                <![CDATA[Domestic]]>
               </value>
             </param>
             <param index="26">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[OneWay]]>
               </value>
             </param>
             <param index="27">
               <value>
-                <![CDATA[DELHI]]>
+                <![CDATA[del]]>
               </value>
             </param>
             <param index="28">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[Delhi,India - Indira Gandhi Intl (DEL)]]>
               </value>
             </param>
             <param index="29">
               <value>
-                <![CDATA[India]]>
+                <![CDATA[bom]]>
               </value>
             </param>
             <param index="30">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[Mumbai,India - Shivaji Terminal (BOM)]]>
               </value>
             </param>
             <param index="31">
               <value>
-                <![CDATA[Delhi]]>
+                <![CDATA[Business trip  - Without reason]]>
               </value>
             </param>
             <param index="32">
               <value>
-                <![CDATA[City]]>
+                <![CDATA[31-Jan-2024]]>
               </value>
             </param>
             <param index="33">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[22-Dec-2023]]>
               </value>
             </param>
             <param index="34">
               <value>
-                <![CDATA[Asia]]>
+                <![CDATA[NotApplied]]>
               </value>
             </param>
             <param index="35">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[3]]>
               </value>
             </param>
             <param index="36">
               <value>
-                <![CDATA[DELHI]]>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
               </value>
             </param>
             <param index="37">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="38">
               <value>
-                <![CDATA[India]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="39">
@@ -211,162 +211,217 @@
             </param>
             <param index="40">
               <value>
-                <![CDATA[Chennai]]>
+                <![CDATA[Indian Rupees]]>
               </value>
             </param>
             <param index="41">
               <value>
-                <![CDATA[1000]]>
+                <![CDATA[Economy]]>
               </value>
             </param>
             <param index="42">
               <value>
-                <![CDATA[1500]]>
+                <![CDATA[Yes]]>
               </value>
             </param>
             <param index="43">
               <value>
-                <![CDATA[11-Feb-2022]]>
+                <![CDATA[Null]]>
               </value>
             </param>
             <param index="44">
               <value>
-                <![CDATA[21-Feb-2023]]>
+                <![CDATA[0]]>
               </value>
             </param>
             <param index="45">
               <value>
-                <![CDATA[11-Feb-2022]]>
+                <![CDATA[Yes]]>
               </value>
             </param>
             <param index="46">
               <value>
-                <![CDATA[21-Feb-2023]]>
+                <![CDATA[Indigo]]>
               </value>
             </param>
             <param index="47">
               <value>
-                <![CDATA[Domestic]]>
+                <![CDATA[Indigo]]>
               </value>
             </param>
             <param index="48">
               <value>
-                <![CDATA[Domestic]]>
+                <![CDATA[SAVER]]>
               </value>
             </param>
             <param index="49">
               <value>
-                <![CDATA[Flight]]>
+                <![CDATA[SAVER]]>
               </value>
             </param>
             <param index="50">
               <value>
-                <![CDATA[Business Dom31235]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="51">
               <value>
-                <![CDATA[Corporate]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="52">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="53">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[Flight]]>
               </value>
             </param>
             <param index="54">
               <value>
-                <![CDATA[Shree Travel]]>
+                <![CDATA[bom]]>
               </value>
             </param>
             <param index="55">
               <value>
-                <![CDATA[Parallel]]>
+                <![CDATA[Mumbai, Maharashtra, India (BOM-Chhatrapati Shivaji Intl.)]]>
               </value>
             </param>
             <param index="56">
               <value>
-                <![CDATA[Govind,Mr Govind Sharma(govind.sharma@quadlabs.com) ]]>
+                <![CDATA[23-Mar-2023]]>
               </value>
             </param>
             <param index="57">
               <value>
-                <![CDATA[Govind,Mr Govind Sharma( govind.sharma@quadlabs.com ) ]]>
+                <![CDATA[24-Mar-2023]]>
               </value>
             </param>
             <param index="58">
               <value>
-                <![CDATA[Govind,Mr Govind Sharma( govind.sharma@quadlabs.com ) ]]>
+                <![CDATA[78554432323]]>
               </value>
             </param>
             <param index="59">
               <value>
-                <![CDATA[Govind,Mr Govind Sharma( govind.sharma@quadlabs.com ) ]]>
+                <![CDATA[Ca]]>
               </value>
             </param>
             <param index="60">
               <value>
-                <![CDATA[InPolicy]]>
+                <![CDATA[345678]]>
               </value>
             </param>
             <param index="61">
               <value>
-                <![CDATA[English]]>
+                <![CDATA[Credit Card]]>
               </value>
             </param>
             <param index="62">
               <value>
-                <![CDATA[RE12345]]>
+                <![CDATA[Corporate]]>
               </value>
             </param>
             <param index="63">
               <value>
-                <![CDATA[Health]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="64">
               <value>
-                <![CDATA[Denied]]>
+                <![CDATA[Amazon]]>
               </value>
             </param>
             <param index="65">
               <value>
-                <![CDATA[3]]>
+                <![CDATA[Visa]]>
               </value>
             </param>
             <param index="66">
               <value>
-                <![CDATA[Flight,Hotel,Insurance]]>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[Addtocart]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[Airline For flight]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[Fullfillment]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[21B,9E,6E,12E]]>
+              </value>
+            </param>
+            <param index="75">
+              <value>
+                <![CDATA[6A,25B,2E,12E]]>
+              </value>
+            </param>
+            <param index="76">
+              <value>
+                <![CDATA[IN Policy all ]]>
+              </value>
+            </param>
+            <param index="77">
+              <value>
+                <![CDATA[Shubham Natkar]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='lblCorporateAppWorkflow']"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//a[contains(@id,'flght-itnry-link')])[1]"}
   (Session info: chrome=120.0.6099.130)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'ANKUR', ip: '192.168.111.156', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d7d7a94c9ea6ff0a7f3ce44f79af9f0c, findElement {using=xpath, value=//span[@id='lblCorporateAppWorkflow']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\ANKUR~1.YAD\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61187}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61187/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d7d7a94c9ea6ff0a7f3ce44f79af9f0c]]>
+Command: [188ca022eff865664b18b264c0deefe4, findElement {using=xpath, value=(//a[contains(@id,'flght-itnry-link')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58856}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58856/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 188ca022eff865664b18b264c0deefe4]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@id='lblCorporateAppWorkflow']"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[contains(@id,'flght-itnry-link')])[1]"}
   (Session info: chrome=120.0.6099.130)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'ANKUR', ip: '192.168.111.156', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d7d7a94c9ea6ff0a7f3ce44f79af9f0c, findElement {using=xpath, value=//span[@id='lblCorporateAppWorkflow']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\ANKUR~1.YAD\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61187}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61187/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: d7d7a94c9ea6ff0a7f3ce44f79af9f0c
+Command: [188ca022eff865664b18b264c0deefe4, findElement {using=xpath, value=(//a[contains(@id,'flght-itnry-link')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58856}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58856/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 188ca022eff865664b18b264c0deefe4
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -386,7 +441,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at utilities.QaRobot.getLocator(QaRobot.java:71)
 at utilities.QaRobot.getWebElement(QaRobot.java:153)
 at utilities.QaRobot.ClickOnElement(QaRobot.java:175)
-at sbt117.ApprovalWorkflow.travellerProfiling(ApprovalWorkflow.java:340)
+at testFlightHotel.FlightBooking.flightBooking(FlightBooking.java:590)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -420,12 +475,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- travellerProfiling -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:sbt117.ApprovalWorkflow@f5acb9d]" started-at="2024-01-04T14:36:44 IST" name="afterMethod" finished-at="2024-01-04T14:36:44 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- flightBooking -->
+        <test-method is-config="true" signature="After_Test()[pri:0, instance:testFlightHotel.FlightBooking@1b11171f]" started-at="2024-01-04T15:11:33 IST" name="After_Test" finished-at="2024-01-04T15:11:34 IST" duration-ms="318" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- sbt117.ApprovalWorkflow -->
+        </test-method> <!-- After_Test -->
+      </class> <!-- testFlightHotel.FlightBooking -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
