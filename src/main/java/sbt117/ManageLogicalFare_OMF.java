@@ -61,7 +61,6 @@ public class ManageLogicalFare_OMF {
 		QaRobot.switchframe("//frame[@id='frm2']");
 		QaExtentReport.extentScreenshot("Corporate Management");
 //		QaRobot.ClickOnElement("ManageLogicalFare");
-
 //		if (SLogicalFare.equalsIgnoreCase("AsPerTravelPolicy")) {
 //			QaRobot.ClickOnElement("Aspertravelpolicy");
 //
