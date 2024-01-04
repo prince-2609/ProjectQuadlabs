@@ -37,14 +37,14 @@ public class BusinessHotelTrip {
 
 	@Test(dataProvider = "getexceldata1")
 	public static void Sbt_Hotel_Search(String TestCaseId, String TestScenario, String ccode, String URL,
-			String EmployeName, String TravelerType, String UserName, String Password, String CoporateName,
-			String FareBranding, String DashboardType, String CorporateTraveller, String SearchType, String Trip,
-			String CityCode, String CityTitle, String ChooseRadius, String CheckInDate, String CheckOutDate,
-			String Rooms, String Adult, String Child, String ChildAge, String SearchRuleStatus, String BookNowIndex,
-			String PolicyIndex, String TripRequestIndex, String ModifySearch, String TravellerTypeM,
-			String ChangeTripLocation, String CityCodeM, String CityTitleM, String ChangeRadius, String ChooseRadiusM,
-			String ChangeTripDate, String CheckInDateM, String CheckOutDateM, String ChangeRooms, String RoomsM,
-			String AdultM, String ChildM, String ChildAgeM, String Applyfilter, String ChangeStarRating,
+			String LoginType, String Emailid, String SDN, String EmployeName, String TravelerType, String UserName,
+			String Password, String CoporateName, String FareBranding, String DashboardType, String CorporateTraveller,
+			String SearchType, String Trip, String CityCode, String CityTitle, String ChooseRadius, String CheckInDate,
+			String CheckOutDate, String Rooms, String Adult, String Child, String ChildAge, String SearchRuleStatus,
+			String BookNowIndex, String PolicyIndex, String TripRequestIndex, String ModifySearch,
+			String TravellerTypeM, String ChangeTripLocation, String CityCodeM, String CityTitleM, String ChangeRadius,
+			String ChooseRadiusM, String ChangeTripDate, String CheckInDateM, String CheckOutDateM, String ChangeRooms,
+			String RoomsM, String AdultM, String ChildM, String ChildAgeM, String Applyfilter, String ChangeStarRating,
 			String StarRatingM, String ChangePropertyType, String SelectProperty, String Resultpagestep,
 			String ProductType, String TripType, String OriginCityCode, String OriginLocation,
 			String DestinationCityCode, String DestinationLocation, String DepartureDate, String ReturnDate,
@@ -57,10 +57,18 @@ public class BusinessHotelTrip {
 		TestBase.Companycode(ccode, URL);
 		QaRobot.impliwait(30);
 //		Login.SbtLogin(uname, pwd);
-		QaRobot.getWebElement("sbt_Login1").sendKeys(UserName);
-		QaRobot.getWebElement("sbt_Pasword1").sendKeys(Password);
-		QaExtentReport.extentScreenshot("Sigh In Page");
-		QaRobot.getWebElement("sbt_submit").click();
+		if (LoginType.equalsIgnoreCase("Old Url")) {
+			QaRobot.getWebElement("sbt_Login1").sendKeys(UserName);
+			QaRobot.getWebElement("sbt_Pasword1").sendKeys(Password);
+			QaExtentReport.extentScreenshot("Sigh In Page");
+			QaRobot.getWebElement("sbt_submit").click();
+		} else if (LoginType.equalsIgnoreCase("SSO Login")) {
+			QaRobot.getWebElement("SSOEmail").sendKeys(Emailid);
+			QaRobot.getWebElement("SSOSDN").sendKeys(SDN);
+			QaExtentReport.extentScreenshot("Sigh In Page");
+			QaRobot.getWebElement("SSOEncrypt").click();
+			QaRobot.getWebElement("SSOSubmit").click();
+		}
 		QaExtentReport.test.log(Status.INFO, "<b><i>Employee Name is  </i></b>" + EmployeName);
 		QaExtentReport.test.log(Status.INFO, "<b><i>Travel Arranger Name is  </i></b>" + TravelerType);
 		if (ccode.equalsIgnoreCase("sbt")) {
@@ -1025,7 +1033,7 @@ public class BusinessHotelTrip {
 		System.out.println(number2);
 		String number3 = getTxt2[4];
 		System.out.println(number3);
-		QaExtentReport.test.log(Status.INFO, "<b><i>Res Number is </i></b>" + number2 + " / " +number3);
+		QaExtentReport.test.log(Status.INFO, "<b><i>Res Number is </i></b>" + number2 + " / " + number3);
 		QaExtentReport.extentScreenshot("Confirm Page");
 		QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']", "//span[@id='ctl00_HeaderTop_lblBookingQueue']");
 		QaExtentReport.extentScreenshot("CorporateDashboard Page");
