@@ -251,7 +251,7 @@ public class BusinessHotelTrip {
 					}
 				}
 			}
-			QaRobot.ClickOnElement("HotelPolicyCheckJ");
+			//QaRobot.ClickOnElement("HotelPolicyCheckJ");
 			try {
 				QaExtentReport.extentScreenshot("Search Page");
 				QaRobot.ClickOnElement("FinalSearchHJ");

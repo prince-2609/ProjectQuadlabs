@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testFlightHotel.BusinessHotelTrip">
+      <class name="sbt117.ApprovalWorkflow">
         <methods>
-          <include name="Sbt_Hotel_Search" invocation-numbers="0"/>
-          <include name="After_Test"/>
+          <include name="travellerProfiling" invocation-numbers="0"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- testFlightHotel.BusinessHotelTrip -->
+      </class> <!-- sbt117.ApprovalWorkflow -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
