@@ -20,7 +20,7 @@ public class ApprovalWorkflow {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("ApprovalWorkflow1", "Sheet2");
+		return QaDataProvider.getTestdata("ApprovalWorkflow", "Car");
 	}
 
 	@Test(dataProvider = "getexceldata")
