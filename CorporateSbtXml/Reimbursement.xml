@@ -4,7 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
     
-      <class name="CarporateSBT.Reimbursement"/>
+      <class name="SBT_Corporate.Reimbursement"/>
      
     </classes>
   </test> <!-- Test -->
