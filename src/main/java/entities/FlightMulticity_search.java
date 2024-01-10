@@ -48,11 +48,11 @@ public class FlightMulticity_search extends FlightMulticity {
 		// departure date1
 		
 
-		QaRobot.explicitwaitinvisible(30, By.xpath("//DIV[@id='dynamultiarr3']/P"));
+//		QaRobot.explicitwaitinvisible(30, By.xpath("//DIV[@id='dynamultiarr3']/P"));
 		
 		Thread.sleep(500);
 
-		QaRobot.ClickOnElement("dep_date1", "Clicked on Flight Departure");
+		QaRobot.ClickOnElement("dep_date1");
 		
 		Thread.sleep(500);
 
@@ -65,8 +65,8 @@ public class FlightMulticity_search extends FlightMulticity {
 
 		// departure date2
 		Thread.sleep(500);
-		QaRobot.ClickOnElement("dep_date2", "Clicked on Flight return date Button");
-		QaRobot.explicitwaitinvisible(10, By.id("id182020"));
+		QaRobot.ClickOnElement("dep_date2");
+//		QaRobot.explicitwaitinvisible(10, By.id("id182020"));
 		JavascriptExecutor tripDays1 = (JavascriptExecutor) driver;
 		WebElement departdate1 =driver.findElement(By.id("id"+adate+""));
         tripDays1.executeScript("arguments[0].click();", departdate1);
@@ -74,9 +74,9 @@ public class FlightMulticity_search extends FlightMulticity {
        Thread.sleep(500);
         
 		// departure date3
-        QaRobot.explicitwaitinvisible(10, By.id("id182019"));
-		QaRobot.ClickOnElement("dep_date3", "Clicked on Flight return date Button");
-		QaRobot.explicitwaitinvisible(10, By.id("id182020"));
+//        QaRobot.explicitwaitinvisible(10, By.id("id182019"));
+		QaRobot.ClickOnElement("dep_date3");
+//		QaRobot.explicitwaitinvisible(10, By.id("id182020"));
 		JavascriptExecutor tripDays2 = (JavascriptExecutor) driver;
 		WebElement departdate2 =driver.findElement(By.id("id"+adate1+""));
         tripDays2.executeScript("arguments[0].click();", departdate2);
@@ -85,7 +85,7 @@ public class FlightMulticity_search extends FlightMulticity {
 
 		// Pax
         Thread.sleep(500);
-		QaRobot.ClickOnElement("select_mulpax", "clicked on select PAX");
+		QaRobot.ClickOnElement("select_mulpax");
 
 		// select adult
 		QaRobot.selectValueFromDropdown("flight_multiadult", adult, "Selected Adult");
@@ -96,13 +96,13 @@ public class FlightMulticity_search extends FlightMulticity {
 		// select infant
 		QaRobot.selectValueFromDropdown("flight_multiinfant", infant, "Selected Infant");
 
-		QaRobot.ClickOnElement("option", "clicked on interface");
+		QaRobot.ClickOnElement("option");
 
 		// click on more option
-		QaRobot.ClickOnElement("multi_option", "clicked on more option");
+		QaRobot.ClickOnElement("multi_option");
 
 		// select class
-		QaRobot.ClickOnElement("flight_mclass", "Selected Class");
+		QaRobot.ClickOnElement("flight_mclass");
 		QaRobot.getLocator(Fclass).click();
 
 		// PreferedAirline("preferd_airline", airlines, "search_airline");
@@ -115,7 +115,7 @@ public class FlightMulticity_search extends FlightMulticity {
 		test.log(Status.INFO, "Screenshot for Search Page", MediaEntityBuilder.createScreenCaptureFromPath(searchpage).build());
 		
 		// search
-		QaRobot.ClickOnElement("flight_msearch", "Clicked On Serach");
+		QaRobot.ClickOnElement("flight_msearch");
 		
 		
 		//Total time for page load
@@ -124,7 +124,7 @@ public class FlightMulticity_search extends FlightMulticity {
 				
 		System.out.println("Start time - " + start); 
 		
-		QaRobot.explicitwaitinvisible(280, By.xpath("//*[@class='progress-bar progress-bar-striped active']"));
+//		QaRobot.explicitwaitinvisible(280, By.xpath("//*[@class='progress-bar progress-bar-striped active']"));
 
 		// get current url
 
