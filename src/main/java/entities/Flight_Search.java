@@ -54,7 +54,7 @@ public class Flight_Search extends Flight {
 
 		// departure date
 
-		QaRobot.ClickOnElement("flight_depart_date", "Clicked on Flight Departure");
+		QaRobot.ClickOnElement("flight_depart_date");
 
 		// impliwait(60);
 		Thread.sleep(200);
@@ -65,7 +65,7 @@ public class Flight_Search extends Flight {
 		QaRobot.getLocator(departdate).click();// id1252019
 
 		// arrival date
-		QaRobot.ClickOnElement("flight_return_date", "Clicked on Flight return date Button");
+		QaRobot.ClickOnElement("flight_return_date");
 
 		// impliwait(23);
 		Thread.sleep(500);
@@ -74,7 +74,7 @@ public class Flight_Search extends Flight {
 		Thread.sleep(500);
 
 		// Pax
-		QaRobot.ClickOnElement("select_pax", "clicked on select PAX");
+		QaRobot.ClickOnElement("select_pax");
 
 		// select adult
 		QaRobot.selectValueFromDropdown("flight_adult", adult, "Selected "+ adult +" Adult");
@@ -85,18 +85,18 @@ public class Flight_Search extends Flight {
 		// select infant
 		QaRobot.selectValueFromDropdown("flight_infant", infant, "Selected "+ infant +" Infant");
 
-		QaRobot.ClickOnElement("option", "clicked on interface");
+		QaRobot.ClickOnElement("option");
 
 		// click on more option
-		QaRobot.ClickOnElement("more_option", "clicked on more option");
+		QaRobot.ClickOnElement("more_option");
 
 		// select currency
 
-		QaRobot.ClickOnElement("flight_currency", "Selected "+ fcurrency +" Currency");
+		QaRobot.ClickOnElement("flight_currency");
 		QaRobot.getLocator(currency).click();
 
 		// select class
-		QaRobot.ClickOnElement("flight_class", "Selected "+ fclass+" Class");
+		QaRobot.ClickOnElement("flight_class");
 		QaRobot.getLocator(Fclass).click();
 
 		// PreferedAirline("preferd_airline", airlines, "search_airline");
@@ -113,7 +113,7 @@ public class Flight_Search extends Flight {
 		
 
 		// search
-		QaRobot.ClickOnElement("flight_rsearch", "Clicked On Serach");
+		QaRobot.ClickOnElement("flight_rsearch");
 		
 		//Total time for page load
 		
@@ -123,7 +123,7 @@ public class Flight_Search extends Flight {
 
 		//driver.get("Some url");
 
-		QaRobot.explicitwaitinvisible(200, By.xpath("//*[@class='progress-bar progress-bar-striped active']"));
+//		QaRobot.explicitwaitinvisible(200, By.xpath("//*[@class='progress-bar progress-bar-striped active']"));
 		
 		
 		
@@ -162,7 +162,7 @@ public class Flight_Search extends Flight {
 						QaExtentReport.test.info(MarkupHelper.createCodeBlock(getLogText("\\\\erp-staging\\Cache\\Booking\\local\\store", uid[1]),
 						CodeLanguage.XML));
 
-				QaRobot.ClickOnElement("Go_Home", "clicked on Home Page");
+				QaRobot.ClickOnElement("Go_Home");
 
 				System.out.println("Result Not Found");
 
@@ -267,7 +267,7 @@ public class Flight_Search extends Flight {
 				local_flight.click();
 
 			}
-			QaRobot.explicitwaitclickable(600, By.xpath("//button[@id='btnConfirm_LeftSide']"));
+//			QaRobot.explicitwaitclickable(600, By.xpath("//button[@id='btnConfirm_LeftSide']"));
 
 			QaRobot.impliwait(30);
 
@@ -296,7 +296,7 @@ public class Flight_Search extends Flight {
 
 			// Click on confirm button
 
-			QaRobot.ClickOnElement("fnew_confirm", "Clicked on confirm button");
+			QaRobot.ClickOnElement("fnew_confirm");
 			// condition for credit and online
 			NewChkout_Card(cardmode, type, cardno, cardname, cardmonth, cardyear, cardcvv);
 			
@@ -315,8 +315,8 @@ public class Flight_Search extends Flight {
 						
 						// click pay now button
 						
-						QaRobot.ClickOnElement("new_chk_paynow", "Clicked on pay now Button");
-						QaRobot.explicitwaitvisible(100, By.xpath("//h1[@class='text-truncate pt-0 ng-binding']"));
+						QaRobot.ClickOnElement("new_chk_paynow");
+//						QaRobot.explicitwaitvisible(100, By.xpath("//h1[@class='text-truncate pt-0 ng-binding']"));
 						// take screenshot for confirm page
 
 						//String confirmpage = Logger.takeScreenshot(QaBrowser.driver, "confirmpage");
@@ -651,7 +651,7 @@ public class Flight_Search extends Flight {
 //			}
 //		}
 		QaExtentReport.test.info(MarkupHelper.createCodeBlock(getLogText("\\\\v12staging\\Cache\\Booking\\local\\store", uid[1]),CodeLanguage.XML));
-		QaRobot.ClickOnElement("new_chk_home", "clicked on Home Page");
+		QaRobot.ClickOnElement("new_chk_home");
 
 	}
 

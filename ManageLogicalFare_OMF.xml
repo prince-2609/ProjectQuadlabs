@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="sbt117.ManageLogicalFare_OMF"/>
+      <class name="CAM_MO.ManageLogicalFare_OMF"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

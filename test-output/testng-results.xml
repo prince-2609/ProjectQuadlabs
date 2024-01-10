@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-04T17:42:39 IST" name="Suite" finished-at="2024-01-04T17:45:24 IST" duration-ms="164876">
+  <suite started-at="2024-01-05T15:52:40 IST" name="Suite" finished-at="2024-01-05T15:55:07 IST" duration-ms="146643">
     <groups>
     </groups>
-    <test started-at="2024-01-04T17:42:39 IST" name="Test" finished-at="2024-01-04T17:45:24 IST" duration-ms="164876">
+    <test started-at="2024-01-05T15:52:40 IST" name="Test" finished-at="2024-01-05T15:55:07 IST" duration-ms="146643">
       <class name="testFlightHotel.FlightBooking">
-        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking@1b11171f]" started-at="2024-01-04T17:42:40 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-01-04T17:45:23 IST" duration-ms="162976" status="FAIL">
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking@1b11171f]" started-at="2024-01-05T15:52:41 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-01-05T15:55:06 IST" duration-ms="144788" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -126,7 +126,7 @@
             </param>
             <param index="23">
               <value>
-                <![CDATA[shubham.natkar@quadlabs.com]]>
+                <![CDATA[ankit.bist@quadlabs.com]]>
               </value>
             </param>
             <param index="24">
@@ -136,7 +136,7 @@
             </param>
             <param index="25">
               <value>
-                <![CDATA[Domestic]]>
+                <![CDATA[International]]>
               </value>
             </param>
             <param index="26">
@@ -156,12 +156,12 @@
             </param>
             <param index="29">
               <value>
-                <![CDATA[bom]]>
+                <![CDATA[JFK]]>
               </value>
             </param>
             <param index="30">
               <value>
-                <![CDATA[Mumbai,India - Shivaji Terminal (BOM)]]>
+                <![CDATA[John F Kennedy-United States,United States - John F. Kennedy International Airport (JFK)]]>
               </value>
             </param>
             <param index="31">
@@ -171,7 +171,7 @@
             </param>
             <param index="32">
               <value>
-                <![CDATA[31-Jan-2024]]>
+                <![CDATA[23-Mar-2024]]>
               </value>
             </param>
             <param index="33">
@@ -402,26 +402,26 @@
           </params>
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//a[contains(@id,'flght-itnry-link')])[1]"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div/span/span"}
   (Session info: chrome=120.0.6099.130)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.1.4', revision: '535d840ee2'
 System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ed50c41156cf4855cf7f420da342a2e8, findElement {using=xpath, value=(//a[contains(@id,'flght-itnry-link')])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60459}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60459/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ed50c41156cf4855cf7f420da342a2e8]]>
+Command: [0d86fcebd8f65376f53aca334a3e960a, findElement {using=xpath, value=/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div/span/span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52254}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52254/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0d86fcebd8f65376f53aca334a3e960a]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[contains(@id,'flght-itnry-link')])[1]"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div/span/span"}
   (Session info: chrome=120.0.6099.130)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.1.4', revision: '535d840ee2'
 System info: host: 'SHUBHAM', ip: '192.168.111.145', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ed50c41156cf4855cf7f420da342a2e8, findElement {using=xpath, value=(//a[contains(@id,'flght-itnry-link')])[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60459}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60459/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ed50c41156cf4855cf7f420da342a2e8
+Command: [0d86fcebd8f65376f53aca334a3e960a, findElement {using=xpath, value=/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div/span/span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52254}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52254/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0d86fcebd8f65376f53aca334a3e960a
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -438,10 +438,7 @@ at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(Elemen
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
-at utilities.QaRobot.getLocator(QaRobot.java:71)
-at utilities.QaRobot.getWebElement(QaRobot.java:153)
-at utilities.QaRobot.ClickOnElement(QaRobot.java:175)
-at testFlightHotel.FlightBooking.flightBooking(FlightBooking.java:590)
+at testFlightHotel.FlightBooking.flightBooking(FlightBooking.java:958)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -476,7 +473,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flightBooking -->
-        <test-method is-config="true" signature="After_Test()[pri:0, instance:testFlightHotel.FlightBooking@1b11171f]" started-at="2024-01-04T17:45:24 IST" name="After_Test" finished-at="2024-01-04T17:45:24 IST" duration-ms="296" status="PASS">
+        <test-method is-config="true" signature="After_Test()[pri:0, instance:testFlightHotel.FlightBooking@1b11171f]" started-at="2024-01-05T15:55:07 IST" name="After_Test" finished-at="2024-01-05T15:55:07 IST" duration-ms="271" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- After_Test -->

@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="CAM.Preferred_Airline"/>
+      <class name="Old_CAM_Code.Preferred_Airline"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="sbt117.Brand_Information"/>
+      <class name="CAM_MO.Brand_Information"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
