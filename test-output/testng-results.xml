@@ -1,119 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+
   <suite started-at="2024-01-05T15:52:40 IST" name="Suite" finished-at="2024-01-05T15:55:07 IST" duration-ms="146643">
     <groups>
     </groups>
     <test started-at="2024-01-05T15:52:40 IST" name="Test" finished-at="2024-01-05T15:55:07 IST" duration-ms="146643">
       <class name="testFlightHotel.FlightBooking">
         <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking@1b11171f]" started-at="2024-01-05T15:52:41 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-01-05T15:55:06 IST" duration-ms="144788" status="FAIL">
+
           <params>
             <param index="0">
               <value>
-                <![CDATA[Test on Flight 1]]>
+                <![CDATA[Test Case 1]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Flight domestic booking flow for Indigo  flight (One way - Individual) with 0 stop]]>
+                <![CDATA[Reimbursement-Trip -Finance Rejected ]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Live]]>
+                <![CDATA[sbt]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[//test.quadlabs.net/backoffice/]]>
+                <![CDATA[//test.quadlabs.net/SSO_Login]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[at]]>
+                <![CDATA[Null]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Saurav_at]]>
+                <![CDATA[SSOLogin]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[Quad@721]]>
+                <![CDATA[ankur.yadav@quadlabs.com]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[Amazon]]>
+                <![CDATA[test.quadlabs.net]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Applied]]>
+                <![CDATA[Shubham1]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[3]]>
+                <![CDATA[R0FFSNPG]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+                <![CDATA[Goa Trip1]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[preprod117]]>
+                <![CDATA[FinanceReject]]>
               </value>
             </param>
-            <param index="12">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Profiling1 -->
+        <test-method is-config="true" signature="afterMetod()[pri:0, instance:SBT_Corporate.Reimbursement@4fb3ee4e]" started-at="2024-01-09T18:45:33 IST" name="afterMetod" finished-at="2024-01-09T18:45:33 IST" duration-ms="230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method signature="Profiling1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:SBT_Corporate.Reimbursement@4fb3ee4e]" started-at="2024-01-09T18:45:33 IST" name="Profiling1" data-provider="getexceldata" finished-at="2024-01-09T18:46:05 IST" duration-ms="31652" status="PASS">
+          <params>
+            <param index="0">
               <value>
-                <![CDATA[SSO]]>
+                <![CDATA[Test Case 2]]>
               </value>
             </param>
-            <param index="13">
+            <param index="1">
+              <value>
+                <![CDATA[Reimbursement-Trip- Ask for Clarification]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="3">
               <value>
                 <![CDATA[//test.quadlabs.net/SSO_Login]]>
               </value>
             </param>
-            <param index="14">
-              <value>
-                <![CDATA[sachin.kumar@quadlabs.com]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[test.quadlabs.net]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[Shubham]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[Administrator]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[Shubham]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[Shubham@123]]>
-              </value>
-            </param>
-            <param index="20">
+            <param index="4">
               <value>
                 <![CDATA[Null]]>
               </value>
             </param>
+
             <param index="21">
               <value>
                 <![CDATA[On]]>
@@ -172,234 +165,251 @@
             <param index="32">
               <value>
                 <![CDATA[23-Mar-2024]]>
+
               </value>
             </param>
-            <param index="33">
+            <param index="6">
               <value>
-                <![CDATA[22-Dec-2023]]>
+                <![CDATA[ankur.yadav@quadlabs.com]]>
               </value>
             </param>
-            <param index="34">
+            <param index="7">
               <value>
-                <![CDATA[NotApplied]]>
+                <![CDATA[test.quadlabs.net]]>
               </value>
             </param>
-            <param index="35">
+            <param index="8">
               <value>
-                <![CDATA[3]]>
+                <![CDATA[Shubham1]]>
               </value>
             </param>
-            <param index="36">
+            <param index="9">
               <value>
-                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+                <![CDATA[R0FFSNPG]]>
               </value>
             </param>
-            <param index="37">
+            <param index="10">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[Chakrata Tour2]]>
               </value>
             </param>
-            <param index="38">
+            <param index="11">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[AskForClarification]]>
               </value>
             </param>
-            <param index="39">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Profiling1 -->
+        <test-method is-config="true" signature="afterMetod()[pri:0, instance:SBT_Corporate.Reimbursement@4fb3ee4e]" started-at="2024-01-09T18:46:05 IST" name="afterMetod" finished-at="2024-01-09T18:46:05 IST" duration-ms="21" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method signature="Profiling1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:SBT_Corporate.Reimbursement@4fb3ee4e]" started-at="2024-01-09T18:46:05 IST" name="Profiling1" data-provider="getexceldata" finished-at="2024-01-09T18:46:42 IST" duration-ms="36822" status="PASS">
+          <params>
+            <param index="0">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[Test Case 3]]>
               </value>
             </param>
-            <param index="40">
+            <param index="1">
               <value>
-                <![CDATA[Indian Rupees]]>
+                <![CDATA[Reimbursement-Trip -Finance Approved]]>
               </value>
             </param>
-            <param index="41">
+            <param index="2">
               <value>
-                <![CDATA[Economy]]>
+                <![CDATA[sbt]]>
               </value>
             </param>
-            <param index="42">
+            <param index="3">
               <value>
-                <![CDATA[Yes]]>
+                <![CDATA[//test.quadlabs.net/SSO_Login]]>
               </value>
             </param>
-            <param index="43">
+            <param index="4">
               <value>
                 <![CDATA[Null]]>
               </value>
             </param>
-            <param index="44">
+            <param index="5">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[SSOLogin]]>
               </value>
             </param>
-            <param index="45">
+            <param index="6">
               <value>
-                <![CDATA[Yes]]>
+                <![CDATA[ankur.yadav@quadlabs.com]]>
               </value>
             </param>
-            <param index="46">
+            <param index="7">
               <value>
-                <![CDATA[Indigo]]>
+                <![CDATA[test.quadlabs.net]]>
               </value>
             </param>
-            <param index="47">
+            <param index="8">
               <value>
-                <![CDATA[Indigo]]>
+                <![CDATA[Shubham1]]>
               </value>
             </param>
-            <param index="48">
+            <param index="9">
               <value>
-                <![CDATA[SAVER]]>
+                <![CDATA[R0FFSNPG]]>
               </value>
             </param>
-            <param index="49">
+            <param index="10">
               <value>
-                <![CDATA[SAVER]]>
+                <![CDATA[Nainital Trip1]]>
               </value>
             </param>
-            <param index="50">
+            <param index="11">
               <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="51">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="52">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="53">
-              <value>
-                <![CDATA[Flight]]>
-              </value>
-            </param>
-            <param index="54">
-              <value>
-                <![CDATA[bom]]>
-              </value>
-            </param>
-            <param index="55">
-              <value>
-                <![CDATA[Mumbai, Maharashtra, India (BOM-Chhatrapati Shivaji Intl.)]]>
-              </value>
-            </param>
-            <param index="56">
-              <value>
-                <![CDATA[23-Mar-2023]]>
-              </value>
-            </param>
-            <param index="57">
-              <value>
-                <![CDATA[24-Mar-2023]]>
-              </value>
-            </param>
-            <param index="58">
-              <value>
-                <![CDATA[78554432323]]>
-              </value>
-            </param>
-            <param index="59">
-              <value>
-                <![CDATA[Ca]]>
-              </value>
-            </param>
-            <param index="60">
-              <value>
-                <![CDATA[345678]]>
-              </value>
-            </param>
-            <param index="61">
-              <value>
-                <![CDATA[Credit Card]]>
-              </value>
-            </param>
-            <param index="62">
-              <value>
-                <![CDATA[Corporate]]>
-              </value>
-            </param>
-            <param index="63">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="64">
-              <value>
-                <![CDATA[Amazon]]>
-              </value>
-            </param>
-            <param index="65">
-              <value>
-                <![CDATA[Visa]]>
-              </value>
-            </param>
-            <param index="66">
-              <value>
-                <![CDATA[123]]>
-              </value>
-            </param>
-            <param index="67">
-              <value>
-                <![CDATA[Addtocart]]>
-              </value>
-            </param>
-            <param index="68">
-              <value>
-                <![CDATA[Test]]>
-              </value>
-            </param>
-            <param index="69">
-              <value>
-                <![CDATA[NotApplied]]>
-              </value>
-            </param>
-            <param index="70">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="71">
-              <value>
-                <![CDATA[Airline For flight]]>
-              </value>
-            </param>
-            <param index="72">
-              <value>
-                <![CDATA[Fullfillment]]>
-              </value>
-            </param>
-            <param index="73">
-              <value>
-                <![CDATA[No]]>
-              </value>
-            </param>
-            <param index="74">
-              <value>
-                <![CDATA[21B,9E,6E,12E]]>
-              </value>
-            </param>
-            <param index="75">
-              <value>
-                <![CDATA[6A,25B,2E,12E]]>
-              </value>
-            </param>
-            <param index="76">
-              <value>
-                <![CDATA[IN Policy all ]]>
-              </value>
-            </param>
-            <param index="77">
-              <value>
-                <![CDATA[Shubham Natkar]]>
+                <![CDATA[FinanceApprove]]>
               </value>
             </param>
           </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Profiling1 -->
+        <test-method is-config="true" signature="afterMetod()[pri:0, instance:SBT_Corporate.Reimbursement@4fb3ee4e]" started-at="2024-01-09T18:46:43 IST" name="afterMetod" finished-at="2024-01-09T18:46:43 IST" duration-ms="17" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method signature="Profiling1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:SBT_Corporate.Reimbursement@4fb3ee4e]" started-at="2024-01-09T18:46:43 IST" name="Profiling1" data-provider="getexceldata" finished-at="2024-01-09T18:47:21 IST" duration-ms="38092" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test Case 4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Reimbursement-Trip -Finance Rejected ]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[//test.quadlabs.net/SSO_Login]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[SSOLogin]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ankur.yadav@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[test.quadlabs.net]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Shubham1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[R0FFSNPG]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Shimla Tour3]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[FinanceReject]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Profiling1 -->
+        <test-method is-config="true" signature="afterMetod()[pri:0, instance:SBT_Corporate.Reimbursement@4fb3ee4e]" started-at="2024-01-09T18:47:21 IST" name="afterMetod" finished-at="2024-01-09T18:47:21 IST" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMetod -->
+        <test-method signature="Profiling1(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:SBT_Corporate.Reimbursement@4fb3ee4e]" started-at="2024-01-09T18:47:21 IST" name="Profiling1" data-provider="getexceldata" finished-at="2024-01-09T18:47:54 IST" duration-ms="32948" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test Case 5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Reimbursement-Trip- Ask for Clarification]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[//test.quadlabs.net/SSO_Login]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[SSOLogin]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ankur.yadav@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[test.quadlabs.net]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Shubham1]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[R0FFSNPG]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Dxb Tour test 4]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[AskForClarification]]>
+              </value>
+            </param>
+          </params>
+
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div/span/span"}
@@ -474,10 +484,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </reporter-output>
         </test-method> <!-- flightBooking -->
         <test-method is-config="true" signature="After_Test()[pri:0, instance:testFlightHotel.FlightBooking@1b11171f]" started-at="2024-01-05T15:55:07 IST" name="After_Test" finished-at="2024-01-05T15:55:07 IST" duration-ms="271" status="PASS">
+
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- After_Test -->
-      </class> <!-- testFlightHotel.FlightBooking -->
+        </test-method> <!-- afterMetod -->
+      </class> <!-- SBT_Corporate.Reimbursement -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

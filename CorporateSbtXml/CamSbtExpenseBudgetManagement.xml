@@ -4,7 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
    
-      <class name="CarporateSBT.CamSbtExpenseBudgetManagement"/>
+      <class name="SBT_Corporate.CamSbtExpenseBudgetManagement"/>
     
     </classes>
   </test> <!-- Test -->
