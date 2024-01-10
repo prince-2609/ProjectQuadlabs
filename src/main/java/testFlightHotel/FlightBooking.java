@@ -130,7 +130,7 @@ public class FlightBooking {
 			QaRobot.PassValue("SDN", SDN);
 			QaRobot.ClickOnElement("Encrypt");
 			QaRobot.ClickOnElement("ESubmit");
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 		}
 //		QaRobot.getWebElement("sbt_Login1").sendKeys(uname);
 //		QaRobot.getWebElement("sbt_Pasword1").sendKeys(pwd);
