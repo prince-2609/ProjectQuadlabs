@@ -53,7 +53,7 @@ public class TravellerProfiling {
 		QaRobot.PassValue("CompanyName", CorporateName);
 		QaRobot.ClickOnElement("SearchCompanyName");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Corporate Name</i></b>" + " - " + CorporateName);
-		String AccountId = QaBrowser.driver.findElement(By.xpath("//span[@id='GridView1_ctl02_Label2']")).getText();
+		String AccountId = QaBrowser.driver.findElement(By.xpath("//span[@id='GridView1_ctl04_Label2']")).getText();
 		QaExtentReport.test.log(Status.INFO, "<b><i>Account Id</i></b>" + " - " + AccountId);
 		QaRobot.ClickOnElement("ClickOnSearchCompanyName");
 		QaBrowser.driver.switchTo().parentFrame();
@@ -61,33 +61,33 @@ public class TravellerProfiling {
 		QaRobot.ClickOnElement("CPCorporateManagement");
 		QaBrowser.driver.switchTo().parentFrame();
 		QaRobot.switchframe("//frame[@id='frm2']");
-		QaRobot.ClickOnElement("ManageDepartment");
-		QaRobot.ClickOnElement("Adddepartment");
-		QaRobot.selectTextByLocator("//select[@id='ddBranch']", SelectBranch);
-		QaRobot.PassValue("DepartmentName", DepartmentName);
-		QaRobot.ClickOnElement("SaveDepartment");
-		QaRobot.acceptAlert("DepartmentStatus");
-		QaRobot.ClickOnElement("CloseDepartment");
-		QaRobot.ClickOnElement("ManageDesignation");
-		QaRobot.ClickOnElement("AddManageDesignation");
-		QaRobot.PassValue("AddDesignation", AddDesignation);
-		QaRobot.ClickOnElement("ManageDesignationSelectAll");
-		QaRobot.ClickOnElement("SaveDesignation");
-		QaRobot.acceptAlert("DesignationStatus");
-		QaRobot.ClickOnElement("CloseDesignation");
-		QaRobot.ClickOnElement("ManageGrade");
-		QaRobot.ClickOnElement("AddGrade");
-		QaRobot.PassValue("CategoryCode", CategoryCode);
-		QaRobot.PassValue("CategoryName1", CategoryName);
-		if (GradeCategoryFor.equalsIgnoreCase("Book For Family")) {
-			QaRobot.ClickOnElement("BookFamily");
-		} else if (GradeCategoryFor.equalsIgnoreCase("Personal")) {
-			QaRobot.ClickOnElement("Personal");
-		}
-		QaRobot.ClickOnElement("GradeSelectAll");
-		QaRobot.ClickOnElement("AddGrade");
-		QaRobot.acceptAlert("GradeStatus");
-		QaRobot.ClickOnElement("CloseGrade");
+//		QaRobot.ClickOnElement("ManageDepartment");
+//		QaRobot.ClickOnElement("Adddepartment");
+//		QaRobot.selectTextByLocator("//select[@id='ddBranch']", SelectBranch);
+//		QaRobot.PassValue("DepartmentName", DepartmentName);
+//		QaRobot.ClickOnElement("SaveDepartment");
+//		QaRobot.acceptAlert("DepartmentStatus");
+//		QaRobot.ClickOnElement("CloseDepartment");
+//		QaRobot.ClickOnElement("ManageDesignation");
+//		QaRobot.ClickOnElement("AddManageDesignation");
+//		QaRobot.PassValue("AddDesignation", AddDesignation);
+//		QaRobot.ClickOnElement("ManageDesignationSelectAll");
+//		QaRobot.ClickOnElement("SaveDesignation");
+//		QaRobot.acceptAlert("DesignationStatus");
+//		QaRobot.ClickOnElement("CloseDesignation");
+//		QaRobot.ClickOnElement("ManageGrade");
+//		QaRobot.ClickOnElement("AddGrade");
+//		QaRobot.PassValue("CategoryCode", CategoryCode);
+//		QaRobot.PassValue("CategoryName1", CategoryName);
+//		if (GradeCategoryFor.equalsIgnoreCase("Book For Family")) {
+//			QaRobot.ClickOnElement("BookFamily");
+//		} else if (GradeCategoryFor.equalsIgnoreCase("Personal")) {
+//			QaRobot.ClickOnElement("Personal");
+//		}
+//		QaRobot.ClickOnElement("GradeSelectAll");
+//		QaRobot.ClickOnElement("AddGrade");
+//		QaRobot.acceptAlert("GradeStatus");
+//		QaRobot.ClickOnElement("CloseGrade");
 		QaRobot.ClickOnElement("ManageTravellers");
 		QaRobot.ClickOnElement("CreateNewTraveller");
 		String HolderName[] = TravellerName.split(" ");

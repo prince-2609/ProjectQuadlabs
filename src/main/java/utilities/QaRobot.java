@@ -148,6 +148,48 @@ public class QaRobot extends QaExtentReport {
 			}
 		}
 	}
+	
+	public static void selectDateInCalendarFF(String Day, String Month, String Year) throws Exception {
+
+		Assert.assertFalse(Integer.parseInt(Day) > 31, "Invalid date provided " + Day + "-" + Month + "-" + Year);
+		Assert.assertFalse(Month.equals("Feb") && Integer.parseInt(Day) > 28,
+				"Invalid date provided " + Day + "-" + Month + "-" + Year);
+		Thread.sleep(3000);
+		QaRobot.selectTextByLocator("/html/body/div[4]/div/div[2]/div/div/select[2]", Year);
+		QaRobot.selectTextByLocator("/html/body/div[4]/div/div[2]/div/div/select[1]", Month);
+
+		List<WebElement> allDates = QaBrowser.driver
+				.findElements(By.xpath("/html/body/div[4]/div/div[2]/div[1]/table/tbody/tr/td"));
+		for (WebElement ele : allDates) {
+			String dt = ele.getText();
+
+			if (dt.equalsIgnoreCase(Day)) {
+				ele.click();
+				break;
+			}
+		}
+	}
+	
+	public static void selectDateInCalendarHMN(String Day, String Month, String Year) throws Exception {
+
+		Assert.assertFalse(Integer.parseInt(Day) > 31, "Invalid date provided " + Day + "-" + Month + "-" + Year);
+		Assert.assertFalse(Month.equals("Feb") && Integer.parseInt(Day) > 28,
+				"Invalid date provided " + Day + "-" + Month + "-" + Year);
+		Thread.sleep(3000);
+		QaRobot.selectTextByLocator("/html/body/div[2]/div/div[2]/div/div/select[2]", Year);
+		QaRobot.selectTextByLocator("/html/body/div[2]/div/div[2]/div/div/select[1]", Month);
+
+		List<WebElement> allDates = QaBrowser.driver
+				.findElements(By.xpath("/html/body/div[2]/div/div[2]/div[1]/table/tbody/tr/td"));
+		for (WebElement ele : allDates) {
+			String dt = ele.getText();
+
+			if (dt.equalsIgnoreCase(Day)) {
+				ele.click();
+				break;
+			}
+		}
+	}
 
 	public static WebElement getWebElement(String locator) throws Exception {
 		return getLocator(TestBase.obj.getProperty(locator));

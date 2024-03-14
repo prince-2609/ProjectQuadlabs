@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="sbt117.TravellerProfiling"/>
+      <class name="CAM_MO.TravellerProfiling"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

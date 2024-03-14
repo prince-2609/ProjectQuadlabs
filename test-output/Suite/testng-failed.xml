@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="SBT_Corporate.Reimbursement">
+      <class name="TestScripts.TestOn_FFno_To_BookingFlow">
         <methods>
-          <include name="Profiling1"/>
-          <include name="afterMetod"/>
+          <include name="flightBooking" invocation-numbers="0"/>
+          <include name="After_Test"/>
         </methods>
-      </class> <!-- SBT_Corporate.Reimbursement -->
+      </class> <!-- TestScripts.TestOn_FFno_To_BookingFlow -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
