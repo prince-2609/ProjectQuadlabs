@@ -447,12 +447,10 @@ public class FlightBooking {
 						if (policytype.equalsIgnoreCase("Out Of Policy")) {
 							QaBrowser.driver.switchTo().alert().accept();
 						}
-						checkoutpage(ccode, FareBranding, searchType, Trip, adult, child, infant, Stops, OneWayAirLine,
-								RoundTripAirLine,
-
-								ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus, RCqty,
-								RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection,
-								ChildSeatSelection, airReasonCode, CreatedBy);
+						checkoutpage(ccode, FareBranding, searchType, triptype, Trip, adult, child, infant, Stops,
+								OneWayAirLine, RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv,
+								CheckOutRuleStatus, RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection,
+								AdultSeatSelection, ChildSeatSelection, airReasonCode, CreatedBy);
 					} else if (Resultpagestep.equalsIgnoreCase("Addtocart")) {
 						SBTResultPage.addToCart(booknowindex, AddToCartRemarks, resultPagePrice, policytype);
 					}
@@ -473,12 +471,10 @@ public class FlightBooking {
 						js3.executeScript("arguments[0].click()", Inbound);
 						QaExtentReport.extentScreenshot("Result Page2");
 						QaRobot.ClickOnElement("rt_Continue");
-						checkoutpage(ccode, FareBranding, searchType, Trip, adult, child, infant, Stops, OneWayAirLine,
-								RoundTripAirLine,
-
-								ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus, RCqty,
-								RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection,
-								ChildSeatSelection, airReasonCode, CreatedBy);
+						checkoutpage(ccode, FareBranding, searchType, triptype, Trip, adult, child, infant, Stops,
+								OneWayAirLine, RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv,
+								CheckOutRuleStatus, RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection,
+								AdultSeatSelection, ChildSeatSelection, airReasonCode, CreatedBy);
 					} else if (Resultpagestep.equalsIgnoreCase("Addtocart")) {
 //				SBTResultPage.addToCart(addtocartindex, addToCartRemarks,resultPagePrice,policytype);
 					}
@@ -502,10 +498,10 @@ public class FlightBooking {
 					if (policytype.equalsIgnoreCase("Out Of Policy")) {
 						QaBrowser.driver.switchTo().alert().accept();
 					}
-					checkoutpage(ccode, FareBranding, searchType, Trip, adult, child, infant, Stops, OneWayAirLine,
-							RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus,
-							RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection,
-							ChildSeatSelection, airReasonCode, CreatedBy);
+					checkoutpage(ccode, FareBranding, searchType, triptype, Trip, adult, child, infant, Stops,
+							OneWayAirLine, RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv,
+							CheckOutRuleStatus, RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection,
+							AdultSeatSelection, ChildSeatSelection, airReasonCode, CreatedBy);
 				}
 			}
 		} else if (FareBranding.equalsIgnoreCase("On")) {
@@ -1828,7 +1824,7 @@ public class FlightBooking {
 					QaRobot.ClickOnElement("SendForApprovalC");
 				}
 			}
-			checkoutpage(ccode, FareBranding, searchType, Trip, adult, child, infant, Stops, OneWayAirLine,
+			checkoutpage(ccode, FareBranding, searchType, triptype, Trip, adult, child, infant, Stops, OneWayAirLine,
 					RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus, RCqty,
 					RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection, ChildSeatSelection,
 					airReasonCode, CreatedBy);
@@ -1852,8 +1848,8 @@ public class FlightBooking {
 //		QaBrowser.driver.close();
 	}
 
-	public static void checkoutpage(String ccode, String FareBranding, String searchType, String Trip, String adult,
-			String child, String infant, String Stops, String OneWayAirLine, String RoundTripAirLine,
+	public static void checkoutpage(String ccode, String FareBranding, String searchType, String triptype, String Trip,
+			String adult, String child, String infant, String Stops, String OneWayAirLine, String RoundTripAirLine,
 			String ProductType, String fop, String receiptno, String card, String cardtype, String cvv,
 			String CheckOutRuleStatus, String RCqty, String RulesAppliedOnCheckOutPage, String checkoutPageStep,
 			String SeatSelection, String AdultSeatSelection, String ChildSeatSelection, String airReasonCode,
@@ -2166,6 +2162,28 @@ public class FlightBooking {
 //							Select sel1 = new Select(element1);
 //							sel1.selectByIndex(1);
 //							Thread.sleep(3000);
+							WebElement element1 = QaBrowser.driver.findElement(
+									By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169072']"));
+							Select sel1 = new Select(element1);
+							sel1.selectByIndex(1);
+							Thread.sleep(3000);
+							WebElement element2 = QaBrowser.driver.findElement(
+									By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169043']"));
+							Select sel2 = new Select(element2);
+							sel2.selectByIndex(1);
+							Thread.sleep(3000);
+							WebElement element3 = QaBrowser.driver.findElement(
+									By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169077']"));
+							Select sel3 = new Select(element3);
+							sel3.selectByIndex(1);
+							Thread.sleep(3000);
+							WebElement element4 = QaBrowser.driver.findElement(
+									By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169084']"));
+							Select sel4 = new Select(element4);
+							sel4.selectByIndex(1);
+							Thread.sleep(3000);
+							QaRobot.PassValue("CLogicalFAre", "Test");
+							QaRobot.PassValue("LLACLASSCODE", "Test");
 							QaExtentReport.extentScreenshot("Baggage and Meals");
 							softAssert.assertAll();
 						} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
@@ -4026,25 +4044,46 @@ public class FlightBooking {
 						}
 					}
 				} else if (SeatSelection.equalsIgnoreCase("No")) {
-					if (ccode.equalsIgnoreCase("sbt")) {
-						String ParentWindow1 = QaBrowser.driver.getWindowHandle();
-						Set<String> handles1 = QaBrowser.driver.getWindowHandles();
-						for (String childWindow1 : handles1) {
-							if (!childWindow1.equals(ParentWindow1))
-								QaBrowser.driver.switchTo().window(childWindow1);
+					if (triptype.equalsIgnoreCase("Domestic")) {
+						if (ccode.equalsIgnoreCase("sbt")) {
+							String ParentWindow1 = QaBrowser.driver.getWindowHandle();
+							Set<String> handles1 = QaBrowser.driver.getWindowHandles();
+							for (String childWindow1 : handles1) {
+								if (!childWindow1.equals(ParentWindow1))
+									QaBrowser.driver.switchTo().window(childWindow1);
+							}
+							QaRobot.ClickOnElement("SeatNotSelect");
+//							QaBrowser.driver.switchTo().alert().accept();
+						} else if (ccode.equalsIgnoreCase("preprod117")) {
+							String ParentWindow1 = QaBrowser.driver.getWindowHandle();
+							Set<String> handles1 = QaBrowser.driver.getWindowHandles();
+							for (String childWindow1 : handles1) {
+								if (!childWindow1.equals(ParentWindow1))
+									QaBrowser.driver.switchTo().window(childWindow1);
+							}
+							QaRobot.ClickOnElement("SeatNotSelect");
+//							QaBrowser.driver.switchTo().alert().accept();
 						}
-						QaRobot.ClickOnElement("SeatNotSelect");
-//						QaBrowser.driver.switchTo().alert().accept();
-					} else if (ccode.equalsIgnoreCase("preprod117")) {
-						String ParentWindow1 = QaBrowser.driver.getWindowHandle();
-						Set<String> handles1 = QaBrowser.driver.getWindowHandles();
-						for (String childWindow1 : handles1) {
-							if (!childWindow1.equals(ParentWindow1))
-								QaBrowser.driver.switchTo().window(childWindow1);
+					} else if (triptype.equalsIgnoreCase("International")) {
+						if (ccode.equalsIgnoreCase("sbt")) {
+							String ParentWindow1 = QaBrowser.driver.getWindowHandle();
+							Set<String> handles1 = QaBrowser.driver.getWindowHandles();
+							for (String childWindow1 : handles1) {
+								if (!childWindow1.equals(ParentWindow1))
+									QaBrowser.driver.switchTo().window(childWindow1);
+							}
+							QaBrowser.driver.switchTo().alert().accept();
+						} else if (ccode.equalsIgnoreCase("preprod117")) {
+							String ParentWindow1 = QaBrowser.driver.getWindowHandle();
+							Set<String> handles1 = QaBrowser.driver.getWindowHandles();
+							for (String childWindow1 : handles1) {
+								if (!childWindow1.equals(ParentWindow1))
+									QaBrowser.driver.switchTo().window(childWindow1);
+							}
+							QaBrowser.driver.switchTo().alert().accept();
 						}
-						QaRobot.ClickOnElement("SeatNotSelect");
-//						QaBrowser.driver.switchTo().alert().accept();
 					}
+
 				}
 				Thread.sleep(10000);
 //				String paymentprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']"))
@@ -4061,56 +4100,56 @@ public class FlightBooking {
 					SBTCheckoutPayment.fopCreditDebit(ProductType, card, cardtype, cvv);
 				}
 
-				QaExtentReport.extentScreenshot("Payment Page");
-				QaRobot.ClickOnElement("ow_paymentprocced");
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
-				Thread.sleep(2000);
-				String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']"))
-						.getText();
-				System.out.println("Booking Status is " + bookingStatus);
-				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
-				// Confirmation code
-				String pnr = QaBrowser.driver.findElement(By.xpath("//p[@class='nc_status_p']")).getText();
-				System.out.println("PNR is " + pnr);
-				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
-				// Confirm page price
-//				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
+//				QaExtentReport.extentScreenshot("Payment Page");
+//				QaRobot.ClickOnElement("ow_paymentprocced");
+////				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
+//				Thread.sleep(2000);
+//				String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']"))
 //						.getText();
-//				System.out.println("Confirm Page Price is " + confirmePrice);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
-				// Booking id
-				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
-				String a[] = bookingID.split(" ");
-				String number = a[2];
-				System.out.println("Booking ID is " + number);
-				QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
-				QaExtentReport.extentScreenshot("Confirm Page");
-
-				QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']",
-						"//span[@id='ctl00_HeaderTop_lblBookingQueue']");
-//				QaExtentReport.extentScreenshot("CorporateDashboard Page");
+//				System.out.println("Booking Status is " + bookingStatus);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
+//				// Confirmation code
+//				String pnr = QaBrowser.driver.findElement(By.xpath("//p[@class='nc_status_p']")).getText();
+//				System.out.println("PNR is " + pnr);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
+//				// Confirm page price
+////				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
+////						.getText();
+////				System.out.println("Confirm Page Price is " + confirmePrice);
+////				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
+//				// Booking id
+//				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
+//				String a[] = bookingID.split(" ");
+//				String number = a[2];
+//				System.out.println("Booking ID is " + number);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
+//				QaExtentReport.extentScreenshot("Confirm Page");
 //
-//				QaRobot.ScreenshotMethod("CorporateDashboard", "<b><i>Screenshot for Corporate Dashboard Page</i></b>");
-//				Thread.sleep(3000);
-
-				QaRobot.PassValue("RefNo", number);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Write Ref No</i></b>");
-
-				QaRobot.ClickOnElement("SearchRefNo");
-
-				QaRobot.ClickOnElement("RefBooking");
-
-				QaExtentReport.extentScreenshot("Booking Card");
-
-				String Creater = QaBrowser.driver.findElement(By.xpath("//span[@id='lblCreatedBy']")).getText();
-				System.out.println("Created By " + Creater);
-				QaExtentReport.test.log(Status.INFO, "<b><i>Created By </i></b>" + Creater);
-
-				if (CreatedBy.equalsIgnoreCase(Creater)) {
-					QaExtentReport.test.log(Status.INFO, "<b><i>Creater is Correct  </i></b>" + CreatedBy);
-				} else {
-					QaExtentReport.test.log(Status.FAIL, "<b><i>Creater is Different  </i></b>" + CreatedBy);
-				}
+//				QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']",
+//						"//span[@id='ctl00_HeaderTop_lblBookingQueue']");
+////				QaExtentReport.extentScreenshot("CorporateDashboard Page");
+////
+////				QaRobot.ScreenshotMethod("CorporateDashboard", "<b><i>Screenshot for Corporate Dashboard Page</i></b>");
+////				Thread.sleep(3000);
+//
+//				QaRobot.PassValue("RefNo", number);
+////				QaExtentReport.test.log(Status.INFO, "<b><i>Write Ref No</i></b>");
+//
+//				QaRobot.ClickOnElement("SearchRefNo");
+//
+//				QaRobot.ClickOnElement("RefBooking");
+//
+//				QaExtentReport.extentScreenshot("Booking Card");
+//
+//				String Creater = QaBrowser.driver.findElement(By.xpath("//span[@id='lblCreatedBy']")).getText();
+//				System.out.println("Created By " + Creater);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Created By </i></b>" + Creater);
+//
+//				if (CreatedBy.equalsIgnoreCase(Creater)) {
+//					QaExtentReport.test.log(Status.INFO, "<b><i>Creater is Correct  </i></b>" + CreatedBy);
+//				} else {
+//					QaExtentReport.test.log(Status.FAIL, "<b><i>Creater is Different  </i></b>" + CreatedBy);
+//				}
 			}
 		}
 	}

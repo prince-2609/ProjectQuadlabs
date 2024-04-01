@@ -28,7 +28,7 @@ import utilities.QaRobot;
 
 @Listeners(listenerClass.Listener.class)
 public class BusinessHotelTrip {
-	public static String resultPagePrice;
+//	public static String resultPagePrice;
 
 	@DataProvider
 	public Object[][] getexceldata1() throws Exception {
