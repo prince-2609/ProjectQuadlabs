@@ -35,7 +35,7 @@ public class FlightBooking {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("FlightBooking", "Sheet9");
+		return QaDataProvider.getTestdata("FlightBooking", "NonBranding");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -516,7 +516,7 @@ public class FlightBooking {
 			if (Trip.equalsIgnoreCase("OneWay")) {
 				if (triptype.equalsIgnoreCase("Domestic")) {
 //						Thread.sleep(5000);
-//						QaRobot.scrollPage(1000);
+						QaRobot.scrollPage(1000);
 //						Thread.sleep(5000);
 //					QaRobot.ClickOnElement("AFlightItinerary");
 //					Thread.sleep(15000);
@@ -1855,8 +1855,8 @@ public class FlightBooking {
 			String SeatSelection, String AdultSeatSelection, String ChildSeatSelection, String airReasonCode,
 			String CreatedBy) throws Exception {
 		if (QaBrowser.driver.findElement(By.xpath("//a[@id='ctl00_contentMain_expATag']")).isDisplayed()) {
-			Assert.assertTrue(false, "Geeting change selection");
-			QaExtentReport.test.log(Status.FAIL, "Geeting change selection");
+			Assert.assertTrue(false, "Getting change selection");
+			QaExtentReport.test.log(Status.FAIL, "Getting change selection");
 		} else {
 			String checkoutprice = QaBrowser.driver
 					.findElement(By.xpath("//span[@id='ctl00_contentMain_totcashPrice']")).getText();
@@ -1915,19 +1915,29 @@ public class FlightBooking {
 				if (FareBranding.equalsIgnoreCase("Off")) {
 					if (ccode.equalsIgnoreCase("sbt")) {
 						WebElement element = QaBrowser.driver
-								.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
+								.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169073']"));
 						Select sel = new Select(element);
 						sel.selectByIndex(1);
-						Thread.sleep(3000);
-						QaRobot.ClickOnElement("ow_billtobranch");
+						Thread.sleep(2000);
+						WebElement element1 = QaBrowser.driver
+								.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169076']"));
+						Select sel1 = new Select(element1);
+						sel1.selectByIndex(1);
+						Thread.sleep(2000);
+//						QaRobot.ClickOnElement("ow_billtobranch");
 					}
 					if (ccode.equalsIgnoreCase("preprod117")) {
 						WebElement element = QaBrowser.driver
-								.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
+								.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169073']"));
 						Select sel = new Select(element);
 						sel.selectByIndex(1);
-						Thread.sleep(3000);
-						QaRobot.ClickOnElement("ow_billtobranch");
+						Thread.sleep(2000);
+						WebElement element1 = QaBrowser.driver
+								.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169076']"));
+						Select sel1 = new Select(element1);
+						sel1.selectByIndex(1);
+						Thread.sleep(2000);
+//						QaRobot.ClickOnElement("ow_billtobranch");
 					}
 				}
 				if (FareBranding.equalsIgnoreCase("On")) {
@@ -4100,30 +4110,37 @@ public class FlightBooking {
 					SBTCheckoutPayment.fopCreditDebit(ProductType, card, cardtype, cvv);
 				}
 
-//				QaExtentReport.extentScreenshot("Payment Page");
-//				QaRobot.ClickOnElement("ow_paymentprocced");
-////				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
-//				Thread.sleep(2000);
-//				String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']"))
-//						.getText();
-//				System.out.println("Booking Status is " + bookingStatus);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
-//				// Confirmation code
+				QaExtentReport.extentScreenshot("Payment Page");
+				QaRobot.ClickOnElement("ow_paymentprocced");
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
+				Thread.sleep(2000);
+				String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']"))
+						.getText();
+				System.out.println("Booking Status is " + bookingStatus);
+				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
+				// Confirmation code
+//				QaExtentReport.extentScreenshot("Confirmation Page");
+				String pnr = QaBrowser.driver
+						.findElement(
+								By.xpath("//div[@id='ctl00_contentMain_flt_details']/div[1]/div[1]/div[2]/p/span[2]"))
+						.getText();
+				System.out.println("PNR is " + pnr);
+				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
 //				String pnr = QaBrowser.driver.findElement(By.xpath("//p[@class='nc_status_p']")).getText();
 //				System.out.println("PNR is " + pnr);
 //				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
-//				// Confirm page price
-////				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
-////						.getText();
-////				System.out.println("Confirm Page Price is " + confirmePrice);
-////				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
-//				// Booking id
-//				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
-//				String a[] = bookingID.split(" ");
-//				String number = a[2];
-//				System.out.println("Booking ID is " + number);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
-//				QaExtentReport.extentScreenshot("Confirm Page");
+				// Confirm page price
+//				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
+//						.getText();
+//				System.out.println("Confirm Page Price is " + confirmePrice);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
+				// Booking id
+				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
+				String a[] = bookingID.split(" ");
+				String number = a[2];
+				System.out.println("Booking ID is " + number);
+				QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
+				QaExtentReport.extentScreenshot("Confirm Page");
 //
 //				QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']",
 //						"//span[@id='ctl00_HeaderTop_lblBookingQueue']");

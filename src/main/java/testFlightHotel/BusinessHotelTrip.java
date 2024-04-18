@@ -71,23 +71,9 @@ public class BusinessHotelTrip {
 		}
 		QaExtentReport.test.log(Status.INFO, "<b><i>Employee Name is  </i></b>" + EmployeName);
 		QaExtentReport.test.log(Status.INFO, "<b><i>Travel Arranger Name is  </i></b>" + TravelerType);
-		if (ccode.equalsIgnoreCase("sbt")) {
-			if (CoporateName.equalsIgnoreCase("Poonam_Corp")) {
-				QaRobot.ClickOnElement("ChooseCorporate1");
-				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-				QaExtentReport.extentScreenshot("Choose Corporate");
-			} else if (CoporateName.equalsIgnoreCase("Amazon")) {
-				QaRobot.ClickOnElement("ChooseCorporate2");
-				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-				QaExtentReport.extentScreenshot("Choose Corporate");
-			}
-		} else if (ccode.equalsIgnoreCase("preprod117")) {
-//			if (CoporateName.equalsIgnoreCase("Demo Corporate")) {
+//		if (ccode.equalsIgnoreCase("sbt")) {
+//			if (CoporateName.equalsIgnoreCase("Poonam_Corp")) {
 //				QaRobot.ClickOnElement("ChooseCorporate1");
-//				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
-//				QaExtentReport.extentScreenshot("Choose Corporate");
-//			} else if (CoporateName.equalsIgnoreCase("Lux_Test_corp")) {
-//				QaRobot.ClickOnElement("ChooseCorporate2");
 //				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
 //				QaExtentReport.extentScreenshot("Choose Corporate");
 //			} else if (CoporateName.equalsIgnoreCase("Amazon")) {
@@ -95,9 +81,23 @@ public class BusinessHotelTrip {
 //				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
 //				QaExtentReport.extentScreenshot("Choose Corporate");
 //			}
-		}
+//		} else if (ccode.equalsIgnoreCase("preprod117")) {
+////			if (CoporateName.equalsIgnoreCase("Demo Corporate")) {
+////				QaRobot.ClickOnElement("ChooseCorporate1");
+////				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+////				QaExtentReport.extentScreenshot("Choose Corporate");
+////			} else if (CoporateName.equalsIgnoreCase("Lux_Test_corp")) {
+////				QaRobot.ClickOnElement("ChooseCorporate2");
+////				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+////				QaExtentReport.extentScreenshot("Choose Corporate");
+////			} else if (CoporateName.equalsIgnoreCase("Amazon")) {
+////				QaRobot.ClickOnElement("ChooseCorporate2");
+////				QaExtentReport.test.log(Status.INFO, "<b><i> Coporate Name is  </i></b>" + CoporateName);
+////				QaExtentReport.extentScreenshot("Choose Corporate");
+////			}
+//		}
 		Thread.sleep(3000);
-		QaRobot.ClickOnElement("NotificationClose");
+//		QaRobot.ClickOnElement("NotificationClose");
 		Thread.sleep(2000);
 		QaRobot.ClickOnElement("search_hotel");
 		Thread.sleep(2000);
@@ -172,7 +172,7 @@ public class BusinessHotelTrip {
 			// "search currency : " + currency);
 			// check the policy checkbox
 			if (SearchType.equalsIgnoreCase("Individual")) {
-				SearchDashboard.hotelPolicyCheck();
+//				SearchDashboard.hotelPolicyCheck();
 			}
 			// sceernshot of search interface
 			// String searchpage = Logger.takeScreenshot(QaBrowser.driver,
@@ -443,7 +443,7 @@ public class BusinessHotelTrip {
 			QaRobot.ClickOnElement("TModifiedSearchMH");
 			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on Modified Search</i></b>");
 		}
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		QaRobot.scrollPage(400);
 		QaRobot.ClickOnElement("HotelSelectC");
 		Thread.sleep(3000);

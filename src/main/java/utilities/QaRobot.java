@@ -201,7 +201,6 @@ public class QaRobot extends QaExtentReport {
 		WebElement subMenu = QaBrowser.driver.findElement(By.xpath(targetXpath));
 		action.moveToElement(mainMenu);
 		action.moveToElement(subMenu).click().build().perform();
-		;
 
 	}
 

@@ -35,102 +35,116 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("TestOn_FFno_To_BookingFlow", "Sheet4");
+		return QaDataProvider.getTestdata("TestOn_FFno_To_BookingFlow", "Testbookingflow");
 	}
 
 	@Test(dataProvider = "getexceldata")
 	public static void flightBooking(String TestCaseId, String TestScenario, String Source, String MoURL,
 			String CompanyCode, String UserName, String Password, String CorporateName, String TravellerName,
-			String FFAirline, String FFExpiryDate, String FFLoyaltyNumber, String HMNHotelName, String HMNumber,
-			String SearchRuleStatus, String RSqty, String RulesAppliedOnSearchPage, String ccode, String LoginType,
-			String URL, String Emailid, String SDN, String EmployeName, String TravelerType, String uname, String pwd,
-			String CoporateName, String FareBranding, String DashboardType, String corptraveller, String searchType,
-			String triptype, String Trip, String origin, String forigin, String destination, String fdesti,
-			String Policy, String DepartureDate, String ReturnDate, String ResultRuleStatus, String RRqty,
-			String RulesAppliedOnResultPage, String adult, String child, String infant, String currency, String fclass,
-			String UpgradePolicy, String PolicyType, String Stops, String ChooseAirLine, String OneWayAirLine,
-			String RoundTripAirLine, String OneWayFareType, String RoundTripFareType, String booknowindex,
-			String policyindex, String tripindex, String ProductType, String CityCode, String CityTitle,
-			String CheckInDate, String CheckOutDate, String passportnumber, String fop, String receiptno, String card,
-			String AppliedOn, String CQty, String CName, String cardtype, String cvv, String Resultpagestep,
-			String AddToCartRemarks, String CheckOutRuleStatus, String RCqty, String RulesAppliedOnCheckOutPage,
-			String checkoutPageStep, String SeatSelection, String AdultSeatSelection, String ChildSeatSelection,
-			String airReasonCode, String CreatedBy) throws Exception {
+			String Preferencetype, String Lhseat, String Shseat, String FFAirline, String FFExpiryDate,
+			String FFLoyaltyNumber, String HMNHotelName, String HMNumber, String SearchRuleStatus, String RSqty,
+			String RulesAppliedOnSearchPage, String ccode, String LoginType, String URL, String Emailid, String SDN,
+			String EmployeName, String TravelerType, String uname, String pwd, String CoporateName, String FareBranding,
+			String DashboardType, String corptraveller, String searchType, String triptype, String Trip, String origin,
+			String forigin, String destination, String fdesti, String Policy, String DepartureDate, String ReturnDate,
+			String ResultRuleStatus, String RRqty, String RulesAppliedOnResultPage, String adult, String child,
+			String infant, String currency, String fclass, String UpgradePolicy, String PolicyType, String Stops,
+			String ChooseAirLine, String OneWayAirLine, String RoundTripAirLine, String OneWayFareType,
+			String RoundTripFareType, String booknowindex, String policyindex, String tripindex, String ProductType,
+			String CityCode, String CityTitle, String CheckInDate, String CheckOutDate, String passportnumber,
+			String fop, String receiptno, String card, String AppliedOn, String CQty, String CName, String cardtype,
+			String cvv, String Resultpagestep, String AddToCartRemarks, String CheckOutRuleStatus, String RCqty,
+			String RulesAppliedOnCheckOutPage, String checkoutPageStep, String SeatSelection, String AdultSeatSelection,
+			String ChildSeatSelection, String airReasonCode, String CreatedBy) throws Exception {
 		QaExtentReport.test = QaExtentReport.report.createTest(TestCaseId + "-" + TestScenario);
-		TestBase.moLogin(Source, MoURL);
-		QaRobot.PassValue("CompanyCode", CompanyCode);
-		QaRobot.PassValue("UserName", UserName);
-		QaRobot.PassValue("PasswordFD", Password);
-		QaExtentReport.extentScreenshot("Sigh In Page");
-		QaRobot.ClickOnElement("LogIn");
-		Thread.sleep(3000);
-		QaRobot.switchframe("//frame[@name='login']");
-		QaRobot.switchframe("//frame[@name='leftbar']");
-		QaRobot.ClickOnElement("CorporateManagement");
-		Thread.sleep(3000);
-		QaRobot.ClickOnElement("SearchCorporate");
-		QaBrowser.driver.switchTo().parentFrame();
-		QaRobot.switchframe("//frame[@name='main']");
-		QaRobot.switchframe("//frame[@id='frm2']");
-		QaRobot.PassValue("CompanyName", CorporateName);
-		QaRobot.ClickOnElement("SearchCompanyName");
-		QaExtentReport.test.log(Status.INFO, "<b><i>Corporate Name</i></b>" + " - " + CorporateName);
-		String AccountId = QaBrowser.driver.findElement(By.xpath("//span[@id='GridView1_ctl02_Label2']")).getText();
-		QaExtentReport.test.log(Status.INFO, "<b><i>Account Id</i></b>" + " - " + AccountId);
-		QaRobot.ClickOnElement("ClickOnSearchCompanyName");
-		QaBrowser.driver.switchTo().parentFrame();
-		QaRobot.switchframe("//frame[@id='toolHeader']");
-		QaRobot.ClickOnElement("CPCorporateManagement");
-		QaBrowser.driver.switchTo().parentFrame();
-		QaRobot.switchframe("//frame[@id='frm2']");
-		QaRobot.ClickOnElement("ManageTravellers");
-		QaRobot.ClickOnElement("ATSearchOption");
-		Thread.sleep(3000);
-		String HolderName[] = TravellerName.split(" ");
-		String FN = HolderName[0];
-		String LN = HolderName[1];
-		QaRobot.PassValue("TravellerFN", FN);
-		QaRobot.PassValue("TravellerLN", LN);
-		QaRobot.ClickOnElement("ATSearchTraveller");
-		Thread.sleep(3000);
-		QaRobot.ClickOnElement("ATSelectTraveller");
-		Thread.sleep(5000);
-		QaExtentReport.extentScreenshot("Employee Profile");
-		QaRobot.ClickOnElement("FFPreferences");
-		Thread.sleep(5000);
-		if (ProductType.equalsIgnoreCase("Flight")) {
-			QaRobot.ClickOnElement("FFAirlineSelection");
-			QaRobot.PassValue("FFAirlineSearch", FFAirline);
-			QaBrowser.driver.findElement(By.xpath("//div[@id='select2-drop']/ul/li")).click();
-			String DateSelectionFF[] = FFExpiryDate.split("-");
-			String yearFF = DateSelectionFF[2];
-			String monthFF = DateSelectionFF[1];
-			String expDateFF = DateSelectionFF[0];
-			QaBrowser.driver.findElement(By.xpath(
-					"/html/body/div[1]/form/div[4]/div/div[2]/div[2]/div[4]/div[2]/ul[2]/li[6]/div/div[1]/div[3]/div/div/div/span"))
-					.click();
-			QaRobot.selectDateInCalendarFF(expDateFF, monthFF, yearFF);
-			QaRobot.PassValue("FFLoyaltyNumber", FFLoyaltyNumber);
-			QaRobot.ClickOnElement("FFAdd");
-		} else if (ProductType.equalsIgnoreCase("Hotel")) {
-			QaRobot.PassValue("HMNHotelSearch", HMNHotelName);
-			QaBrowser.driver.findElement(By.xpath("(//div[@id='divhotelchain']/p)[1]")).click();
-			String DateSelectionFF[] = FFExpiryDate.split("-");
-			String yearFF = DateSelectionFF[2];
-			String monthFF = DateSelectionFF[1];
-			String expDateFF = DateSelectionFF[0];
-			QaBrowser.driver.findElement(By.xpath(
-					"/html/body/div/form/div[4]/div/div[2]/div[2]/div[5]/div[2]/ul/li[2]/div/div[1]/div[4]/div/div/div/span"))
-					.click();
-			QaRobot.selectDateInCalendarHMN(expDateFF, monthFF, yearFF);
-			QaRobot.PassValue("HMNumber", HMNumber);
-			QaRobot.ClickOnElement("HMNAdd");
-		} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
-
-		}
-		QaRobot.scrollPage(600);
-		QaExtentReport.extentScreenshot("FF Number");
-		QaRobot.ClickOnElement("FFSave");
+//		TestBase.moLogin(Source, MoURL);
+//		QaRobot.PassValue("CompanyCode", CompanyCode);
+//		QaRobot.PassValue("UserName", UserName);
+//		QaRobot.PassValue("PasswordFD", Password);
+//		QaExtentReport.extentScreenshot("Sigh In Page");
+//		QaRobot.ClickOnElement("LogIn");
+//		Thread.sleep(3000);
+//		QaRobot.switchframe("//frame[@name='login']");
+//		QaRobot.switchframe("//frame[@name='leftbar']");
+//		QaRobot.ClickOnElement("CorporateManagement");
+//		Thread.sleep(3000);
+//		QaRobot.ClickOnElement("SearchCorporate");
+//		QaBrowser.driver.switchTo().parentFrame();
+//		QaRobot.switchframe("//frame[@name='main']");
+//		QaRobot.switchframe("//frame[@id='frm2']");
+//		QaRobot.PassValue("CompanyName", CorporateName);
+//		QaRobot.ClickOnElement("SearchCompanyName");
+//		QaExtentReport.test.log(Status.INFO, "<b><i>Corporate Name</i></b>" + " - " + CorporateName);
+//		String AccountId = QaBrowser.driver.findElement(By.xpath("//span[@id='GridView1_ctl02_Label2']")).getText();
+//		QaExtentReport.test.log(Status.INFO, "<b><i>Account Id</i></b>" + " - " + AccountId);
+//		QaRobot.ClickOnElement("ClickOnSearchCompanyName");
+//		QaBrowser.driver.switchTo().parentFrame();
+//		QaRobot.switchframe("//frame[@id='toolHeader']");
+//		QaRobot.ClickOnElement("CPCorporateManagement");
+//		QaBrowser.driver.switchTo().parentFrame();
+//		QaRobot.switchframe("//frame[@id='frm2']");
+//		QaRobot.ClickOnElement("ManageTravellers");
+//		QaRobot.ClickOnElement("ATSearchOption");
+//		Thread.sleep(3000);
+//		String HolderName[] = TravellerName.split(" ");
+//		String FN = HolderName[0];
+//		String LN = HolderName[1];
+//		QaRobot.PassValue("TravellerFN", FN);
+//		QaRobot.PassValue("TravellerLN", LN);
+//		QaRobot.ClickOnElement("ATSearchTraveller");
+//		Thread.sleep(3000);
+//		QaRobot.ClickOnElement("ATSelectTraveller");
+//		Thread.sleep(5000);
+//		QaExtentReport.extentScreenshot("Employee Profile");
+//		QaRobot.ClickOnElement("FFPreferences");
+//		Thread.sleep(5000);
+//		if (Preferencetype.equalsIgnoreCase("FFN or Loyality")) {
+//			if (ProductType.equalsIgnoreCase("Flight")) {
+//				QaRobot.ClickOnElement("FFAirlineSelection");
+//				QaRobot.PassValue("FFAirlineSearch", FFAirline);
+//				QaBrowser.driver.findElement(By.xpath("//div[@id='select2-drop']/ul/li")).click();
+//				String DateSelectionFF[] = FFExpiryDate.split("-");
+//				String yearFF = DateSelectionFF[2];
+//				String monthFF = DateSelectionFF[1];
+//				String expDateFF = DateSelectionFF[0];
+//				QaBrowser.driver.findElement(By.xpath(
+//						"/html/body/div[1]/form/div[4]/div/div[2]/div[2]/div[4]/div[2]/ul[2]/li[6]/div/div[1]/div[3]/div/div/div/span"))
+//						.click();
+//				QaRobot.selectDateInCalendarFF(expDateFF, monthFF, yearFF);
+//				QaRobot.PassValue("FFLoyaltyNumber", FFLoyaltyNumber);
+//				QaRobot.ClickOnElement("FFAdd");
+//			} else if (ProductType.equalsIgnoreCase("Hotel")) {
+//				QaRobot.PassValue("HMNHotelSearch", HMNHotelName);
+//				QaBrowser.driver.findElement(By.xpath("(//div[@id='divhotelchain']/p)[1]")).click();
+//				String DateSelectionFF[] = FFExpiryDate.split("-");
+//				String yearFF = DateSelectionFF[2];
+//				String monthFF = DateSelectionFF[1];
+//				String expDateFF = DateSelectionFF[0];
+//				QaBrowser.driver.findElement(By.xpath(
+//						"/html/body/div/form/div[4]/div/div[2]/div[2]/div[5]/div[2]/ul/li[2]/div/div[1]/div[4]/div/div/div/span"))
+//						.click();
+//				QaRobot.selectDateInCalendarHMN(expDateFF, monthFF, yearFF);
+//				QaRobot.PassValue("HMNumber", HMNumber);
+//				QaRobot.ClickOnElement("HMNAdd");
+//			} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
+//
+//			}
+//			QaRobot.scrollPage(600);
+//			QaExtentReport.extentScreenshot("FF Number");
+//		} else if (Preferencetype.equalsIgnoreCase("Seat Preference")) {
+//			if (triptype.equalsIgnoreCase("Domestic")) {
+//				QaRobot.ClickOnElement("Clickondomesticrule");
+//				QaRobot.selectTextFromDropdown("Longhaulseat", Lhseat);
+//				QaRobot.selectTextFromDropdown("Shorthaulseat", Shseat);
+//			} else if (triptype.equalsIgnoreCase("International")) {
+//				QaRobot.ClickOnElement("Clickoninternationalrule");
+//				QaRobot.selectTextFromDropdown("Longhaulseat", Lhseat);
+//				QaRobot.selectTextFromDropdown("Shorthaulseat", Shseat);
+//			}
+//		}
+//		QaRobot.ClickOnElement("FFSave");
+//		Thread.sleep(3000);
+//		QaExtentReport.extentScreenshot("preferences has been saved successfully.");
 
 		TestBase.Companycode(ccode, URL);
 		QaRobot.impliwait(30);
@@ -525,8 +539,8 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 						if (policytype.equalsIgnoreCase("Out Of Policy")) {
 							QaBrowser.driver.switchTo().alert().accept();
 						}
-						checkoutpage(ccode, FareBranding, searchType, Trip, adult, child, infant, Stops, OneWayAirLine,
-								RoundTripAirLine,
+						checkoutpage(Lhseat, Shseat, ccode, FareBranding, searchType, triptype, Trip, adult, child,
+								infant, Stops, OneWayAirLine, RoundTripAirLine,
 
 								ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus, RCqty,
 								RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection,
@@ -539,7 +553,7 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 //				SBTResultPage.tripRequest(tripindex, resultPagePrice, policytype);
 					} else if (Resultpagestep.equalsIgnoreCase("Flight Book")) {
 						QaExtentReport.extentScreenshot("Result Page1");
-						QaRobot.ClickOnElement("InPolicyTab");
+//						QaRobot.ClickOnElement("InPolicyTab");
 						Thread.sleep(3000);
 						WebElement Outbound = QaBrowser.driver.findElement(
 								By.xpath("(//input[contains(@id,'radio_Outbound')])[" + booknowindex + "]"));
@@ -551,8 +565,8 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 						js3.executeScript("arguments[0].click()", Inbound);
 						QaExtentReport.extentScreenshot("Result Page2");
 						QaRobot.ClickOnElement("rt_Continue");
-						checkoutpage(ccode, FareBranding, searchType, Trip, adult, child, infant, Stops, OneWayAirLine,
-								RoundTripAirLine,
+						checkoutpage(Lhseat, Shseat, ccode, FareBranding, searchType, triptype, Trip, adult, child,
+								infant, Stops, OneWayAirLine, RoundTripAirLine,
 
 								ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus, RCqty,
 								RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection,
@@ -580,10 +594,10 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 					if (policytype.equalsIgnoreCase("Out Of Policy")) {
 						QaBrowser.driver.switchTo().alert().accept();
 					}
-					checkoutpage(ccode, FareBranding, searchType, Trip, adult, child, infant, Stops, OneWayAirLine,
-							RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus,
-							RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection,
-							ChildSeatSelection, airReasonCode, CreatedBy);
+					checkoutpage(Lhseat, Shseat, ccode, FareBranding, searchType, triptype, Trip, adult, child, infant,
+							Stops, OneWayAirLine, RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv,
+							CheckOutRuleStatus, RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection,
+							AdultSeatSelection, ChildSeatSelection, airReasonCode, CreatedBy);
 				}
 			}
 		} else if (FareBranding.equalsIgnoreCase("On")) {
@@ -1911,10 +1925,10 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 					QaRobot.ClickOnElement("SendForApprovalC");
 				}
 			}
-			checkoutpage(ccode, FareBranding, searchType, Trip, adult, child, infant, Stops, OneWayAirLine,
-					RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus, RCqty,
-					RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection, ChildSeatSelection,
-					airReasonCode, CreatedBy);
+			checkoutpage(Lhseat, Shseat, ccode, FareBranding, searchType, triptype, Trip, adult, child, infant, Stops,
+					OneWayAirLine, RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv,
+					CheckOutRuleStatus, RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection,
+					AdultSeatSelection, ChildSeatSelection, airReasonCode, CreatedBy);
 		}
 
 //		if (TravellerType.equalsIgnoreCase("Individual")) {
@@ -1935,12 +1949,12 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 //		QaBrowser.driver.close();
 	}
 
-	public static void checkoutpage(String ccode, String FareBranding, String searchType, String Trip, String adult,
-			String child, String infant, String Stops, String OneWayAirLine, String RoundTripAirLine,
-			String ProductType, String fop, String receiptno, String card, String cardtype, String cvv,
-			String CheckOutRuleStatus, String RCqty, String RulesAppliedOnCheckOutPage, String checkoutPageStep,
-			String SeatSelection, String AdultSeatSelection, String ChildSeatSelection, String airReasonCode,
-			String CreatedBy) throws Exception {
+	public static void checkoutpage(String Lhseat, String Shseat, String ccode, String FareBranding, String searchType,
+			String triptype, String Trip, String adult, String child, String infant, String Stops, String OneWayAirLine,
+			String RoundTripAirLine, String ProductType, String fop, String receiptno, String card, String cardtype,
+			String cvv, String CheckOutRuleStatus, String RCqty, String RulesAppliedOnCheckOutPage,
+			String checkoutPageStep, String SeatSelection, String AdultSeatSelection, String ChildSeatSelection,
+			String airReasonCode, String CreatedBy) throws Exception {
 		if (QaBrowser.driver.findElement(By.xpath("//a[@id='ctl00_contentMain_expATag']")).isDisplayed()) {
 			Assert.assertTrue(false, "Geeting change selection");
 			QaExtentReport.test.log(Status.FAIL, "Geeting change selection");
@@ -1950,6 +1964,488 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 			System.out.println(checkoutprice);
 			QaExtentReport.test.log(Status.INFO, "<b><i>Price of checkout page </i></b>" + checkoutprice);
 			Thread.sleep(5000);
+
+			if (triptype.equalsIgnoreCase("Domestic")) {
+				if (OneWayAirLine.equalsIgnoreCase("Akasa Air") || RoundTripAirLine.equalsIgnoreCase("Akasa Air")
+
+						|| OneWayAirLine.equalsIgnoreCase("Indigo") || RoundTripAirLine.equalsIgnoreCase("Indigo")
+						|| OneWayAirLine.equalsIgnoreCase("Air Asia")
+						|| RoundTripAirLine.equalsIgnoreCase("Air Asia")) {
+					QaRobot.scrollPage(500);
+				} else {
+
+					Thread.sleep(2000);
+					QaRobot.ClickOnElement("Clickonseatpreferences");
+					QaRobot.scrollPage(400);
+					Thread.sleep(2000);
+					QaExtentReport.extentScreenshot("Seat Preference");
+
+//				if (Trip.equalsIgnoreCase("OneWay")) {
+//					if (Stops.equalsIgnoreCase("0")) {
+//						String SeatPrefer = QaBrowser.driver
+//								.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"))
+//								.getText();
+//						System.out.println(" LLhseat " + SeatPrefer);
+//						System.out.println(" Shseat " + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer);
+//
+//						if (Lhseat.equalsIgnoreCase(SeatPrefer) || Shseat.equalsIgnoreCase(SeatPrefer)) {
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//						} else {
+//							QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//						}
+//
+//					} else if (Stops.equalsIgnoreCase("1")) {
+//						String SeatPrefer = QaBrowser.driver
+//								.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"))
+//								.getText();
+//						System.out.println(" LLhseat " + SeatPrefer);
+//						System.out.println(" Shseat " + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer);
+//
+//						if (Lhseat.equalsIgnoreCase(SeatPrefer) || Shseat.equalsIgnoreCase(SeatPrefer)) {
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//						} else {
+//							QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//						}
+//						String SeatPrefer1 = QaBrowser.driver
+//								.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT2']"))
+//								.getText();
+//						System.out.println(" LLhseat " + SeatPrefer);
+//						System.out.println(" Shseat " + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer1);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer1);
+//
+//						if (Lhseat.equalsIgnoreCase(SeatPrefer1) || Shseat.equalsIgnoreCase(SeatPrefer1)) {
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//						} else {
+//							QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//						}
+//
+//					}
+//				}
+//				else if (Trip.equalsIgnoreCase("RoundTrip")) {
+//					if (Stops.equalsIgnoreCase("0")) {
+//						String SeatPrefer = QaBrowser.driver
+//								.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"))
+//								.getText();
+//						System.out.println(" LLhseat " + SeatPrefer);
+//						System.out.println(" Shseat " + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer);
+//
+//						if (Lhseat.equalsIgnoreCase(SeatPrefer) || Shseat.equalsIgnoreCase(SeatPrefer)) {
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//						} else {
+//							QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//						}
+//						String SeatPrefer1 = QaBrowser.driver
+//								.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT1']"))
+//								.getText();
+//						System.out.println(" LLhseat " + SeatPrefer);
+//						System.out.println(" Shseat " + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer1);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer1);
+//
+//						if (Lhseat.equalsIgnoreCase(SeatPrefer1) || Shseat.equalsIgnoreCase(SeatPrefer1)) {
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//						} else {
+//							QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//						}
+//					
+//					
+//					
+//				}else if (Stops.equalsIgnoreCase("1")) {
+//										String SeatPrefer = QaBrowser.driver
+//								.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"))
+//								.getText();
+//						System.out.println(" LLhseat " + SeatPrefer);
+//						System.out.println(" Shseat " + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer);
+//
+//						if (Lhseat.equalsIgnoreCase(SeatPrefer) || Shseat.equalsIgnoreCase(SeatPrefer)) {
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//						} else {
+//							QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//						}
+//						String SeatPrefer1 = QaBrowser.driver
+//								.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT1']"))
+//								.getText();
+//						System.out.println(" LLhseat " + SeatPrefer);
+//						System.out.println(" Shseat " + SeatPrefer);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer1);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer1);
+//
+//						if (Lhseat.equalsIgnoreCase(SeatPrefer1) || Shseat.equalsIgnoreCase(SeatPrefer1)) {
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//						} else {
+//							QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//						}
+//						String SeatPrefer3 = QaBrowser.driver
+//								.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT2']"))
+//								.getText();
+//						System.out.println(" LLhseat " + SeatPrefer3);
+//						System.out.println(" Shseat " + SeatPrefer3);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer3);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer3);
+//
+//						if (Lhseat.equalsIgnoreCase(SeatPrefer3) || Shseat.equalsIgnoreCase(SeatPrefer3)) {
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//						} else {
+//							QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//						}
+//						String SeatPrefer4 = QaBrowser.driver
+//								.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT2']"))
+//								.getText();
+//						System.out.println(" LLhseat " + SeatPrefer4);
+//						System.out.println(" Shseat " + SeatPrefer4);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer4);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer4);
+//
+//						if (Lhseat.equalsIgnoreCase(SeatPrefer4) || Shseat.equalsIgnoreCase(SeatPrefer4)) {
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//						} else {
+//							QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//						}
+//					
+//				}
+//				}
+
+				}
+			} else if (triptype.equalsIgnoreCase("International")) {
+				if (OneWayAirLine.equalsIgnoreCase("Akasa Air") || RoundTripAirLine.equalsIgnoreCase("Akasa Air")
+
+						|| OneWayAirLine.equalsIgnoreCase("Indigo") || RoundTripAirLine.equalsIgnoreCase("Indigo")
+						|| OneWayAirLine.equalsIgnoreCase("Air Asia")
+						|| RoundTripAirLine.equalsIgnoreCase("Air Asia")) {
+					QaRobot.scrollPage(500);
+				} else {
+
+					Thread.sleep(2000);
+					QaRobot.ClickOnElement("Clickonseatpreferences");
+					QaRobot.scrollPage(400);
+					QaExtentReport.extentScreenshot("Seat Preference");
+
+//					if (Trip.equalsIgnoreCase("OneWay")) {
+//						if (Stops.equalsIgnoreCase("0")) {
+//							String SeatPrefer = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"))
+//									.getText();
+//							System.out.println(" LLhseat " + SeatPrefer);
+//							System.out.println(" Shseat " + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer);
+//
+//							if (Lhseat.equalsIgnoreCase(SeatPrefer) || Shseat.equalsIgnoreCase(SeatPrefer)) {
+//								QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//							} else {
+//								QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//							}
+//
+//						} else if (Stops.equalsIgnoreCase("1")) {
+//							String SeatPrefer = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"))
+//									.getText();
+//							System.out.println(" LLhseat " + SeatPrefer);
+//							System.out.println(" Shseat " + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer);
+//
+//							if (Lhseat.equalsIgnoreCase(SeatPrefer) || Shseat.equalsIgnoreCase(SeatPrefer)) {
+//								QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//							} else {
+//								QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//							}
+//							String SeatPrefer1 = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT2']"))
+//									.getText();
+//							System.out.println(" LLhseat " + SeatPrefer);
+//							System.out.println(" Shseat " + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer1);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer1);
+//
+//							if (Lhseat.equalsIgnoreCase(SeatPrefer1) || Shseat.equalsIgnoreCase(SeatPrefer1)) {
+//								QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//							} else {
+//								QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//							}
+//
+//						}
+//					} else if (Trip.equalsIgnoreCase("RoundTrip")) {
+//						if (Stops.equalsIgnoreCase("0")) {
+//							String SeatPrefer = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"))
+//									.getText();
+//							System.out.println(" LLhseat " + SeatPrefer);
+//							System.out.println(" Shseat " + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer);
+//
+//							if (Lhseat.equalsIgnoreCase(SeatPrefer) || Shseat.equalsIgnoreCase(SeatPrefer)) {
+//								QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//							} else {
+//								QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//							}
+//							String SeatPrefer1 = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT1']"))
+//									.getText();
+//							System.out.println(" LLhseat " + SeatPrefer);
+//							System.out.println(" Shseat " + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer1);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer1);
+//
+//							if (Lhseat.equalsIgnoreCase(SeatPrefer1) || Shseat.equalsIgnoreCase(SeatPrefer1)) {
+//								QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//							} else {
+//								QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//							}
+//
+//						} else if (Stops.equalsIgnoreCase("1")) {
+//							String SeatPrefer = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"))
+//									.getText();
+//							System.out.println(" LLhseat " + SeatPrefer);
+//							System.out.println(" Shseat " + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer);
+//
+//							if (Lhseat.equalsIgnoreCase(SeatPrefer) || Shseat.equalsIgnoreCase(SeatPrefer)) {
+//								QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//							} else {
+//								QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//							}
+//							String SeatPrefer1 = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT1']"))
+//									.getText();
+//							System.out.println(" LLhseat " + SeatPrefer);
+//							System.out.println(" Shseat " + SeatPrefer);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer1);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer1);
+//
+//							if (Lhseat.equalsIgnoreCase(SeatPrefer1) || Shseat.equalsIgnoreCase(SeatPrefer1)) {
+//								QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//							} else {
+//								QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//							}
+//							String SeatPrefer3 = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT2']"))
+//									.getText();
+//							System.out.println(" LLhseat " + SeatPrefer3);
+//							System.out.println(" Shseat " + SeatPrefer3);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer3);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer3);
+//
+//							if (Lhseat.equalsIgnoreCase(SeatPrefer3) || Shseat.equalsIgnoreCase(SeatPrefer3)) {
+//								QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//							} else {
+//								QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//							}
+//							String SeatPrefer4 = QaBrowser.driver
+//									.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT2']"))
+//									.getText();
+//							System.out.println(" LLhseat " + SeatPrefer4);
+//							System.out.println(" Shseat " + SeatPrefer4);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>LLhseat </i></b>" + SeatPrefer4);
+//							QaExtentReport.test.log(Status.INFO, "<b><i>Shseat </i></b>" + SeatPrefer4);
+//
+//							if (Lhseat.equalsIgnoreCase(SeatPrefer4) || Shseat.equalsIgnoreCase(SeatPrefer4)) {
+//								QaExtentReport.test.log(Status.INFO, "<b><i>Seat Preference  is Correct  </i></b>");
+//							} else {
+//								QaExtentReport.test.log(Status.FAIL, "<b><i>Seat Preference  is not correct  </i></b>");
+//
+//							}
+//
+//						}
+//					}
+//				if (Trip.equalsIgnoreCase("OneWay")) {
+//				
+//				
+//				String seatprefer = QaBrowser.driver.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']")).getText();
+//				System.out.println("Created By " + seatprefer);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Created By </i></b>" + seatprefer);
+//				String seatprefer1 = QaBrowser.driver.findElement(By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']")).getText();
+//				System.out.println("Created By " + seatprefer);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Created By </i></b>" + seatprefer1);
+//
+//				if (Lhseat.equalsIgnoreCase(seatprefer)) {
+//					QaExtentReport.test.log(Status.INFO, "<b><i>seatprefer is Correct  </i></b>" + Lhseat);
+//				} else if (Shseat.equalsIgnoreCase("seatprefer1")) { 
+//					QaExtentReport.test.log(Status.FAIL, "<b><i>seatprefer is Different  </i></b>" + Lhseat);
+//				}else {
+//					QaExtentReport.test.log(Status.FAIL, "<b><i>seatprefer is Different  </i></b>" + Lhseat);
+//				}
+//					
+
+					QaExtentReport.extentScreenshot("Seat Preference");
+				}
+			}
+//				SoftAssert softAssert1 = new SoftAssert();
+//				
+//				Thread.sleep(2000);
+//				QaRobot.ClickOnElement("Clickonseatpreferences");
+//				if (Trip.equalsIgnoreCase("OneWay")) {
+//					if (Stops.equalsIgnoreCase("0")) {
+//						QaRobot.scrollPage(500);
+//						Thread.sleep(2000);
+//						try {
+//							QaRobot.ClickOnElement("Clickonseatpre1");
+//							Thread.sleep(3000);
+//							QaExtentReport.extentScreenshot("seat preference1");
+//							Thread.sleep(3000);
+//							WebElement Seatpre = QaBrowser.driver.findElement(
+//									By.xpath("//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"));
+//							Select sel = new Select(Seatpre);
+//							sel.selectByIndex(1);
+//						} catch (Exception e) {
+//							softAssert1.assertTrue(false, "Seat Preferences is not showing");
+//						}
+//						Thread.sleep(3000);
+//						
+//					} else if (Stops.equalsIgnoreCase("1")) {
+//						QaRobot.scrollPage(500);
+//						Thread.sleep(2000);
+//						try {
+//					QaRobot.ClickOnElement("Clickonseatpre1");
+//					Thread.sleep(7000);
+//					QaExtentReport.extentScreenshot("seat preference1");
+//					Thread.sleep(4000);
+//					WebElement Seatpre = QaBrowser.driver.findElement(By.xpath(
+//							"(//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"));
+//					Select sel1 = new Select(Seatpre);
+//					sel1.selectByIndex(1);
+//				} catch (Exception e) {
+//					softAssert1.assertTrue(false, "Seat Preferences1 is not showing");
+//				}
+//						
+//				Thread.sleep(3000);
+//						try {
+//							QaRobot.ClickOnElement("Clickonseatpre2");
+//							Thread.sleep(7000);
+//							QaExtentReport.extentScreenshot("seat preference2");
+//							Thread.sleep(4000);
+//							WebElement Seatpre1 = QaBrowser.driver.findElement(By.xpath(
+//									"(//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT1']"));
+//							Select sel1 = new Select(Seatpre1);
+//							sel1.selectByIndex(1);
+//						} catch (Exception e) {
+//							softAssert1.assertTrue(false, "Seat preferences1  is not showing");
+//						}
+//						Thread.sleep(3000);
+//				}
+//				QaRobot.scrollPage(400);
+//				Thread.sleep(2000);
+//				QaExtentReport.extentScreenshot("Seat Preferences");
+//			}else if (Trip.equalsIgnoreCase("RoundTrip")) {
+//				if (Stops.equalsIgnoreCase("0")) {
+//				QaRobot.scrollPage(500);
+//				Thread.sleep(2000);
+//				try {
+//					QaRobot.ClickOnElement("Clickonseatpre1");
+//					Thread.sleep(3000);
+//					QaExtentReport.extentScreenshot("Clickonseatpre1");
+//					Thread.sleep(3000);
+//					WebElement Clickonseatpre1 = QaBrowser.driver.findElement(By.xpath(
+//							"(//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"));
+//					Select sel1 = new Select(Clickonseatpre1);
+//					sel1.selectByIndex(1);
+//				} catch (Exception e) {
+//					softAssert1.assertTrue(false, "Baggage 1 is not showing");
+//				}
+//				Thread.sleep(3000);
+//				try {
+//					QaRobot.ClickOnElement("Clickonseatpre2");
+//					Thread.sleep(3000);
+//					QaExtentReport.extentScreenshot("Clickonseatpre2");
+//					Thread.sleep(3000);
+//					WebElement seatpre2 = QaBrowser.driver.findElement(By.xpath(
+//							"(//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT1']"));
+//					Select sel2 = new Select(seatpre2);
+//					sel2.selectByIndex(1);
+//				} catch (Exception e) {
+//					softAssert1.assertTrue(false, "Seat preferences is not showing");
+//				}
+//				Thread.sleep(3000);
+//				
+//			} else if (Stops.equalsIgnoreCase("1")) {
+//				QaRobot.scrollPage(500);
+//				Thread.sleep(2000);
+//				try {
+//					QaRobot.ClickOnElement("Clickonseatpre1");
+//					Thread.sleep(3000);
+//					QaExtentReport.extentScreenshot("Clickonseatpre1");
+//					Thread.sleep(3000);
+//					WebElement Seatpre1 = QaBrowser.driver.findElement(By.xpath(
+//							"(//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT1']"));
+//					Select sel1 = new Select(Seatpre1);
+//					sel1.selectByIndex(1);
+//				} catch (Exception e) {
+//					softAssert1.assertTrue(false, "Seat preferences is not showing");
+//				}
+//				Thread.sleep(3000);
+//				try {
+//					QaRobot.ClickOnElement("Clickonseatpre2");
+//					Thread.sleep(3000);
+//					QaExtentReport.extentScreenshot("Clickonseatpre2");
+//					Thread.sleep(3000);
+//					WebElement Seatpre2 = QaBrowser.driver.findElement(By.xpath(
+//							"(//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT1']"));
+//					Select sel2 = new Select(Seatpre2);
+//					sel2.selectByIndex(1);
+//				} catch (Exception e) {
+//					softAssert1.assertTrue(false, "Seat preferences is not showing");
+//				}
+//				Thread.sleep(3000);
+//				try {
+//					QaRobot.ClickOnElement("Clickonseatpre3");
+//					Thread.sleep(7000);
+//					QaExtentReport.extentScreenshot("Clickonseatpre3");
+//					Thread.sleep(4000);
+//					WebElement Seatpref3 = QaBrowser.driver.findElement(By
+//							.xpath("(//select[@id='ctl00_contentMain_ddlSeatPrefOB_ADT2']"));
+//					Select sel3 = new Select(Seatpref3);
+//					sel3.selectByIndex(1);
+//				} catch (Exception e) {
+//					softAssert1.assertTrue(false, "Seat preferences is not showing");
+//				}
+//				Thread.sleep(3000);
+//				try {
+//					QaRobot.ClickOnElement("Clickonseatpre4");
+//					Thread.sleep(7000);
+//					QaExtentReport.extentScreenshot("Clickonseatpre4");
+//					Thread.sleep(4000);
+//					WebElement Seatpref4 = QaBrowser.driver.findElement(By
+//							.xpath("(//select[@id='ctl00_contentMain_ddlSeatPrefIB_ADT2']"));
+//					Select sel3 = new Select(Seatpref4);
+//					sel3.selectByIndex(1);
+//				} catch (Exception e) {
+//					softAssert1.assertTrue(false, "Seat preferences is not showing");
+//				}
+//				Thread.sleep(3000);
+//			}
+//			}
+//				softAssert1.assertAll();
+//			}
+
 			QaExtentReport.extentScreenshot("Checkout Page");
 
 //			if (CheckOutRuleStatus.equalsIgnoreCase("Applied")) {
@@ -2002,19 +2498,30 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 				if (FareBranding.equalsIgnoreCase("Off")) {
 					if (ccode.equalsIgnoreCase("sbt")) {
 						WebElement element = QaBrowser.driver
-								.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
+								.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169073']"));
 						Select sel = new Select(element);
 						sel.selectByIndex(1);
 						Thread.sleep(3000);
-						QaRobot.ClickOnElement("ow_billtobranch");
+						WebElement element1 = QaBrowser.driver
+								.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169076']"));
+						Select sel1 = new Select(element1);
+						sel1.selectByIndex(1);
+						Thread.sleep(3000);
+
+//						QaRobot.ClickOnElement("ow_billtobranch");
 					}
 					if (ccode.equalsIgnoreCase("preprod117")) {
 						WebElement element = QaBrowser.driver
-								.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
+								.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169073']"));
 						Select sel = new Select(element);
 						sel.selectByIndex(1);
 						Thread.sleep(3000);
-						QaRobot.ClickOnElement("ow_billtobranch");
+						WebElement element1 = QaBrowser.driver
+								.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169076']"));
+						Select sel1 = new Select(element1);
+						sel1.selectByIndex(1);
+						Thread.sleep(3000);
+//						QaRobot.ClickOnElement("ow_billtobranch");
 					}
 				}
 				if (FareBranding.equalsIgnoreCase("On")) {
@@ -2249,7 +2756,7 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 //							Select sel1 = new Select(element1);
 //							sel1.selectByIndex(1);
 //							Thread.sleep(3000);
-							QaExtentReport.extentScreenshot("Baggage and Meals");
+//							QaExtentReport.extentScreenshot("Baggage and Meals");
 							softAssert.assertAll();
 						} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
 //							WebElement element = QaBrowser.driver
@@ -2498,7 +3005,7 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 //							Select sel1 = new Select(element1);
 //							sel1.selectByIndex(1);
 //							Thread.sleep(3000);
-							QaExtentReport.extentScreenshot("Baggage and Meals");
+//							QaExtentReport.extentScreenshot("Baggage and Meals");
 							softAssert.assertAll();
 						} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
 //							WebElement element = QaBrowser.driver
@@ -2524,1651 +3031,1671 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 				QaRobot.scrollPage(1000);
 				QaRobot.ClickOnElement("ow_chkterms");
 //				QaExtentReport.test.log(Status.INFO, "<b><i>check the terms and condition</i></b>");
-//				if (ccode.equalsIgnoreCase("sbt")) {
-//					if (OneWayAirLine.equalsIgnoreCase("Air India") || RoundTripAirLine.equalsIgnoreCase("Air India")
-//							|| OneWayAirLine.equalsIgnoreCase("Vistara")
-//							|| RoundTripAirLine.equalsIgnoreCase("Vistara")) {
-//						QaRobot.ClickOnElement("ow_chkbookP");
-//					} else {
-//						QaRobot.ClickOnElement("ow_chkbook");
-//					}
-//				} else if (ccode.equalsIgnoreCase("preprod117")) {
-//					if (OneWayAirLine.equalsIgnoreCase("Air India") || RoundTripAirLine.equalsIgnoreCase("Air India")
-//							|| OneWayAirLine.equalsIgnoreCase("Vistara")
-//							|| RoundTripAirLine.equalsIgnoreCase("Vistara")) {
-//						QaRobot.ClickOnElement("ow_chkbookP");
-//					} else {
-//						QaRobot.ClickOnElement("ow_chkbook");
-//					}
-//
-//				}
+				if (ccode.equalsIgnoreCase("sbt")) {
+					if (OneWayAirLine.equalsIgnoreCase("Air India") || RoundTripAirLine.equalsIgnoreCase("Air India")
+							|| OneWayAirLine.equalsIgnoreCase("Vistara")
+							|| RoundTripAirLine.equalsIgnoreCase("Vistara")) {
+						QaRobot.ClickOnElement("ow_chkbookP");
+					} else {
+						QaRobot.ClickOnElement("ow_chkbook");
+					}
+				} else if (ccode.equalsIgnoreCase("preprod117")) {
+					if (OneWayAirLine.equalsIgnoreCase("Air India") || RoundTripAirLine.equalsIgnoreCase("Air India")
+							|| OneWayAirLine.equalsIgnoreCase("Vistara")
+							|| RoundTripAirLine.equalsIgnoreCase("Vistara")) {
+						QaRobot.ClickOnElement("ow_chkbookP");
+					} else {
+						QaRobot.ClickOnElement("ow_chkbook");
+					}
+
+				}
 //////				QaExtentReport.test.log(Status.INFO,
 //////						"<b><i>book button to proceed the booking from checkout page</i></b>");
-//				if (SeatSelection.equalsIgnoreCase("Yes")) {
-//					String ParentWindow1 = QaBrowser.driver.getWindowHandle();
-//					Set<String> handles1 = QaBrowser.driver.getWindowHandles();
-//					for (String childWindow1 : handles1) {
-//						if (!childWindow1.equals(ParentWindow1))
-//							QaBrowser.driver.switchTo().window(childWindow1);
-//					}
-//					QaRobot.ClickOnElement("SeatSelect");
-//					Thread.sleep(5000);
-//					QaBrowser.driver.switchTo().window(ParentWindow1);
-//					String SelectSeat[] = AdultSeatSelection.split(",");
-//					String Seat1 = SelectSeat[0];
-//					String Seat2 = SelectSeat[1];
-//					String Seat3 = SelectSeat[2];
-//					String Seat4 = SelectSeat[3];
-//					String CSelectSeat[] = ChildSeatSelection.split(",");
-//					String CSeat1 = CSelectSeat[0];
-//					String CSeat2 = CSelectSeat[1];
-////					String CSeat3 = CSelectSeat[2];
-//					if (searchType.equalsIgnoreCase("Individual")) {
-//						if (Trip.equalsIgnoreCase("OneWay")) {
-//							if (Stops.equalsIgnoreCase("0")) {
-//								List<WebElement> listOfRights1 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights1 : listOfRights1) {
-//									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//										autoRights1.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//							} else if (Stops.equalsIgnoreCase("1")) {
-//								List<WebElement> listOfRights1 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights1 : listOfRights1) {
-//									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//										autoRights1.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//								Thread.sleep(3000);
-//								List<WebElement> listOfRights2 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights2 : listOfRights2) {
-//									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//										autoRights2.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//							} else if (Stops.equalsIgnoreCase("2")) {
-//								List<WebElement> listOfRights1 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights1 : listOfRights1) {
-//									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//										autoRights1.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//								Thread.sleep(3000);
-//								List<WebElement> listOfRights2 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights2 : listOfRights2) {
-//									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//										autoRights2.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//								Thread.sleep(3000);
-//								List<WebElement> listOfRights3 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights3 : listOfRights3) {
-//									if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//										autoRights3.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//							}
-//						} else if (Trip.equalsIgnoreCase("RoundTrip")) {
-//							if (Stops.equalsIgnoreCase("0")) {
-//								List<WebElement> listOfRights1 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights1 : listOfRights1) {
-//									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//										autoRights1.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//								Thread.sleep(3000);
-//								List<WebElement> listOfRights2 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights2 : listOfRights2) {
-//									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//										autoRights2.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//							} else if (Stops.equalsIgnoreCase("1")) {
-//								List<WebElement> listOfRights1 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights1 : listOfRights1) {
-//									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//										autoRights1.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//								Thread.sleep(3000);
-//								List<WebElement> listOfRights2 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights2 : listOfRights2) {
-//									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//										autoRights2.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//								Thread.sleep(3000);
-//								List<WebElement> listOfRights3 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights3 : listOfRights3) {
-//									if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//										autoRights3.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//								Thread.sleep(3000);
-//								List<WebElement> listOfRights4 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights4 : listOfRights4) {
-//									if (autoRights4.getText().equalsIgnoreCase(Seat4)) {
-//										autoRights4.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//							}
-//						}
-//					} else {
-//						if (Trip.equalsIgnoreCase("OneWay")) {
-//							if (Stops.equalsIgnoreCase("0")) {
-//								if (adult.equalsIgnoreCase("1")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("2")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat2");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("3")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat2");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat3");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights3 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights3 : listOfRights3) {
-//										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights3.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								}
-//								if (child.equalsIgnoreCase("1")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//									}
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (child.equalsIgnoreCase("2")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat4");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									}
-//								}
-//								QaRobot.ClickOnElement("OW_ContinueBooking");
-//							} else if (Stops.equalsIgnoreCase("1")) {
-//								if (adult.equalsIgnoreCase("1")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("2")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat2");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("3")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat2");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat3");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights3 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights3 : listOfRights3) {
-//										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights3.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								}
-//								if (child.equalsIgnoreCase("1")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//									}
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (child.equalsIgnoreCase("2")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat4");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									}
-//								}
-//								QaRobot.ClickOnElement("OW_ContinueBooking");
-//								Thread.sleep(5000);
-//								if (adult.equalsIgnoreCase("1")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("2")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat5");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("3")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat5");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat6");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights3 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights3 : listOfRights3) {
-//										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights3.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								}
-//								if (child.equalsIgnoreCase("1")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat5");
-//										Thread.sleep(3000);
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat6");
-//										Thread.sleep(3000);
-//									}
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (child.equalsIgnoreCase("2")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat4");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									}
-//								}
-//								QaRobot.ClickOnElement("OW_ContinueBooking");
-//							} else if (Stops.equalsIgnoreCase("2")) {
-//								List<WebElement> listOfRights1 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights1 : listOfRights1) {
-//									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//										autoRights1.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//								Thread.sleep(3000);
-//								List<WebElement> listOfRights2 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights2 : listOfRights2) {
-//									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//										autoRights2.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//								Thread.sleep(3000);
-//								List<WebElement> listOfRights3 = QaBrowser.driver
-//										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//								for (WebElement autoRights3 : listOfRights3) {
-//									if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//										autoRights3.click();
-//										QaExtentReport.extentScreenshot("Seat Selection Page");
-//										Thread.sleep(5000);
-//										QaRobot.ClickOnElement("OW_ContinueBooking");
-//										break;
-//									}
-//								}
-//							}
-//						} else if (Trip.equalsIgnoreCase("RoundTrip")) {
-//							if (Stops.equalsIgnoreCase("0")) {
-//								if (adult.equalsIgnoreCase("1")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("2")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat2");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("3")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat2");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat3");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights3 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights3 : listOfRights3) {
-//										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights3.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								}
-//								if (child.equalsIgnoreCase("1")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//									}
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (child.equalsIgnoreCase("2")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat4");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									}
-//								}
-//								QaRobot.ClickOnElement("OW_ContinueBooking");
-//								Thread.sleep(3000);
-//								if (adult.equalsIgnoreCase("1")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("2")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat5");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("3")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat5");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat6");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights3 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights3 : listOfRights3) {
-//										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights3.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								}
-//								if (child.equalsIgnoreCase("1")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat4");
-//										Thread.sleep(3000);
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat6");
-//										Thread.sleep(3000);
-//									}
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (child.equalsIgnoreCase("2")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat4");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat5");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat5");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat6");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									}
-//								}
-//								QaRobot.ClickOnElement("OW_ContinueBooking");
-//							} else if (Stops.equalsIgnoreCase("1")) {
-//								if (adult.equalsIgnoreCase("1")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("2")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat2");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("3")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat2");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat3");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights3 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights3 : listOfRights3) {
-//										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights3.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								}
-//								if (child.equalsIgnoreCase("1")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//									}
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (child.equalsIgnoreCase("2")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat4");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									}
-//								}
-//								QaRobot.ClickOnElement("OW_ContinueBooking");
-//								Thread.sleep(5000);
-//								QaRobot.ClickOnElement("Seat4");
-//								Thread.sleep(3000);
-//								if (adult.equalsIgnoreCase("1")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("2")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat5");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat4)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("3")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat5");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat6");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights3 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights3 : listOfRights3) {
-//										if (autoRights3.getText().equalsIgnoreCase(Seat4)) {
-//											autoRights3.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								}
-//								if (child.equalsIgnoreCase("1")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat4");
-//										Thread.sleep(3000);
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat6");
-//										Thread.sleep(3000);
-//									}
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(CSeat2)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (child.equalsIgnoreCase("2")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat4");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									}
-//								}
-//								QaRobot.ClickOnElement("OW_ContinueBooking");
-//								Thread.sleep(5000);
-//								if (adult.equalsIgnoreCase("1")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("2")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat8");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("3")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat8");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat9");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights3 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights3 : listOfRights3) {
-//										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights3.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								}
-//								if (child.equalsIgnoreCase("1")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat9");
-//										Thread.sleep(3000);
-//									}
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (child.equalsIgnoreCase("2")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat2");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat10");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat3");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat10");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									}
-//								}
-//								QaRobot.ClickOnElement("OW_ContinueBooking");
-//								Thread.sleep(5000);
-//								if (adult.equalsIgnoreCase("1")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("2")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat11");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat4)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (adult.equalsIgnoreCase("3")) {
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(Seat2)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat11");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights2 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights2 : listOfRights2) {
-//										if (autoRights2.getText().equalsIgnoreCase(Seat3)) {
-//											autoRights2.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//									Thread.sleep(3000);
-//									QaRobot.ClickOnElement("Seat12");
-//									Thread.sleep(3000);
-//									List<WebElement> listOfRights3 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights3 : listOfRights3) {
-//										if (autoRights3.getText().equalsIgnoreCase(Seat4)) {
-//											autoRights3.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								}
-//								if (child.equalsIgnoreCase("1")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat10");
-//										Thread.sleep(3000);
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat12");
-//										Thread.sleep(3000);
-//									}
-//									List<WebElement> listOfRights1 = QaBrowser.driver
-//											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//									for (WebElement autoRights1 : listOfRights1) {
-//										if (autoRights1.getText().equalsIgnoreCase(CSeat2)) {
-//											autoRights1.click();
-//											QaExtentReport.extentScreenshot("Seat Selection Page");
-//											Thread.sleep(5000);
-//											break;
-//										}
-//									}
-//								} else if (child.equalsIgnoreCase("2")) {
-//									if (adult.equalsIgnoreCase("1")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat11");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat12");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									} else if (adult.equalsIgnoreCase("2")) {
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat11");
-//										Thread.sleep(3000);
-//										List<WebElement> listOfRights1 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights1 : listOfRights1) {
-//											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
-//												autoRights1.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//										Thread.sleep(3000);
-//										QaRobot.ClickOnElement("Seat12");
-//										List<WebElement> listOfRights2 = QaBrowser.driver
-//												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
-//										for (WebElement autoRights2 : listOfRights2) {
-//											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
-//												autoRights2.click();
-//												QaExtentReport.extentScreenshot("Seat Selection Page");
-//												Thread.sleep(5000);
-//												break;
-//											}
-//										}
-//									}
-//								}
-//							}
-//							QaRobot.ClickOnElement("OW_ContinueBooking");
-//						}
-//					}
-//				} else if (SeatSelection.equalsIgnoreCase("No")) {
-//					if (ccode.equalsIgnoreCase("sbt")) {
-//						String ParentWindow1 = QaBrowser.driver.getWindowHandle();
-//						Set<String> handles1 = QaBrowser.driver.getWindowHandles();
-//						for (String childWindow1 : handles1) {
-//							if (!childWindow1.equals(ParentWindow1))
-//								QaBrowser.driver.switchTo().window(childWindow1);
-//						}
-//						QaRobot.ClickOnElement("SeatNotSelect");
-////						QaBrowser.driver.switchTo().alert().accept();
-//					} else if (ccode.equalsIgnoreCase("preprod117")) {
-//						String ParentWindow1 = QaBrowser.driver.getWindowHandle();
-//						Set<String> handles1 = QaBrowser.driver.getWindowHandles();
-//						for (String childWindow1 : handles1) {
-//							if (!childWindow1.equals(ParentWindow1))
-//								QaBrowser.driver.switchTo().window(childWindow1);
-//						}
-//						QaRobot.ClickOnElement("SeatNotSelect");
-////						QaBrowser.driver.switchTo().alert().accept();
-//					}
-//				}
-//				Thread.sleep(10000);
-////				String paymentprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']"))
-////						.getText();
-////				System.out.println("Price of payment page " + paymentprice);
-////				QaExtentReport.test.log(Status.INFO, "<b><i>Price of payment page </i></b>" + paymentprice);
-//				// select FOP
-//				if (fop.equalsIgnoreCase("Cash")) {
-//					SBTCheckoutPayment.fopCash(fop, receiptno);
-//				} else if (fop.equalsIgnoreCase("Bill To Company")) {
-//					SBTCheckoutPayment.fopBillToComapnay(fop);
-//					QaRobot.ClickOnElement("click_OK");
-//				} else {
-//					SBTCheckoutPayment.fopCreditDebit(ProductType, card, cardtype, cvv);
-//				}
-//
-//				QaExtentReport.extentScreenshot("Payment Page");
-//				QaRobot.ClickOnElement("ow_paymentprocced");
-////				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
-//				Thread.sleep(2000);
-//				String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']"))
+				if (SeatSelection.equalsIgnoreCase("Yes")) {
+					String ParentWindow1 = QaBrowser.driver.getWindowHandle();
+					Set<String> handles1 = QaBrowser.driver.getWindowHandles();
+					for (String childWindow1 : handles1) {
+						if (!childWindow1.equals(ParentWindow1))
+							QaBrowser.driver.switchTo().window(childWindow1);
+					}
+					QaRobot.ClickOnElement("SeatSelect");
+					Thread.sleep(5000);
+					QaBrowser.driver.switchTo().window(ParentWindow1);
+					String SelectSeat[] = AdultSeatSelection.split(",");
+					String Seat1 = SelectSeat[0];
+					String Seat2 = SelectSeat[1];
+					String Seat3 = SelectSeat[2];
+					String Seat4 = SelectSeat[3];
+					String CSelectSeat[] = ChildSeatSelection.split(",");
+					String CSeat1 = CSelectSeat[0];
+					String CSeat2 = CSelectSeat[1];
+//					String CSeat3 = CSelectSeat[2];
+					if (searchType.equalsIgnoreCase("Individual")) {
+						if (Trip.equalsIgnoreCase("OneWay")) {
+							if (Stops.equalsIgnoreCase("0")) {
+								List<WebElement> listOfRights1 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights1 : listOfRights1) {
+									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+										autoRights1.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+							} else if (Stops.equalsIgnoreCase("1")) {
+								List<WebElement> listOfRights1 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights1 : listOfRights1) {
+									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+										autoRights1.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+								Thread.sleep(3000);
+								List<WebElement> listOfRights2 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights2 : listOfRights2) {
+									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+										autoRights2.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+							} else if (Stops.equalsIgnoreCase("2")) {
+								List<WebElement> listOfRights1 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights1 : listOfRights1) {
+									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+										autoRights1.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+								Thread.sleep(3000);
+								List<WebElement> listOfRights2 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights2 : listOfRights2) {
+									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+										autoRights2.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+								Thread.sleep(3000);
+								List<WebElement> listOfRights3 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights3 : listOfRights3) {
+									if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+										autoRights3.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+							}
+						} else if (Trip.equalsIgnoreCase("RoundTrip")) {
+							if (Stops.equalsIgnoreCase("0")) {
+								List<WebElement> listOfRights1 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights1 : listOfRights1) {
+									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+										autoRights1.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+								Thread.sleep(3000);
+								List<WebElement> listOfRights2 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights2 : listOfRights2) {
+									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+										autoRights2.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+							} else if (Stops.equalsIgnoreCase("1")) {
+								List<WebElement> listOfRights1 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights1 : listOfRights1) {
+									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+										autoRights1.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+								Thread.sleep(3000);
+								List<WebElement> listOfRights2 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights2 : listOfRights2) {
+									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+										autoRights2.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+								Thread.sleep(3000);
+								List<WebElement> listOfRights3 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights3 : listOfRights3) {
+									if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+										autoRights3.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+								Thread.sleep(3000);
+								List<WebElement> listOfRights4 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights4 : listOfRights4) {
+									if (autoRights4.getText().equalsIgnoreCase(Seat4)) {
+										autoRights4.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+							}
+						}
+					} else {
+						if (Trip.equalsIgnoreCase("OneWay")) {
+							if (Stops.equalsIgnoreCase("0")) {
+								if (adult.equalsIgnoreCase("1")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("2")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat2");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("3")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat2");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat3");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights3 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights3 : listOfRights3) {
+										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+											autoRights3.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								}
+								if (child.equalsIgnoreCase("1")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+									}
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (child.equalsIgnoreCase("2")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat4");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									}
+								}
+								QaRobot.ClickOnElement("OW_ContinueBooking");
+							} else if (Stops.equalsIgnoreCase("1")) {
+								if (adult.equalsIgnoreCase("1")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("2")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat2");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("3")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat2");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat3");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights3 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights3 : listOfRights3) {
+										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+											autoRights3.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								}
+								if (child.equalsIgnoreCase("1")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+									}
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (child.equalsIgnoreCase("2")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat4");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									}
+								}
+								QaRobot.ClickOnElement("OW_ContinueBooking");
+								Thread.sleep(5000);
+								if (adult.equalsIgnoreCase("1")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("2")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat5");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("3")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat5");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat6");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights3 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights3 : listOfRights3) {
+										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+											autoRights3.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								}
+								if (child.equalsIgnoreCase("1")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat5");
+										Thread.sleep(3000);
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat6");
+										Thread.sleep(3000);
+									}
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (child.equalsIgnoreCase("2")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat4");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									}
+								}
+								QaRobot.ClickOnElement("OW_ContinueBooking");
+							} else if (Stops.equalsIgnoreCase("2")) {
+								List<WebElement> listOfRights1 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights1 : listOfRights1) {
+									if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+										autoRights1.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+								Thread.sleep(3000);
+								List<WebElement> listOfRights2 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights2 : listOfRights2) {
+									if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+										autoRights2.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+								Thread.sleep(3000);
+								List<WebElement> listOfRights3 = QaBrowser.driver
+										.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+								for (WebElement autoRights3 : listOfRights3) {
+									if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+										autoRights3.click();
+										QaExtentReport.extentScreenshot("Seat Selection Page");
+										Thread.sleep(5000);
+										QaRobot.ClickOnElement("OW_ContinueBooking");
+										break;
+									}
+								}
+							}
+						} else if (Trip.equalsIgnoreCase("RoundTrip")) {
+							if (Stops.equalsIgnoreCase("0")) {
+								if (adult.equalsIgnoreCase("1")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("2")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat2");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("3")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat2");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat3");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights3 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights3 : listOfRights3) {
+										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+											autoRights3.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								}
+								if (child.equalsIgnoreCase("1")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+									}
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (child.equalsIgnoreCase("2")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat4");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									}
+								}
+								QaRobot.ClickOnElement("OW_ContinueBooking");
+								Thread.sleep(3000);
+								if (adult.equalsIgnoreCase("1")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("2")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat5");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("3")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat5");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat6");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights3 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights3 : listOfRights3) {
+										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+											autoRights3.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								}
+								if (child.equalsIgnoreCase("1")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat4");
+										Thread.sleep(3000);
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat6");
+										Thread.sleep(3000);
+									}
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (child.equalsIgnoreCase("2")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat4");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat5");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat5");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat6");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									}
+								}
+								QaRobot.ClickOnElement("OW_ContinueBooking");
+							} else if (Stops.equalsIgnoreCase("1")) {
+								if (adult.equalsIgnoreCase("1")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("2")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat2");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("3")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat2");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat3");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights3 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights3 : listOfRights3) {
+										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+											autoRights3.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								}
+								if (child.equalsIgnoreCase("1")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+									}
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (child.equalsIgnoreCase("2")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat4");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									}
+								}
+								QaRobot.ClickOnElement("OW_ContinueBooking");
+								Thread.sleep(5000);
+								QaRobot.ClickOnElement("Seat4");
+								Thread.sleep(3000);
+								if (adult.equalsIgnoreCase("1")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat2)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("2")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat3)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat5");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat4)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("3")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat2)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat5");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat3)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat6");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights3 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights3 : listOfRights3) {
+										if (autoRights3.getText().equalsIgnoreCase(Seat4)) {
+											autoRights3.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								}
+								if (child.equalsIgnoreCase("1")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat4");
+										Thread.sleep(3000);
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat6");
+										Thread.sleep(3000);
+									}
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(CSeat2)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (child.equalsIgnoreCase("2")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat4");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									}
+								}
+								QaRobot.ClickOnElement("OW_ContinueBooking");
+								Thread.sleep(5000);
+								if (adult.equalsIgnoreCase("1")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("2")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat8");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("3")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat8");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat2)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat9");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights3 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights3 : listOfRights3) {
+										if (autoRights3.getText().equalsIgnoreCase(Seat3)) {
+											autoRights3.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								}
+								if (child.equalsIgnoreCase("1")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat9");
+										Thread.sleep(3000);
+									}
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (child.equalsIgnoreCase("2")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat2");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat10");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat3");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat10");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									}
+								}
+								QaRobot.ClickOnElement("OW_ContinueBooking");
+								Thread.sleep(5000);
+								if (adult.equalsIgnoreCase("1")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat2)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("2")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat3)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat11");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat4)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (adult.equalsIgnoreCase("3")) {
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(Seat2)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat11");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights2 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights2 : listOfRights2) {
+										if (autoRights2.getText().equalsIgnoreCase(Seat3)) {
+											autoRights2.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+									Thread.sleep(3000);
+									QaRobot.ClickOnElement("Seat12");
+									Thread.sleep(3000);
+									List<WebElement> listOfRights3 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights3 : listOfRights3) {
+										if (autoRights3.getText().equalsIgnoreCase(Seat4)) {
+											autoRights3.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								}
+								if (child.equalsIgnoreCase("1")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat10");
+										Thread.sleep(3000);
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat12");
+										Thread.sleep(3000);
+									}
+									List<WebElement> listOfRights1 = QaBrowser.driver
+											.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+									for (WebElement autoRights1 : listOfRights1) {
+										if (autoRights1.getText().equalsIgnoreCase(CSeat2)) {
+											autoRights1.click();
+											QaExtentReport.extentScreenshot("Seat Selection Page");
+											Thread.sleep(5000);
+											break;
+										}
+									}
+								} else if (child.equalsIgnoreCase("2")) {
+									if (adult.equalsIgnoreCase("1")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat11");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat12");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									} else if (adult.equalsIgnoreCase("2")) {
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat11");
+										Thread.sleep(3000);
+										List<WebElement> listOfRights1 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights1 : listOfRights1) {
+											if (autoRights1.getText().equalsIgnoreCase(CSeat1)) {
+												autoRights1.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+										Thread.sleep(3000);
+										QaRobot.ClickOnElement("Seat12");
+										List<WebElement> listOfRights2 = QaBrowser.driver
+												.findElements(By.xpath("//div[@id='divLayout']/div//div/a/div"));
+										for (WebElement autoRights2 : listOfRights2) {
+											if (autoRights2.getText().equalsIgnoreCase(CSeat2)) {
+												autoRights2.click();
+												QaExtentReport.extentScreenshot("Seat Selection Page");
+												Thread.sleep(5000);
+												break;
+											}
+										}
+									}
+								}
+							}
+							QaRobot.ClickOnElement("OW_ContinueBooking");
+						}
+					}
+				} else if (SeatSelection.equalsIgnoreCase("No")) {
+					if (ccode.equalsIgnoreCase("sbt")) {
+						String ParentWindow1 = QaBrowser.driver.getWindowHandle();
+						Set<String> handles1 = QaBrowser.driver.getWindowHandles();
+						for (String childWindow1 : handles1) {
+							if (!childWindow1.equals(ParentWindow1))
+								QaBrowser.driver.switchTo().window(childWindow1);
+						}
+						if (OneWayAirLine.equalsIgnoreCase("Akasa Air")
+								|| RoundTripAirLine.equalsIgnoreCase("Akasa Air")
+								|| OneWayAirLine.equalsIgnoreCase("Indigo")
+								|| RoundTripAirLine.equalsIgnoreCase("Indigo")
+								|| OneWayAirLine.equalsIgnoreCase("Air Asia")
+								|| RoundTripAirLine.equalsIgnoreCase("Air Asia")) {
+
+							QaRobot.ClickOnElement("SeatNotSelect");
+						} else {
+							QaBrowser.driver.switchTo().alert().accept();
+						}
+
+					} else if (ccode.equalsIgnoreCase("preprod117")) {
+						String ParentWindow1 = QaBrowser.driver.getWindowHandle();
+						Set<String> handles1 = QaBrowser.driver.getWindowHandles();
+						for (String childWindow1 : handles1) {
+							if (!childWindow1.equals(ParentWindow1))
+								QaBrowser.driver.switchTo().window(childWindow1);
+						}
+						if (OneWayAirLine.equalsIgnoreCase("Akasa Air")
+								|| RoundTripAirLine.equalsIgnoreCase("Akasa Air")
+								|| OneWayAirLine.equalsIgnoreCase("Indigo")
+								|| RoundTripAirLine.equalsIgnoreCase("Indigo")
+								|| OneWayAirLine.equalsIgnoreCase("Air Asia")
+								|| RoundTripAirLine.equalsIgnoreCase("Air Asia")) {
+
+							QaRobot.ClickOnElement("SeatNotSelect");
+						} else {
+							QaBrowser.driver.switchTo().alert().accept();
+						}
+//					
+					}
+				}
+				Thread.sleep(10000);
+//				String paymentprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']"))
 //						.getText();
-//				System.out.println("Booking Status is " + bookingStatus);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
-//				// Confirmation code
-//				String pnr = QaBrowser.driver.findElement(By.xpath("//p[@class='nc_status_p']")).getText();
-//				System.out.println("PNR is " + pnr);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
-//				// Confirm page price
-////				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
-////						.getText();
-////				System.out.println("Confirm Page Price is " + confirmePrice);
-////				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
-//				// Booking id
-//				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
-//				String a[] = bookingID.split(" ");
-//				String number = a[2];
-//				System.out.println("Booking ID is " + number);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
-//				QaExtentReport.extentScreenshot("Confirm Page");
-//
+//				System.out.println("Price of payment page " + paymentprice);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Price of payment page </i></b>" + paymentprice);
+				// select FOP
+				if (fop.equalsIgnoreCase("Cash")) {
+					SBTCheckoutPayment.fopCash(fop, receiptno);
+				} else if (fop.equalsIgnoreCase("Bill To Company")) {
+					SBTCheckoutPayment.fopBillToComapnay(fop);
+					QaRobot.ClickOnElement("click_OK");
+				} else {
+					SBTCheckoutPayment.fopCreditDebit(ProductType, card, cardtype, cvv);
+				}
+
+				QaExtentReport.extentScreenshot("Payment Page");
+				QaRobot.ClickOnElement("ow_paymentprocced");
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
+				Thread.sleep(2000);
+				String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']"))
+						.getText();
+				System.out.println("Booking Status is " + bookingStatus);
+				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
+				// Confirmation code
+				String pnr = QaBrowser.driver.findElement(By.xpath("//div[@id='ctl00_contentMain_flt_details']/div[1]/div[1]/div[2]/p/span[2]")).getText();
+				System.out.println("PNR is " + pnr);
+				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
+				// Confirm page price
+//				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
+//						.getText();
+//				System.out.println("Confirm Page Price is " + confirmePrice);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
+				// Booking id
+				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
+				String a[] = bookingID.split(" ");
+				String number = a[2];
+				System.out.println("Booking ID is " + number);
+				QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
+				QaExtentReport.extentScreenshot("Confirm Page");
+
 //				QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']",
 //						"//span[@id='ctl00_HeaderTop_lblBookingQueue']");
 ////				QaExtentReport.extentScreenshot("CorporateDashboard Page");
