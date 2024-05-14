@@ -97,7 +97,7 @@ public class BusinessHotelTrip {
 ////			}
 //		}
 		Thread.sleep(3000);
-//		QaRobot.ClickOnElement("NotificationClose");
+		QaRobot.ClickOnElement("NotificationClose");
 		Thread.sleep(2000);
 		QaRobot.ClickOnElement("search_hotel");
 		Thread.sleep(2000);
@@ -479,13 +479,13 @@ public class BusinessHotelTrip {
 		if (Resultpagestep.equalsIgnoreCase("Add to Cart")) {
 			if (DashboardType.equalsIgnoreCase("Old")) {
 //					if (Server.equalsIgnoreCase("Staging") || Server.equalsIgnoreCase("Xchange")) {
-//						String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy3')])[3]"))
-//								.getText();
-//						QaExtentReport.extentScreenshot("Flight Results");
-//						QaRobot.ClickOnElement("AddToCartHotelCX");
-//						if (getT.equalsIgnoreCase("Out Of Policy")) {
-//							QaRobot.alertAccept();
-//						}
+						String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy3')])[3]"))
+								.getText();
+						QaExtentReport.extentScreenshot("Flight Results");
+						QaRobot.ClickOnElement("Addtocartlive");
+						if (getT.equalsIgnoreCase("Out Of Policy")) {
+							QaRobot.alertAccept();
+						}
 //					} else if (Server.equalsIgnoreCase("tpstg")) {
 //						String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy4')])[3]"))
 //								.getText();

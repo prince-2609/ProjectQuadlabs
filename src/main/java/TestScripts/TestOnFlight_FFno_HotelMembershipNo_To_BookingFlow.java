@@ -144,7 +144,7 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 //		}
 //		QaRobot.ClickOnElement("FFSave");
 //		Thread.sleep(3000);
-//		QaExtentReport.extentScreenshot("preferences has been saved successfully.");
+//		QaExtentReport.extentScreenshot("Preferences has been saved successfully.");
 
 		TestBase.Companycode(ccode, URL);
 		QaRobot.impliwait(30);
@@ -554,6 +554,9 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 					} else if (Resultpagestep.equalsIgnoreCase("Flight Book")) {
 						QaExtentReport.extentScreenshot("Result Page1");
 //						QaRobot.ClickOnElement("InPolicyTab");
+						String policytype = QaBrowser.driver
+								.findElement(By.xpath("(//span[contains(@id,'PT_')])[" + policyindex + "]")).getText();
+						System.out.println(policytype);
 						Thread.sleep(3000);
 						WebElement Outbound = QaBrowser.driver.findElement(
 								By.xpath("(//input[contains(@id,'radio_Outbound')])[" + booknowindex + "]"));
@@ -2485,15 +2488,15 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 //				}
 //				softAssert.assertAll();
 //			}
-			if (searchType.equalsIgnoreCase("Dependent")) {
-				SBTCheckoutPayment.CheckoutForFlightDependent(adult, child, infant);
-			}
+//			if (searchType.equalsIgnoreCase("Dependent")) {
+//				SBTCheckoutPayment.CheckoutForFlightDependent(adult, child, infant);
+//			}
 			if (checkoutPageStep.equalsIgnoreCase("Hold and quote")) {
 				QaRobot.ClickOnElement("ow_chkterms");
 //				QaExtentReport.test.log(Status.INFO, "<b><i>check the terms and condition</i></b>");
-				SBTCheckoutPayment.holdAndQuote();
+//				SBTCheckoutPayment.holdAndQuote();
 			} else if (checkoutPageStep.equalsIgnoreCase("Quote")) {
-				SBTCheckoutPayment.checkoutFlightQuote(airReasonCode);
+//				SBTCheckoutPayment.checkoutFlightQuote(airReasonCode);
 			} else if (checkoutPageStep.equalsIgnoreCase("Fullfillment")) {
 				if (FareBranding.equalsIgnoreCase("Off")) {
 					if (ccode.equalsIgnoreCase("sbt")) {
@@ -2524,509 +2527,509 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 //						QaRobot.ClickOnElement("ow_billtobranch");
 					}
 				}
-				if (FareBranding.equalsIgnoreCase("On")) {
-					SoftAssert softAssert = new SoftAssert();
-					if (ccode.equalsIgnoreCase("sbt")) {
-						if (ProductType.equalsIgnoreCase("Flight")) {
-//							if (Trip.equalsIgnoreCase("OneWay")) {
-//								if (Stops.equalsIgnoreCase("0")) {
-//									QaRobot.scrollPage(500);
-//									Thread.sleep(2000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage1");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 1");
-//										Thread.sleep(3000);
-//										WebElement Baggage = QaBrowser.driver.findElement(
-//												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
-//										Select sel = new Select(Baggage);
-//										sel.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals1");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 1");
-//										Thread.sleep(4000);
-//										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
-//										Select sel1 = new Select(Meals1);
-//										sel1.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Meal is not showing");
-//									}
-//									Thread.sleep(3000);
-//								} else if (Stops.equalsIgnoreCase("1")) {
-//									QaRobot.scrollPage(500);
-//									Thread.sleep(2000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage1");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 1");
-//										Thread.sleep(3000);
-//										WebElement Baggage = QaBrowser.driver.findElement(
-//												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
-//										Select sel = new Select(Baggage);
-//										sel.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals1");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 1");
-//										Thread.sleep(4000);
-//										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
-//										Select sel1 = new Select(Meals1);
-//										sel1.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Meal 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals2");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 2");
-//										Thread.sleep(4000);
-//										WebElement Meals2 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[2]"));
-//										Select sel2 = new Select(Meals2);
-//										sel2.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Meal 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//								}
-//							} else if (Trip.equalsIgnoreCase("RoundTrip")) {
-//								if (Stops.equalsIgnoreCase("0")) {
-//									QaRobot.scrollPage(500);
-//									Thread.sleep(2000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage1");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 1");
-//										Thread.sleep(3000);
-//										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
-//										Select sel1 = new Select(Baggage1);
-//										sel1.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage2");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 2");
-//										Thread.sleep(3000);
-//										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
-//										Select sel2 = new Select(Baggage2);
-//										sel2.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals1");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 1");
-//										Thread.sleep(4000);
-//										WebElement Meals1 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
-//										Select sel3 = new Select(Meals1);
-//										sel3.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Outbound Meal is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals2");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 2");
-//										Thread.sleep(4000);
-//										WebElement Meals2 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
-//										Select sel4 = new Select(Meals2);
-//										sel4.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Inbound Meal is not showing");
-//									}
-//									Thread.sleep(3000);
-//								} else if (Stops.equalsIgnoreCase("1")) {
-//									QaRobot.scrollPage(500);
-//									Thread.sleep(2000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage1");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 1");
-//										Thread.sleep(3000);
-//										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
-//										Select sel1 = new Select(Baggage1);
-//										sel1.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage2");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 2");
-//										Thread.sleep(3000);
-//										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
-//										Select sel2 = new Select(Baggage2);
-//										sel2.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals1");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 1");
-//										Thread.sleep(4000);
-//										WebElement Meals1 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
-//										Select sel3 = new Select(Meals1);
-//										sel3.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Outbound Meal 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals2");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 2");
-//										Thread.sleep(4000);
-//										WebElement Meals2 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
-//										Select sel4 = new Select(Meals2);
-//										sel4.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Outbound Meal 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals3");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 3");
-//										Thread.sleep(4000);
-//										WebElement Meals3 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[3]"));
-//										Select sel5 = new Select(Meals3);
-//										sel5.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Inbound Meal 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals4");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 4");
-//										Thread.sleep(4000);
-//										WebElement Meals4 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[4]"));
-//										Select sel6 = new Select(Meals4);
-//										sel6.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Inbound Meal 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//								}
-//							}
-							String checkoutprice1 = QaBrowser.driver
-									.findElement(By.xpath("//span[@id='ctl00_contentMain_totcashPrice']")).getText();
-							System.out.println(checkoutprice1);
-							QaExtentReport.test.log(Status.INFO,
-									"<b><i>Price after adding Meal and Baggage </i></b>" + checkoutprice1);
-							Thread.sleep(5000);
-							WebElement element = QaBrowser.driver
-									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
-							Select sel = new Select(element);
-							sel.selectByIndex(1);
-							Thread.sleep(3000);
-//							WebElement element1 = QaBrowser.driver.findElement(
-//									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
-//							Select sel1 = new Select(element1);
-//							sel1.selectByIndex(1);
-//							Thread.sleep(3000);
-//							QaExtentReport.extentScreenshot("Baggage and Meals");
-							softAssert.assertAll();
-						} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
+//				if (FareBranding.equalsIgnoreCase("On")) {
+//					SoftAssert softAssert = new SoftAssert();
+//					if (ccode.equalsIgnoreCase("sbt")) {
+//						if (ProductType.equalsIgnoreCase("Flight")) {
+////							if (Trip.equalsIgnoreCase("OneWay")) {
+////								if (Stops.equalsIgnoreCase("0")) {
+////									QaRobot.scrollPage(500);
+////									Thread.sleep(2000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage1");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 1");
+////										Thread.sleep(3000);
+////										WebElement Baggage = QaBrowser.driver.findElement(
+////												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
+////										Select sel = new Select(Baggage);
+////										sel.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals1");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 1");
+////										Thread.sleep(4000);
+////										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
+////										Select sel1 = new Select(Meals1);
+////										sel1.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Meal is not showing");
+////									}
+////									Thread.sleep(3000);
+////								} else if (Stops.equalsIgnoreCase("1")) {
+////									QaRobot.scrollPage(500);
+////									Thread.sleep(2000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage1");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 1");
+////										Thread.sleep(3000);
+////										WebElement Baggage = QaBrowser.driver.findElement(
+////												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
+////										Select sel = new Select(Baggage);
+////										sel.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals1");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 1");
+////										Thread.sleep(4000);
+////										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
+////										Select sel1 = new Select(Meals1);
+////										sel1.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Meal 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals2");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 2");
+////										Thread.sleep(4000);
+////										WebElement Meals2 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[2]"));
+////										Select sel2 = new Select(Meals2);
+////										sel2.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Meal 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////								}
+////							} else if (Trip.equalsIgnoreCase("RoundTrip")) {
+////								if (Stops.equalsIgnoreCase("0")) {
+////									QaRobot.scrollPage(500);
+////									Thread.sleep(2000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage1");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 1");
+////										Thread.sleep(3000);
+////										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
+////										Select sel1 = new Select(Baggage1);
+////										sel1.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage2");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 2");
+////										Thread.sleep(3000);
+////										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
+////										Select sel2 = new Select(Baggage2);
+////										sel2.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals1");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 1");
+////										Thread.sleep(4000);
+////										WebElement Meals1 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
+////										Select sel3 = new Select(Meals1);
+////										sel3.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Outbound Meal is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals2");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 2");
+////										Thread.sleep(4000);
+////										WebElement Meals2 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
+////										Select sel4 = new Select(Meals2);
+////										sel4.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Inbound Meal is not showing");
+////									}
+////									Thread.sleep(3000);
+////								} else if (Stops.equalsIgnoreCase("1")) {
+////									QaRobot.scrollPage(500);
+////									Thread.sleep(2000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage1");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 1");
+////										Thread.sleep(3000);
+////										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
+////										Select sel1 = new Select(Baggage1);
+////										sel1.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage2");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 2");
+////										Thread.sleep(3000);
+////										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
+////										Select sel2 = new Select(Baggage2);
+////										sel2.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals1");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 1");
+////										Thread.sleep(4000);
+////										WebElement Meals1 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
+////										Select sel3 = new Select(Meals1);
+////										sel3.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Outbound Meal 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals2");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 2");
+////										Thread.sleep(4000);
+////										WebElement Meals2 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
+////										Select sel4 = new Select(Meals2);
+////										sel4.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Outbound Meal 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals3");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 3");
+////										Thread.sleep(4000);
+////										WebElement Meals3 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[3]"));
+////										Select sel5 = new Select(Meals3);
+////										sel5.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Inbound Meal 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals4");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 4");
+////										Thread.sleep(4000);
+////										WebElement Meals4 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[4]"));
+////										Select sel6 = new Select(Meals4);
+////										sel6.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Inbound Meal 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////								}
+////							}
+//							String checkoutprice1 = QaBrowser.driver
+//									.findElement(By.xpath("//span[@id='ctl00_contentMain_totcashPrice']")).getText();
+//							System.out.println(checkoutprice1);
+//							QaExtentReport.test.log(Status.INFO,
+//									"<b><i>Price after adding Meal and Baggage </i></b>" + checkoutprice1);
+//							Thread.sleep(5000);
 //							WebElement element = QaBrowser.driver
 //									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
 //							Select sel = new Select(element);
 //							sel.selectByIndex(1);
 //							Thread.sleep(3000);
-//							WebElement element1 = QaBrowser.driver.findElement(
-//									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
-//							Select sel1 = new Select(element1);
-//							sel1.selectByIndex(1);
-//							Thread.sleep(3000);
-//							WebElement element2 = QaBrowser.driver.findElement(
-//									By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDLHHLM']"));
-//							Select sel2 = new Select(element2);
-//							sel2.selectByIndex(1);
-//							Thread.sleep(3000);
-						}
-					} else if (ccode.equalsIgnoreCase("preprod117")) {
-						if (ProductType.equalsIgnoreCase("Flight")) {
-//							if (Trip.equalsIgnoreCase("OneWay")) {
-//								if (Stops.equalsIgnoreCase("0")) {
-//									QaRobot.scrollPage(500);
-//									Thread.sleep(2000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage1");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 1");
-//										Thread.sleep(3000);
-//										WebElement Baggage = QaBrowser.driver.findElement(
-//												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
-//										Select sel = new Select(Baggage);
-//										sel.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals1");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 1");
-//										Thread.sleep(4000);
-//										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
-//										Select sel1 = new Select(Meals1);
-//										sel1.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Meal is not showing");
-//									}
-//									Thread.sleep(3000);
-//								} else if (Stops.equalsIgnoreCase("1")) {
-//									QaRobot.scrollPage(500);
-//									Thread.sleep(2000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage1");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 1");
-//										Thread.sleep(3000);
-//										WebElement Baggage = QaBrowser.driver.findElement(
-//												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
-//										Select sel = new Select(Baggage);
-//										sel.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals1");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 1");
-//										Thread.sleep(4000);
-//										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
-//										Select sel1 = new Select(Meals1);
-//										sel1.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Meal 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals2");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 2");
-//										Thread.sleep(4000);
-//										WebElement Meals2 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[2]"));
-//										Select sel2 = new Select(Meals2);
-//										sel2.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Meal 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//								}
-//							} else if (Trip.equalsIgnoreCase("RoundTrip")) {
-//								if (Stops.equalsIgnoreCase("0")) {
-//									QaRobot.scrollPage(500);
-//									Thread.sleep(2000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage1");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 1");
-//										Thread.sleep(3000);
-//										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
-//										Select sel1 = new Select(Baggage1);
-//										sel1.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage2");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 2");
-//										Thread.sleep(3000);
-//										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
-//										Select sel2 = new Select(Baggage2);
-//										sel2.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals1");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 1");
-//										Thread.sleep(4000);
-//										WebElement Meals1 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
-//										Select sel3 = new Select(Meals1);
-//										sel3.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Outbound Meal is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals2");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 2");
-//										Thread.sleep(4000);
-//										WebElement Meals2 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
-//										Select sel4 = new Select(Meals2);
-//										sel4.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Inbound Meal is not showing");
-//									}
-//									Thread.sleep(3000);
-//								} else if (Stops.equalsIgnoreCase("1")) {
-//									QaRobot.scrollPage(500);
-//									Thread.sleep(2000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage1");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 1");
-//										Thread.sleep(3000);
-//										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
-//										Select sel1 = new Select(Baggage1);
-//										sel1.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("Clickonbaggage2");
-//										Thread.sleep(3000);
-//										QaExtentReport.extentScreenshot("Baggage 2");
-//										Thread.sleep(3000);
-//										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
-//												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
-//										Select sel2 = new Select(Baggage2);
-//										sel2.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Baggage 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals1");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 1");
-//										Thread.sleep(4000);
-//										WebElement Meals1 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
-//										Select sel3 = new Select(Meals1);
-//										sel3.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Outbound Meal 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals2");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 2");
-//										Thread.sleep(4000);
-//										WebElement Meals2 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
-//										Select sel4 = new Select(Meals2);
-//										sel4.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Outbound Meal 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals3");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 3");
-//										Thread.sleep(4000);
-//										WebElement Meals3 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[3]"));
-//										Select sel5 = new Select(Meals3);
-//										sel5.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Inbound Meal 1 is not showing");
-//									}
-//									Thread.sleep(3000);
-//									try {
-//										QaRobot.ClickOnElement("ClickonMeals4");
-//										Thread.sleep(7000);
-//										QaExtentReport.extentScreenshot("Meals 4");
-//										Thread.sleep(4000);
-//										WebElement Meals4 = QaBrowser.driver.findElement(By
-//												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[4]"));
-//										Select sel6 = new Select(Meals4);
-//										sel6.selectByIndex(1);
-//									} catch (Exception e) {
-//										softAssert.assertTrue(false, "Inbound Meal 2 is not showing");
-//									}
-//									Thread.sleep(3000);
-//								}
-//							}
-							String checkoutprice1 = QaBrowser.driver
-									.findElement(By.xpath("//span[@id='ctl00_contentMain_totcashPrice']")).getText();
-							System.out.println(checkoutprice1);
-							QaExtentReport.test.log(Status.INFO,
-									"<b><i>Price after adding Meal and Baggage </i></b>" + checkoutprice1);
-							Thread.sleep(5000);
-							WebElement element = QaBrowser.driver
-									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
-							Select sel = new Select(element);
-							sel.selectByIndex(1);
-							Thread.sleep(3000);
-//							WebElement element1 = QaBrowser.driver.findElement(
-//									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
-//							Select sel1 = new Select(element1);
-//							sel1.selectByIndex(1);
-//							Thread.sleep(3000);
-//							QaExtentReport.extentScreenshot("Baggage and Meals");
-							softAssert.assertAll();
-						} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
+////							WebElement element1 = QaBrowser.driver.findElement(
+////									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
+////							Select sel1 = new Select(element1);
+////							sel1.selectByIndex(1);
+////							Thread.sleep(3000);
+////							QaExtentReport.extentScreenshot("Baggage and Meals");
+//							softAssert.assertAll();
+//						} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
+////							WebElement element = QaBrowser.driver
+////									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
+////							Select sel = new Select(element);
+////							sel.selectByIndex(1);
+////							Thread.sleep(3000);
+////							WebElement element1 = QaBrowser.driver.findElement(
+////									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
+////							Select sel1 = new Select(element1);
+////							sel1.selectByIndex(1);
+////							Thread.sleep(3000);
+////							WebElement element2 = QaBrowser.driver.findElement(
+////									By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDLHHLM']"));
+////							Select sel2 = new Select(element2);
+////							sel2.selectByIndex(1);
+////							Thread.sleep(3000);
+//						}
+//					} else if (ccode.equalsIgnoreCase("preprod117")) {
+//						if (ProductType.equalsIgnoreCase("Flight")) {
+////							if (Trip.equalsIgnoreCase("OneWay")) {
+////								if (Stops.equalsIgnoreCase("0")) {
+////									QaRobot.scrollPage(500);
+////									Thread.sleep(2000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage1");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 1");
+////										Thread.sleep(3000);
+////										WebElement Baggage = QaBrowser.driver.findElement(
+////												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
+////										Select sel = new Select(Baggage);
+////										sel.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals1");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 1");
+////										Thread.sleep(4000);
+////										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
+////										Select sel1 = new Select(Meals1);
+////										sel1.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Meal is not showing");
+////									}
+////									Thread.sleep(3000);
+////								} else if (Stops.equalsIgnoreCase("1")) {
+////									QaRobot.scrollPage(500);
+////									Thread.sleep(2000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage1");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 1");
+////										Thread.sleep(3000);
+////										WebElement Baggage = QaBrowser.driver.findElement(
+////												By.xpath("//select[@id='ctl00_contentMain_ddl_baggageAdt']"));
+////										Select sel = new Select(Baggage);
+////										sel.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals1");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 1");
+////										Thread.sleep(4000);
+////										WebElement Meals1 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[1]"));
+////										Select sel1 = new Select(Meals1);
+////										sel1.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Meal 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals2");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 2");
+////										Thread.sleep(4000);
+////										WebElement Meals2 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddlMealPrefOB_ADT')])[2]"));
+////										Select sel2 = new Select(Meals2);
+////										sel2.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Meal 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////								}
+////							} else if (Trip.equalsIgnoreCase("RoundTrip")) {
+////								if (Stops.equalsIgnoreCase("0")) {
+////									QaRobot.scrollPage(500);
+////									Thread.sleep(2000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage1");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 1");
+////										Thread.sleep(3000);
+////										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
+////										Select sel1 = new Select(Baggage1);
+////										sel1.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage2");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 2");
+////										Thread.sleep(3000);
+////										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
+////										Select sel2 = new Select(Baggage2);
+////										sel2.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals1");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 1");
+////										Thread.sleep(4000);
+////										WebElement Meals1 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
+////										Select sel3 = new Select(Meals1);
+////										sel3.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Outbound Meal is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals2");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 2");
+////										Thread.sleep(4000);
+////										WebElement Meals2 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
+////										Select sel4 = new Select(Meals2);
+////										sel4.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Inbound Meal is not showing");
+////									}
+////									Thread.sleep(3000);
+////								} else if (Stops.equalsIgnoreCase("1")) {
+////									QaRobot.scrollPage(500);
+////									Thread.sleep(2000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage1");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 1");
+////										Thread.sleep(3000);
+////										WebElement Baggage1 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[1]"));
+////										Select sel1 = new Select(Baggage1);
+////										sel1.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("Clickonbaggage2");
+////										Thread.sleep(3000);
+////										QaExtentReport.extentScreenshot("Baggage 2");
+////										Thread.sleep(3000);
+////										WebElement Baggage2 = QaBrowser.driver.findElement(By.xpath(
+////												"(//select[contains(@id,'ctl00_contentMain_ddl_baggageAdt')])[2]"));
+////										Select sel2 = new Select(Baggage2);
+////										sel2.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Baggage 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals1");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 1");
+////										Thread.sleep(4000);
+////										WebElement Meals1 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[1]"));
+////										Select sel3 = new Select(Meals1);
+////										sel3.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Outbound Meal 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals2");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 2");
+////										Thread.sleep(4000);
+////										WebElement Meals2 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[2]"));
+////										Select sel4 = new Select(Meals2);
+////										sel4.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Outbound Meal 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals3");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 3");
+////										Thread.sleep(4000);
+////										WebElement Meals3 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[3]"));
+////										Select sel5 = new Select(Meals3);
+////										sel5.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Inbound Meal 1 is not showing");
+////									}
+////									Thread.sleep(3000);
+////									try {
+////										QaRobot.ClickOnElement("ClickonMeals4");
+////										Thread.sleep(7000);
+////										QaExtentReport.extentScreenshot("Meals 4");
+////										Thread.sleep(4000);
+////										WebElement Meals4 = QaBrowser.driver.findElement(By
+////												.xpath("(//select[contains(@id,'ctl00_contentMain_ddlMealPref')])[4]"));
+////										Select sel6 = new Select(Meals4);
+////										sel6.selectByIndex(1);
+////									} catch (Exception e) {
+////										softAssert.assertTrue(false, "Inbound Meal 2 is not showing");
+////									}
+////									Thread.sleep(3000);
+////								}
+////							}
+//							String checkoutprice1 = QaBrowser.driver
+//									.findElement(By.xpath("//span[@id='ctl00_contentMain_totcashPrice']")).getText();
+//							System.out.println(checkoutprice1);
+//							QaExtentReport.test.log(Status.INFO,
+//									"<b><i>Price after adding Meal and Baggage </i></b>" + checkoutprice1);
+//							Thread.sleep(5000);
 //							WebElement element = QaBrowser.driver
 //									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
 //							Select sel = new Select(element);
 //							sel.selectByIndex(1);
 //							Thread.sleep(3000);
-//							WebElement element1 = QaBrowser.driver.findElement(
-//									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
-//							Select sel1 = new Select(element1);
-//							sel1.selectByIndex(1);
-//							Thread.sleep(3000);
-//							WebElement element2 = QaBrowser.driver.findElement(
-//									By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDLHHLM']"));
-//							Select sel2 = new Select(element2);
-//							sel2.selectByIndex(1);
-//							Thread.sleep(3000);
-						}
-					}
-//					QaRobot.ClickOnElement("ow_billtobranch");
-				}
+////							WebElement element1 = QaBrowser.driver.findElement(
+////									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
+////							Select sel1 = new Select(element1);
+////							sel1.selectByIndex(1);
+////							Thread.sleep(3000);
+////							QaExtentReport.extentScreenshot("Baggage and Meals");
+//							softAssert.assertAll();
+//						} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
+////							WebElement element = QaBrowser.driver
+////									.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDL']"));
+////							Select sel = new Select(element);
+////							sel.selectByIndex(1);
+////							Thread.sleep(3000);
+////							WebElement element1 = QaBrowser.driver.findElement(
+////									By.xpath("//select[contains(@id,'ctl00_contentMain_dynamicdatacapture')][1]"));
+////							Select sel1 = new Select(element1);
+////							sel1.selectByIndex(1);
+////							Thread.sleep(3000);
+////							WebElement element2 = QaBrowser.driver.findElement(
+////									By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDLHHLM']"));
+////							Select sel2 = new Select(element2);
+////							sel2.selectByIndex(1);
+////							Thread.sleep(3000);
+//						}
+//					}
+////					QaRobot.ClickOnElement("ow_billtobranch");
+//				}
 				Thread.sleep(3000);
 				QaRobot.scrollPage(1000);
 				QaRobot.ClickOnElement("ow_chkterms");
@@ -4657,70 +4660,70 @@ public class TestOnFlight_FFno_HotelMembershipNo_To_BookingFlow {
 					}
 				}
 				Thread.sleep(10000);
-//				String paymentprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']"))
-//						.getText();
-//				System.out.println("Price of payment page " + paymentprice);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Price of payment page </i></b>" + paymentprice);
-				// select FOP
-				if (fop.equalsIgnoreCase("Cash")) {
-					SBTCheckoutPayment.fopCash(fop, receiptno);
-				} else if (fop.equalsIgnoreCase("Bill To Company")) {
-					SBTCheckoutPayment.fopBillToComapnay(fop);
-					QaRobot.ClickOnElement("click_OK");
-				} else {
-					SBTCheckoutPayment.fopCreditDebit(ProductType, card, cardtype, cvv);
-				}
-
-				QaExtentReport.extentScreenshot("Payment Page");
-				QaRobot.ClickOnElement("ow_paymentprocced");
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
-				Thread.sleep(2000);
-				String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']"))
-						.getText();
-				System.out.println("Booking Status is " + bookingStatus);
-				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
-				// Confirmation code
-				String pnr = QaBrowser.driver.findElement(By.xpath("//div[@id='ctl00_contentMain_flt_details']/div[1]/div[1]/div[2]/p/span[2]")).getText();
-				System.out.println("PNR is " + pnr);
-				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
-				// Confirm page price
-//				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
-//						.getText();
-//				System.out.println("Confirm Page Price is " + confirmePrice);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
-				// Booking id
-				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
-				String a[] = bookingID.split(" ");
-				String number = a[2];
-				System.out.println("Booking ID is " + number);
-				QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
-				QaExtentReport.extentScreenshot("Confirm Page");
-
-//				QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']",
-//						"//span[@id='ctl00_HeaderTop_lblBookingQueue']");
-////				QaExtentReport.extentScreenshot("CorporateDashboard Page");
-////
-////				QaRobot.ScreenshotMethod("CorporateDashboard", "<b><i>Screenshot for Corporate Dashboard Page</i></b>");
-////				Thread.sleep(3000);
-//
-//				QaRobot.PassValue("RefNo", number);
-////				QaExtentReport.test.log(Status.INFO, "<b><i>Write Ref No</i></b>");
-//
-//				QaRobot.ClickOnElement("SearchRefNo");
-//
-//				QaRobot.ClickOnElement("RefBooking");
-//
-//				QaExtentReport.extentScreenshot("Booking Card");
-//
-//				String Creater = QaBrowser.driver.findElement(By.xpath("//span[@id='lblCreatedBy']")).getText();
-//				System.out.println("Created By " + Creater);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Created By </i></b>" + Creater);
-//
-//				if (CreatedBy.equalsIgnoreCase(Creater)) {
-//					QaExtentReport.test.log(Status.INFO, "<b><i>Creater is Correct  </i></b>" + CreatedBy);
+////				String paymentprice = QaBrowser.driver.findElement(By.xpath("//span[@id='ctl00_contentMain_lblTAmt']"))
+////						.getText();
+////				System.out.println("Price of payment page " + paymentprice);
+////				QaExtentReport.test.log(Status.INFO, "<b><i>Price of payment page </i></b>" + paymentprice);
+//				// select FOP
+//				if (fop.equalsIgnoreCase("Cash")) {
+//					SBTCheckoutPayment.fopCash(fop, receiptno);
+//				} else if (fop.equalsIgnoreCase("Bill To Company")) {
+//					SBTCheckoutPayment.fopBillToComapnay(fop);
+//					QaRobot.ClickOnElement("click_OK");
 //				} else {
-//					QaExtentReport.test.log(Status.FAIL, "<b><i>Creater is Different  </i></b>" + CreatedBy);
+//					SBTCheckoutPayment.fopCreditDebit(ProductType, card, cardtype, cvv);
 //				}
+//
+//				QaExtentReport.extentScreenshot("Payment Page");
+//				QaRobot.ClickOnElement("ow_paymentprocced");
+////				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
+//				Thread.sleep(2000);
+//				String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']"))
+//						.getText();
+//				System.out.println("Booking Status is " + bookingStatus);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
+//				// Confirmation code
+//				String pnr = QaBrowser.driver.findElement(By.xpath("//div[@id='ctl00_contentMain_flt_details']/div[1]/div[1]/div[2]/p/span[2]")).getText();
+//				System.out.println("PNR is " + pnr);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
+//				// Confirm page price
+////				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
+////						.getText();
+////				System.out.println("Confirm Page Price is " + confirmePrice);
+////				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
+//				// Booking id
+//				String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
+//				String a[] = bookingID.split(" ");
+//				String number = a[2];
+//				System.out.println("Booking ID is " + number);
+//				QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
+//				QaExtentReport.extentScreenshot("Confirm Page");
+//
+////				QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']",
+////						"//span[@id='ctl00_HeaderTop_lblBookingQueue']");
+//////				QaExtentReport.extentScreenshot("CorporateDashboard Page");
+//////
+//////				QaRobot.ScreenshotMethod("CorporateDashboard", "<b><i>Screenshot for Corporate Dashboard Page</i></b>");
+//////				Thread.sleep(3000);
+////
+////				QaRobot.PassValue("RefNo", number);
+//////				QaExtentReport.test.log(Status.INFO, "<b><i>Write Ref No</i></b>");
+////
+////				QaRobot.ClickOnElement("SearchRefNo");
+////
+////				QaRobot.ClickOnElement("RefBooking");
+////
+////				QaExtentReport.extentScreenshot("Booking Card");
+////
+////				String Creater = QaBrowser.driver.findElement(By.xpath("//span[@id='lblCreatedBy']")).getText();
+////				System.out.println("Created By " + Creater);
+////				QaExtentReport.test.log(Status.INFO, "<b><i>Created By </i></b>" + Creater);
+////
+////				if (CreatedBy.equalsIgnoreCase(Creater)) {
+////					QaExtentReport.test.log(Status.INFO, "<b><i>Creater is Correct  </i></b>" + CreatedBy);
+////				} else {
+////					QaExtentReport.test.log(Status.FAIL, "<b><i>Creater is Different  </i></b>" + CreatedBy);
+////				}
 			}
 		}
 	}

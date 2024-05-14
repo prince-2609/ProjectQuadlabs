@@ -146,11 +146,11 @@ public class TravellerProfiling {
 //		QaRobot.ClickOnElement("AddPassport");
 //		QaRobot.PassValue("PassportNo", PassportNo);
 //		QaRobot.ClickOnElement("TravellerDOB");
-//		String DateSelection[] = TravellerDOB.split("-");
-//		String year = DateSelection[2];
-//		String month = DateSelection[1];
-//		String expDate = DateSelection[0];
-//		QaRobot.selectDateInCalendar(expDate, month, year);
+		String DateSelection[] = TravellerDOB.split("-");
+		String year = DateSelection[2];
+		String month = DateSelection[1];
+		String expDate = DateSelection[0];
+		QaRobot.selectDateInCalendar(expDate, month, year);
 //		String City[] = PPlaceOfIssue.split(",");
 //		String City1 = City[0];
 //		String City2 = City[1];

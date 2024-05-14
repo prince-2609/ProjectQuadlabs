@@ -31,7 +31,7 @@ public class TestOnHotel_FFno_HotelMembershipNo_To_BookingFlow {
 
 	@DataProvider
 	public Object[][] getexceldata1() throws Exception {
-		return QaDataProvider.getTestdata("SBT_Hotel", "Sheet14");
+		return QaDataProvider.getTestdata("SBT_Hotel", "Liveset");
 	}
 
 	@Test(dataProvider = "getexceldata1")
@@ -56,83 +56,83 @@ public class TestOnHotel_FFno_HotelMembershipNo_To_BookingFlow {
 			String QuoteTitle, String QuoteRemark, String Checkoutpagestep, String FOP, String CardType,
 			String CreditCardNumber, String CardHolderName, String CardExpiryDate, String CreatedBy) throws Exception {
 		QaExtentReport.test = QaExtentReport.report.createTest(TestCaseId + "-" + TestScenario);
-		TestBase.moLogin(Source, MoURL);
-		QaRobot.PassValue("CompanyCode", CompanyCode);
-		QaRobot.PassValue("UserName", UserName1);
-		QaRobot.PassValue("PasswordFD", Password1);
-		QaExtentReport.extentScreenshot("Sigh In Page");
-		QaRobot.ClickOnElement("LogIn");
-		Thread.sleep(3000);
-		QaRobot.switchframe("//frame[@name='login']");
-		QaRobot.switchframe("//frame[@name='leftbar']");
-		QaRobot.ClickOnElement("CorporateManagement");
-		Thread.sleep(3000);
-		QaRobot.ClickOnElement("SearchCorporate");
-		QaBrowser.driver.switchTo().parentFrame();
-		QaRobot.switchframe("//frame[@name='main']");
-		QaRobot.switchframe("//frame[@id='frm2']");
-		QaRobot.PassValue("CompanyName", CorporateName);
-		QaRobot.ClickOnElement("SearchCompanyName");
-		QaExtentReport.test.log(Status.INFO, "<b><i>Corporate Name</i></b>" + " - " + CorporateName);
-		String AccountId = QaBrowser.driver.findElement(By.xpath("//span[@id='GridView1_ctl02_Label2']")).getText();
-		QaExtentReport.test.log(Status.INFO, "<b><i>Account Id</i></b>" + " - " + AccountId);
-		QaRobot.ClickOnElement("ClickOnSearchCompanyName");
-		QaBrowser.driver.switchTo().parentFrame();
-		QaRobot.switchframe("//frame[@id='toolHeader']");
-		QaRobot.ClickOnElement("CPCorporateManagement");
-		QaBrowser.driver.switchTo().parentFrame();
-		QaRobot.switchframe("//frame[@id='frm2']");
-		QaRobot.ClickOnElement("ManageTravellers");
-		QaRobot.ClickOnElement("ATSearchOption");
-		Thread.sleep(3000);
-		String HolderName[] = TravellerName.split(" ");
-		String FN = HolderName[0];
-		String LN = HolderName[1];
-		QaRobot.PassValue("TravellerFN", FN);
-		QaRobot.PassValue("TravellerLN", LN);
-		QaRobot.ClickOnElement("ATSearchTraveller");
-		Thread.sleep(3000);
-		QaRobot.ClickOnElement("ATSelectTraveller");
-		Thread.sleep(5000);
-		QaExtentReport.extentScreenshot("Employee Profile");
-		QaRobot.ClickOnElement("FFPreferences");
-		Thread.sleep(5000);
-		if (ProductType.equalsIgnoreCase("Flight")) {
-			QaRobot.ClickOnElement("FFAirlineSelection");
-			QaRobot.PassValue("FFAirlineSearch", FFAirline);
-			QaBrowser.driver.findElement(By.xpath("//div[@id='select2-drop']/ul/li")).click();
-			String DateSelectionFF[] = FFExpiryDate.split("-");
-			String yearFF = DateSelectionFF[2];
-			String monthFF = DateSelectionFF[1];
-			String expDateFF = DateSelectionFF[0];
-			QaBrowser.driver.findElement(By.xpath(
-					"/html/body/div[1]/form/div[4]/div/div[2]/div[2]/div[4]/div[2]/ul[2]/li[6]/div/div[1]/div[3]/div/div/div/span"))
-					.click();
-			QaRobot.selectDateInCalendarFF(expDateFF, monthFF, yearFF);
-			QaRobot.PassValue("FFLoyaltyNumber", FFLoyaltyNumber);
-			QaRobot.ClickOnElement("FFAdd");
-			QaRobot.scrollPage(600);
-			QaExtentReport.extentScreenshot("FF Number");
-			QaRobot.ClickOnElement("FFSave");
-		} else if (ProductType.equalsIgnoreCase("Hotel")) {
-			QaRobot.PassValue("HMNHotelSearch", HMNHotelName);
-			QaBrowser.driver.findElement(By.xpath("(//div[@id='divhotelchain']/p)[1]")).click();
-			String DateSelectionFF[] = FFExpiryDate.split("-");
-			String yearFF = DateSelectionFF[2];
-			String monthFF = DateSelectionFF[1];
-			String expDateFF = DateSelectionFF[0];
-			QaBrowser.driver.findElement(By.xpath(
-					"/html/body/div/form/div[4]/div/div[2]/div[2]/div[5]/div[2]/ul/li[2]/div/div[1]/div[4]/div/div/div/span"))
-					.click();
-			QaRobot.selectDateInCalendarHMN(expDateFF, monthFF, yearFF);
-			QaRobot.PassValue("HMNumber", HMNumber);
-			QaRobot.ClickOnElement("HMNAdd");
-			QaRobot.scrollPage(600);
-			QaExtentReport.extentScreenshot("Membership Number");
-			QaRobot.ClickOnElement("HMNSave");
-		} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
-
-		}
+//		TestBase.moLogin(Source, MoURL);
+//		QaRobot.PassValue("CompanyCode", CompanyCode);
+//		QaRobot.PassValue("UserName", UserName1);
+//		QaRobot.PassValue("PasswordFD", Password1);
+//		QaExtentReport.extentScreenshot("Sigh In Page");
+//		QaRobot.ClickOnElement("LogIn");
+//		Thread.sleep(3000);
+//		QaRobot.switchframe("//frame[@name='login']");
+//		QaRobot.switchframe("//frame[@name='leftbar']");
+//		QaRobot.ClickOnElement("CorporateManagement");
+//		Thread.sleep(3000);
+//		QaRobot.ClickOnElement("SearchCorporate");
+//		QaBrowser.driver.switchTo().parentFrame();
+//		QaRobot.switchframe("//frame[@name='main']");
+//		QaRobot.switchframe("//frame[@id='frm2']");
+//		QaRobot.PassValue("CompanyName", CorporateName);
+//		QaRobot.ClickOnElement("SearchCompanyName");
+//		QaExtentReport.test.log(Status.INFO, "<b><i>Corporate Name</i></b>" + " - " + CorporateName);
+//		String AccountId = QaBrowser.driver.findElement(By.xpath("//span[@id='GridView1_ctl02_Label2']")).getText();
+//		QaExtentReport.test.log(Status.INFO, "<b><i>Account Id</i></b>" + " - " + AccountId);
+//		QaRobot.ClickOnElement("ClickOnSearchCompanyName");
+//		QaBrowser.driver.switchTo().parentFrame();
+//		QaRobot.switchframe("//frame[@id='toolHeader']");
+//		QaRobot.ClickOnElement("CPCorporateManagement");
+//		QaBrowser.driver.switchTo().parentFrame();
+//		QaRobot.switchframe("//frame[@id='frm2']");
+//		QaRobot.ClickOnElement("ManageTravellers");
+//		QaRobot.ClickOnElement("ATSearchOption");
+//		Thread.sleep(3000);
+//		String HolderName[] = TravellerName.split(" ");
+//		String FN = HolderName[0];
+//		String LN = HolderName[1];
+//		QaRobot.PassValue("TravellerFN", FN);
+//		QaRobot.PassValue("TravellerLN", LN);
+//		QaRobot.ClickOnElement("ATSearchTraveller");
+//		Thread.sleep(3000);
+//		QaRobot.ClickOnElement("ATSelectTraveller");
+//		Thread.sleep(5000);
+//		QaExtentReport.extentScreenshot("Employee Profile");
+//		QaRobot.ClickOnElement("FFPreferences");
+//		Thread.sleep(5000);
+//		if (ProductType.equalsIgnoreCase("Flight")) {
+//			QaRobot.ClickOnElement("FFAirlineSelection");
+//			QaRobot.PassValue("FFAirlineSearch", FFAirline);
+//			QaBrowser.driver.findElement(By.xpath("//div[@id='select2-drop']/ul/li")).click();
+//			String DateSelectionFF[] = FFExpiryDate.split("-");
+//			String yearFF = DateSelectionFF[2];
+//			String monthFF = DateSelectionFF[1];
+//			String expDateFF = DateSelectionFF[0];
+//			QaBrowser.driver.findElement(By.xpath(
+//					"/html/body/div[1]/form/div[4]/div/div[2]/div[2]/div[4]/div[2]/ul[2]/li[6]/div/div[1]/div[3]/div/div/div/span"))
+//					.click();
+//			QaRobot.selectDateInCalendarFF(expDateFF, monthFF, yearFF);
+//			QaRobot.PassValue("FFLoyaltyNumber", FFLoyaltyNumber);
+//			QaRobot.ClickOnElement("FFAdd");
+//			QaRobot.scrollPage(600);
+//			QaExtentReport.extentScreenshot("FF Number");
+//			QaRobot.ClickOnElement("FFSave");
+//		} else if (ProductType.equalsIgnoreCase("Hotel")) {
+//			QaRobot.PassValue("HMNHotelSearch", HMNHotelName);
+//			QaBrowser.driver.findElement(By.xpath("(//div[@id='divhotelchain']/p)[1]")).click();
+//			String DateSelectionFF[] = FFExpiryDate.split("-");
+//			String yearFF = DateSelectionFF[2];
+//			String monthFF = DateSelectionFF[1];
+//			String expDateFF = DateSelectionFF[0];
+//			QaBrowser.driver.findElement(By.xpath(
+//					"/html/body/div/form/div[4]/div/div[2]/div[2]/div[5]/div[2]/ul/li[2]/div/div[1]/div[4]/div/div/div/span"))
+//					.click();
+//			QaRobot.selectDateInCalendarHMN(expDateFF, monthFF, yearFF);
+//			QaRobot.PassValue("HMNumber", HMNumber);
+//			QaRobot.ClickOnElement("HMNAdd");
+//			QaRobot.scrollPage(600);
+//			QaExtentReport.extentScreenshot("Membership Number");
+//			QaRobot.ClickOnElement("HMNSave");
+//		} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
+//
+//		}	
 
 		TestBase.Companycode(ccode, URL);
 		QaRobot.impliwait(30);
@@ -252,7 +252,7 @@ public class TestOnHotel_FFno_HotelMembershipNo_To_BookingFlow {
 			// "search currency : " + currency);
 			// check the policy checkbox
 			if (SearchType.equalsIgnoreCase("Individual")) {
-				SearchDashboard.hotelPolicyCheck();
+//				SearchDashboard.hotelPolicyCheck();
 			}
 			// sceernshot of search interface
 			// String searchpage = Logger.takeScreenshot(QaBrowser.driver,
@@ -522,12 +522,12 @@ public class TestOnHotel_FFno_HotelMembershipNo_To_BookingFlow {
 			QaRobot.ClickOnElement("TModifiedSearchMH");
 			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on Modified Search</i></b>");
 		}
-		Thread.sleep(15000);
+		Thread.sleep(16000);
 		QaRobot.scrollPage(400);
-		Thread.sleep(5000);
-		QaRobot.PassValue("SearchHotelName", HotelName);
-		Thread.sleep(5000);
-		QaBrowser.driver.findElement(By.xpath("//div[@id='divHTCity']/p")).click();
+//		Thread.sleep(5000);
+//		QaRobot.PassValue("SearchHotelName", HotelName);
+//		Thread.sleep(5000);
+//		QaBrowser.driver.findElement(By.xpath("//div[@id='divHTCity']/p")).click();
 		QaRobot.ClickOnElement("HotelSelectC");
 		Thread.sleep(3000);
 //			QaRobot.ClickOnElement("CancellationPolicy");
@@ -564,8 +564,8 @@ public class TestOnHotel_FFno_HotelMembershipNo_To_BookingFlow {
 //					if (Server.equalsIgnoreCase("Staging") || Server.equalsIgnoreCase("Xchange")) {
 //						String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy3')])[3]"))
 //								.getText();
-//						QaExtentReport.extentScreenshot("Flight Results");
-//						QaRobot.ClickOnElement("AddToCartHotelCX");
+						QaExtentReport.extentScreenshot("Hotel Results Results");
+						QaRobot.ClickOnElement("Bookbuttonhotel");
 //						if (getT.equalsIgnoreCase("Out Of Policy")) {
 //							QaRobot.alertAccept();
 //						}
@@ -897,33 +897,33 @@ public class TestOnHotel_FFno_HotelMembershipNo_To_BookingFlow {
 		if (SearchType.equalsIgnoreCase("Individual")) {
 			Thread.sleep(8000);
 			QaExtentReport.extentScreenshot("Checkout Page");
-			QaRobot.scrollPage(400);
-			if (ProductType.equalsIgnoreCase("Hotel")) {
-				QaRobot.selectIndexFromDropdown("ResonCodeCT", 1);
-				QaRobot.selectIndexFromDropdown("ResonCodeCN", 1);
-				QaRobot.ClickOnElement("BillToBranchC");
-			} else if (ProductType.equalsIgnoreCase("Hotel+Flight")) {
-				if (ccode.equalsIgnoreCase("Staging")) {
-					QaRobot.selectIndexFromDropdown("AirResonCodeC", 1);
-				}
-				QaRobot.ClickOnElement("BillToBranchC");
-			} else if (ProductType.equalsIgnoreCase("Hotel+Car")) {
-				QaRobot.selectTextByLocator("//select[@id='ctl00_contentMain_ddl_titleAdt_H']", "Mr");
-				if (ccode.equalsIgnoreCase("Staging")) {
-					QaRobot.selectIndexFromDropdown("HotelResonCodeC", 1);
-				}
-				QaRobot.ClickOnElement("BillToBranchC");
-			} else if (ProductType.equalsIgnoreCase("Hotel+Flight+Car")
-					|| ProductType.equalsIgnoreCase("Hotel+Car+Flight")) {
-				if (ccode.equalsIgnoreCase("Staging")) {
-					QaRobot.selectIndexFromDropdown("AirResonCodeC", 1);
-					QaRobot.selectIndexFromDropdown("HotelResonCodeC", 1);
-				}
-				QaRobot.ClickOnElement("BillToBranchC");
-			}
-			QaRobot.ClickOnElement("TermsAndConditionC");
-			bookForHotelNew(ProductType, QuoteTitle, QuoteRemark, Checkoutpagestep, FOP, CardType, CreditCardNumber,
-					CardHolderName, CardExpiryDate, CreatedBy);
+//			QaRobot.scrollPage(400);
+//			if (ProductType.equalsIgnoreCase("Hotel")) {
+//				QaRobot.selectIndexFromDropdown("ResonCodeCT", 1);
+//				QaRobot.selectIndexFromDropdown("ResonCodeCN", 1);
+//				QaRobot.ClickOnElement("BillToBranchC");
+//			} else if (ProductType.equalsIgnoreCase("Hotel+Flight")) {
+//				if (ccode.equalsIgnoreCase("Staging")) {
+//					QaRobot.selectIndexFromDropdown("AirResonCodeC", 1);
+//				}
+//				QaRobot.ClickOnElement("BillToBranchC");
+//			} else if (ProductType.equalsIgnoreCase("Hotel+Car")) {
+//				QaRobot.selectTextByLocator("//select[@id='ctl00_contentMain_ddl_titleAdt_H']", "Mr");
+//				if (ccode.equalsIgnoreCase("Staging")) {
+//					QaRobot.selectIndexFromDropdown("HotelResonCodeC", 1);
+//				}
+//				QaRobot.ClickOnElement("BillToBranchC");
+//			} else if (ProductType.equalsIgnoreCase("Hotel+Flight+Car")
+//					|| ProductType.equalsIgnoreCase("Hotel+Car+Flight")) {
+//				if (ccode.equalsIgnoreCase("Staging")) {
+//					QaRobot.selectIndexFromDropdown("AirResonCodeC", 1);
+//					QaRobot.selectIndexFromDropdown("HotelResonCodeC", 1);
+//				}
+//				QaRobot.ClickOnElement("BillToBranchC");
+//			}
+//			QaRobot.ClickOnElement("TermsAndConditionC");
+//			bookForHotelNew(ProductType, QuoteTitle, QuoteRemark, Checkoutpagestep, FOP, CardType, CreditCardNumber,
+//					CardHolderName, CardExpiryDate, CreatedBy);
 		} else if (SearchType.equalsIgnoreCase("Dependent")) {
 		}
 	}
