@@ -32,7 +32,7 @@ import utilities.QaRobot;
 
 @Listeners(listenerClass.Listener.class)
 public class OtherServices {
-	
+
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
 		return QaDataProvider.getTestdata("Otherservices", "Sheet1");
@@ -43,10 +43,10 @@ public class OtherServices {
 			String RulesAppliedOnSearchPage, String Module, String LoginType, String URL, String Emailid, String SDN,
 			String Employee, String TravelerType, String Username, String Password, String CoporateName,
 			String DashboardType, String ItineraryName, String Optripcode, String Optripcity, String StartDate,
-			String EndDate, String Optrip, String OPRemark, String ItineraryType, String Triptype, String JourneyType,
-			String TravelClass, String Departure, String Fullorigin, String DepartureDate, String ReturnDate)
-			throws Exception {
-		
+			String EndDate, String Optrip, String OPRemark, String ItineraryType, String Triptype, String PolicyName,
+			String JourneyType, String TravelClass, String Departure, String Fullorigin, String DepartureDate,
+			String ReturnDate, String DirectFlights) throws Exception {
+
 		QaExtentReport.test = QaExtentReport.report.createTest(TestCaseId + "-" + TestScenario);
 
 		TestBase.Companycode(Module, URL);
@@ -96,6 +96,7 @@ public class OtherServices {
 			QaRobot.ClickOnElement("CreateItinerary");
 			QaExtentReport.extentScreenshot("Itinerary created successfully");
 		}
+
 		String DateSelection[] = DepartureDate.split("-");
 		String year = DateSelection[2];
 		String month = DateSelection[1];
@@ -106,30 +107,36 @@ public class OtherServices {
 		String expDate1 = DateSelection1[0];
 		if (ItineraryType.equalsIgnoreCase("Flight")) {
 			QaRobot.ClickOnElement("FlightItinerary");
-			QaRobot.selectValueFromDropdown("Journeytype", JourneyType);
-			QaRobot.selectValueFromDropdown("ClassOfTravel", TravelClass);
-			TestBase.listofautosuggestion(By.xpath("//div[@id='divDepartureCity']/p"), Optripcode, Optripcity,
+			Thread.sleep(3000);
+			QaRobot.selectTextFromDropdown("Journeytype", JourneyType);
+			QaRobot.selectTextFromDropdown("ClassOfTravel", TravelClass);
+			TestBase.listofautosuggestion(By.xpath("//div[@id='divDepartureCity']/p"), Departure, Fullorigin,
 					By.xpath("//input[@id='txtflightOrigin']"));
-			TestBase.listofautosuggestion(By.xpath("//div[@id='divDestinationCity']/p"), Optripcode, Optripcity,
-					By.xpath("//input[@id='txtflightDestination']"));
-			
-			
-			
-			
-
-			if (JourneyType.equalsIgnoreCase("OneWay")) {
+			Thread.sleep(2000);
+//			QaRobot.selectTextFromDropdown("Policyname", PolicyName);
+			if (JourneyType.equalsIgnoreCase("One Way")) {
+				Thread.sleep(2000);
 				QaBrowser.driver
 						.findElement(
 								By.xpath("//div[@id='divflightsection']/div/div[2]/div/div/div[3]/div[1]/div/div/span"))
 						.click();
 				selectDateInCalendarOneWay(expDate, month, year);
-			} else if (JourneyType.equalsIgnoreCase("RoundTrip")) {
+			} else if (JourneyType.equalsIgnoreCase("Round Trip")) {
+				Thread.sleep(2000);
 				QaBrowser.driver
 						.findElement(
 								By.xpath("//div[@id='divflightsection']/div/div[2]/div/div/div[3]/div[1]/div/div/span"))
 						.click();
 				selectDateInCalendarRoundTrip(expDate, month, year, expDate1, month1, year1);
 			}
+			Thread.sleep(2000);
+			QaExtentReport.extentScreenshot("Flight Detail");
+			if (DirectFlights.equalsIgnoreCase("Yes")) {
+				QaRobot.ClickOnElement("Directflight");
+			}
+			Thread.sleep(3000);
+			QaRobot.ClickOnElement("Saveproductitinerary");
+			QaExtentReport.extentScreenshot("Flight Saved Successfully");
 
 		} else if (ItineraryType.equalsIgnoreCase("Hotel")) {
 			QaRobot.ClickOnElement("HotelItinerary");
@@ -352,11 +359,10 @@ public class OtherServices {
 		Assert.assertFalse(Integer.parseInt(Day) > 31, "Invalid date provided " + Day + "-" + Month + "-" + Year);
 		Assert.assertFalse(Month.equals("Feb") && Integer.parseInt(Day) > 28,
 				"Invalid date provided " + Day + "-" + Month + "-" + Year);
-		Thread.sleep(3000);
-		String monthYear = QaBrowser.driver.findElement(By.xpath("/html/body/div[9]/div/div[2]/div/div")).getText();
-		Thread.sleep(5000);
-		String month = monthYear.split(" ")[0];
 		Thread.sleep(4000);
+		String monthYear = QaBrowser.driver.findElement(By.xpath("/html/body/div[9]/div/div[2]/div/div")).getText();
+		Thread.sleep(3000);
+		String month = monthYear.split(" ")[0];
 		String year = monthYear.split(" ")[1];
 		Assert.assertFalse(date2.before(date1), "Invalid date provided " + Day + "-" + Month + "-" + Year);
 		while (!(month.equals(Month) && year.equals(Year))) {
@@ -475,8 +481,11 @@ public class OtherServices {
 					"<b><i>Invalid date provided  </i></b>" + Day1 + "-" + Month1 + "-" + Year1);
 //			throw new B2cExceptionClass("Invalid date provided " + Day1 + "-" + Month1 + "-" + Year1);
 		}
-
+		Thread.sleep(5000);
 		String monthYear = QaBrowser.driver.findElement(By.xpath("/html/body/div[9]/div/div[2]/div/div")).getText();
+
+//		Thread.sleep(10000);
+		System.out.println(monthYear);
 		String month = monthYear.split(" ")[0];
 		String year = monthYear.split(" ")[1];
 
@@ -508,9 +517,9 @@ public class OtherServices {
 
 			String monthYear1 = QaBrowser.driver.findElement(By.xpath("/html/body/div[9]/div/div[2]/div/div"))
 					.getText();
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			String month1 = monthYear1.split(" ")[0];
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			String year1 = monthYear1.split(" ")[1];
 
 			if (date3.before(date2)) {
