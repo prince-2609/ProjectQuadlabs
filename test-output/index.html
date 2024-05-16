@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-skipped">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testFlightHotel.OtherServices" class="method navigator-link" hash-for-method="OtherProducts">OtherProducts</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testFlightHotel.OtherServices" class="method navigator-link" hash-for-method="OtherProducts(Test 2, Verify on other Product-Flight(One Way)., sbt, SSO, //test.quadlabs.net/SSO_Login, sachin.ku...)">OtherProducts(Test 2, Verify on other Product-Flight(One Way)., sbt, SSO, //test.quadlabs.net/SSO_Login, sachin.ku...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -119,31 +119,45 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-skipped">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="failed.png"/>
               <span class="class-name">testFlightHotel.OtherServices</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="OtherProducts">
-                  </a> <!-- OtherProducts -->
+                  <a name="OtherProducts(Test 2, Verify on other Product-Flight(One Way)., sbt, SSO, //test.quadlabs.net/SSO_Login, sachin.ku...)">
+                  </a> <!-- OtherProducts(Test 2, Verify on other Product-Flight(One Way)., sbt, SSO, //test.quadlabs.net/SSO_Login, sachin.ku...) -->
                   <span class="method-name">OtherProducts</span>
-                  <div class="stack-trace">java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFCell.setCellType(org.apache.poi.ss.usermodel.CellType)&quot; because &quot;cell&quot; is null
+                  <span class="parameters">(Test 2, Verify on other Product-Flight(One Way)., sbt, SSO, //test.quadlabs.net/SSO_Login, sachin.kumar@quadlabs.com, test.quadlabs.net, Sachin Kumar, Administrator, sachinkumar, Ankur@123, Automation Test 7, Bom, Mumbai,India - Shivaji Terminal (BOM), 15-Jul-2024, 18-Jul-2024, Business, Test, MoreProduct, Domestic, Business trip - QL Business policy, One Way, Economy, Del, Delhi,India - Indira Gandhi Intl (DEL), 16-Jul-2024, 18-Jul-2024, No, 5, ComplexItineraryAir,HotelsOnRequest,SelfDriveCar,Forex,ChauffeurDrivenCar,Visa,Insurance,Bus,Rail, One Way, Economy, Del, Delhi,India - Indira Gandhi Intl (DEL), 1, 12:30, BOM, Mumbai, India - Mumbai - Airport (130022), DEL, New Delhi, India - New Delhi - Airport (130043), Normal, 1000, 12:30, BOM, Mumbai, India - Mumbai - Airport (130022), DEL, New Delhi, India - New Delhi - Airport (130043), Sedan , Transfers, Bisht Travels [6683], Visitor, Excluding USA, Yes, BOM, DEL, BD123, One Way, One Way, OR123, OD123, Male, Voter ID)</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;javascript:void(0);&quot; id=&quot;btnnonbsavehotel&quot; onclick=&quot;return PageValidation(&apos;nonbookablehotel&apos;);&quot; class=&quot;btn btn-primary&quot;&gt;...&lt;/a&gt; is not clickable at point (473, 894). Other element would receive the click: &lt;div class=&quot;row&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=124.0.6367.207)
+Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
+System info: host: &apos;SHUBHAM&apos;, ip: &apos;192.168.111.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1ac0b5ac6c3286fe9b3ed368cf5b27bb, clickElement {id=f.6FC94F232E97336D3A393F635F693F40.d.A4A02557B778B9353ABDCEA130996062.e.842}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 124.0.6367.207, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62209}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62209/devtoo..., se:cdpVersion: 124.0.6367.207, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (1ac0b5ac6c3286fe9b3ed368cf5b27bb)] -&gt; xpath: //a[@id=&apos;btnnonbsavehotel&apos;]]
+Session ID: 1ac0b5ac6c3286fe9b3ed368cf5b27bb
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at utilities.QaRobot.ClickOnElement(QaRobot.java:217)
+	at testFlightHotel.OtherServices.OtherProducts(OtherServices.java:171)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: java.lang.NullPointerException: Cannot invoke &quot;org.apache.poi.xssf.usermodel.XSSFCell.setCellType(org.apache.poi.ss.usermodel.CellType)&quot; because &quot;cell&quot; is null
-	at utilities.QaExcelRead.getData(QaExcelRead.java:42)
-	at utilities.QaDataProvider.getExceldata(QaDataProvider.java:35)
-	at utilities.QaDataProvider.getTestdata(QaDataProvider.java:16)
-	at testFlightHotel.OtherServices.getexceldata(OtherServices.java:38)
-	... 25 more
 ... Removed 32 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-skipped -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -200,12 +214,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'OtherProducts')
 data.setCell(0, 2, 'testFlightHotel.OtherServices')
-data.setCell(0, 3, 0);
+data.setCell(0, 3, 63070);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -232,9 +246,15 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">testFlightHotel.OtherServices</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">OtherProducts(Test 2, Verify on other Product-Flight(One Way)., sbt, SSO, //test.quadlabs.net/SSO_Login, sachin.ku...)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">After_Test</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">63405 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
