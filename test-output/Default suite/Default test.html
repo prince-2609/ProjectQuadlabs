@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed May 03 10:33:17 IST 2023</td>
+<td>Started on:</td><td>Wed May 15 15:12:31 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (990 ms)</td>
+<tr><td>Total time:</td><td>3 seconds (3467 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,12 +75,32 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='sbt117.TravellerProfiling.travellerProfiling()'><b>travellerProfiling</b><br>Test class: sbt117.TravellerProfiling<br>Parameters: Test MO 1, Positive, Verify Register Corporate, mo, //staging117/backoffice/, at, saurav_at, Laxmi@123, Shree Travel, Shree Travel, QA 01, QA1235, F101235, Grade 101235, Book For Family, Mr Govind Sharma, Male, GovindSharma, govind.sharma@quadlabs.com, Shree Travel, English, India, India, 45858899, Administrator, 2, Expense Mgmt - Finance Manager,Proceed To Check Out In Case Of Plan Your Trip, 5797856, 14-Nov-1997, Del,Delhi, 14-Nov-2022, 14-Nov-2033, eqweqe123, India, 14-Nov-2022, 14-Nov-2033, Mr Abhi Jha, Male, 2-Apr-1993, Sibling, 786868768768, 6-Apr-2033, Indian, India</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;utilities.QaBrowser.driver&quot; is null
-	at utilities.QaRobot.getLocator(QaRobot.java:71)
-	at utilities.QaRobot.getWebElement(QaRobot.java:153)
-	at utilities.QaRobot.PassValue(QaRobot.java:185)
-	at sbt117.TravellerProfiling.travellerProfiling(TravellerProfiling.java:40)
+<td title='testFlightHotel.OtherServices.OtherProducts()'><b>OtherProducts</b><br>Test class: testFlightHotel.OtherServices<br>Parameters: Test 2, Verify on other Product-Flight(One Way)., sbt, SSO, //test.quadlabs.net/SSO_Login, sachin.kumar@quadlabs.com, test.quadlabs.net, Sachin Kumar, Administrator, sachinkumar, Ankur@123, New, Flight Itinerary 2, Bom, Mumbai,India - Shivaji Terminal (BOM), 15-Jul-2024, 18-Jul-2024, Business, Test, Flight, Domestic, Business trip - QL Business policy, One Way, Economy, Del, Delhi,India - Indira Gandhi Intl (DEL), 16-Jul-2024, 18-Jul-2024, No</td>
+<td><div><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: Chrome failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
+System info: host: &apos;SHUBHAM&apos;, ip: &apos;192.168.111.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:248)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at utilities.QaBrowser.launchChrome(QaBrowser.java:62)
+	at utilities.QaBrowser.launchBrowser(QaBrowser.java:31)
+	at utilities.QaBrowser.launchBrowser(QaBrowser.java:42)
+	at Base.TestBase.Companycode(TestBase.java:83)
+	at testFlightHotel.OtherServices.OtherProducts(OtherServices.java:51)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -109,12 +129,32 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1778877569", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1778877569'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;utilities.QaBrowser.driver&quot; is null
-	at utilities.QaRobot.getLocator(QaRobot.java:71)
-	at utilities.QaRobot.getWebElement(QaRobot.java:153)
-	at utilities.QaRobot.PassValue(QaRobot.java:185)
-	at sbt117.TravellerProfiling.travellerProfiling(TravellerProfiling.java:40)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1984317333", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1984317333'><pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: Chrome failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
+System info: host: &apos;SHUBHAM&apos;, ip: &apos;192.168.111.141&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}}]
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:84)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:62)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:248)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:164)
+	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:108)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:106)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:93)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
+	at utilities.QaBrowser.launchChrome(QaBrowser.java:62)
+	at utilities.QaBrowser.launchBrowser(QaBrowser.java:31)
+	at utilities.QaBrowser.launchBrowser(QaBrowser.java:42)
+	at Base.TestBase.Companycode(TestBase.java:83)
+	at testFlightHotel.OtherServices.OtherProducts(OtherServices.java:51)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -144,8 +184,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
-<td>sbt117.TravellerProfiling@7bd4937b</td></tr>
+<td>2</td>
+<td>testFlightHotel.OtherServices@49049a04</td></tr>
 </table><p>
 </body>
 </html>

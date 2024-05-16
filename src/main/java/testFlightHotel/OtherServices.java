@@ -35,17 +35,17 @@ public class OtherServices {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("Otherservices", "Sheet1");
+		return QaDataProvider.getTestdata("OtherServices", "Sheet2");
 	}
 
 	@Test(dataProvider = "getexceldata")
-	public static void OtherProducts(String TestCaseId, String TestScenario, String SearchRuleStatus, String RSqty,
-			String RulesAppliedOnSearchPage, String Module, String LoginType, String URL, String Emailid, String SDN,
-			String Employee, String TravelerType, String Username, String Password, String CoporateName,
-			String DashboardType, String ItineraryName, String Optripcode, String Optripcity, String StartDate,
+	public static void OtherProducts(String TestCaseId, String TestScenario, String Module, String LoginType,
+			String URL, String Emailid, String SDN, String Employee, String TravelerType, String Username,
+			String Password, String ItineraryName, String Optripcode, String Optripcity, String StartDate,
 			String EndDate, String Optrip, String OPRemark, String ItineraryType, String Triptype, String PolicyName,
 			String JourneyType, String TravelClass, String Departure, String Fullorigin, String DepartureDate,
-			String ReturnDate, String DirectFlights) throws Exception {
+			String ReturnDate, String DirectFlights, String NoOfProducts, String ProductsName, String CAJourneyType,
+			String CAClass, String CAOCode, String CAOriginCity, String HRStarCategory) throws Exception {
 
 		QaExtentReport.test = QaExtentReport.report.createTest(TestCaseId + "-" + TestScenario);
 
@@ -61,50 +61,47 @@ public class OtherServices {
 			QaRobot.ClickOnElement("ESubmit");
 			Thread.sleep(6000);
 		}
+
 		QaExtentReport.test.log(Status.INFO, "<b><i>Employee Name is  </i></b>" + Employee);
-//		QaExtentReport.test.log(Status.INFO, "<b><i> Traveler Type is  </i></b>" + TravelerType);
-		if (DashboardType.equalsIgnoreCase("Old")) {
+		QaExtentReport.test.log(Status.INFO, "<b><i> Traveler Type is  </i></b>" + TravelerType);
 
-		} else if (DashboardType.equalsIgnoreCase("New")) {
-			QaRobot.ClickOnElement("NotificationClose");
-			Thread.sleep(1000);
-			QaExtentReport.extentScreenshot("Search Page");
-			QaRobot.ClickOnElement("clickotherservice");
-			Thread.sleep(10000);
-			QaRobot.PassValue("PassItineraryName", ItineraryName);
-			TestBase.listofautosuggestion(By.xpath("//div[@id='divTripDestinationCity']/p"), Optripcode, Optripcity,
-					By.xpath("//input[@id='txtDestination']"));
+		QaRobot.ClickOnElement("NotificationClose");
+		Thread.sleep(1000);
+		QaExtentReport.extentScreenshot("Search Page");
+		QaRobot.ClickOnElement("clickotherservice");
+		Thread.sleep(10000);
+		QaRobot.PassValue("PassItineraryName", ItineraryName);
+		TestBase.listofautosuggestion(By.xpath("//div[@id='divTripDestinationCity']/p"), Optripcode, Optripcity,
+				By.xpath("//input[@id='txtDestination']"));
 
-			String DateSelection[] = StartDate.split("-");
-			String year = DateSelection[2];
-			String month = DateSelection[1];
-			String expDate = DateSelection[0];
-			String DateSelection1[] = EndDate.split("-");
-			String year1 = DateSelection1[2];
-			String month1 = DateSelection1[1];
-			String expDate1 = DateSelection1[0];
-			QaBrowser.driver
-					.findElement(
-							By.xpath("//div[@id='divTripsection']/div[2]/div/div/div/div/div[1]/div[3]/div/div/span"))
-					.click();
-			Thread.sleep(2000);
-			StartAndEndDate(expDate, month, year, expDate1, month1, year1);
-			QaRobot.selectTextFromDropdown("OPTrip", Optrip);
-			QaRobot.PassValue("OPRemarks", OPRemark);
-			Thread.sleep(2000);
-			QaExtentReport.extentScreenshot("Itinerary Detail");
-			QaRobot.ClickOnElement("CreateItinerary");
-			QaExtentReport.extentScreenshot("Itinerary created successfully");
-		}
-
-		String DateSelection[] = DepartureDate.split("-");
+		String DateSelection[] = StartDate.split("-");
 		String year = DateSelection[2];
 		String month = DateSelection[1];
 		String expDate = DateSelection[0];
-		String DateSelection1[] = ReturnDate.split("-");
+		String DateSelection1[] = EndDate.split("-");
 		String year1 = DateSelection1[2];
 		String month1 = DateSelection1[1];
 		String expDate1 = DateSelection1[0];
+		QaBrowser.driver
+				.findElement(By.xpath("//div[@id='divTripsection']/div[2]/div/div/div/div/div[1]/div[3]/div/div/span"))
+				.click();
+		Thread.sleep(2000);
+		StartAndEndDate(expDate, month, year, expDate1, month1, year1);
+		QaRobot.selectTextFromDropdown("OPTrip", Optrip);
+		QaRobot.PassValue("OPRemarks", OPRemark);
+		Thread.sleep(2000);
+		QaExtentReport.extentScreenshot("Itinerary Detail");
+		QaRobot.ClickOnElement("CreateItinerary");
+		QaExtentReport.extentScreenshot("Itinerary created successfully");
+
+		String DateSelection2[] = DepartureDate.split("-");
+		String year2 = DateSelection2[2];
+		String month2 = DateSelection2[1];
+		String expDate2 = DateSelection2[0];
+		String DateSelection3[] = ReturnDate.split("-");
+		String year3 = DateSelection3[2];
+		String month3 = DateSelection3[1];
+		String expDate3 = DateSelection3[0];
 		if (ItineraryType.equalsIgnoreCase("Flight")) {
 			QaRobot.ClickOnElement("FlightItinerary");
 			Thread.sleep(3000);
@@ -120,14 +117,14 @@ public class OtherServices {
 						.findElement(
 								By.xpath("//div[@id='divflightsection']/div/div[2]/div/div/div[3]/div[1]/div/div/span"))
 						.click();
-				selectDateInCalendarOneWay(expDate, month, year);
+				selectDateInCalendarOneWay(expDate2, month2, year2);
 			} else if (JourneyType.equalsIgnoreCase("Round Trip")) {
 				Thread.sleep(2000);
 				QaBrowser.driver
 						.findElement(
 								By.xpath("//div[@id='divflightsection']/div/div[2]/div/div/div[3]/div[1]/div/div/span"))
 						.click();
-				selectDateInCalendarRoundTrip(expDate, month, year, expDate1, month1, year1);
+				selectDateInCalendarRoundTrip(expDate2, month2, year2, expDate3, month3, year3);
 			}
 			Thread.sleep(2000);
 			QaExtentReport.extentScreenshot("Flight Detail");
@@ -142,13 +139,57 @@ public class OtherServices {
 			QaRobot.ClickOnElement("HotelItinerary");
 		} else if (ItineraryType.equalsIgnoreCase("MoreProduct")) {
 			QaRobot.ClickOnElement("Moreproductitinerary");
-		}
+			int pAS = Integer.parseInt(NoOfProducts);
+			for (int i = 1; i <= pAS; i++) {
+				if (ProductsName.equalsIgnoreCase("ComplexItineraryAir")) {
+					QaRobot.ClickOnElement("ComplexItineraryAir");
+					QaRobot.selectTextFromDropdown("CAJourneyType", CAJourneyType,
+							"<b><i>Journey Type<b><i>" + " : " + CAJourneyType);
+					QaRobot.selectTextFromDropdown("CAClass", CAClass, "<b><i>Journey Type<b><i>" + " : " + CAClass);
+					TestBase.listofautosuggestion(By.xpath("//div[@id='divNonbDepartureCity']/p"), CAOCode,
+							CAOriginCity, By.xpath("//input[@id='txtnonbflightOrigin']"));
+					QaExtentReport.test.log(Status.INFO, "<b><i>Departure city</i></b>" + " : " + CAOriginCity);
+					Thread.sleep(2000);
+					QaRobot.ClickOnElement("CASaveFlight");
 
+				} else if (ProductsName.equalsIgnoreCase("HotelsOnRequest")) {
+					QaRobot.ClickOnElement("HotelsOnRequest");
+					WebElement element = QaBrowser.driver.findElement(By.xpath("//select[@id='ddlnonbhotelPolicy']"));
+					Select s = new Select(element);
+					s.selectByIndex(0);
+					QaRobot.selectTextFromDropdown("HRStarCategory", HRStarCategory,
+							"<b><i>Star Category<b><i>" + " : " + HRStarCategory);
+
+				} else if (ProductsName.equalsIgnoreCase("SelfDriveCar")) {
+					QaRobot.ClickOnElement("SelfDriveCar");
+
+				} else if (ProductsName.equalsIgnoreCase("Forex")) {
+					QaRobot.ClickOnElement("Forex");
+
+				} else if (ProductsName.equalsIgnoreCase("ChauffeurDrivenCar")) {
+					QaRobot.ClickOnElement("ChauffeurDrivenCar");
+
+				} else if (ProductsName.equalsIgnoreCase("Visa")) {
+					QaRobot.ClickOnElement("Visa");
+
+				} else if (ProductsName.equalsIgnoreCase("Insurance")) {
+					QaRobot.ClickOnElement("Insurance");
+
+				} else if (ProductsName.equalsIgnoreCase("Bus")) {
+					QaRobot.ClickOnElement("Bus");
+
+				} else if (ProductsName.equalsIgnoreCase("Rail")) {
+					QaRobot.ClickOnElement("Rail");
+
+				}
+			}
+			QaExtentReport.extentScreenshot("Cancellation Charges Rule");
+		}
 	}
 
 	@AfterTest
 	public static void After_Test() {
-		QaExtentReport.test.getExtent().flush();
+//		QaExtentReport.test.getExtent().flush();
 //		QaBrowser.driver.close();
 	}
 
