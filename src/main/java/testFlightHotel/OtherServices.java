@@ -211,13 +211,15 @@ public class OtherServices {
 					Thread.sleep(3000);
 					QaRobot.PassValue("CDCPickTime", CDCPickTime);
 					Thread.sleep(3000);
-					TestBase.listofautosuggestion(By.xpath("//div[@id='divCarPickUpName']/p"), CDCPickCode,
-							CDCPickLocation, By.xpath("//input[@id='txttransferpickupLocation']"));
-					QaExtentReport.test.log(Status.INFO, "<b><i>Departure city</i></b>" + " : " + CDCPickLocation);
+					QaRobot.PassValue("CDCPickLocation", CDCPickLocation);
+//					TestBase.listofautosuggestion(By.xpath("//div[@id='divCarPickUpName']/p"), CDCPickCode,
+//							CDCPickLocation, By.xpath("//input[@id='txttransferpickupLocation']"));
+//					QaExtentReport.test.log(Status.INFO, "<b><i>Departure city</i></b>" + " : " + CDCPickLocation);
 					Thread.sleep(2000);
-					TestBase.listofautosuggestion(By.xpath("//div[@id='divCarDropOffName']/p"), CDCDropCode,
-							CDCDropLocation, By.xpath("//input[@id='txttransferDropoffLocation']"));
-					QaExtentReport.test.log(Status.INFO, "<b><i>Departure city</i></b>" + " : " + CDCDropLocation);
+					QaRobot.PassValue("CDCDropLocation", CDCDropLocation);
+//					TestBase.listofautosuggestion(By.xpath("//div[@id='divCarDropOffName']/p"), CDCDropCode,
+//							CDCDropLocation, By.xpath("//input[@id='txttransferDropoffLocation']"));
+//					QaExtentReport.test.log(Status.INFO, "<b><i>Departure city</i></b>" + " : " + CDCDropLocation);
 					Thread.sleep(2000);
 					QaRobot.selectTextFromDropdown("CDCCarType", CDCCarType,
 							"<b><i>Car Type<b><i>" + " : " + CDCCarType);
