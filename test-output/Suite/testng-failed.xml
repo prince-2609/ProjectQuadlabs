@@ -6,7 +6,7 @@
       <class name="testFlightHotel.OtherServices">
         <methods>
           <include name="After_Test"/>
-          <include name="OtherProducts" invocation-numbers="0"/>
+          <include name="OtherProducts"/>
         </methods>
       </class> <!-- testFlightHotel.OtherServices -->
     </classes>

@@ -148,7 +148,7 @@ public class QaRobot extends QaExtentReport {
 			}
 		}
 	}
-	
+
 	public static void selectDateInCalendarFF(String Day, String Month, String Year) throws Exception {
 
 		Assert.assertFalse(Integer.parseInt(Day) > 31, "Invalid date provided " + Day + "-" + Month + "-" + Year);
@@ -169,7 +169,7 @@ public class QaRobot extends QaExtentReport {
 			}
 		}
 	}
-	
+
 	public static void selectDateInCalendarHMN(String Day, String Month, String Year) throws Exception {
 
 		Assert.assertFalse(Integer.parseInt(Day) > 31, "Invalid date provided " + Day + "-" + Month + "-" + Year);
@@ -252,11 +252,11 @@ public class QaRobot extends QaExtentReport {
 	 * @param time
 	 */
 	public static void impliwait(int time) {
-		QaBrowser.driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
+		QaBrowser.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	}
 
 	public static void pageLoad(int time) {
-		QaBrowser.driver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
+		QaBrowser.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 	}
 
 	/**
