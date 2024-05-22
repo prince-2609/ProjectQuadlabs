@@ -15,6 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -31,11 +32,11 @@ import utilities.QaExtentReport;
 import utilities.QaRobot;
 
 @Listeners(listenerClass.Listener.class)
-public class FlightBooking {
+public class FlightBookingWithMoreProducts {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("FlightBooking", "Sheet11");
+		return QaDataProvider.getTestdata("FlightBookingWithMoreProducts", "Sheet11");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -49,11 +50,19 @@ public class FlightBooking {
 			String ChooseTimingFilter, String FilterType, String ChooseAirLine, String OneWayAirLine,
 			String RoundTripAirLine, String OneWayFareType, String RoundTripFareType, String AirlineType,
 			String booknowindex, String policyindex, String tripindex, String ProductType, String CityCode,
-			String CityTitle, String CheckInDate, String CheckOutDate, String passportnumber, String fop,
-			String receiptno, String card, String AppliedOn, String CQty, String CName, String cardtype, String cvv,
-			String Resultpagestep, String AddToCartRemarks, String CheckOutRuleStatus, String RCqty,
-			String RulesAppliedOnCheckOutPage, String checkoutPageStep, String SeatSelection, String AdultSeatSelection,
-			String ChildSeatSelection, String airReasonCode, String CreatedBy) throws Exception {
+			String CityTitle, String CheckInDate, String CheckOutDate, String NoOfProducts, String ProductsName,
+			String CAJourneyType, String CAClass, String CAOCode, String CAOriginCity, String HRStarCategory,
+			String SCPickTime, String SCPickCode, String SCPickLocation, String SCDropCode, String SCDropLocation,
+			String SCCarType, String ForPerDiem, String CDCPickTime, String CDCPickCode, String CDCPickLocation,
+			String CDCDropCode, String CDCDropLocation, String CDCCarType, String CDCRequirement, String CDCSupplier,
+			String OPTypeVisa, String OPINomineeName, String OPIRelation, String OPIPolicyType, String OPIValidVisa,
+			String OBusOrigin, String OBusDestination, String OBusBoardingPoint, String OBJournneyType,
+			String ORJourneyType, String OROriginCode, String ORDestinationCode, String ORGender, String ORGovernmentId,
+			String passportnumber, String fop, String receiptno, String card, String AppliedOn, String CQty,
+			String CName, String cardtype, String cvv, String Resultpagestep, String AddToCartRemarks,
+			String CheckOutRuleStatus, String RCqty, String RulesAppliedOnCheckOutPage, String checkoutPageStep,
+			String SeatSelection, String AdultSeatSelection, String ChildSeatSelection, String airReasonCode,
+			String CreatedBy) throws Exception {
 		QaExtentReport.test = QaExtentReport.report.createTest(TestCaseId + "-" + TestScenario);
 		TestBase.Companycode(ccode, URL);
 		QaRobot.impliwait(30);
@@ -1910,6 +1919,15 @@ public class FlightBooking {
 				} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
 					addHotel(ProductType, CityCode, CityTitle, CheckInDate, CheckOutDate);
 					QaRobot.switchToWindow();
+					QaRobot.ClickOnElement("SendForApprovalC");
+				} else if (ProductType.equalsIgnoreCase("Flight+MoreProducts")) {
+					MoreProducts(NoOfProducts, ProductsName, CAJourneyType, CAClass, CAOCode, CAOriginCity,
+							HRStarCategory, SCPickTime, SCPickCode, SCPickLocation, SCDropCode, SCDropLocation,
+							SCCarType, ForPerDiem, CDCPickTime, CDCPickCode, CDCPickLocation, CDCDropCode,
+							CDCDropLocation, CDCCarType, CDCRequirement, CDCSupplier, OPTypeVisa, OPINomineeName,
+							OPIRelation, OPIPolicyType, OPIValidVisa, OBusOrigin, OBusDestination, OBusBoardingPoint,
+							OBJournneyType, ORJourneyType, OROriginCode, ORDestinationCode, ORGender, ORGovernmentId);
+					Thread.sleep(5000);
 					QaRobot.ClickOnElement("SendForApprovalC");
 				}
 			}
@@ -4465,6 +4483,167 @@ public class FlightBooking {
 		QaRobot.ClickOnElement("YourItineraryC");
 		Thread.sleep(5000);
 		QaExtentReport.extentScreenshot("Your Itinerary");
+	}
+
+	public static void MoreProducts(String NoOfProducts, String ProductsName, String CAJourneyType, String CAClass,
+			String CAOCode, String CAOriginCity, String HRStarCategory, String SCPickTime, String SCPickCode,
+			String SCPickLocation, String SCDropCode, String SCDropLocation, String SCCarType, String ForPerDiem,
+			String CDCPickTime, String CDCPickCode, String CDCPickLocation, String CDCDropCode, String CDCDropLocation,
+			String CDCCarType, String CDCRequirement, String CDCSupplier, String OPTypeVisa, String OPINomineeName,
+			String OPIRelation, String OPIPolicyType, String OPIValidVisa, String OBusOrigin, String OBusDestination,
+			String OBusBoardingPoint, String OBJournneyType, String ORJourneyType, String OROriginCode,
+			String ORDestinationCode, String ORGender, String ORGovernmentId) throws Exception {
+		int pAS = Integer.parseInt(NoOfProducts);
+		for (int i = 1; i <= pAS; i++) {
+			String[] tN = ProductsName.split(",");
+			String b = tN[i - 1];
+			if (b.equalsIgnoreCase("ComplexItineraryAir")) {
+				QaRobot.ClickOnElement("FBMoreproductitinerary");
+				Thread.sleep(3000);
+				QaRobot.ClickOnElement("FBComplexItineraryAir");
+				Thread.sleep(3000);
+				QaRobot.selectTextFromDropdown("CAJourneyType", CAJourneyType,
+						"<b><i>Journey Type<b><i>" + " : " + CAJourneyType);
+				Thread.sleep(3000);
+				QaRobot.selectTextFromDropdown("CAClass", CAClass, "<b><i>Journey Type<b><i>" + " : " + CAClass);
+				Thread.sleep(3000);
+				TestBase.listofautosuggestion(By.xpath("//div[@id='divNonbDepartureCity']/p"), CAOCode, CAOriginCity,
+						By.xpath("//input[@id='txtnonbflightOrigin']"));
+				Thread.sleep(2000);
+				QaExtentReport.extentScreenshot("Complex Itinerary Air");
+				Thread.sleep(2000);
+				QaRobot.ClickOnElement("CASaveFlight");
+
+			} else if (b.equalsIgnoreCase("HotelsOnRequest")) {
+				QaRobot.ClickOnElement("FBMoreproductitinerary");
+				Thread.sleep(3000);
+				QaRobot.ClickOnElement("FBHotelsOnRequest");
+				Thread.sleep(3000);
+				WebElement element = QaBrowser.driver.findElement(By.xpath("//select[@id='ddlnonbhotelPolicy']"));
+				Select s = new Select(element);
+				s.selectByIndex(1);
+				Thread.sleep(3000);
+				QaRobot.selectTextFromDropdown("HRStarCategory", HRStarCategory,
+						"<b><i>Star Category<b><i>" + " : " + HRStarCategory);
+				Thread.sleep(3000);
+				QaExtentReport.extentScreenshot("Hotels On Request");
+				Thread.sleep(2000);
+				QaRobot.ClickOnElement("HRSaveHotel");
+
+			} else if (b.equalsIgnoreCase("SelfDriveCar")) {
+				QaRobot.ClickOnElement("FBMoreproductitinerary");
+				Thread.sleep(3000);
+				QaRobot.ClickOnElement("FBSelfDriveCar");
+				Thread.sleep(3000);
+				QaRobot.PassValue("SCPickTime", SCPickTime);
+				TestBase.listofautosuggestion(By.xpath("//div[@id='divCarPickUpName']/p"), SCPickCode, SCPickLocation,
+						By.xpath("//input[@id='txtcarpickupLocation']"));
+				Thread.sleep(2000);
+				TestBase.listofautosuggestion(By.xpath("//div[@id='divCarDropOffName']/p"), SCDropCode, SCDropLocation,
+						By.xpath("//input[@id='txtcarDropoffLocation']"));
+				Thread.sleep(2000);
+				QaRobot.selectTextFromDropdown("SCCarType", SCCarType, "<b><i>Car Type<b><i>" + " : " + SCCarType);
+				Thread.sleep(3000);
+				QaExtentReport.extentScreenshot("Self Drive Car");
+				Thread.sleep(2000);
+				QaRobot.ClickOnElement("SCSaveCar");
+
+			} else if (b.equalsIgnoreCase("Forex")) {
+				QaRobot.ClickOnElement("FBMoreproductitinerary");
+				Thread.sleep(3000);
+				QaRobot.ClickOnElement("FBForex");
+				Thread.sleep(3000);
+				QaRobot.PassValue("ForPerDiem", ForPerDiem);
+				QaExtentReport.extentScreenshot("Forex");
+				Thread.sleep(2000);
+				QaRobot.ClickOnElement("ForSaveForex");
+
+			} else if (b.equalsIgnoreCase("ChauffeurDrivenCar")) {
+				QaRobot.ClickOnElement("FBMoreproductitinerary");
+				Thread.sleep(3000);
+				QaRobot.ClickOnElement("FBChauffeurDrivenCar");
+				Thread.sleep(3000);
+				QaRobot.PassValue("CDCPickTime", CDCPickTime);
+				Thread.sleep(3000);
+				QaRobot.PassValue("CDCPickLocation", CDCPickLocation);
+				Thread.sleep(2000);
+				QaRobot.PassValue("CDCDropLocation", CDCDropLocation);
+				Thread.sleep(2000);
+				QaRobot.selectTextFromDropdown("CDCCarType", CDCCarType, "<b><i>Car Type<b><i>" + " : " + CDCCarType);
+				Thread.sleep(3000);
+				QaRobot.selectTextFromDropdown("CDCRequirement", CDCRequirement,
+						"<b><i>Requirement<b><i>" + " : " + CDCRequirement);
+				Thread.sleep(3000);
+				QaRobot.selectTextFromDropdown("CDCSupplier", CDCSupplier,
+						"<b><i>Supplier<b><i>" + " : " + CDCSupplier);
+				Thread.sleep(3000);
+				QaExtentReport.extentScreenshot("Chauffeur Driven Car");
+				Thread.sleep(2000);
+				QaRobot.ClickOnElement("CDCSaveTransfer");
+
+			} else if (b.equalsIgnoreCase("Visa")) {
+				QaRobot.ClickOnElement("FBMoreproductitinerary");
+				Thread.sleep(3000);
+				QaRobot.ClickOnElement("FBOPVisa");
+				Thread.sleep(3000);
+				QaRobot.selectTextFromDropdown("OPTypeVisa", OPTypeVisa, "<b><i>Car Type<b><i>" + " : " + OPTypeVisa);
+				Thread.sleep(3000);
+				QaExtentReport.extentScreenshot("Visa");
+				Thread.sleep(2000);
+				QaRobot.ClickOnElement("OPSaveVisa");
+
+			} else if (b.equalsIgnoreCase("Insurance")) {
+				QaRobot.ClickOnElement("FBMoreproductitinerary");
+				Thread.sleep(3000);
+				QaRobot.ClickOnElement("FBOPInsurance");
+				Thread.sleep(3000);
+				QaRobot.PassValue("OPINomineeName", OPINomineeName);
+				QaRobot.PassValue("OPIRelation", OPIRelation);
+				QaRobot.selectTextFromDropdown("OPIPolicyType", OPIPolicyType,
+						"<b><i>Policy Type<b><i>" + " : " + OPIPolicyType);
+				Thread.sleep(3000);
+				QaRobot.selectTextFromDropdown("OPIValidVisa", OPIValidVisa,
+						"<b><i>Valid Visa<b><i>" + " : " + OPIValidVisa);
+				Thread.sleep(3000);
+				QaExtentReport.extentScreenshot("Insurance");
+				Thread.sleep(2000);
+				QaRobot.ClickOnElement("OPSaveInsurane");
+
+			} else if (b.equalsIgnoreCase("Bus")) {
+				QaRobot.ClickOnElement("FBMoreproductitinerary");
+				Thread.sleep(3000);
+				QaRobot.ClickOnElement("FBOPBus");
+				Thread.sleep(3000);
+				QaRobot.PassValue("OBusOrigin", OBusOrigin);
+				QaRobot.PassValue("OBusDestination", OBusDestination);
+				QaRobot.PassValue("OBusBoardingPoint", OBusBoardingPoint);
+				QaRobot.selectTextFromDropdown("OBJournneyType", OBJournneyType,
+						"<b><i>Journey Type<b><i>" + " : " + OBJournneyType);
+				Thread.sleep(3000);
+				QaExtentReport.extentScreenshot("Bus");
+				Thread.sleep(2000);
+				QaRobot.ClickOnElement("OSaveBus");
+
+			} else if (b.equalsIgnoreCase("Rail")) {
+				QaRobot.ClickOnElement("FBMoreproductitinerary");
+				Thread.sleep(3000);
+				QaRobot.ClickOnElement("FBRail");
+				Thread.sleep(3000);
+				QaRobot.selectTextFromDropdown("ORJourneyType", ORJourneyType,
+						"<b><i>Journey Type<b><i>" + " : " + ORJourneyType);
+				Thread.sleep(3000);
+				QaRobot.PassValue("OROriginCode", OROriginCode);
+				QaRobot.PassValue("ORDestinationCode", ORDestinationCode);
+				QaRobot.selectTextFromDropdown("ORGender", ORGender, "<b><i>Gender<b><i>" + " : " + ORGender);
+				Thread.sleep(3000);
+				QaRobot.selectTextFromDropdown("ORGovernmentId", ORGovernmentId,
+						"<b><i>GOvernment Id<b><i>" + " : " + ORGovernmentId);
+				Thread.sleep(3000);
+				QaExtentReport.extentScreenshot("Rail");
+				Thread.sleep(2000);
+				QaRobot.ClickOnElement("ORSaveRail");
+			}
+		}
 	}
 
 	public static void selectDateInCalendarOneWayNew(String Day, String Month, String Year) throws Exception {

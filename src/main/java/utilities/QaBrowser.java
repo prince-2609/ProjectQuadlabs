@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import com.beust.jcommander.Parameters;
 
 
 public class QaBrowser extends QaRobot {
@@ -54,6 +55,7 @@ public class QaBrowser extends QaRobot {
 
 //	@SuppressWarnings("deprecation")
 	private void launchChrome() throws MalformedURLException {
+		
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\lib\\chromedriverNewMar.exe");
 //		DesiredCapabilities dc = DesiredCapabilities.chrome();
 //		dc.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
