@@ -3,6 +3,7 @@ package testFlightHotel;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -479,8 +480,6 @@ public class FlightBookingWithMoreProducts {
 			} else if (FilterType.equalsIgnoreCase("Layover")) {
 
 			}
-		} else if (ChooseTimingFilter.equalsIgnoreCase("No")) {
-
 		}
 		QaExtentReport.extentScreenshot("Result Page");
 		if (ChooseAirLine.equalsIgnoreCase("Yes")) {
@@ -1384,7 +1383,7 @@ public class FlightBookingWithMoreProducts {
 						}
 					} else {
 						List<WebElement> listOfStop1 = QaBrowser.driver.findElements(By.xpath(
-								"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[1]/div/div[3]/div[4]/div[2]/ul/li/span"));
+								"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[1]/div/div[3]/div[5]/div[2]/ul/li/span"));
 						for (WebElement autoStop1 : listOfStop1) {
 //							System.out.println(autoAirline.getText());
 							if (autoStop1.getText().equalsIgnoreCase(Stops)) {
@@ -2067,7 +2066,7 @@ public class FlightBookingWithMoreProducts {
 			if (FareBranding.equalsIgnoreCase("On")) {
 				SoftAssert softAssert = new SoftAssert();
 				if (ccode.equalsIgnoreCase("sbt")) {
-					if (ProductType.equalsIgnoreCase("Flight")) {
+					if (ProductType.equalsIgnoreCase("Flight") || ProductType.equalsIgnoreCase("Flight+MoreProducts")) {
 						if (Trip.equalsIgnoreCase("OneWay")) {
 							if (Stops.equalsIgnoreCase("0")) {
 								QaRobot.scrollPage(500);
@@ -4498,6 +4497,8 @@ public class FlightBookingWithMoreProducts {
 			String[] tN = ProductsName.split(",");
 			String b = tN[i - 1];
 			if (b.equalsIgnoreCase("ComplexItineraryAir")) {
+				QaRobot.scrollPage(8000);
+				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBMoreproductitinerary");
 				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBComplexItineraryAir");
@@ -4515,6 +4516,8 @@ public class FlightBookingWithMoreProducts {
 				QaRobot.ClickOnElement("CASaveFlight");
 
 			} else if (b.equalsIgnoreCase("HotelsOnRequest")) {
+				QaRobot.scrollPage(8000);
+				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBMoreproductitinerary");
 				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBHotelsOnRequest");
@@ -4531,6 +4534,8 @@ public class FlightBookingWithMoreProducts {
 				QaRobot.ClickOnElement("HRSaveHotel");
 
 			} else if (b.equalsIgnoreCase("SelfDriveCar")) {
+				QaRobot.scrollPage(8000);
+				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBMoreproductitinerary");
 				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBSelfDriveCar");
@@ -4549,6 +4554,8 @@ public class FlightBookingWithMoreProducts {
 				QaRobot.ClickOnElement("SCSaveCar");
 
 			} else if (b.equalsIgnoreCase("Forex")) {
+				QaRobot.scrollPage(8000);
+				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBMoreproductitinerary");
 				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBForex");
@@ -4559,6 +4566,8 @@ public class FlightBookingWithMoreProducts {
 				QaRobot.ClickOnElement("ForSaveForex");
 
 			} else if (b.equalsIgnoreCase("ChauffeurDrivenCar")) {
+				QaRobot.scrollPage(8000);
+				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBMoreproductitinerary");
 				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBChauffeurDrivenCar");
@@ -4582,6 +4591,8 @@ public class FlightBookingWithMoreProducts {
 				QaRobot.ClickOnElement("CDCSaveTransfer");
 
 			} else if (b.equalsIgnoreCase("Visa")) {
+				QaRobot.scrollPage(8000);
+				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBMoreproductitinerary");
 				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBOPVisa");
@@ -4593,6 +4604,8 @@ public class FlightBookingWithMoreProducts {
 				QaRobot.ClickOnElement("OPSaveVisa");
 
 			} else if (b.equalsIgnoreCase("Insurance")) {
+				QaRobot.scrollPage(8000);
+				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBMoreproductitinerary");
 				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBOPInsurance");
@@ -4610,12 +4623,14 @@ public class FlightBookingWithMoreProducts {
 				QaRobot.ClickOnElement("OPSaveInsurane");
 
 			} else if (b.equalsIgnoreCase("Bus")) {
+				QaRobot.scrollPage(8000);
+				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBMoreproductitinerary");
 				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBOPBus");
 				Thread.sleep(3000);
 				QaRobot.PassValue("OBusOrigin", OBusOrigin);
-				QaRobot.PassValue("OBusDestination", OBusDestination);
+//				QaRobot.PassValue("OBusDestination", OBusDestination);
 				QaRobot.PassValue("OBusBoardingPoint", OBusBoardingPoint);
 				QaRobot.selectTextFromDropdown("OBJournneyType", OBJournneyType,
 						"<b><i>Journey Type<b><i>" + " : " + OBJournneyType);
@@ -4625,6 +4640,8 @@ public class FlightBookingWithMoreProducts {
 				QaRobot.ClickOnElement("OSaveBus");
 
 			} else if (b.equalsIgnoreCase("Rail")) {
+				QaRobot.scrollPage(8000);
+				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBMoreproductitinerary");
 				Thread.sleep(3000);
 				QaRobot.ClickOnElement("FBRail");

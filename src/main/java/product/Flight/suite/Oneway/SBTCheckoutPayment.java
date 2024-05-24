@@ -122,7 +122,7 @@ public class SBTCheckoutPayment {
 			QaRobot.selectTextFromDropdown("ow_selectcard", card, "Selected card");
 			QaRobot.ClickOnElement("click_OK");
 //			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked Ok button</i></b>");
-			if (ProductType.equalsIgnoreCase("Flight")) {
+			if (ProductType.equalsIgnoreCase("Flight")||ProductType.equalsIgnoreCase("Flight+MoreProducts")) {
 				if (cardType.equalsIgnoreCase("Master Card")) {
 					QaRobot.selectTextFromDropdown("ow_selectcardtype", cardType, "Selected master card");
 					QaRobot.ClickOnElement("ow_Card");

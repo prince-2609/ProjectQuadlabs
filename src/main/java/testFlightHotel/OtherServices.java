@@ -35,7 +35,7 @@ public class OtherServices {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("OtherServices", "Sheet2");
+		return QaDataProvider.getTestdata("OtherServices", "Sheet4");
 	}
 
 	@Test(dataProvider = "getexceldata")
