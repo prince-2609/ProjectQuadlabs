@@ -37,7 +37,7 @@ public class FlightBookingWithMoreProducts {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("FlightBookingWithMoreProducts", "Sheet11");
+		return QaDataProvider.getTestdata("FlightBookingWithMoreProducts", "Sheet15");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -1927,7 +1927,7 @@ public class FlightBookingWithMoreProducts {
 							OPIRelation, OPIPolicyType, OPIValidVisa, OBusOrigin, OBusDestination, OBusBoardingPoint,
 							OBJournneyType, ORJourneyType, OROriginCode, ORDestinationCode, ORGender, ORGovernmentId);
 					Thread.sleep(5000);
-					QaRobot.ClickOnElement("SendForApprovalC");
+					QaRobot.ClickOnElement("ProceedToCheckoutH");
 				}
 			}
 			checkoutpage(ccode, FareBranding, searchType, triptype, Trip, adult, child, infant, Stops, OneWayAirLine,

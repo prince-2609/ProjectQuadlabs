@@ -249,7 +249,7 @@ public class BusinessHotelTrip {
 					}
 				}
 			}
-			QaRobot.ClickOnElement("HotelPolicyCheckJ");
+//			QaRobot.ClickOnElement("HotelPolicyCheckJ");
 			try {
 				QaExtentReport.extentScreenshot("Search Page");
 				QaRobot.ClickOnElement("FinalSearchHJ");
@@ -443,7 +443,7 @@ public class BusinessHotelTrip {
 			QaRobot.ClickOnElement("TModifiedSearchMH");
 			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on Modified Search</i></b>");
 		}
-		Thread.sleep(15000);
+		Thread.sleep(30000);
 		QaRobot.scrollPage(400);
 		QaRobot.ClickOnElement("HotelSelectC");
 		Thread.sleep(3000);
@@ -479,13 +479,12 @@ public class BusinessHotelTrip {
 		if (Resultpagestep.equalsIgnoreCase("Add to Cart")) {
 			if (DashboardType.equalsIgnoreCase("Old")) {
 //					if (Server.equalsIgnoreCase("Staging") || Server.equalsIgnoreCase("Xchange")) {
-						String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy3')])[3]"))
-								.getText();
-						QaExtentReport.extentScreenshot("Flight Results");
-						QaRobot.ClickOnElement("Addtocartlive");
-						if (getT.equalsIgnoreCase("Out Of Policy")) {
-							QaRobot.alertAccept();
-						}
+				String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy3')])[3]")).getText();
+				QaExtentReport.extentScreenshot("Flight Results");
+				QaRobot.ClickOnElement("Addtocartlive");
+				if (getT.equalsIgnoreCase("Out Of Policy")) {
+					QaRobot.alertAccept();
+				}
 //					} else if (Server.equalsIgnoreCase("tpstg")) {
 //						String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy4')])[3]"))
 //								.getText();
@@ -797,7 +796,8 @@ public class BusinessHotelTrip {
 			if (ProductType.equalsIgnoreCase("Hotel")) {
 				QaRobot.selectIndexFromDropdown("ResonCodeCT", 1);
 				QaRobot.selectIndexFromDropdown("ResonCodeCN", 1);
-				QaRobot.ClickOnElement("BillToBranchC");
+				QaRobot.PassValue("HotelReasonCode", "RC101");
+//				QaRobot.ClickOnElement("BillToBranchC");
 			} else if (ProductType.equalsIgnoreCase("Hotel+Flight")) {
 				if (ccode.equalsIgnoreCase("Staging")) {
 					QaRobot.selectIndexFromDropdown("AirResonCodeC", 1);
