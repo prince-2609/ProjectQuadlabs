@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="3" parallel="tests" name="Test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testFlightHotel.FlightBookingWithMoreProducts">
+      <class name="testFlightHotel.FlightBooking117">
         <methods>
+          <include name="flightBooking" invocation-numbers="7"/>
           <include name="After_Test"/>
-          <include name="flightBooking" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testFlightHotel.FlightBookingWithMoreProducts -->
+      </class> <!-- testFlightHotel.FlightBooking117 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
