@@ -278,7 +278,7 @@ public class SBTResultPage {
 			QaBrowser.driver.switchTo().alert().accept();
 		}
 		// wait for close button visibility
-		QaRobot.explicitwaitvisible(80, By.xpath("//button[@class='btn btn-default']"));
+//		QaRobot.explicitwaitvisible(80, By.xpath("//button[@class='btn btn-default']"));
 		// check notification text after add to cart
 		String message = QaBrowser.driver.findElement(By.xpath("//div[@class='modal-body']/p")).getText();
 
@@ -294,7 +294,7 @@ public class SBTResultPage {
 //			//click on Your Itineary button
 //			QaRobot.ClickOnElement("hoteladdTocart_Itineary", "Click on Your Itineary button");
 		// wait visibility of send for approval button
-		QaRobot.explicitwaitvisible(100, By.xpath("(//a[@class='btn btn_blue_lg proceedcart btnTripRequest'])[1]"));
+//		QaRobot.explicitwaitvisible(100, By.xpath("(//a[@class='btn btn_blue_lg proceedcart btnTripRequest'])[1]"));
 		// take the screenshot of add to cart page
 		String addToCart = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\addTocart.png");
 		QaExtentReport.test.log(Status.INFO, "Add To Cart  " + addToCart + "");
@@ -311,7 +311,7 @@ public class SBTResultPage {
 		QaRobot.ClickOnElement("addHotelInAddToCart");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Add Hotel with Flight</i></b>");
 		// Wait till search button visibility
-		QaRobot.explicitwaitvisible(250, By.xpath("//input[@id='btnSearchHotel']"));
+//		QaRobot.explicitwaitvisible(250, By.xpath("//input[@id='btnSearchHotel']"));
 		// Select the hotel destination
 		TestBase.listofautosuggestion(By.xpath("//div[@id='divHTCity']/p"), origin, forigin,
 				By.xpath("//input[@id='txtHotelSearch']"));
@@ -321,9 +321,9 @@ public class SBTResultPage {
 		QaRobot.ClickOnElement("searchInAddToCart");
 		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on search button for Hotel results</i></b>");
 
-		QaRobot.explicitwaitinvisible(250, By.xpath("div[@class='loadbar ld_hotel']"));
+//		QaRobot.explicitwaitinvisible(250, By.xpath("div[@class='loadbar ld_hotel']"));
 		// explicit wait till loader invisible
-		QaRobot.explicitwaitinvisible(600, By.xpath("//i[@class='htl-rslt-loader-img']"));
+//		QaRobot.explicitwaitinvisible(600, By.xpath("//i[@class='htl-rslt-loader-img']"));
 ////
 		// Click on send for approval button
 		QaRobot.ClickOnElement("sendforApproval");
@@ -342,7 +342,7 @@ public class SBTResultPage {
 		// verify the details and accept alert
 		QaBrowser.driver.switchTo().alert().accept();
 		// wait till successful alert is present
-		QaRobot.explicitwaitalert(500);
+//		QaRobot.explicitwaitalert(500);
 		// take screen shot
 //			String sendingApproval = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\sendingApproval.png");
 //			QaExtentReport.test.log(Status.INFO, "Add To Cart  "+sendingApproval+"");

@@ -143,7 +143,7 @@ public class TestBase extends QaExtentReport {
 		ArrayList<WebElement> autosuggestions = (ArrayList<WebElement>) QaBrowser.driver.findElements(suggestiontxt);
 //		 System.out.println(autosuggestions.toString());
 		for (WebElement autosuggestion : autosuggestions) {
-			System.out.println(autosuggestion.getText());
+//			System.out.println(autosuggestion.getText());
 			if (autosuggestion.getText().equalsIgnoreCase(city_name)) {
 				autosuggestion.click();
 				break;

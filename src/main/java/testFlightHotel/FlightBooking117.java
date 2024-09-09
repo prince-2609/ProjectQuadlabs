@@ -36,7 +36,7 @@ public class FlightBooking117 {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("FlightBooking117", "Sheet17");
+		return QaDataProvider.getTestdata("FlightBooking117", "Sheet15");
 	}
 
 	@Test(dataProvider = "getexceldata")

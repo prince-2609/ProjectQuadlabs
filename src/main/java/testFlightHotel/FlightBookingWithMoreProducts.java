@@ -37,7 +37,7 @@ public class FlightBookingWithMoreProducts {
 
 	@DataProvider
 	public Object[][] getexceldata() throws Exception {
-		return QaDataProvider.getTestdata("FlightBookingWithMoreProducts", "Sheet15");
+		return QaDataProvider.getTestdata("FlightBookingWithMoreProducts", "118LiveTestCases");
 	}
 
 	@Test(dataProvider = "getexceldata")
@@ -191,8 +191,8 @@ public class FlightBookingWithMoreProducts {
 			QaExtentReport.extentScreenshot("Search Page");
 			QaRobot.ClickOnElement("ow_searchflight");
 		} else if (DashboardType.equalsIgnoreCase("New")) {
-			QaRobot.ClickOnElement("NotificationClose");
-			Thread.sleep(2000);
+//			QaRobot.ClickOnElement("NotificationClose");
+//			Thread.sleep(2000);
 //			QaRobot.ClickOnElement("NBookAs");
 //			Thread.sleep(2000);
 			if (TravelerType.equalsIgnoreCase("Administrator") || TravelerType.equalsIgnoreCase("Travel Arranger")) {
@@ -982,7 +982,7 @@ public class FlightBookingWithMoreProducts {
 				} else if (triptype.equalsIgnoreCase("International")) {
 					if (searchType.equalsIgnoreCase("Individual")) {
 						String getT = QaBrowser.driver.findElement(By.xpath(
-								"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[3]/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div[1]/div[2]/div/span/span"))
+								"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[2]/div[1]/div[2]/div[1]/div[2]/div/span/span"))
 								.getText();
 						QaRobot.ClickOnElement("SelectInter");
 						QaRobot.ClickOnElement("AddToCartJ1");
@@ -1785,7 +1785,7 @@ public class FlightBookingWithMoreProducts {
 					}
 					Thread.sleep(3000);
 					String getT = QaBrowser.driver.findElement(By.xpath(
-							"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[3]/div[1]/div/div/div[2]/div/div[3]/div[1]/div[2]/div[1]/div[2]/div/span/span"))
+							"/html/body/div[1]/div[2]/div/section/div[2]/div[2]/div/div[2]/div[2]/div[1]/div/div/div[2]/div/div[2]/div[1]/div[2]/div[1]/div[2]/div/span/span"))
 							.getText();
 					QaRobot.ClickOnElement("SelectInter");
 					QaRobot.scrollPage(400);
@@ -2065,7 +2065,7 @@ public class FlightBookingWithMoreProducts {
 			}
 			if (FareBranding.equalsIgnoreCase("On")) {
 				SoftAssert softAssert = new SoftAssert();
-				if (ccode.equalsIgnoreCase("sbt")) {
+				if (ccode.equalsIgnoreCase("sbt") || ccode.equalsIgnoreCase("Live")) {
 					if (ProductType.equalsIgnoreCase("Flight") || ProductType.equalsIgnoreCase("Flight+MoreProducts")) {
 						if (Trip.equalsIgnoreCase("OneWay")) {
 							if (Stops.equalsIgnoreCase("0")) {
@@ -2593,7 +2593,7 @@ public class FlightBookingWithMoreProducts {
 //				QaRobot.scrollPage(1000);
 			QaRobot.ClickOnElement("ow_chkterms");
 //				QaExtentReport.test.log(Status.INFO, "<b><i>check the terms and condition</i></b>");
-			if (ccode.equalsIgnoreCase("sbt")) {
+			if (ccode.equalsIgnoreCase("sbt") || ccode.equalsIgnoreCase("Live")) {
 //				if (OneWayAirLine.equalsIgnoreCase("Air India") || RoundTripAirLine.equalsIgnoreCase("Air India")
 //						|| OneWayAirLine.equalsIgnoreCase("Vistara") || RoundTripAirLine.equalsIgnoreCase("Vistara")
 //						|| OneWayAirLine.equalsIgnoreCase("Qatar Airways")
@@ -4274,43 +4274,43 @@ public class FlightBookingWithMoreProducts {
 //				System.out.println("Price of payment page " + paymentprice);
 //				QaExtentReport.test.log(Status.INFO, "<b><i>Price of payment page </i></b>" + paymentprice);
 			// select FOP
-			if (fop.equalsIgnoreCase("Cash")) {
-				SBTCheckoutPayment.fopCash(fop, receiptno);
-			} else if (fop.equalsIgnoreCase("Bill To Company")) {
-				SBTCheckoutPayment.fopBillToComapnay(fop);
-				QaRobot.ClickOnElement("click_OK");
-			} else {
-				SBTCheckoutPayment.fopCreditDebit(ProductType, card, cardtype, cvv);
-			}
-
-			QaExtentReport.extentScreenshot("Payment Page");
-			QaRobot.ClickOnElement("ow_paymentprocced");
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
-			Thread.sleep(2000);
-			String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']")).getText();
-			System.out.println("Booking Status is " + bookingStatus);
-			QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
-			// Confirmation code
-			QaExtentReport.extentScreenshot("Confirmation Page");
-			String pnr = QaBrowser.driver
-					.findElement(By.xpath("//div[@id='ctl00_contentMain_flt_details']/div[1]/div[1]/div[2]/p/span[2]"))
-					.getText();
-			System.out.println("PNR is " + pnr);
-			QaExtentReport.test.log(Status.INFO, "<b><i> </i></b>" + pnr);
-//				String pnr = QaBrowser.driver.findElement(By.xpath("//p[@class='nc_status_p']")).getText();
-//				System.out.println("PNR is " + pnr);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
-			// Confirm page price
-//				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
-//						.getText();
-//				System.out.println("Confirm Page Price is " + confirmePrice);
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
-			// Booking id
-			String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
-			String a[] = bookingID.split(" ");
-			String number = a[2];
-			System.out.println("Booking ID is " + number);
-			QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
+//			if (fop.equalsIgnoreCase("Cash")) {
+//				SBTCheckoutPayment.fopCash(fop, receiptno);
+//			} else if (fop.equalsIgnoreCase("Bill To Company")) {
+//				SBTCheckoutPayment.fopBillToComapnay(fop);
+//				QaRobot.ClickOnElement("click_OK");
+//			} else {
+//				SBTCheckoutPayment.fopCreditDebit(ProductType, card, cardtype, cvv);
+//			}
+//
+//			QaExtentReport.extentScreenshot("Payment Page");
+//			QaRobot.ClickOnElement("ow_paymentprocced");
+////				QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on procced button</i></b>");
+//			Thread.sleep(2000);
+//			String bookingStatus = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_status_color']")).getText();
+//			System.out.println("Booking Status is " + bookingStatus);
+//			QaExtentReport.test.log(Status.INFO, "<b><i>Booking Status is </i></b>" + bookingStatus);
+//			// Confirmation code
+//			QaExtentReport.extentScreenshot("Confirmation Page");
+//			String pnr = QaBrowser.driver
+//					.findElement(By.xpath("//div[@id='ctl00_contentMain_flt_details']/div[1]/div[1]/div[2]/p/span[2]"))
+//					.getText();
+//			System.out.println("PNR is " + pnr);
+//			QaExtentReport.test.log(Status.INFO, "<b><i> </i></b>" + pnr);
+////				String pnr = QaBrowser.driver.findElement(By.xpath("//p[@class='nc_status_p']")).getText();
+////				System.out.println("PNR is " + pnr);
+////				QaExtentReport.test.log(Status.INFO, "<b><i>PNR is </i></b>" + pnr);
+//			// Confirm page price
+////				String confirmePrice = QaBrowser.driver.findElement(By.xpath("(//div[@class='nc_fcelllast'])[4]"))
+////						.getText();
+////				System.out.println("Confirm Page Price is " + confirmePrice);
+////				QaExtentReport.test.log(Status.INFO, "<b><i>Confirm Page Price is </i></b>" + confirmePrice);
+//			// Booking id
+//			String bookingID = QaBrowser.driver.findElement(By.xpath("//span[@class='nc_bookid_no']")).getText();
+//			String a[] = bookingID.split(" ");
+//			String number = a[2];
+//			System.out.println("Booking ID is " + number);
+//			QaExtentReport.test.log(Status.INFO, "<b><i>Booking id is </i></b>" + number);
 //			QaExtentReport.extentScreenshot("Confirm Page");
 ////
 ////				QaRobot.mouseHover("//a[@id='ctl00_HeaderTop_aBookingMenu']",

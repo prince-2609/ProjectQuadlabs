@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="6" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-08T05:31:42 IST" name="Suite" finished-at="2024-06-08T05:45:26 IST" duration-ms="823481">
+  <suite started-at="2024-06-29T05:45:29 IST" name="Suite" finished-at="2024-06-29T06:17:09 IST" duration-ms="1900688">
     <groups>
     </groups>
-    <test started-at="2024-06-08T05:31:42 IST" name="Test" finished-at="2024-06-08T05:45:26 IST" duration-ms="823481">
+    <test started-at="2024-06-29T05:45:29 IST" name="Test" finished-at="2024-06-29T06:17:09 IST" duration-ms="1900688">
       <class name="testFlightHotel.FlightBooking117">
-        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-08T05:31:43 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-08T05:34:48 IST" duration-ms="184829" status="PASS">
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T05:45:30 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T05:48:25 IST" duration-ms="174976" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -16,7 +16,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[Verify Booking Flow-Domestic(One Way)-Disable Paid Baggage And Disable Paid Meals With Duration Filter.]]>
+                <![CDATA[Verify Booking flow-Domestic(One Way) with LCC(Akasa Air).]]>
               </value>
             </param>
             <param index="2">
@@ -141,12 +141,12 @@
             </param>
             <param index="26">
               <value>
-                <![CDATA[11-Jul-2024]]>
+                <![CDATA[18-Jul-2024]]>
               </value>
             </param>
             <param index="27">
               <value>
-                <![CDATA[18-Jul-2024]]>
+                <![CDATA[25-Jul-2024]]>
               </value>
             </param>
             <param index="28">
@@ -206,7 +206,7 @@
             </param>
             <param index="39">
               <value>
-                <![CDATA[Yes]]>
+                <![CDATA[No]]>
               </value>
             </param>
             <param index="40">
@@ -221,12 +221,12 @@
             </param>
             <param index="42">
               <value>
-                <![CDATA[Air Asia]]>
+                <![CDATA[Akasa Air]]>
               </value>
             </param>
             <param index="43">
               <value>
-                <![CDATA[Air Asia]]>
+                <![CDATA[Akasa Air]]>
               </value>
             </param>
             <param index="44">
@@ -388,7 +388,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flightBooking -->
-        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-08T05:34:48 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-08T05:38:09 IST" duration-ms="200439" status="PASS">
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T05:48:25 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T05:51:32 IST" duration-ms="186497" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -397,7 +397,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[Verify Booking Flow-Domestic(Round Trip) -Disable Paid Baggage And Disable Paid Meals With Duration Filter.]]>
+                <![CDATA[Verify Booking flow-Domestic(Round Trip) with LCC(Indigo).]]>
               </value>
             </param>
             <param index="2">
@@ -522,12 +522,12 @@
             </param>
             <param index="26">
               <value>
-                <![CDATA[19-Jul-2024]]>
+                <![CDATA[5-Jul-2024]]>
               </value>
             </param>
             <param index="27">
               <value>
-                <![CDATA[26-Jul-2024]]>
+                <![CDATA[22-Jul-2024]]>
               </value>
             </param>
             <param index="28">
@@ -587,7 +587,7 @@
             </param>
             <param index="39">
               <value>
-                <![CDATA[Yes]]>
+                <![CDATA[No]]>
               </value>
             </param>
             <param index="40">
@@ -769,7 +769,839 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flightBooking -->
-        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-08T05:38:09 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-08T05:41:22 IST" duration-ms="192286" status="PASS">
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T05:51:32 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T05:54:35 IST" duration-ms="183189" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test on Flight 3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Verify Booking flow-Domestic(One Way) with GDS(Air India).]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Applied]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[tripsource.co.in/sbt/#]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[test.quadlabs.net]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Administrator]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Laxmi]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[DWUFR8WRAR6SL1M]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Off]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Old]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Individual]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Domestic]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[OneWay]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Bom]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[del]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Delhi,India - Indira Gandhi Intl (DEL)]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Business trip  - Without reason]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[12-Jul-2024]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[17-Jul-2024]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Indian Rupees]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Economy]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Duration]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Air India]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Air India]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[ECO LITE]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[ECO LITE]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[GDS]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[Flight]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[bom]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Mumbai, Maharashtra, India (BOM-Chhatrapati Shivaji Intl.)]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[23-May-2024]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[24-May-2024]]>
+              </value>
+            </param>
+            <param index="55">
+              <value>
+                <![CDATA[78554432323]]>
+              </value>
+            </param>
+            <param index="56">
+              <value>
+                <![CDATA[Ca]]>
+              </value>
+            </param>
+            <param index="57">
+              <value>
+                <![CDATA[345678]]>
+              </value>
+            </param>
+            <param index="58">
+              <value>
+                <![CDATA[Credit Card]]>
+              </value>
+            </param>
+            <param index="59">
+              <value>
+                <![CDATA[Corporate]]>
+              </value>
+            </param>
+            <param index="60">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="61">
+              <value>
+                <![CDATA[Amazon]]>
+              </value>
+            </param>
+            <param index="62">
+              <value>
+                <![CDATA[Visa]]>
+              </value>
+            </param>
+            <param index="63">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="64">
+              <value>
+                <![CDATA[Flight Book]]>
+              </value>
+            </param>
+            <param index="65">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="66">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[Airline For flight]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[Fullfillment]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[21B,9E,6E,12E]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[6A,25B,2E,12E]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[IN Policy all ]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightBooking -->
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T05:54:41 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T05:56:28 IST" duration-ms="106875" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test on Flight 4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Verify Booking flow-Domestic(Round Trip) with GDS(Vistara).]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Applied]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[tripsource.co.in/sbt/#]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[test.quadlabs.net]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Administrator]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Laxmi]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[DWUFR8WRAR6SL1M]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Off]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Old]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Individual]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Domestic]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[RoundTrip]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[del]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Delhi,India - Indira Gandhi Intl (DEL)]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Bom]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Business trip  - Without reason]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[12-Jul-2024]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[17-Jul-2024]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Indian Rupees]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Economy]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Duration]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Vistara]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Vistara]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[ECO LITE]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[ECO LITE]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[GDS]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[Flight]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[bom]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Mumbai, Maharashtra, India (BOM-Chhatrapati Shivaji Intl.)]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[23-May-2024]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[24-May-2024]]>
+              </value>
+            </param>
+            <param index="55">
+              <value>
+                <![CDATA[78554432323]]>
+              </value>
+            </param>
+            <param index="56">
+              <value>
+                <![CDATA[Ca]]>
+              </value>
+            </param>
+            <param index="57">
+              <value>
+                <![CDATA[345678]]>
+              </value>
+            </param>
+            <param index="58">
+              <value>
+                <![CDATA[Credit Card]]>
+              </value>
+            </param>
+            <param index="59">
+              <value>
+                <![CDATA[Corporate]]>
+              </value>
+            </param>
+            <param index="60">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="61">
+              <value>
+                <![CDATA[Amazon]]>
+              </value>
+            </param>
+            <param index="62">
+              <value>
+                <![CDATA[Visa]]>
+              </value>
+            </param>
+            <param index="63">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="64">
+              <value>
+                <![CDATA[Flight Book]]>
+              </value>
+            </param>
+            <param index="65">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="66">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[Airline For flight]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[Fullfillment]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[21B,9E,6E,12E]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[6A,25B,2E,12E]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[IN Policy all ]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//input[contains(@id,'radio_Inbound')])[1]"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a9632998a0106a3e52dc2f28e18680b, findElement {using=xpath, value=(//input[contains(@id,'radio_Inbound')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63386}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63386/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a9632998a0106a3e52dc2f28e18680b]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//input[contains(@id,'radio_Inbound')])[1]"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a9632998a0106a3e52dc2f28e18680b, findElement {using=xpath, value=(//input[contains(@id,'radio_Inbound')])[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63386}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63386/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a9632998a0106a3e52dc2f28e18680b
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+at testFlightHotel.FlightBooking117.flightBooking(FlightBooking117.java:539)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightBooking -->
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T05:56:29 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T06:00:08 IST" duration-ms="219288" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -778,7 +1610,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[Verify Booking flow-International(One Way) -Disable Paid Baggage And Disable Paid Meals With Duration Filter.]]>
+                <![CDATA[Verify Booking flow-International(One Way) With LCC(Akasa Air).]]>
               </value>
             </param>
             <param index="2">
@@ -903,12 +1735,12 @@
             </param>
             <param index="26">
               <value>
-                <![CDATA[5-Jul-2024]]>
+                <![CDATA[19-Jul-2024]]>
               </value>
             </param>
             <param index="27">
               <value>
-                <![CDATA[22-Jul-2024]]>
+                <![CDATA[26-Jul-2024]]>
               </value>
             </param>
             <param index="28">
@@ -968,7 +1800,458 @@
             </param>
             <param index="39">
               <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Duration]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
                 <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Akasa Air]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Akasa Air]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[SAVER]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[SAVER]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[LCC]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[Flight]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[bom]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Mumbai, Maharashtra, India (BOM-Chhatrapati Shivaji Intl.)]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[23-May-2024]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[24-May-2024]]>
+              </value>
+            </param>
+            <param index="55">
+              <value>
+                <![CDATA[78554432323]]>
+              </value>
+            </param>
+            <param index="56">
+              <value>
+                <![CDATA[Ca]]>
+              </value>
+            </param>
+            <param index="57">
+              <value>
+                <![CDATA[345678]]>
+              </value>
+            </param>
+            <param index="58">
+              <value>
+                <![CDATA[Credit Card]]>
+              </value>
+            </param>
+            <param index="59">
+              <value>
+                <![CDATA[Corporate]]>
+              </value>
+            </param>
+            <param index="60">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="61">
+              <value>
+                <![CDATA[Amazon]]>
+              </value>
+            </param>
+            <param index="62">
+              <value>
+                <![CDATA[Visa]]>
+              </value>
+            </param>
+            <param index="63">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="64">
+              <value>
+                <![CDATA[Flight Book]]>
+              </value>
+            </param>
+            <param index="65">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="66">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[Airline For flight]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[Fullfillment]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[21B,9E,6E,12E]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[6A,25B,2E,12E]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[IN Policy all ]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c830f090e88241b45493a9a6d2e0bf63, clickElement {id=f.188F58C348631FDA56C2145F28EDA7F4.d.F503155FA131ADC85728E329C7D88143.e.1923}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63429}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63429/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (c830f090e88241b45493a9a6d2e0bf63)] -> xpath: //a[@id='ctl00_contentMain_btnSeatLcc']]
+Session ID: c830f090e88241b45493a9a6d2e0bf63]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c830f090e88241b45493a9a6d2e0bf63, clickElement {id=f.188F58C348631FDA56C2145F28EDA7F4.d.F503155FA131ADC85728E329C7D88143.e.1923}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63429}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63429/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (c830f090e88241b45493a9a6d2e0bf63)] -> xpath: //a[@id='ctl00_contentMain_btnSeatLcc']]
+Session ID: c830f090e88241b45493a9a6d2e0bf63
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at utilities.QaRobot.ClickOnElement(QaRobot.java:217)
+at testFlightHotel.FlightBooking117.checkoutpage(FlightBooking117.java:2868)
+at testFlightHotel.FlightBooking117.flightBooking(FlightBooking117.java:582)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightBooking -->
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T06:00:08 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T06:02:38 IST" duration-ms="149740" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test on Flight 6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Verify Booking flow-International(Round Trip) With LCC(Indigo).]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Applied]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[tripsource.co.in/sbt/#]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[test.quadlabs.net]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Administrator]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Laxmi]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[DWUFR8WRAR6SL1M]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Off]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Old]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Individual]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[International]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[RoundTrip]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[del]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Delhi,India - Indira Gandhi Intl (DEL)]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Dxb]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Dubai,United Arab Emirates - Dubai (DXB)]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Business trip  - Without reason]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[11-Jul-2024]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[18-Jul-2024]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Indian Rupees]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Economy]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[No]]>
               </value>
             </param>
             <param index="40">
@@ -1147,19 +2430,90 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[@id='ctl00_contentMain_expATag']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9927923f87ae3f4f92b90e8f97a72447, findElement {using=xpath, value=//a[@id='ctl00_contentMain_expATag']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63490}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63490/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9927923f87ae3f4f92b90e8f97a72447]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@id='ctl00_contentMain_expATag']"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9927923f87ae3f4f92b90e8f97a72447, findElement {using=xpath, value=//a[@id='ctl00_contentMain_expATag']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63490}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63490/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9927923f87ae3f4f92b90e8f97a72447
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+at testFlightHotel.FlightBooking117.checkoutpage(FlightBooking117.java:1947)
+at testFlightHotel.FlightBooking117.flightBooking(FlightBooking117.java:582)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flightBooking -->
-        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-08T05:41:22 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-08T05:45:25 IST" duration-ms="243095" status="PASS">
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T06:02:39 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T06:05:54 IST" duration-ms="195420" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Test on Flight 6]]>
+                <![CDATA[Test on Flight 7]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Verify Booking flow-International(Round Trip)  -Disable Paid Baggage And Disable Paid Meals With Duration Filter.]]>
+                <![CDATA[Verify Booking flow-International(One Way) With GDS(Qatar Airways).]]>
               </value>
             </param>
             <param index="2">
@@ -1254,7 +2608,7 @@
             </param>
             <param index="20">
               <value>
-                <![CDATA[RoundTrip]]>
+                <![CDATA[OneWay]]>
               </value>
             </param>
             <param index="21">
@@ -1349,7 +2703,7 @@
             </param>
             <param index="39">
               <value>
-                <![CDATA[Yes]]>
+                <![CDATA[No]]>
               </value>
             </param>
             <param index="40">
@@ -1364,12 +2718,844 @@
             </param>
             <param index="42">
               <value>
-                <![CDATA[Akasa Air]]>
+                <![CDATA[Qatar Airways]]>
               </value>
             </param>
             <param index="43">
               <value>
-                <![CDATA[Akasa Air]]>
+                <![CDATA[Qatar Airways]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[PUB]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[PUB]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[GDS]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[Flight]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[bom]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Mumbai, Maharashtra, India (BOM-Chhatrapati Shivaji Intl.)]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[23-May-2024]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[24-May-2024]]>
+              </value>
+            </param>
+            <param index="55">
+              <value>
+                <![CDATA[78554432323]]>
+              </value>
+            </param>
+            <param index="56">
+              <value>
+                <![CDATA[Ca]]>
+              </value>
+            </param>
+            <param index="57">
+              <value>
+                <![CDATA[345678]]>
+              </value>
+            </param>
+            <param index="58">
+              <value>
+                <![CDATA[Credit Card]]>
+              </value>
+            </param>
+            <param index="59">
+              <value>
+                <![CDATA[Corporate]]>
+              </value>
+            </param>
+            <param index="60">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="61">
+              <value>
+                <![CDATA[Amazon]]>
+              </value>
+            </param>
+            <param index="62">
+              <value>
+                <![CDATA[Visa]]>
+              </value>
+            </param>
+            <param index="63">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="64">
+              <value>
+                <![CDATA[Flight Book]]>
+              </value>
+            </param>
+            <param index="65">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="66">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[Airline For flight]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[Fullfillment]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[21B,9E,6E,12E]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[6A,25B,2E,12E]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[IN Policy all ]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8fcc3b73c4e84743b4aed40d5688afa9, clickElement {id=f.C9212AFFBBD8F240D7C6DB1CA58080A5.d.A3FBCCE98A097AD615E5BB3A4C902D24.e.1887}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63541}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63541/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (8fcc3b73c4e84743b4aed40d5688afa9)] -> xpath: //input[@id='ctl00_contentMain_btnInstantTicket']]
+Session ID: 8fcc3b73c4e84743b4aed40d5688afa9]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'SHUBHAM', ip: '192.168.111.141', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8fcc3b73c4e84743b4aed40d5688afa9, clickElement {id=f.C9212AFFBBD8F240D7C6DB1CA58080A5.d.A3FBCCE98A097AD615E5BB3A4C902D24.e.1887}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 125.0.6422.76 (67dcf7562b8f..., userDataDir: C:\Users\SHUBHA~1.NAT\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63541}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63541/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (8fcc3b73c4e84743b4aed40d5688afa9)] -> xpath: //input[@id='ctl00_contentMain_btnInstantTicket']]
+Session ID: 8fcc3b73c4e84743b4aed40d5688afa9
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at utilities.QaRobot.ClickOnElement(QaRobot.java:217)
+at testFlightHotel.FlightBooking117.checkoutpage(FlightBooking117.java:2871)
+at testFlightHotel.FlightBooking117.flightBooking(FlightBooking117.java:582)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightBooking -->
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T06:05:54 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T06:10:10 IST" duration-ms="255578" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test on Flight 8]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Verify Booking flow-International(Round Trip) With GDS(Qatar Airways).]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Applied]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[tripsource.co.in/sbt/#]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[test.quadlabs.net]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Administrator]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Laxmi]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[DWUFR8WRAR6SL1M]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Off]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Old]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Individual]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[International]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[RoundTrip]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Bom]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Dxb]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Dubai,United Arab Emirates - Dubai (DXB)]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Business trip  - Without reason]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[18-Jul-2024]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[25-Jul-2024]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Indian Rupees]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Economy]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Duration]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Qatar Airways]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Qatar Airways]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[PUB]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[PUB]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[GDS]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[Flight]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[bom]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Mumbai, Maharashtra, India (BOM-Chhatrapati Shivaji Intl.)]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[23-May-2024]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[24-May-2024]]>
+              </value>
+            </param>
+            <param index="55">
+              <value>
+                <![CDATA[78554432323]]>
+              </value>
+            </param>
+            <param index="56">
+              <value>
+                <![CDATA[Ca]]>
+              </value>
+            </param>
+            <param index="57">
+              <value>
+                <![CDATA[345678]]>
+              </value>
+            </param>
+            <param index="58">
+              <value>
+                <![CDATA[Credit Card]]>
+              </value>
+            </param>
+            <param index="59">
+              <value>
+                <![CDATA[Corporate]]>
+              </value>
+            </param>
+            <param index="60">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="61">
+              <value>
+                <![CDATA[Amazon]]>
+              </value>
+            </param>
+            <param index="62">
+              <value>
+                <![CDATA[Visa]]>
+              </value>
+            </param>
+            <param index="63">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="64">
+              <value>
+                <![CDATA[Flight Book]]>
+              </value>
+            </param>
+            <param index="65">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="66">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[Airline For flight]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[Fullfillment]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[21B,9E,6E,12E]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[6A,25B,2E,12E]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[IN Policy all ]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightBooking -->
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T06:10:18 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T06:13:17 IST" duration-ms="178909" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test on Flight 9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Verify Booking flow-Domestic(One Way) with LCC(Air Asia).]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Applied]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[tripsource.co.in/sbt/#]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[test.quadlabs.net]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Administrator]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Laxmi]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[DWUFR8WRAR6SL1M]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Off]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Old]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Individual]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Domestic]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[OneWay]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Bom]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[del]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Delhi,India - Indira Gandhi Intl (DEL)]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Business trip  - Without reason]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[19-Jul-2024]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[26-Jul-2024]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Indian Rupees]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Economy]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Duration]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[Air Asia]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[Air Asia]]>
               </value>
             </param>
             <param index="44">
@@ -1531,7 +3717,388 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flightBooking -->
-        <test-method is-config="true" signature="After_Test()[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-08T05:45:25 IST" name="After_Test" finished-at="2024-06-08T05:45:26 IST" duration-ms="246" status="PASS">
+        <test-method signature="flightBooking(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T06:13:18 IST" name="flightBooking" data-provider="getexceldata" finished-at="2024-06-29T06:17:09 IST" duration-ms="231037" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test on Flight 10]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Verify Booking flow-Domestic(Round Trip) with LCC(Spice Jet).]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Applied]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[sbt]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Normal]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[tripsource.co.in/sbt/#]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[test.quadlabs.net]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Administrator]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Laxmi]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[DWUFR8WRAR6SL1M]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Off]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Old]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[laxmi.khanal@quadlabs.com]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[Individual]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[Domestic]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[RoundTrip]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[del]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Delhi,India - Indira Gandhi Intl (DEL)]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Bom]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Mumbai,India - Chhatrapati Shivaji Maharaj International (BOM)]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Business trip  - Without reason]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[11-Jul-2024]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[18-Jul-2024]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Download Tripsource Application,Amazon Corp flight,WeekDay Flight]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Indian Rupees]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Economy]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Null]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Duration]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[SpiceJet]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[SpiceJet]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[SAVER]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[SAVER]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[LCC]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="50">
+              <value>
+                <![CDATA[Flight]]>
+              </value>
+            </param>
+            <param index="51">
+              <value>
+                <![CDATA[bom]]>
+              </value>
+            </param>
+            <param index="52">
+              <value>
+                <![CDATA[Mumbai, Maharashtra, India (BOM-Chhatrapati Shivaji Intl.)]]>
+              </value>
+            </param>
+            <param index="53">
+              <value>
+                <![CDATA[23-May-2024]]>
+              </value>
+            </param>
+            <param index="54">
+              <value>
+                <![CDATA[24-May-2024]]>
+              </value>
+            </param>
+            <param index="55">
+              <value>
+                <![CDATA[78554432323]]>
+              </value>
+            </param>
+            <param index="56">
+              <value>
+                <![CDATA[Ca]]>
+              </value>
+            </param>
+            <param index="57">
+              <value>
+                <![CDATA[345678]]>
+              </value>
+            </param>
+            <param index="58">
+              <value>
+                <![CDATA[Credit Card]]>
+              </value>
+            </param>
+            <param index="59">
+              <value>
+                <![CDATA[Corporate]]>
+              </value>
+            </param>
+            <param index="60">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="61">
+              <value>
+                <![CDATA[Amazon]]>
+              </value>
+            </param>
+            <param index="62">
+              <value>
+                <![CDATA[Visa]]>
+              </value>
+            </param>
+            <param index="63">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+            <param index="64">
+              <value>
+                <![CDATA[Flight Book]]>
+              </value>
+            </param>
+            <param index="65">
+              <value>
+                <![CDATA[Test]]>
+              </value>
+            </param>
+            <param index="66">
+              <value>
+                <![CDATA[NotApplied]]>
+              </value>
+            </param>
+            <param index="67">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="68">
+              <value>
+                <![CDATA[Airline For flight]]>
+              </value>
+            </param>
+            <param index="69">
+              <value>
+                <![CDATA[Fullfillment]]>
+              </value>
+            </param>
+            <param index="70">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="71">
+              <value>
+                <![CDATA[21B,9E,6E,12E]]>
+              </value>
+            </param>
+            <param index="72">
+              <value>
+                <![CDATA[6A,25B,2E,12E]]>
+              </value>
+            </param>
+            <param index="73">
+              <value>
+                <![CDATA[IN Policy all ]]>
+              </value>
+            </param>
+            <param index="74">
+              <value>
+                <![CDATA[Laxmi Khanal]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- flightBooking -->
+        <test-method is-config="true" signature="After_Test()[pri:0, instance:testFlightHotel.FlightBooking117@47d9a273]" started-at="2024-06-29T06:17:09 IST" name="After_Test" finished-at="2024-06-29T06:17:09 IST" duration-ms="300" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- After_Test -->
