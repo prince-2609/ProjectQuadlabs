@@ -79,7 +79,7 @@ public class SBTResultPage {
 		// check notification text after add to cart
 		String message = QaBrowser.driver.findElement(By.xpath("//div[@class='modal-body']/p")).getText();
 
-		QaExtentReport.test.log(Status.INFO, "Notification after Add To Cart : " + message);
+//		QaExtentReport.test.log(Status.INFO, "Notification after Add To Cart : " + message);
 		// close the notification
 		QaRobot.ClickOnElement("addToCart_close");
 //		QaExtentReport.test.log(Status.INFO, "<b><i>Close Notification Div after getting message</i></b>");
@@ -87,6 +87,89 @@ public class SBTResultPage {
 		WebElement WebElement = QaBrowser.driver.findElement(By.xpath("//div[@class='cmn-box itinerary-mdf']/a"));
 		JavascriptExecutor js = (JavascriptExecutor) QaBrowser.driver;
 		js.executeScript("arguments[0].click();", WebElement);
+		Thread.sleep(4000);
+		QaExtentReport.extentScreenshot("Your Itinerary Page");
+		Thread.sleep(2000);
+		// wait visibility of send for approval button
+//		QaRobot.explicitwaitvisible(100, By.xpath("(//a[@class='btn btn_blue_lg proceedcart btnTripRequest'])[1]"));
+		// take the screenshot of add to cart page
+//		String addToCart = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\addTocart.png");
+//		QaExtentReport.test.log(Status.INFO, "Add To Cart  " + addToCart + "");
+		// get the enquriy id
+//		String enquiryId = QaBrowser.driver.findElement(By.xpath("//div[@class='contant']/span")).getText();
+//		System.out.println("Enquiry id is " + enquiryId);
+//		QaExtentReport.test.log(Status.INFO, "Enquiry ID is  " + enquiryId);
+//		// get the add to cart fare
+//		String addToCartFare = QaBrowser.driver.findElement(By.xpath("//span[@class='itine_total '] ")).getText();
+//		System.out.println(addToCartFare);
+//		QaExtentReport.extentScreenshot("Your Itinerary Page");
+		// compare fare for add to cart and result page
+//		QaRobot.CompareFareValue(resultPrice,addToCartFare,"Add to cart page");
+		// Click on send for approval button
+//		QaRobot.ClickOnElement("sendforApproval");
+////		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on send for approval button</i></b>");
+//		WebElement element = QaBrowser.driver.findElement(By.xpath("//select[@id='corcostcentre']"));
+//		Select sel = new Select(element);
+//		sel.selectByIndex(1);
+//		Thread.sleep(2000);
+//		// Pass tha remarks
+//		QaRobot.PassValue("sendforApproval_remarks", remarks);
+//		QaExtentReport.test.log(Status.INFO, "<b><i>Passed the remarks : </i></b>" + remarks);
+//
+////		WebElement element1 = QaBrowser.driver.findElement(By.xpath("//select[@id='corpReasonF']"));
+////		Select sel1 = new Select(element1);
+////		sel1.selectByIndex(1);
+////		Thread.sleep(2000);
+//		// clicked on send button
+//		QaRobot.ClickOnElement("sendforApproval_send");
+////		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on send button</i></b>");
+//		// verify the details and accept alert
+//		QaBrowser.driver.switchTo().alert().accept();
+//		Thread.sleep(20000);
+//
+//		// wait till successful alert is present
+////		QaRobot.explicitwaitalert(500);
+//		// take screen shot
+//		// String sendingApproval = Logger.takeScreenshot(QaBrowser.driver,
+//		// "D:\\Screenshot\\sendingApproval.png");
+//		// QaExtentReport.test.log(Status.INFO, "Add To Cart "+sendingApproval+"");
+//		// get the text of alert and accept also
+//		String alerttext = QaBrowser.driver.switchTo().alert().getText();
+//		QaExtentReport.test.log(Status.INFO, "Alert message after sending approval : " + alerttext);
+//		QaBrowser.driver.switchTo().alert().accept();
+		// proceed booking after add to cart
+		// QaRobot.ClickOnElement("proccedTocheckout", "Clicked on proceed to checkout
+		// button");
+	}
+
+	public static void addToCartRT(String index, String remarks, String resultPrice, String policytype)
+			throws Exception {
+		// click on add cart button
+		QaBrowser.driver.findElement(By.xpath("(//a[@id='Addcart'])")).click();
+
+		// check In policy and out policy text
+//		if (policytype.equalsIgnoreCase("Out Of Policy")) {
+//			QaBrowser.driver.switchTo().alert().accept();
+//		}
+
+		// wait for close button visibility
+//		QaRobot.explicitwaitvisible(50, By.xpath("(//button[@class='btn btn-default'])[4]"));
+
+		// check notification text after add to cart
+		String message = QaBrowser.driver.findElement(By.xpath("//div[@class='modal-body']/p")).getText();
+
+//		QaExtentReport.test.log(Status.INFO, "Notification after Add To Cart : " + message);
+		// close the notification
+		QaRobot.ClickOnElement("addToCart_close");
+//		QaExtentReport.test.log(Status.INFO, "<b><i>Close Notification Div after getting message</i></b>");
+
+		// click on Your Itineary button
+		WebElement WebElement = QaBrowser.driver.findElement(By.xpath("//span[@id='ODYourItinearyVal']"));
+		JavascriptExecutor js = (JavascriptExecutor) QaBrowser.driver;
+		js.executeScript("arguments[0].click();", WebElement);
+		Thread.sleep(4000);
+		QaExtentReport.extentScreenshot("Your Itinerary Page");
+		Thread.sleep(2000);
 
 		// wait visibility of send for approval button
 //		QaRobot.explicitwaitvisible(100, By.xpath("(//a[@class='btn btn_blue_lg proceedcart btnTripRequest'])[1]"));
@@ -94,49 +177,12 @@ public class SBTResultPage {
 //		String addToCart = Logger.takeScreenshot(QaBrowser.driver, "D:\\Screenshot\\addTocart.png");
 //		QaExtentReport.test.log(Status.INFO, "Add To Cart  " + addToCart + "");
 		// get the enquriy id
-		String enquiryId = QaBrowser.driver.findElement(By.xpath("//div[@class='contant']/span")).getText();
-		System.out.println("Enquiry id is " + enquiryId);
-		QaExtentReport.test.log(Status.INFO, "Enquiry ID is  " + enquiryId);
+//		String enquiryId = QaBrowser.driver.findElement(By.xpath("//div[@class='contant']/span")).getText();
+//		System.out.println("Enquiry id is " + enquiryId);
+//		QaExtentReport.test.log(Status.INFO, "Enquiry ID is  " + enquiryId);
 		// get the add to cart fare
-		String addToCartFare = QaBrowser.driver.findElement(By.xpath("//span[@class='itine_total '] ")).getText();
-		System.out.println(addToCartFare);
-		// compare fare for add to cart and result page
-//		QaRobot.CompareFareValue(resultPrice,addToCartFare,"Add to cart page");
-		// Click on send for approval button
-		QaRobot.ClickOnElement("sendforApproval");
-//		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on send for approval button</i></b>");
-		WebElement element = QaBrowser.driver.findElement(By.xpath("//select[@id='corcostcentre']"));
-		Select sel = new Select(element);
-		sel.selectByIndex(1);
-		Thread.sleep(2000);
-		// Pass tha remarks
-		QaRobot.PassValue("sendforApproval_remarks", remarks);
-		QaExtentReport.test.log(Status.INFO, "<b><i>Passed the remarks : </i></b>" + remarks);
-
-//		WebElement element1 = QaBrowser.driver.findElement(By.xpath("//select[@id='corpReasonF']"));
-//		Select sel1 = new Select(element1);
-//		sel1.selectByIndex(1);
-//		Thread.sleep(2000);
-		// clicked on send button
-		QaRobot.ClickOnElement("sendforApproval_send");
-//		QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on send button</i></b>");
-		// verify the details and accept alert
-		QaBrowser.driver.switchTo().alert().accept();
-		Thread.sleep(20000);
-
-		// wait till successful alert is present
-//		QaRobot.explicitwaitalert(500);
-		// take screen shot
-		// String sendingApproval = Logger.takeScreenshot(QaBrowser.driver,
-		// "D:\\Screenshot\\sendingApproval.png");
-		// QaExtentReport.test.log(Status.INFO, "Add To Cart "+sendingApproval+"");
-		// get the text of alert and accept also
-		String alerttext = QaBrowser.driver.switchTo().alert().getText();
-		QaExtentReport.test.log(Status.INFO, "Alert message after sending approval : " + alerttext);
-		QaBrowser.driver.switchTo().alert().accept();
-		// proceed booking after add to cart
-		// QaRobot.ClickOnElement("proccedTocheckout", "Clicked on proceed to checkout
-		// button");
+//		String addToCartFare = QaBrowser.driver.findElement(By.xpath("//span[@class='itine_total '] ")).getText();
+//		System.out.println(addToCartFare);
 	}
 
 	// hotel Trip Request

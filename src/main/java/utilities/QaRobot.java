@@ -219,6 +219,16 @@ public class QaRobot extends QaExtentReport {
 //		QaExtentReport.test.log(Status.INFO, text);
 
 	}
+	
+	public static void DoubleClickOnElement(String locator2) throws Exception {
+
+		// QaBrowser.driver.findElement(By.xpath(TestBase.obj.getProperty(locator2))).click();
+		Actions action = new Actions(QaBrowser.driver);
+		WebElement element = getWebElement(locator2);
+		action.doubleClick(element).build().perform();
+//		QaExtentReport.test.log(Status.INFO, text);
+
+	}
 
 	// send the value on textbox
 	public static void PassValue(String Locator, String value) throws Exception {
