@@ -494,7 +494,7 @@ public class FlightBooking117 {
 							.findElement(
 									By.xpath("(//div[@class='fl_price_fmt']/p[2]/span/span[2])[" + tripindex + "]"))
 							.getText();
-//				QaExtentReport.test.log(Status.INFO, "<b><i>Result page price is </i></b>" + resultPagePrice);
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Result page price is </i></b>" + resultPagePrice);
 					String policytype = QaBrowser.driver
 							.findElement(By.xpath("(//span[contains(@id,'PT_')])[" + policyindex + "]")).getText();
 					System.out.println(policytype);
@@ -509,55 +509,61 @@ public class FlightBooking117 {
 						if (policytype.equalsIgnoreCase("Out Of Policy")) {
 							QaBrowser.driver.switchTo().alert().accept();
 						}
-						checkoutpage(ccode, FareBranding, searchType, triptype, Trip, adult, child, infant, Stops,
-								OneWayAirLine, RoundTripAirLine, AirlineType, ProductType, fop, receiptno, card,
-								cardtype, cvv, CheckOutRuleStatus, RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep,
-								SeatSelection, AdultSeatSelection, ChildSeatSelection, airReasonCode, CreatedBy);
+//								checkoutpage(Lhseat, Shseat, ccode, FareBranding, searchType, triptype, Trip, adult, child,
+//										infant, Stops, OneWayAirLine, RoundTripAirLine,
+//
+//										ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus, RCqty,
+//										RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection,
+//										ChildSeatSelection, airReasonCode, CreatedBy);
 					} else if (Resultpagestep.equalsIgnoreCase("Addtocart")) {
-						QaRobot.scrollPage(-400);
-						Thread.sleep(3000);
-						QaRobot.ClickOnElement("YourItineraryFJ");
-						Thread.sleep(5000);
-						QaExtentReport.extentScreenshot("Your Itinerary");
-//						SBTResultPage.addToCart(booknowindex, AddToCartRemarks, resultPagePrice, policytype);
+						SBTResultPage.addToCart(booknowindex, AddToCartRemarks, resultPagePrice, policytype);
 					}
 				} else if (Trip.equalsIgnoreCase("RoundTrip")) {
+
+					String resultPagePrice = QaBrowser.driver.findElement(By.xpath("(//span[@id='TotalPrice'])"))
+							.getText();
+//						QaExtentReport.test.log(Status.INFO, "<b><i>Result page price is </i></b>" + resultPagePrice);
+					String policytype = QaBrowser.driver.findElement(By.xpath(
+							"(//div[@id='FareDetailsController']/div[2]/div/div[2]/div/div[3]/div[2]/div[2]/ul/li[2]/span)"))
+							.getText();
+					System.out.println(policytype);
+
 					if (Resultpagestep.equalsIgnoreCase("Trip Request")) {
-//				SBTResultPage.tripRequest(tripindex, resultPagePrice, policytype);
+//						SBTResultPage.tripRequest(tripindex, resultPagePrice, policytype);
 					} else if (Resultpagestep.equalsIgnoreCase("Flight Book")) {
 						QaExtentReport.extentScreenshot("Result Page1");
-						String policytype = QaBrowser.driver
-								.findElement(By.xpath("(//span[contains(@id,'PT_')])[" + policyindex + "]")).getText();
-						System.out.println(policytype);
-//						QaRobot.ClickOnElement("InPolicyTab");
+//								QaRobot.ClickOnElement("InPolicyTab");
+//						String policytype = QaBrowser.driver
+//								.findElement(By.xpath("(//span[contains(@id,'PT_')])[" + policyindex + "]")).getText();
+//						System.out.println(policytype);
 						Thread.sleep(3000);
 						WebElement Outbound = QaBrowser.driver.findElement(
 								By.xpath("(//input[contains(@id,'radio_Outbound')])[" + booknowindex + "]"));
 						JavascriptExecutor js2 = (JavascriptExecutor) QaBrowser.driver;
 						js2.executeScript("arguments[0].click()", Outbound);
-
 						WebElement Inbound = QaBrowser.driver.findElement(
 								By.xpath("(//input[contains(@id,'radio_Inbound')])[" + booknowindex + "]"));
 						JavascriptExecutor js3 = (JavascriptExecutor) QaBrowser.driver;
 						js3.executeScript("arguments[0].click()", Inbound);
 						QaExtentReport.extentScreenshot("Result Page2");
 						QaRobot.ClickOnElement("rt_Continue");
-						if (policytype.equalsIgnoreCase("Out Of Policy")) {
-							QaBrowser.driver.switchTo().alert().accept();
-							QaBrowser.driver.switchTo().alert().accept();
-						}
-
-						checkoutpage(ccode, FareBranding, searchType, triptype, Trip, adult, child, infant, Stops,
-								OneWayAirLine, RoundTripAirLine, AirlineType, ProductType, fop, receiptno, card,
-								cardtype, cvv, CheckOutRuleStatus, RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep,
-								SeatSelection, AdultSeatSelection, ChildSeatSelection, airReasonCode, CreatedBy);
+//								checkoutpage(Lhseat, Shseat, ccode, FareBranding, searchType, triptype, Trip, adult, child,
+//										infant, Stops, OneWayAirLine, RoundTripAirLine,
+//
+//										ProductType, fop, receiptno, card, cardtype, cvv, CheckOutRuleStatus, RCqty,
+//										RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection, AdultSeatSelection,
+//										ChildSeatSelection, airReasonCode, CreatedBy);
 					} else if (Resultpagestep.equalsIgnoreCase("Addtocart")) {
-						QaRobot.scrollPage(-400);
-						Thread.sleep(3000);
-						QaRobot.ClickOnElement("YourItineraryFJ");
-						Thread.sleep(5000);
-						QaExtentReport.extentScreenshot("Your Itinerary");
-//				SBTResultPage.addToCart(addtocartindex, addToCartRemarks,resultPagePrice,policytype);
+						WebElement Outbound = QaBrowser.driver.findElement(
+								By.xpath("(//input[contains(@id,'radio_Outbound')])[" + booknowindex + "]"));
+						JavascriptExecutor js2 = (JavascriptExecutor) QaBrowser.driver;
+						js2.executeScript("arguments[0].click()", Outbound);
+						WebElement Inbound = QaBrowser.driver.findElement(
+								By.xpath("(//input[contains(@id,'radio_Inbound')])[" + booknowindex + "]"));
+						JavascriptExecutor js3 = (JavascriptExecutor) QaBrowser.driver;
+						js3.executeScript("arguments[0].click()", Inbound);
+						QaExtentReport.extentScreenshot("Result Page2");
+						SBTResultPage.addToCartRT(booknowindex, AddToCartRemarks, resultPagePrice, policytype);
 					}
 				}
 			} else if (triptype.equalsIgnoreCase("International")) {
@@ -579,17 +585,12 @@ public class FlightBooking117 {
 					if (policytype.equalsIgnoreCase("Out Of Policy")) {
 						QaBrowser.driver.switchTo().alert().accept();
 					}
-					checkoutpage(ccode, FareBranding, searchType, triptype, Trip, adult, child, infant, Stops,
-							OneWayAirLine, RoundTripAirLine, AirlineType, ProductType, fop, receiptno, card, cardtype,
-							cvv, CheckOutRuleStatus, RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection,
-							AdultSeatSelection, ChildSeatSelection, airReasonCode, CreatedBy);
-
+//							checkoutpage(Lhseat, Shseat, ccode, FareBranding, searchType, triptype, Trip, adult, child, infant,
+//									Stops, OneWayAirLine, RoundTripAirLine, ProductType, fop, receiptno, card, cardtype, cvv,
+//									CheckOutRuleStatus, RCqty, RulesAppliedOnCheckOutPage, checkoutPageStep, SeatSelection,
+//									AdultSeatSelection, ChildSeatSelection, airReasonCode, CreatedBy);
 				} else if (Resultpagestep.equalsIgnoreCase("Addtocart")) {
-					QaRobot.scrollPage(-400);
-					Thread.sleep(3000);
-					QaRobot.ClickOnElement("YourItineraryFJ");
-					Thread.sleep(5000);
-					QaExtentReport.extentScreenshot("Your Itinerary");
+					SBTResultPage.addToCart(booknowindex, AddToCartRemarks, resultPagePrice, policytype);
 				}
 			}
 		} else if (FareBranding.equalsIgnoreCase("On")) {
