@@ -107,24 +107,11 @@ public class TravellerProfiling {
 		QaRobot.selectTextByLocator("//select[@id='cbobranch']", SelectBranchName);
 		QaRobot.selectTextByLocator("//select[@id='cboLang']", Language);
 		QaRobot.selectTextByLocator("//select[@id='drpDownCountryOfResidence']", Country);
+		QaRobot.ClickOnElement("TBuSameAsCorporate");
 		QaRobot.selectTextByLocator("//select[@id='ddlMobileCountryCode']", MobileCountry);
 		QaRobot.PassValue("MobileNo", MobileNo);
-		int pAS = Integer.parseInt(TotalRights);
-		for (int i = 1; i <= pAS; i++) {
-			String[] tN = RightNames.split(",");
-			String b = tN[i - 1];
-			List<WebElement> listOfRights = QaBrowser.driver.findElements(
-					By.xpath("/html/body/div/form/div[5]/div/div/div/div[2]/div[2]/div/div[46]/div/label/span/label"));
-			for (WebElement autoRights : listOfRights) {
-				if (autoRights.getText().equalsIgnoreCase(b)) {
-					autoRights.click();
-					break;
-				} else {
-				}
-			}
-		}
-		QaRobot.ClickOnElement("VIP");
-		QaRobot.ClickOnElement("CIP");
+		QaRobot.selectTextByLocator("//select[@id='dd_Designation']", "CEO");
+		QaRobot.selectTextByLocator("//select[@id='ddlempgradecat']", "Testing");
 		if (TravellerType.equalsIgnoreCase("Administrator")) {
 			QaRobot.ClickOnElement("Administrator");
 		} else if (TravellerType.equalsIgnoreCase("Travel Arranger")) {
@@ -134,9 +121,24 @@ public class TravellerProfiling {
 		} else if (TravellerType.equalsIgnoreCase("Employee")) {
 			QaRobot.ClickOnElement("Employee");
 		}
+		int pAS = Integer.parseInt(TotalRights);
+		for (int i = 1; i <= pAS; i++) {
+			String[] tN = RightNames.split(",");
+			String b = tN[i - 1];
+			List<WebElement> listOfRights = QaBrowser.driver.findElements(
+					By.xpath("/html/body/div/form/div[5]/div/div/div/div[2]/div[2]/div/div[43]/div/label/span/label"));
+			for (WebElement autoRights : listOfRights) {
+				if (autoRights.getText().equalsIgnoreCase(b)) {
+					autoRights.click();
+					break;
+				}
+			}
+		}
+		QaRobot.ClickOnElement("VIP");
+		QaRobot.ClickOnElement("CIP");
 		QaRobot.ClickOnElement("Acknowledgment1");
 		QaRobot.ClickOnElement("Acknowledgment2");
-		QaRobot.ClickOnElement("TravellerSave");
+//		QaRobot.ClickOnElement("TravellerSave");
 //		QaRobot.ClickOnElement("SearchOption");
 //		Thread.sleep(5000);
 //		QaRobot.PassValue("SUserFN", FN);
@@ -146,11 +148,11 @@ public class TravellerProfiling {
 //		QaRobot.ClickOnElement("AddPassport");
 //		QaRobot.PassValue("PassportNo", PassportNo);
 //		QaRobot.ClickOnElement("TravellerDOB");
-		String DateSelection[] = TravellerDOB.split("-");
-		String year = DateSelection[2];
-		String month = DateSelection[1];
-		String expDate = DateSelection[0];
-		QaRobot.selectDateInCalendar(expDate, month, year);
+//		String DateSelection[] = TravellerDOB.split("-");
+//		String year = DateSelection[2];
+//		String month = DateSelection[1];
+//		String expDate = DateSelection[0];
+//		QaRobot.selectDateInCalendar(expDate, month, year);
 //		String City[] = PPlaceOfIssue.split(",");
 //		String City1 = City[0];
 //		String City2 = City[1];
@@ -224,7 +226,7 @@ public class TravellerProfiling {
 
 	@AfterTest
 	public void After_Test() {
-		QaExtentReport.test.getExtent().flush();
+//		QaExtentReport.test.getExtent().flush();
 	}
 
 //	@AfterMethod
