@@ -148,9 +148,9 @@ public class SBTResultPage {
 		QaBrowser.driver.findElement(By.xpath("(//a[@id='Addcart'])")).click();
 
 		// check In policy and out policy text
-//		if (policytype.equalsIgnoreCase("Out Of Policy")) {
-//			QaBrowser.driver.switchTo().alert().accept();
-//		}
+		if (policytype.equalsIgnoreCase("Out Of Policy")) {
+			QaBrowser.driver.switchTo().alert().accept();
+		}
 
 		// wait for close button visibility
 //		QaRobot.explicitwaitvisible(50, By.xpath("(//button[@class='btn btn-default'])[4]"));

@@ -138,7 +138,35 @@ public class SBTCheckoutPayment {
 //					QaExtentReport.test.log(Status.INFO, "<b><i>auth code</i></b>");
 				}
 			} else if (ProductType.equalsIgnoreCase("Flight+Hotel")) {
-				if (cardType.equalsIgnoreCase("Master Card")) {
+//				if (DashboardType.equalsIgnoreCase("Old")) {
+//					
+//					if (cardType.equalsIgnoreCase("Master Card")) {
+//						QaRobot.selectTextFromDropdown("ow_selectcardtype", cardType, "Selected master card");
+//						QaRobot.ClickOnElement("ow_Card");
+//						QaRobot.PassValue("ow_cardsecuritycode", cvv);
+//						QaRobot.PassValue("OW_Address", "JMD");
+//						TestBase.listofautosuggestion(By.xpath("//div[@id='divHTCity']/p"), "Delhi", "Delhi",
+//								By.xpath("//input[@id='ctl00_contentMain_payeeCity']"));
+//						QaRobot.PassValue("OW_State", "Delhi");
+//					} else if (cardType.equalsIgnoreCase("Visa")) {
+//						QaRobot.selectTextFromDropdown("ow_selectcardtype", cardType, "Selected visa card");
+//						QaRobot.ClickOnElement("ow_Card");
+////						QaExtentReport.extentScreenshot("Payment Page");
+//						Thread.sleep(2000);
+////						QaRobot.PassValue("card_authcode", cvv);
+////						QaExtentReport.test.log(Status.INFO, "<b><i>auth code</i></b>");
+//						QaRobot.ClickOnElement("ow_paymentprocced");
+//						Thread.sleep(3000);
+////						QaExtentReport.extentScreenshot("Payment Page");
+////						Thread.sleep(3000);
+////						QaRobot.selectTextFromDropdown("ow_selectcardtype1", "Credit Card", "");
+//						Thread.sleep(3000);
+//						QaRobot.selectTextFromDropdown("ow_selectcardtype", cardType, "Selected visa card");
+//						QaRobot.ClickOnElement("ow_Card");
+//					}
+//				}else {
+//			}
+					if (cardType.equalsIgnoreCase("Master Card")) {
 					QaRobot.selectTextFromDropdown("ow_selectcardtype", cardType, "Selected master card");
 					QaRobot.ClickOnElement("ow_Card");
 					QaRobot.PassValue("ow_cardsecuritycode", cvv);
@@ -149,22 +177,25 @@ public class SBTCheckoutPayment {
 				} else if (cardType.equalsIgnoreCase("Visa")) {
 					QaRobot.selectTextFromDropdown("ow_selectcardtype", cardType, "Selected visa card");
 					QaRobot.ClickOnElement("ow_Card");
-					QaExtentReport.extentScreenshot("Payment Page");
+//					QaExtentReport.extentScreenshot("Payment Page");
 					Thread.sleep(2000);
 //					QaRobot.PassValue("card_authcode", cvv);
 //					QaExtentReport.test.log(Status.INFO, "<b><i>auth code</i></b>");
 					QaRobot.ClickOnElement("ow_paymentprocced");
 					Thread.sleep(3000);
-					QaExtentReport.extentScreenshot("Payment Page");
-					Thread.sleep(3000);
+//					QaExtentReport.extentScreenshot("Payment Page");
+//					Thread.sleep(3000);
 					QaRobot.selectTextFromDropdown("ow_selectcardtype1", "Credit Card", "");
 					Thread.sleep(3000);
+					
 					QaRobot.selectTextFromDropdown("ow_selectcardtype", cardType, "Selected visa card");
 					QaRobot.ClickOnElement("ow_Card");
 				}
+				}
+				
 			}
 		}
-	}
+//	}
 
 	public static void fopCash(String card, String receiptno) throws Exception {
 

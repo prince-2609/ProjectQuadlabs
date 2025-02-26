@@ -32,7 +32,7 @@ public class BusinessHotelTrip {
 
 	@DataProvider
 	public Object[][] getexceldata1() throws Exception {
-		return QaDataProvider.getTestdata("SBT_Hotel", "Sheet13");
+		return QaDataProvider.getTestdata("SBT_Hotel", "Sheet14");
 	}
 
 	@Test(dataProvider = "getexceldata1")
@@ -444,7 +444,7 @@ public class BusinessHotelTrip {
 			QaExtentReport.test.log(Status.INFO, "<b><i>Clicked on Modified Search</i></b>");
 		}
 		Thread.sleep(30000);
-		QaRobot.scrollPage(400);
+		QaRobot.scrollPage(-400);
 		QaRobot.ClickOnElement("HotelSelectC");
 		Thread.sleep(3000);
 //			QaRobot.ClickOnElement("CancellationPolicy");
@@ -479,7 +479,7 @@ public class BusinessHotelTrip {
 		if (Resultpagestep.equalsIgnoreCase("Add to Cart")) {
 			if (DashboardType.equalsIgnoreCase("Old")) {
 //					if (Server.equalsIgnoreCase("Staging") || Server.equalsIgnoreCase("Xchange")) {
-				String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy3')])[3]")).getText();
+				String getT = QaBrowser.driver.findElement(By.xpath("(//span[contains(@id,'Policy127301')])[1]")).getText();
 				QaExtentReport.extentScreenshot("Flight Results");
 				QaRobot.ClickOnElement("Addtocartlive");
 				if (getT.equalsIgnoreCase("Out Of Policy")) {
@@ -512,6 +512,7 @@ public class BusinessHotelTrip {
 						QaRobot.alertAccept();
 					}
 				}
+//			}
 				QaRobot.switchToWindow();
 				QaRobot.ClickOnElement("HotelNotificationCloseC");
 				QaRobot.scrollPage(-400);
@@ -794,9 +795,24 @@ public class BusinessHotelTrip {
 			QaExtentReport.extentScreenshot("Checkout Page");
 			QaRobot.scrollPage(400);
 			if (ProductType.equalsIgnoreCase("Hotel")) {
-				QaRobot.selectIndexFromDropdown("ResonCodeCT", 1);
-				QaRobot.selectIndexFromDropdown("ResonCodeCN", 1);
-				QaRobot.PassValue("HotelReasonCode", "RC101");
+//				QaRobot.selectIndexFromDropdown("ResonCodeCT", 1);
+//				QaRobot.selectIndexFromDropdown("ResonCodeCN", 1);
+//				QaRobot.PassValue("HotelReasonCode", "RC101");
+				WebElement element = QaBrowser.driver
+						.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture169047']"));
+				Select sel = new Select(element);
+				sel.selectByIndex(1);
+				Thread.sleep(2000);
+				WebElement element1 = QaBrowser.driver
+						.findElement(By.xpath("//select[@id='ctl00_contentMain_dynamicdatacapture168990']"));
+				Select sel1 = new Select(element1);
+				sel1.selectByIndex(1);
+				Thread.sleep(2000);
+				WebElement element2 = QaBrowser.driver
+						.findElement(By.xpath("//select[@id='ctl00_contentMain_CorporateFDReasonDDLHHL']"));
+				Select sel2 = new Select(element2);
+				sel2.selectByIndex(1);
+				Thread.sleep(2000);
 //				QaRobot.ClickOnElement("BillToBranchC");
 			} else if (ProductType.equalsIgnoreCase("Hotel+Flight")) {
 				if (ccode.equalsIgnoreCase("Staging")) {

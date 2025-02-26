@@ -14,9 +14,9 @@ public class SBT_JOLO_PaymentPage {
 		QaRobot.ClickOnElement("ProceedF");
 	}
 
-	public static void cardPayment(String ProductType,String FOP,String CardType, String CreditCardNumber, String CardHolderName,
-			String CardExpiryDate) throws Exception {
-		if(ProductType.equalsIgnoreCase("Car+Hotel+Flight")) {
+	public static void cardPayment(String ProductType, String FOP, String CardType, String CreditCardNumber,
+			String CardHolderName, String CardExpiryDate) throws Exception {
+		if (ProductType.equalsIgnoreCase("Car+Hotel+Flight")) {
 			QaRobot.selectTextFromDropdown("PaymentMethodC1", FOP);
 		}
 		QaRobot.ClickOnElement("OKC");
@@ -33,6 +33,8 @@ public class SBT_JOLO_PaymentPage {
 //		} else if (CardType.equalsIgnoreCase("Visa")) {
 //			cardDetailsForCar(CreditCardNumber, CardHolderName, CardExpiryDate);
 //		}
+		QaExtentReport.extentScreenshot("Payment Page");
+		Thread.sleep(2000);
 		QaRobot.ClickOnElement("ProceedF");
 	}
 
